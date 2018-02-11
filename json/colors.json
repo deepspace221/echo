@@ -1,6 +1,6 @@
-{
-  "aliceblue": "#f0f8ff",
-  "antiquewhite": "#faebd7",
-  "aqua": "#00ffff",
+var color = {
+  "red": "#f0f8ff",
+  "blue": "#faebd7",
+  "white": "#00ffff",
   "aquamarine": "#7fffd4"
-}
+};
