@@ -153,12 +153,7 @@ function isRole(params){ //wroking
         }
         return result;
 }
-function getStaffRoleName(){ //working
-        for (i=0; i < ServerRoles.length; i++){
-            if (ServerRoles[i].ID == 337966506191224834)
-                return ServerRoles[i].Name;
-        }
-}
+
 function getArrStudyLangs(bottomRole, topRole){ //working
         var arr = [];
         var ctr = 0;
