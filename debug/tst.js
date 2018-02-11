@@ -1,3 +1,3 @@
-var output = {
-  test: "aa" 
-};
+{
+  "test": "aa" 
+}
