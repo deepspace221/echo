@@ -64,4 +64,16 @@ function getMembersCount(){
 	}	
 	return ctr;
 }
-
+function getRegexRoleName(rolName){
+	var regex = RegEx(roleName, 'i')
+	var ctr = 0;
+	for (i = 0; ServerRoles.length; i++){
+		if (/regex/i.test(ServerRoles["Name"])){
+			ctr++;
+			roleName = ServerRoles["Name"];	
+		}	
+	}
+	if (ctr > 1)
+		return;
+	else return roleName;
+}
