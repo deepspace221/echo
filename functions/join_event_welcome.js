@@ -1,4 +1,3 @@
-
 function initInviteOBJ(username){
         var obj = [{
                 inviteCodes: [],
