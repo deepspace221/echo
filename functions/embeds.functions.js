@@ -1,6 +1,7 @@
 
 //Count
-function getExpandableEmbed(title, color, thumb, description, fields, footerIcon, footer){
+function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer)
+    if (author) author = "{author|icon:{usericon}}{author|name:{self}}" else author = "";
     var randomColors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226, #26e2c0,#2633e2,#8126e2";
     if (thumb == "") thumb;
     if (fields == "") fields = "";
@@ -11,10 +12,13 @@ function getExpandableEmbed(title, color, thumb, description, fields, footerIcon
     else if (footer != "" && footerIcon != "") footer = "{footer|icon:43} \
                                                          {footer|text:dd}";
     else footer = "";
+    
+    
 
     var embed = "{embed: \
                      {title:" + title +"} \
                      {type: rich} \
+                     " + author + " \
                      {color:{randlist:"+ color +"} \
                     {thumb|url:"+ thumb +"} \
                     {desc: \
