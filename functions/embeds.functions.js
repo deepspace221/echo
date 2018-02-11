@@ -15,7 +15,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     if (fields == "") fields = "";
     if (color == "") color = randomColors;
     
-    if (footer != ""){
+    if (footer != "" && footer != undefined){
         if (footerIcon == "") footer = footer1;
         if (footerIcon != "") footer = footer2;
     }
