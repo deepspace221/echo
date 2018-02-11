@@ -1,0 +1,50 @@
+[#CONTINUE#]
+E-jnevnt9LogNew={init}
+{arslock}
+use server_db;
+{e?servercount:membercount(+1)}
+{redirect:{r?servercount:channel}}
+{embed:
+    {title:Member Joined}
+    {type:rich}
+    {author|icon:{usericon}}
+    {author|name:{/user}}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{usericon}}
+    {desc:
+{user} has joined the server!
+}
+    {footer|icon:https://xtclabs.net/img/favicon-new.png}
+    {footer|text: Current membes count: {math:{r?servercount:membercount}+1}}
+}
+{role:New}
+{ars:E-jnevnt10Ping}
+[#CONTINUE#]
+[#CONTINUE#]
+E-levent={init}
+{Event:Leave}
+{embed:
+    {title:Member Left}
+    {type:rich}
+    {author|icon:{usericon}}
+    {author|name:{self}}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{usericon}}
+    {desc:
+{user} has left the server!
+}
+    {footer|icon:https://xtclabs.net/img/favicon-new.png}
+    {footer|text: Current members count: {math:{r?servercount:membercount}-1}}
+}
