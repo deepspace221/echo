@@ -13,9 +13,7 @@ function debug(content){
 
 //GIVINIG ROLES. Sort the users roles and return them as an array;
 function sortRolesByPosition() {
-
         var arr = new Array();
-
         for (var i = 0; i < UserRoles.length; i++) {
             for (var j = 0; j < ServerRoles.length; j++) {
                 if (UserRoles[i] === ServerRoles[j]["ID"]) {
@@ -27,13 +25,10 @@ function sortRolesByPosition() {
                 }
             }
         }
-
         var byPos = arr.slice(0);
-
         byPos.sort(function(a,b) {
             return b.Position - a.Position;
         });
-
         return byPos;
 }
 
