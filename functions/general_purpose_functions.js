@@ -41,3 +41,11 @@ function getRestrictedRoles(){
 	}
 	return arr;
 }
+
+//Count. Returns a role position.
+function getRolePosition(roleName){
+        for (i=0; i < ServerRoles.length; i++){
+            if (ServerRoles[i].Name == roleName)
+                return ServerRoles[i].Position;
+        }
+}
