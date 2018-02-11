@@ -1,7 +1,7 @@
 function getMembersCount(){
 	var ctr = 0;
-	for (i = 0; ServerMembers.length; i++){
-		if (!ServerMembers[i].User.Bot)
+	for (key in ServerMembers){
+		if (!ServerMembers[key].Bot)
 			ctr++;
 	}	
 	return ctr;
