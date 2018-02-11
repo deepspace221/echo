@@ -27,7 +27,7 @@ function getExpendedEmbed(title, color, thumb, description, fields, footerIcon, 
 
 function getSimpleEmbed(title, thumb, description){
     var color = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226, #26e2c0,#2633e2,#8126e2";
-    if (thumb) thumb = "{guild|icon}"; else thumb;
+    if (thumb) thumb = "{guild|icon}"; else thumb = "";
 
     var embed = "{embed: \
                      {title:" + title +"} \
