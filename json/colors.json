@@ -1,6 +1,6 @@
-var color = {
+color = {
   "red": "#f0f8ff",
   "blue": "#faebd7",
   "white": "#00ffff",
   "aquamarine": "#7fffd4"
-};
+}
