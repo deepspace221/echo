@@ -7,7 +7,11 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 
     if (author) author = "{author|icon:{usericon}}{author|name:{self}}"; else author = "";
     var randomColors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226, #26e2c0,#2633e2,#8126e2";
-    if (thumb == "") thumb = "{thumb|url:{guild|icon}}"; else thumb = "{thumb|url:"+ thumb +"}";
+    
+    if (thumb == "" || thumb == undefined) thumb = "{thumb|url:{guild|icon}}";
+    else if (thumb == "user") thumb = "{thumb|url:{usericon}}"
+    else thumb = "{thumb|url:"+ thumb +"}";
+    
     if (fields == "") fields = "";
     if (color == "") color = randomColors;
     
