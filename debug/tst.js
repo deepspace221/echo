@@ -1,1 +1,3 @@
-var output = 3;
+var output = {
+  test: "aa" 
+};
