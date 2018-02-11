@@ -194,12 +194,7 @@ function getArrStudyLangs(bottomRole, topRole){ //working
 
         return arr;
 }
-function getRolePosition(roleName){
-        for (i=0; i < ServerRoles.length; i++){
-            if (ServerRoles[i].Name == roleName)
-                return ServerRoles[i].Position;
-        }
-}
+
 
 function getEmbed(){
     var embed = " \
