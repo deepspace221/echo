@@ -10,6 +10,7 @@ function getExpandableEmbed(title, color, thumb, description, fields, footerIcon
                                                     {footer|text:" + footer +"}";
     else if (footer != "" && footerIcon != "") footer = "{footer|icon:"+ footerIcon +"} \
                                                          {footer|text:" + footer +"}";
+    else footer = "";
 
     var embed = "{embed: \
                      {title:" + title +"} \
