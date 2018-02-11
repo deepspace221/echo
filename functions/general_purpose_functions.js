@@ -56,12 +56,25 @@ function getStaffRoleName(){ //working
                 return ServerRoles[i].Name;
         }
 }
-function getMembersCount(){
+function getMembersCount(type){
 	var ctr = 0;
-	for (i = 0; ServerMembers.length; i++){
-		if (!ServerMembers[i].User.Bot)
+	if (!type){
+		for (key in ServerMembers){
 			ctr++;
+		}
 	}	
+	else if (type == "users"){
+		for (key in ServerMembers){
+			if (!ServerMembers[key].User.Bot)
+				ctr++;
+		}
+	}
+	else if (type == "bots"){
+		for (key in ServerMembers){
+			if (ServerMembers[key].User.Bot)
+				ctr++;
+		}
+	}
 	return ctr;
 }
 function getRegexRoleName(rolName){
