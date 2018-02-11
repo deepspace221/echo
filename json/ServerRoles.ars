@@ -1,0 +1,2516 @@
+{
+   "err": "",
+   "give": "{role}Dummy, n. Spanish{/role}",
+   "giveMsg": " `n. Spanish`",
+   "polyglot": "true",
+   "role0": "n. Spanish",
+   "roleName": "n. spanish",
+   "roles": [
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "363035052810174465",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Berber",
+         "Permissions": 329728,
+         "Position": 185
+      },
+      {
+         "Color": 8053954,
+         "Hoist": true,
+         "ID": "406900064309739521",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Server Listing",
+         "Permissions": 0,
+         "Position": 5
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "403793828223516673",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "❖ Former Staff",
+         "Permissions": 0,
+         "Position": 208
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "338171319264739330",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♕ Memrise Champion",
+         "Permissions": 0,
+         "Position": 197
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "335021599059345408",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "@everyone",
+         "Permissions": 65536,
+         "Position": 0
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "364955472182378497",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Teachers",
+         "Permissions": 329728,
+         "Position": 196
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216334755594260",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Swedish",
+         "Permissions": 0,
+         "Position": 72
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "406890229149204500",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Team ❷",
+         "Permissions": 65536,
+         "Position": 37
+      },
+      {
+         "Color": 11369471,
+         "Hoist": true,
+         "ID": "344490514613272577",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Vietnamese",
+         "Permissions": 0,
+         "Position": 140
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "347168007211974657",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Macedonian",
+         "Permissions": 0,
+         "Position": 83
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "371606096189587458",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♛ Senior Mods",
+         "Permissions": 1376264,
+         "Position": 246
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216103435272193",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Norwegian",
+         "Permissions": 0,
+         "Position": 81
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298459302658049",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Portuguese",
+         "Permissions": 0,
+         "Position": 119
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "364721420711886848",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♣ servers",
+         "Permissions": 329728,
+         "Position": 13
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "403797786836860928",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "❖ Intralink",
+         "Permissions": 0,
+         "Position": 207
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215937219198986",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "German",
+         "Permissions": 0,
+         "Position": 96
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "346286819354345472",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Romanian",
+         "Permissions": 0,
+         "Position": 154
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298589695442954",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Russian",
+         "Permissions": 0,
+         "Position": 118
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "401538336088391691",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Mobile",
+         "Permissions": 68485121,
+         "Position": 17
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "359412336773169155",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "ASL",
+         "Permissions": 329728,
+         "Position": 110
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "401287472018882560",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Recycle Bin",
+         "Permissions": 68485121,
+         "Position": 19
+      },
+      {
+         "Color": 11591014,
+         "Hoist": false,
+         "ID": "401346442590945290",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Conlangs Patron",
+         "Permissions": 0,
+         "Position": 214
+      },
+      {
+         "Color": 10867018,
+         "Hoist": true,
+         "ID": "360673191154286602",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Persian",
+         "Permissions": 329728,
+         "Position": 157
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "347085464240390145",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "3 Trees LVL 25",
+         "Permissions": 0,
+         "Position": 52
+      },
+      {
+         "Color": 2604494,
+         "Hoist": false,
+         "ID": "371316716250333185",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Celtic",
+         "Permissions": 1376320,
+         "Position": 62
+      },
+      {
+         "Color": 14286926,
+         "Hoist": true,
+         "ID": "364478680275353600",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Sindhi",
+         "Permissions": 329792,
+         "Position": 151
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346879951292727296",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Tinycards",
+         "Permissions": 0,
+         "Position": 58
+      },
+      {
+         "Color": 12207027,
+         "Hoist": true,
+         "ID": "335214960856793092",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Mandarin",
+         "Permissions": 0,
+         "Position": 160
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298610117378051",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Spanish",
+         "Permissions": 0,
+         "Position": 117
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "347161067417239563",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Other",
+         "Permissions": 0,
+         "Position": 137
+      },
+      {
+         "Color": 10934903,
+         "Hoist": true,
+         "ID": "369555486305157121",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Irish",
+         "Permissions": 1376256,
+         "Position": 166
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "382029715088605185",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "XP Contests",
+         "Permissions": 68485121,
+         "Position": 27
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "371151861178171392",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Slovak",
+         "Permissions": 1376256,
+         "Position": 149
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346920644392386560",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "3 Trees Completed",
+         "Permissions": 0,
+         "Position": 47
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "338715948615991296",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Esperanto",
+         "Permissions": 0,
+         "Position": 101
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346307853348503554",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Duolingo",
+         "Permissions": 0,
+         "Position": 57
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "401284779112267778",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Translator",
+         "Permissions": 68485121,
+         "Position": 195
+      },
+      {
+         "Color": 5756492,
+         "Hoist": false,
+         "ID": "401336013299122177",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Africa Patron",
+         "Permissions": 0,
+         "Position": 215
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "338637230514110474",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Ukrainian",
+         "Permissions": 0,
+         "Position": 69
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "406889923363209227",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Team ❶",
+         "Permissions": 65536,
+         "Position": 38
+      },
+      {
+         "Color": 10934903,
+         "Hoist": false,
+         "ID": "401295132583788544",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Celtic Patron",
+         "Permissions": 0,
+         "Position": 229
+      },
+      {
+         "Color": 8053954,
+         "Hoist": true,
+         "ID": "406898567010189335",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Social",
+         "Permissions": 0,
+         "Position": 192
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "363168922360348672",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Bengali",
+         "Permissions": 329728,
+         "Position": 186
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215223508303872",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Bulgarian",
+         "Permissions": 0,
+         "Position": 108
+      },
+      {
+         "Color": 14329333,
+         "Hoist": true,
+         "ID": "371147852958662666",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Macedonian",
+         "Permissions": 1376256,
+         "Position": 162
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "364481697896726531",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Other",
+         "Permissions": 329728,
+         "Position": 112
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "336479920865804309",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Hebrew",
+         "Permissions": 0,
+         "Position": 95
+      },
+      {
+         "Color": 8508585,
+         "Hoist": false,
+         "ID": "407548272815636480",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Block Chatty",
+         "Permissions": 65536,
+         "Position": 21
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "347076914432835586",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Sandbox",
+         "Permissions": 2080382135,
+         "Position": 241
+      },
+      {
+         "Color": 6614649,
+         "Hoist": true,
+         "ID": "406899465417392132",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Featured",
+         "Permissions": 65536,
+         "Position": 191
+      },
+      {
+         "Color": 15526938,
+         "Hoist": false,
+         "ID": "401291389201285130",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Scandinavia Patron",
+         "Permissions": 0,
+         "Position": 227
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "406879215854682132",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "♕ Activity +50 - KING ♕",
+         "Permissions": 65536,
+         "Position": 12
+      },
+      {
+         "Color": 7654001,
+         "Hoist": true,
+         "ID": "335218706856804353",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. French",
+         "Permissions": 0,
+         "Position": 174
+      },
+      {
+         "Color": 5756492,
+         "Hoist": true,
+         "ID": "360673197160529930",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Swahili",
+         "Permissions": 329728,
+         "Position": 147
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928492618973184",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 11",
+         "Permissions": 0,
+         "Position": 40
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215912343044116",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "French",
+         "Permissions": 0,
+         "Position": 98
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "371142636997967882",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Albanian",
+         "Permissions": 1376256,
+         "Position": 189
+      },
+      {
+         "Color": 5418210,
+         "Hoist": true,
+         "ID": "370310045642129421",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Lithuanian",
+         "Permissions": 1376256,
+         "Position": 158
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "364690290679742473",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Icelandic",
+         "Permissions": 329728,
+         "Position": 92
+      },
+      {
+         "Color": 15840468,
+         "Hoist": true,
+         "ID": "338159028574355458",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "✗ Unassigned",
+         "Permissions": 0,
+         "Position": 3
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "349227712868515840",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✰ Activity +30",
+         "Permissions": 327680,
+         "Position": 11
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295595574624256",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Mandarin",
+         "Permissions": 0,
+         "Position": 122
+      },
+      {
+         "Color": 5415882,
+         "Hoist": false,
+         "ID": "371637916377546772",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Russian/Ukrainian Patron",
+         "Permissions": 0,
+         "Position": 234
+      },
+      {
+         "Color": 16218905,
+         "Hoist": true,
+         "ID": "335214794904961026",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Arabic",
+         "Permissions": 0,
+         "Position": 188
+      },
+      {
+         "Color": 3246564,
+         "Hoist": true,
+         "ID": "335216855167795202",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Polish",
+         "Permissions": 0,
+         "Position": 156
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295802760658944",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. English",
+         "Permissions": 0,
+         "Position": 132
+      },
+      {
+         "Color": 2604494,
+         "Hoist": false,
+         "ID": "335373757466148865",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Other Langs",
+         "Permissions": 0,
+         "Position": 65
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298408845443082",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Polish",
+         "Permissions": 0,
+         "Position": 120
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "364690341795725324",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Icelandic",
+         "Permissions": 329728,
+         "Position": 168
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "338637193637527552",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Hungarian",
+         "Permissions": 0,
+         "Position": 169
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216316401188865",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Spanish",
+         "Permissions": 0,
+         "Position": 74
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "357928379707686912",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Catalan",
+         "Permissions": 329728,
+         "Position": 182
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369110518356508672",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Slovenian",
+         "Permissions": 329728,
+         "Position": 75
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295755490852865",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Dutch",
+         "Permissions": 0,
+         "Position": 134
+      },
+      {
+         "Color": 14716980,
+         "Hoist": true,
+         "ID": "335214676726120449",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. German",
+         "Permissions": 0,
+         "Position": 173
+      },
+      {
+         "Color": 14724143,
+         "Hoist": true,
+         "ID": "335566263516397568",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "❖ Course Creator",
+         "Permissions": 0,
+         "Position": 201
+      },
+      {
+         "Color": 7114239,
+         "Hoist": true,
+         "ID": "364476726819946496",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Urdu",
+         "Permissions": 329728,
+         "Position": 139
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "403803531955404801",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "❖ Partnership Assistants",
+         "Permissions": 0,
+         "Position": 202
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "346315257112952833",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Anime",
+         "Permissions": 0,
+         "Position": 32
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "371149291714248704",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Tagalog",
+         "Permissions": 1376256,
+         "Position": 145
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "339086655799558144",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Finnish",
+         "Permissions": 0,
+         "Position": 99
+      },
+      {
+         "Color": 4892379,
+         "Hoist": false,
+         "ID": "401344480374161418",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Finnish/Estonian Patron",
+         "Permissions": 0,
+         "Position": 216
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "346437872058105866",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Social",
+         "Permissions": 2146958400,
+         "Position": 243
+      },
+      {
+         "Color": 3912351,
+         "Hoist": false,
+         "ID": "377870195517161473",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Hebrew/Yiddish Patron",
+         "Permissions": 0,
+         "Position": 218
+      },
+      {
+         "Color": 6906852,
+         "Hoist": false,
+         "ID": "382990381316308992",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Balkan Patron",
+         "Permissions": 0,
+         "Position": 231
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "347459895018127361",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✓ Basic",
+         "Permissions": 1117184,
+         "Position": 6
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "346431074949136384",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Music",
+         "Permissions": 1140325440,
+         "Position": 244
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335217187612786699",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Mandarin",
+         "Permissions": 0,
+         "Position": 82
+      },
+      {
+         "Color": 13850712,
+         "Hoist": true,
+         "ID": "371316705969831937",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Esperanto",
+         "Permissions": 1376320,
+         "Position": 178
+      },
+      {
+         "Color": 4892379,
+         "Hoist": true,
+         "ID": "339086856626896896",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Finnish",
+         "Permissions": 0,
+         "Position": 176
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "401537078652960768",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Partners",
+         "Permissions": 68485121,
+         "Position": 16
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "346678244034084864",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "God Mode",
+         "Permissions": 0,
+         "Position": 193
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928512625541121",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 12",
+         "Permissions": 0,
+         "Position": 41
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "342775623212728320",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Ask a Native",
+         "Permissions": 0,
+         "Position": 194
+      },
+      {
+         "Color": 4319592,
+         "Hoist": true,
+         "ID": "338170758746603520",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Polyglot",
+         "Permissions": 0,
+         "Position": 199
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "402379956660994058",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Armenian",
+         "Permissions": 0,
+         "Position": 187
+      },
+      {
+         "Color": 10472024,
+         "Hoist": true,
+         "ID": "335216599000809473",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Cantonese",
+         "Permissions": 0,
+         "Position": 183
+      },
+      {
+         "Color": 5734589,
+         "Hoist": true,
+         "ID": "337966506191224834",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♟Staff",
+         "Permissions": 1341643969,
+         "Position": 213
+      },
+      {
+         "Color": 4385929,
+         "Hoist": false,
+         "ID": "401337525492514816",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Malayo-Polynesian Patron",
+         "Permissions": 68485185,
+         "Position": 220
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346311408926851074",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Clozemaster",
+         "Permissions": 0,
+         "Position": 54
+      },
+      {
+         "Color": 3246564,
+         "Hoist": false,
+         "ID": "401337517682720779",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Czech/Polish Patron",
+         "Permissions": 0,
+         "Position": 225
+      },
+      {
+         "Color": 15654372,
+         "Hoist": false,
+         "ID": "337347693854588928",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "✓ All",
+         "Permissions": 104188993,
+         "Position": 7
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "361120827665547264",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♘ Patrons",
+         "Permissions": 268443650,
+         "Position": 237
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346357771098390528",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Anki",
+         "Permissions": 0,
+         "Position": 59
+      },
+      {
+         "Color": 9626828,
+         "Hoist": false,
+         "ID": "372369382531137547",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Mobile User",
+         "Permissions": 1376256,
+         "Position": 25
+      },
+      {
+         "Color": 9819903,
+         "Hoist": true,
+         "ID": "337640237931036682",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♜ Mods",
+         "Permissions": 2146958449,
+         "Position": 239
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "349227376489660426",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✰ Activity +5",
+         "Permissions": 327680,
+         "Position": 9
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "379402949702713345",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Satellites",
+         "Permissions": 68485121,
+         "Position": 29
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "366494271152324608",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Turkish",
+         "Permissions": 329728,
+         "Position": 114
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "358746067787055106",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Latin",
+         "Permissions": 329728,
+         "Position": 85
+      },
+      {
+         "Color": 16738736,
+         "Hoist": true,
+         "ID": "335217171980615680",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Norwegian",
+         "Permissions": 0,
+         "Position": 159
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "357941625755926528",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "❖ Contributors",
+         "Permissions": 329728,
+         "Position": 205
+      },
+      {
+         "Color": 6276014,
+         "Hoist": false,
+         "ID": "401291189715861504",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Spanish/Portuguese Patron",
+         "Permissions": 0,
+         "Position": 232
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "346286810906755072",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Persian/Turkish Patron",
+         "Permissions": 0,
+         "Position": 233
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216141339459596",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Portuguese",
+         "Permissions": 0,
+         "Position": 78
+      },
+      {
+         "Color": 7841771,
+         "Hoist": true,
+         "ID": "338637041849991169",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Czech",
+         "Permissions": 0,
+         "Position": 181
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215322577502209",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Cantonese",
+         "Permissions": 0,
+         "Position": 107
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346309849102942208",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Tagalog",
+         "Permissions": 0,
+         "Position": 115
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369106324199440385",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Yiddish",
+         "Permissions": 329728,
+         "Position": 66
+      },
+      {
+         "Color": 16636388,
+         "Hoist": true,
+         "ID": "371141036346703873",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Afrikaans",
+         "Permissions": 1376256,
+         "Position": 190
+      },
+      {
+         "Color": 9103246,
+         "Hoist": true,
+         "ID": "335214908272541717",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Bulgarian",
+         "Permissions": 0,
+         "Position": 184
+      },
+      {
+         "Color": 14254557,
+         "Hoist": true,
+         "ID": "335217097862807556",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Danish",
+         "Permissions": 0,
+         "Position": 180
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346307638427910145",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "LingQ",
+         "Permissions": 0,
+         "Position": 55
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216078957576192",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Korean",
+         "Permissions": 0,
+         "Position": 87
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215838170841089",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Dutch",
+         "Permissions": 0,
+         "Position": 103
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "349377895740866572",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Hooks",
+         "Permissions": 327680,
+         "Position": 18
+      },
+      {
+         "Color": 7630801,
+         "Hoist": false,
+         "ID": "339101336543035392",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Correct Me",
+         "Permissions": 0,
+         "Position": 61
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "337574653809655819",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Indonesian",
+         "Permissions": 0,
+         "Position": 91
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346307759060287488",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Memrise",
+         "Permissions": 0,
+         "Position": 60
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215990231138305",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Italian",
+         "Permissions": 0,
+         "Position": 89
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "371156463994929154",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Tamil",
+         "Permissions": 1376256,
+         "Position": 144
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295114194354177",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Arabic",
+         "Permissions": 0,
+         "Position": 136
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "383808031529500672",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Logs",
+         "Permissions": 68485257,
+         "Position": 242
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346297784204525568",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. German",
+         "Permissions": 0,
+         "Position": 128
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346926243175858176",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "4 Trees Completed",
+         "Permissions": 0,
+         "Position": 48
+      },
+      {
+         "Color": 9800939,
+         "Hoist": true,
+         "ID": "371316720054566912",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Thai",
+         "Permissions": 1376256,
+         "Position": 143
+      },
+      {
+         "Color": 5759487,
+         "Hoist": true,
+         "ID": "406896011265441794",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Make Us Dance",
+         "Permissions": 0,
+         "Position": 211
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369106330729971714",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Ladino",
+         "Permissions": 329728,
+         "Position": 86
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "338637161790308352",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Hungarian",
+         "Permissions": 0,
+         "Position": 93
+      },
+      {
+         "Color": 11369471,
+         "Hoist": false,
+         "ID": "401340134315917322",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Vietnam/Thai Patron",
+         "Permissions": 0,
+         "Position": 221
+      },
+      {
+         "Color": 14980221,
+         "Hoist": false,
+         "ID": "401296539127119872",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Dutch/Afrikaans Patron",
+         "Permissions": 0,
+         "Position": 228
+      },
+      {
+         "Color": 15526938,
+         "Hoist": true,
+         "ID": "335220016418914306",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Swedish",
+         "Permissions": 0,
+         "Position": 146
+      },
+      {
+         "Color": 14980221,
+         "Hoist": true,
+         "ID": "336823724210913283",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Flemish",
+         "Permissions": 0,
+         "Position": 175
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "385992781224476672",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "DJ",
+         "Permissions": 0,
+         "Position": 35
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298102707257345",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Japanese",
+         "Permissions": 0,
+         "Position": 124
+      },
+      {
+         "Color": 14378939,
+         "Hoist": false,
+         "ID": "372366461823483924",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Hindi/Urdu Patron",
+         "Permissions": 0,
+         "Position": 224
+      },
+      {
+         "Color": 15164354,
+         "Hoist": true,
+         "ID": "361811261505273856",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Ambassadors",
+         "Permissions": 329728,
+         "Position": 204
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369135290582827009",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Estonian",
+         "Permissions": 329728,
+         "Position": 100
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346307803234959363",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Readlang",
+         "Permissions": 0,
+         "Position": 56
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "346482875283013633",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Gamer",
+         "Permissions": 0,
+         "Position": 30
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "361115118509228042",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Swahili",
+         "Permissions": 329728,
+         "Position": 73
+      },
+      {
+         "Color": 16289697,
+         "Hoist": false,
+         "ID": "401340829161095189",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Greek/Hungarian Patron",
+         "Permissions": 0,
+         "Position": 217
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298195027951617",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Korean",
+         "Permissions": 0,
+         "Position": 123
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369267404091555850",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Thai",
+         "Permissions": 1376256,
+         "Position": 71
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295963784314880",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. French",
+         "Permissions": 0,
+         "Position": 130
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "361115107323019264",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Persian",
+         "Permissions": 329728,
+         "Position": 80
+      },
+      {
+         "Color": 7654001,
+         "Hoist": false,
+         "ID": "401289812813938698",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ French/Italian Patron",
+         "Permissions": 0,
+         "Position": 230
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "371315368439840770",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Malaysian",
+         "Permissions": 1376256,
+         "Position": 84
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216242250219521",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Russian",
+         "Permissions": 0,
+         "Position": 77
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "383023597196804101",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "LGBT",
+         "Permissions": 68485121,
+         "Position": 26
+      },
+      {
+         "Color": 2747552,
+         "Hoist": true,
+         "ID": "338637266446450700",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Ukrainian",
+         "Permissions": 0,
+         "Position": 141
+      },
+      {
+         "Color": 1104025,
+         "Hoist": true,
+         "ID": "335218811240185867",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Japanese",
+         "Permissions": 0,
+         "Position": 164
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "401537533399269377",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Private",
+         "Permissions": 68485121,
+         "Position": 14
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298014337466368",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Italian",
+         "Permissions": 0,
+         "Position": 125
+      },
+      {
+         "Color": 12207027,
+         "Hoist": false,
+         "ID": "382390680577900544",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Mandarin/Cantonese Patron",
+         "Permissions": 0,
+         "Position": 223
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "346298525576986624",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Catalan",
+         "Permissions": 0,
+         "Position": 106
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216353579630595",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Turkish",
+         "Permissions": 0,
+         "Position": 70
+      },
+      {
+         "Color": 16218905,
+         "Hoist": false,
+         "ID": "401290978637643776",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Arabic Patron",
+         "Permissions": 0,
+         "Position": 219
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "360366858999955456",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Partners",
+         "Permissions": 509952,
+         "Position": 203
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298240129564672",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Norwegian",
+         "Permissions": 0,
+         "Position": 121
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346920404117618689",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "1 Tree Completed",
+         "Permissions": 0,
+         "Position": 45
+      },
+      {
+         "Color": 13522424,
+         "Hoist": false,
+         "ID": "371637925395562497",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ English Patron",
+         "Permissions": 0,
+         "Position": 235
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "364953332072316930",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Serbo-Croatian",
+         "Permissions": 329728,
+         "Position": 76
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346920681512108035",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "5 Trees Completed",
+         "Permissions": 0,
+         "Position": 49
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "364820625254252564",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✗ New",
+         "Permissions": 329728,
+         "Position": 2
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "347085049130385408",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "1 Tree LVL 25",
+         "Permissions": 0,
+         "Position": 50
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216020757282816",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Japanese",
+         "Permissions": 0,
+         "Position": 88
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335216126189633547",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Polish",
+         "Permissions": 0,
+         "Position": 79
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "357925286945488896",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Hindi",
+         "Permissions": 329728,
+         "Position": 94
+      },
+      {
+         "Color": 5415882,
+         "Hoist": true,
+         "ID": "335219986245091328",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Russian",
+         "Permissions": 0,
+         "Position": 153
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "347085234141003780",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "2 Trees LVL 25",
+         "Permissions": 0,
+         "Position": 51
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "359885236307492866",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "IPA",
+         "Permissions": 329728,
+         "Position": 34
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928583358414851",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 15",
+         "Permissions": 0,
+         "Position": 44
+      },
+      {
+         "Color": 15277667,
+         "Hoist": true,
+         "ID": "371139651576135680",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Malaysian",
+         "Permissions": 1376256,
+         "Position": 161
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "346921801248538646",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Traveler",
+         "Permissions": 0,
+         "Position": 28
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "357926396196159488",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Hindi",
+         "Permissions": 329728,
+         "Position": 126
+      },
+      {
+         "Color": 15582198,
+         "Hoist": false,
+         "ID": "407294116066754560",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "v. Courses",
+         "Permissions": 65536,
+         "Position": 15
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "349227583570837514",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✰ Activity +15",
+         "Permissions": 327680,
+         "Position": 10
+      },
+      {
+         "Color": 65504,
+         "Hoist": true,
+         "ID": "335021703140737034",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "• Admins",
+         "Permissions": 104324169,
+         "Position": 248
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "365833368232919041",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Danish",
+         "Permissions": 329728,
+         "Position": 133
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346920608661110784",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "2 Trees Completed",
+         "Permissions": 0,
+         "Position": 46
+      },
+      {
+         "Color": 7592806,
+         "Hoist": true,
+         "ID": "335219347612106752",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Portuguese",
+         "Permissions": 0,
+         "Position": 155
+      },
+      {
+         "Color": 15019383,
+         "Hoist": false,
+         "ID": "401287452670689302",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Extras",
+         "Permissions": 68485185,
+         "Position": 24
+      },
+      {
+         "Color": 8508585,
+         "Hoist": false,
+         "ID": "401890182556680192",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Updates",
+         "Permissions": 68485121,
+         "Position": 20
+      },
+      {
+         "Color": 6906852,
+         "Hoist": true,
+         "ID": "364680409553960960",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Serbo-Croatian",
+         "Permissions": 329728,
+         "Position": 152
+      },
+      {
+         "Color": 6928337,
+         "Hoist": true,
+         "ID": "335220056692752386",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Turkish",
+         "Permissions": 0,
+         "Position": 142
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "346409938257707028",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Programmer",
+         "Permissions": 0,
+         "Position": 31
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "346415797544943626",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✓ Voice-media",
+         "Permissions": 36749312,
+         "Position": 8
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298651968012288",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Swedish",
+         "Permissions": 0,
+         "Position": 116
+      },
+      {
+         "Color": 16714434,
+         "Hoist": true,
+         "ID": "371146458306707456",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Estonian",
+         "Permissions": 1376256,
+         "Position": 177
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "350829371575107585",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Greek",
+         "Permissions": 327680,
+         "Position": 97
+      },
+      {
+         "Color": 14378939,
+         "Hoist": true,
+         "ID": "357925156028678155",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Hindi",
+         "Permissions": 329728,
+         "Position": 170
+      },
+      {
+         "Color": 16297869,
+         "Hoist": true,
+         "ID": "335218891582210060",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Korean",
+         "Permissions": 0,
+         "Position": 163
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "401601948983361537",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "❖ Advisors",
+         "Permissions": 68485121,
+         "Position": 212
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369108146616139789",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Afrikaans",
+         "Permissions": 329728,
+         "Position": 111
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215167140790274",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Arabic",
+         "Permissions": 0,
+         "Position": 109
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928414818697216",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 10",
+         "Permissions": 0,
+         "Position": 39
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928564177731594",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 14",
+         "Permissions": 0,
+         "Position": 43
+      },
+      {
+         "Color": 1104025,
+         "Hoist": false,
+         "ID": "401290109535911946",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Japanese/Korean Patron",
+         "Permissions": 0,
+         "Position": 222
+      },
+      {
+         "Color": 8487814,
+         "Hoist": false,
+         "ID": "407361473380220931",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "✗ Muted",
+         "Permissions": 65536,
+         "Position": 1
+      },
+      {
+         "Color": 16725929,
+         "Hoist": false,
+         "ID": "349263361713635330",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "nsfw",
+         "Permissions": 327680,
+         "Position": 23
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "403799057472028672",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♛ Bot Dev",
+         "Permissions": 8,
+         "Position": 247
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346298762336927746",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Ukrainian",
+         "Permissions": 0,
+         "Position": 113
+      },
+      {
+         "Color": 8508585,
+         "Hoist": false,
+         "ID": "407266354115248152",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Chatty",
+         "Permissions": 65536,
+         "Position": 22
+      },
+      {
+         "Color": 15500751,
+         "Hoist": false,
+         "ID": "346928543667716096",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Memrise LVL 13",
+         "Permissions": 0,
+         "Position": 42
+      },
+      {
+         "Color": 10392058,
+         "Hoist": true,
+         "ID": "335218756970348545",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Italian",
+         "Permissions": 0,
+         "Position": 165
+      },
+      {
+         "Color": 13850712,
+         "Hoist": false,
+         "ID": "401336570629718036",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ Esperanto/Latin Patron",
+         "Permissions": 0,
+         "Position": 226
+      },
+      {
+         "Color": 2604494,
+         "Hoist": false,
+         "ID": "338796822753705984",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Conlangs",
+         "Permissions": 0,
+         "Position": 63
+      },
+      {
+         "Color": 6276014,
+         "Hoist": true,
+         "ID": "335214721852637184",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Spanish",
+         "Permissions": 0,
+         "Position": 148
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "352262298431127553",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "nickname",
+         "Permissions": 201326592,
+         "Position": 249
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "344490481096327168",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Vietnamese",
+         "Permissions": 0,
+         "Position": 67
+      },
+      {
+         "Color": 16289697,
+         "Hoist": true,
+         "ID": "350829402474545157",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Greek",
+         "Permissions": 327680,
+         "Position": 172
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346323646735974400",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Esperanto",
+         "Permissions": 0,
+         "Position": 131
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "361816826617004036",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "❖ Tech Support",
+         "Permissions": 329776,
+         "Position": 238
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "382857220960026624",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Hebrew",
+         "Permissions": 68485121,
+         "Position": 127
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215348083326976",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Danish",
+         "Permissions": 0,
+         "Position": 104
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "401848789381546001",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Urdu",
+         "Permissions": 68485121,
+         "Position": 68
+      },
+      {
+         "Color": 14716980,
+         "Hoist": false,
+         "ID": "369765884018950144",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "♞ German Patron",
+         "Permissions": 0,
+         "Position": 236
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "407557696389251082",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Feeling Lonely",
+         "Permissions": 65536,
+         "Position": 198
+      },
+      {
+         "Color": 2604494,
+         "Hoist": false,
+         "ID": "363327653190696970",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Dead Langs",
+         "Permissions": 329728,
+         "Position": 64
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "403796476645474316",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "❖ Friends",
+         "Permissions": 0,
+         "Position": 206
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "350829433638223883",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Greek",
+         "Permissions": 327680,
+         "Position": 129
+      },
+      {
+         "Color": 1752220,
+         "Hoist": false,
+         "ID": "346309546186244096",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Lang-8",
+         "Permissions": 0,
+         "Position": 53
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "336860788247756800",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Bots",
+         "Permissions": 511040,
+         "Position": 240
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "406945184564379658",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Tools",
+         "Permissions": 65536,
+         "Position": 210
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "406938108337324045",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Games",
+         "Permissions": 65536,
+         "Position": 209
+      },
+      {
+         "Color": 4385929,
+         "Hoist": true,
+         "ID": "337574551900782592",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Indonesian",
+         "Permissions": 0,
+         "Position": 167
+      },
+      {
+         "Color": 13624473,
+         "Hoist": true,
+         "ID": "347168010529931264",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Slovenian",
+         "Permissions": 0,
+         "Position": 150
+      },
+      {
+         "Color": 14980221,
+         "Hoist": true,
+         "ID": "335217134789722113",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Dutch",
+         "Permissions": 0,
+         "Position": 179
+      },
+      {
+         "Color": 15277667,
+         "Hoist": false,
+         "ID": "346295359787499531",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "f. Cantonese",
+         "Permissions": 0,
+         "Position": 135
+      },
+      {
+         "Color": 0,
+         "Hoist": true,
+         "ID": "347168010584457216",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Supporter",
+         "Permissions": 0,
+         "Position": 200
+      },
+      {
+         "Color": 3912351,
+         "Hoist": true,
+         "ID": "336479667349618699",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. Hebrew",
+         "Permissions": 0,
+         "Position": 171
+      },
+      {
+         "Color": 15840468,
+         "Hoist": true,
+         "ID": "385806195220283402",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "✗ No Native",
+         "Permissions": 68485121,
+         "Position": 4
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "335215858013962241",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "English",
+         "Permissions": 0,
+         "Position": 102
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "338637101606240276",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Czech",
+         "Permissions": 0,
+         "Position": 105
+      },
+      {
+         "Color": 16753408,
+         "Hoist": false,
+         "ID": "346855522021933067",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Linguistics",
+         "Permissions": 0,
+         "Position": 33
+      },
+      {
+         "Color": 952535,
+         "Hoist": false,
+         "ID": "369555830841802763",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "Irish",
+         "Permissions": 1376256,
+         "Position": 90
+      },
+      {
+         "Color": 13522424,
+         "Hoist": true,
+         "ID": "335214594001731604",
+         "Managed": false,
+         "Mentionable": true,
+         "Name": "n. English",
+         "Permissions": 0,
+         "Position": 138
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "357959811318546434",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "► Main",
+         "Permissions": 2146958591,
+         "Position": 245
+      },
+      {
+         "Color": 0,
+         "Hoist": false,
+         "ID": "410946304722731008",
+         "Managed": false,
+         "Mentionable": false,
+         "Name": "Team ❸",
+         "Permissions": 65536,
+         "Position": 36
+      }
+   ],
+   "take": "",
+   "take0": "n. Spanish",
+   "takeMsg": ""
+}
+
+
+Settings
