@@ -8,8 +8,8 @@ function getExpandableEmbed(title, color, thumb, description, fields, footerIcon
     
     if (footer != undefined && footerIcon == undefined) footer = "{footer|icon:http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png} \
                                                     {footer|text:" + footer +"}";
-    else if (footer != "" && footerIcon != "") footer = "{footer|icon:"+ footerIcon +"} \
-                                                         {footer|text:" + footer +"}";
+//     else if (footer != "" && footerIcon != "") footer = "{footer|icon:"+ footerIcon +"} \
+//                                                          {footer|text:" + footer +"}";
     else footer = "";
 
     var embed = "{embed: \
