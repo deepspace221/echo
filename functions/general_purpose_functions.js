@@ -49,3 +49,10 @@ function getRolePosition(roleName){
                 return ServerRoles[i].Position;
         }
 }
+//Count|Roles get staff role name. You can also use the function GetRoleName(337966506191224834)
+function getStaffRoleName(){ //working
+        for (i=0; i < ServerRoles.length; i++){
+            if (ServerRoles[i].ID == 337966506191224834)
+                return ServerRoles[i].Name;
+        }
+}
