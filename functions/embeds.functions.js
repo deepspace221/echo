@@ -13,7 +13,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     else thumb = "{thumb|url:"+ thumb +"}";
     
     if (fields == "") fields = "";
-    if (!color) color = randomColors;
+    if (color == undefined) color = randomColors;
     
     if (footer){
         if (footerIcon == "") footer = footer1;
