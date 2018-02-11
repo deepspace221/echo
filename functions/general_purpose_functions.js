@@ -56,3 +56,12 @@ function getStaffRoleName(){ //working
                 return ServerRoles[i].Name;
         }
 }
+function getMembersCount(){
+	var ctr = 0;
+	for (i = 0; ServerMembers.length; i++){
+		if (@ServerMembers[i].Bot)
+			ctr++
+	}	
+	return ctr;
+}
+
