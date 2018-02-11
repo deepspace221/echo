@@ -1,2 +1,2 @@
 
-var value = 4;
+var value = 6;
