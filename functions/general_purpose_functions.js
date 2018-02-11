@@ -59,8 +59,8 @@ function getStaffRoleName(){ //working
 function getMembersCount(){
 	var ctr = 0;
 	for (i = 0; ServerMembers.length; i++){
-		if (@ServerMembers[i].Bot)
-			ctr++
+		if (ServerMembers[i].Bot)
+			ctr++;
 	}	
 	return ctr;
 }
