@@ -1,6 +1,6 @@
 
 //Count
-function getExpendedEmbed(title, color, thumb, description, fields, footerIcon, footer){
+function getExpandableEmbed(title, color, thumb, description, fields, footerIcon, footer){
     var randomColors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226, #26e2c0,#2633e2,#8126e2";
     if (thumb == "") thumb = "https://www.google.co.il/";
     if (fields == "") fields = "";
