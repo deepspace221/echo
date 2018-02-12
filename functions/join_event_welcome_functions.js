@@ -73,3 +73,25 @@ function getWelcomeMsg(){
     ";
     return welcome; 
 }
+
+
+invitesPingToggle(UserID){
+        use server_db;
+        invites = JSON.parse(server_db["invites"]);
+        
+        if (invites.toggle == undefined){
+                arr = [];
+                invites.toggle = arr.push(UserID);
+        }
+        else {
+                for (i = 0; i < invites.toggle.length; i++){
+                        if (invites.toggle[i] == UserID){
+                                invites.toggle.splice(i, 1);
+                                server_db["invites"] = JSON.stringify(invites);
+                                return;
+                        }
+                }
+                invites.toggle.push(UserID);
+                server_db["invites"] = JSON.stringify(invites);          
+        }
+}
