@@ -53,7 +53,7 @@ function minutesUntilMidnight() {
     midnight.setMinutes( 0 );
     midnight.setSeconds( 0 );
     midnight.setMilliseconds( 0 );
-    return Math.floor(midnight.getTime() - new Date().getTime())/1000/60);
+    return Math.floor((midnight.getTime() - new Date().getTime())/1000/60);
 }
 
 function isSameDay(a, b) {
