@@ -1,0 +1,6 @@
+%auto tst3={init}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+var result = findUserImageAndUsernameByUserID(UserID);
+resp = result;
+>>
