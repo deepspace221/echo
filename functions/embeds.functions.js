@@ -71,3 +71,11 @@ function getSimpleEmbed(title, thumb, description){
     return embed;
 }
 
+function getEmbed(type){
+      if (type == "daily"){
+         
+      }  
+      else if (type == "monthly"){
+         
+      }
+}
