@@ -38,7 +38,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 
 function getSimpleEmbed(title, thumb, description){
     var color = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
-    if (!thumb) thumb = "{guild|icon}"; else thumb = "http://en.freejpg.com.ar/asset/900/5c/5c82/F100011050.jpg";
+    if (!thumb) thumb = "{guild|icon}";
 
     var embed = "{embed: \
                      {title:" + title +"} \
