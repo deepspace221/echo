@@ -89,7 +89,7 @@ function getHelpEmbed(){
 //       var username = "\{user\}";
       var username = "<@" + UserID + ">";
       var author = "false";
-      var thumb = "server";
+      var thumb = "";
       var color = "";
       var footerIcon = "";
       var footer = "";
