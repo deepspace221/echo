@@ -1,5 +1,5 @@
 function updateMonthStats(type){
-	var date = new Date();
+	var d = new Date();
 	
 	var stats = {
 		joinMonthCounter: 0,
@@ -8,20 +8,20 @@ function updateMonthStats(type){
                 leftDayCounter: 0,
 		sameDay: true,
 		sameMonth: true,
-		monthDay: date.getDate()
+		monthDay: d.getDate()
 	};
 
 	if (server_db["traffic"].date == undefined){
-	    server_db["traffic"].date = JSON.stringify(date);
+	    server_db["traffic"].date = JSON.stringify(d);
 	    stats[type + "DayCounter"] = 1;
-        stats[type + "MonthCounter"] = 1;
+            stats[type + "MonthCounter"] = 1;
 	    server_db["traffic"].stats = JSON.stringify(stats);
 	}
 	else {
-		dateDB = JSON.parse(server_db["traffic"].date)
+		var d2 = JSON.parse(server_db["traffic"].date)
 		stats = JSON.parse(server_db["traffic"].stats)
 		
-		if (date.getDate() == dateDB.getDate()){ 
+		if (d.getDate() == d2.getDate()){ 
 			stats[type + "DayCounter"]++;
 			stats[type + "MonthCounter"]++;
 			stats.sameDay = true;
