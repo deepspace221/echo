@@ -1,4 +1,4 @@
-function debug(content){
+function dbg(content){
    webhook_url = "https://discordapp.com/api/webhooks/412072411333263360/xdl1PAHXJ3rQowr0VwRG1a5EnavbyoKoZjeOZ4TGE71IEVjfBNFJO1HBh_RSTILT553Q";
    if(content === ""){
      content = "Nothing passed into content" 
