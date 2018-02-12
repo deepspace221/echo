@@ -1,7 +1,7 @@
 var value = var value = " \
 {embed: \
              {desc:\
-                {user} {/user} this is js mixed with an ars not in an imported file. \
+                {user} {/user} this is js mixed with ars in an imported file. \
               }\
 }\
 ";
