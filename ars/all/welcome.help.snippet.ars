@@ -1,0 +1,110 @@
+[#CONTINUE#]
+&{:}(?i)^\\help={init} 
+{redirect:337513163853529088}
+{embed:
+    {title:Command examples for {guild|name}}
+    {type:rich}
+    {author|name:{owner|name}}
+    {author|icon:{owner|avatar}}
+    {author|url:{owner|avatar}}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:
+
+Hello, {/user}! <:blank:352901517004636163>
+
+Access to features in the this server is dependent upon the roles you have. 
+
+Please make sure to tag yourself properly so you'll have access to all the features this server has to offer.
+    }
+{field[0]|name:Select language <:blank:352901517004636163>}
+{field[0]|value:
+```css
+.iam n. english
+.iam f. spanish 
+.iam german 
+```}
+{field[0]|inline:true}
+{field[1]|name:Description <:blank:352901517004636163>}
+{field[1]|value:
+```fix
+For native languages
+For fluent languaages
+For learning languages
+```}
+{field[1]|inline:true}
+{field[2]|name:Memrise <:blank:352901517004636163>}
+{field[2]|value:
+```css
+.iam memrise
+.iam memrise lvl 13
+```}
+{field[2]|inline:true}
+{field[3]|name: <:blank:352901517004636163>}
+{field[3]|value:
+```fix
+For Memrise users
+Between 10-15
+```}
+{field[3]|inline:true}
+{field[4]|name: Duolingo<:blank:352901517004636163>}
+{field[4]|value:
+```css
+.iam duolingo
+.iam 4 trees completed
+.iam 2 trees lvl 25
+```}
+{field[4]|inline:true}
+{field[5]|name: <:blank:352901517004636163>}
+{field[5]|value:
+```fix
+For Duolingo users
+Between 1-5
+Between 1-3
+```}
+{field[5]|inline:true}
+
+{field[6]|name:Misc <:blank:352901517004636163>}
+{field[6]|value:
+```css
+.iam polyglot
+.iam linguistics
+.iam translator
+.iam IPA
+.iam NSFW
+```}
+{field[6]|inline:true}
+
+{field[7]|name: <:blank:352901517004636163>}
+{field[7]|value:
+```fix
+Fluent in 4 or above
+For linguists
+For translators
+For IPA literate
+Age 18+
+```}
+{field[7]|inline:true}
+
+{field[8]|name:Removing a role <:blank:352901517004636163>}
+{field[8]|value:
+:point_right: To **remove** a role replace `.iam` with `.iamnot`
+}
+{field[8]|inline:false}
+
+{field[9]|name:Additional information}
+{field[9]|value:
+💠 Type: `\misc` for information on other roles on the server.
+💠 Type: `\lang` to view a full list of available languages.
+💠 Type: `\views` to view a list of aviliable view options.
+💠 Type `\platform` to view a full list of available platforms.
+💠 Type: `\cmd` to view a list of additional help commands.
+}
+{field[9]|inline:false}
+}{take:New}
