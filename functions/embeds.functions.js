@@ -4,15 +4,23 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
+   var Username = "{/user}";
+   var userIcon = "{usericon}";
+   if (!UserImage){
+         var userOBJ = findUserImageAndUsernameByUserID(UserID)
+         var Username = userOBJ.userName;
+         var userIcon = userOBJ.userIcon;   
+   }
+   
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
     var footer2 = "{footer|icon:" + footerIcon + "} {footer|text:" + footer + "}";
 
-    if (author) author = "{author|icon:{usericon}}{author|name:{/user}}"; else author = "";
+    if (author) author = "{author|icon:{usericon}}{author|name:"+ Username +"}"; else author = "";
     var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
     
     if (thumb == "user") thumb = "{thumb|url:{usericon}}";
-    else if (thumb == "server") thumb = "{thumb|url:{guild|icon}}";
+    else if (thumb == "server") thumb = "{thumb|url:"+ userIcon +"}";
     else if (thumb) thumb = "{thumb|url:"+ thumb +"}";
     else if (!thumb) thumb = "";
    
