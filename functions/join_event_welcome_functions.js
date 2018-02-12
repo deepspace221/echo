@@ -89,11 +89,11 @@ invitesPingToggle(UserID){
                         if (invites.toggle[i] == UserID){
                                 invites.toggle.splice(i, 1);
                                 server_db["invites"] = JSON.stringify(invites);
-                                return "off";
+                                return "on";
                         }
                 }
                 invites.toggle.push(UserID);
                 server_db["invites"] = JSON.stringify(invites);  
-                return "on";
+                return "off";
         }
 }
