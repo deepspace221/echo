@@ -82,16 +82,18 @@ invitesPingToggle(UserID){
         if (invites.toggle == undefined){
                 arr = [];
                 invites.toggle = arr.push(UserID);
+                return "off";
         }
         else {
                 for (i = 0; i < invites.toggle.length; i++){
                         if (invites.toggle[i] == UserID){
                                 invites.toggle.splice(i, 1);
                                 server_db["invites"] = JSON.stringify(invites);
-                                return;
+                                return "off";
                         }
                 }
                 invites.toggle.push(UserID);
-                server_db["invites"] = JSON.stringify(invites);          
+                server_db["invites"] = JSON.stringify(invites);  
+                return "on";
         }
 }
