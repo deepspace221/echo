@@ -17,9 +17,9 @@ function updateMonthStats(type){
 	if (server_db["traffic"] == undefined){
 	    var obj = {};
 	    stats[type + "DayCounter"] = 1;
-                 stats[type + "MonthCounter"] = 1;
+            stats[type + "MonthCounter"] = 1;
 	    obj.stats = stats;
-                 obj.date = {day: d.getDate(), month: d.getMonth()}; 
+            obj.date = {day: d.getDate(), month: d.getMonth()}; 
 	    server_db["traffic"] = JSON.stringify(obj);
 	}
 	else {
