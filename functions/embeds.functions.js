@@ -86,7 +86,12 @@ function getEmbed(type){
 function getHelpEmbed(){
 
       var title = "Command examples for {guild|name}"; 
-
+      var author = "false";
+      var thumb = "user";
+      var color = "";
+      var footerIcon = "";
+      var footer = "";
+   
       var description = " \
       \nHello, {/user}! <:blank:352901517004636163> \
       \n \
@@ -182,5 +187,5 @@ function getHelpEmbed(){
       {field[9]|inline:false} \
       ";
    
-      return  getExpandableEmbed(title, false, "", "user", description, fields, '', '');  
+      return  getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);  
 }
