@@ -8,7 +8,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    var userIcon = "{usericon}";
    if (Trigger == "E-levent"){
 //          var userOBJ = findUserImageAndUsernameByUserID(UserID);
-         var Username = username;
+            Username = username;
 //          var userIcon = userOBJ.avatar;   
    }
    
