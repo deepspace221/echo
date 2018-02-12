@@ -77,7 +77,7 @@ function getMembersCount(type){
 	}
 	return ctr;
 }
-function getRegexRoleName(rolName){
+function getRegexRoleName(roleName){
 	var regex = RegEx(roleName, 'i')
 	var ctr = 0;
 	for (i = 0; ServerRoles.length; i++){
