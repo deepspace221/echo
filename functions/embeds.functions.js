@@ -93,7 +93,7 @@ function getHelpEmbed(){
       var footer = "";
    
       var description = " \
-      \nHello, {/user}! <:blank:352901517004636163> \
+      \nHello, <@" + UserID + ">! <:cc:337623208243101698> \
       \n \
       \nAccess to features in the this server is dependent upon the roles you have. \
       \n \
