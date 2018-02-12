@@ -15,10 +15,12 @@ function updateMonthStats(type){
 	};
 
 	if (server_db["traffic"] == undefined){
-	    server_db["traffic"] = JSON.stringify({date: d});
+	    var obj = {}
 	    stats[type + "DayCounter"] = 1;
             stats[type + "MonthCounter"] = 1;
-	    server_db["traffic"] = JSON.stringify({stats: stats});
+	    var obj.stats = stats;
+            var obj.date = d; 
+	    server_db["traffic"] = JSON.stringify(obj);
 	}
 	else {
 		var d2 = JSON.parse(server_db["traffic"].date)
