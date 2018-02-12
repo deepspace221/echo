@@ -1,21 +1,9 @@
-function getMembersCount(type){
-	var ctr = 0;
-	if (!type){
-		for (key in ServerMembers){
-			ctr++;
-		}
-	}	
-	else if (type == "users"){
-		for (key in ServerMembers){
-			if (!ServerMembers[key].User.Bot)
-				ctr++;
-		}
+function findUserImageAndUsernameByUserID(userID){
+	for (key in ServerMembers){
+	     if (ServerMembers[key].User.ID == userID){
+		     var userIcon = "https://discordapp.com/api/v6/users/" + userID + "/avatars/" + ServerMembers[key].User.Avatar + ".jpg";
+		     var userName = ServerMembers[key].User.Name;
+		     retrun {username: userName, avatar: userIcon};
+	     }	
 	}
-	else if (type == "bots"){
-		for (key in ServerMembers){
-			if (ServerMembers[key].User.Bot)
-				ctr++;
-		}
-	}
-	return ctr;
 }
