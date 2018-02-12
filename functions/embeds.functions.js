@@ -86,7 +86,8 @@ function getEmbed(type){
 function getHelpEmbed(){
 
       var title = "Command examples for {guild|name}";
-      var username = "\{user\}"
+//       var username = "\{user\}";
+      var username = "<@" + UserID + ">";
       var author = "false";
       var thumb = "user";
       var color = "";
