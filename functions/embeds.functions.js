@@ -84,6 +84,8 @@ function getEmbed(type){
 }
 
 function getHelpEmbed(){
+      var icon1 = ":point_right:";
+      var icon2 = ":diamond_shape_with_a_dot_inside:";
 
       var title = "Command examples for {guild|name}";
 //       var username = "\{user\}";
@@ -174,17 +176,17 @@ Fluent in 4 or above \
       \n \
       {field[8]|name:Removing a role <:blank:352901517004636163>} \
       {field[8]|value: \
-      \n:point_right: To **remove** a role replace `.iam` with `.iamnot` \
+      \n"+ icon1 +" To **remove** a role replace `.iam` with `.iamnot` \
       \n} \
       {field[8]|inline:false} \
       \n \
       {field[9]|name:Additional information} \
       {field[9]|value: \
-      \n💠 Type: `\misc` for information on other roles on the server. \
-      \n💠 Type: `\lang` to view a full list of available languages. \
-      \n💠 Type: `\views` to view a list of aviliable view options. \
-      \n💠 Type `\platform` to view a full list of available platforms. \
-      \n💠 Type: `\cmd` to view a list of additional help commands. \
+      \n"+ icon2 +" Type: `\misc` for information on other roles on the server. \
+      \n"+ icon2 +" Type: `\lang` to view a full list of available languages. \
+      \n"+ icon2 +" Type: `\views` to view a list of aviliable view options. \
+      \n"+ icon2 +" Type `\platform` to view a full list of available platforms. \
+      \n"+ icon2 +" Type: `\cmd` to view a list of additional help commands. \
       \n} \
       {field[9]|inline:false} \
       ";
