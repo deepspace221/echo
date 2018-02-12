@@ -15,7 +15,7 @@ function updateMonthStats(type){
 	};
 
 	if (server_db["traffic"] == undefined){
-	    var obj = {}
+	    var obj = {};
 	    stats[type + "DayCounter"] = 1;
             stats[type + "MonthCounter"] = 1;
 	    var obj.stats = stats;
