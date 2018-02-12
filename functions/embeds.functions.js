@@ -1,16 +1,16 @@
 
 //Count
-function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
+function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer, username){
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
    var Username = "{/user}";
    var userIcon = "{usericon}";
-//    if (Trigger == "E-levent"){
+   if (Trigger == "E-levent"){
 //          var userOBJ = findUserImageAndUsernameByUserID(UserID);
-//          var Username = userOBJ.username;
+         var Username = username;
 //          var userIcon = userOBJ.avatar;   
-//    }
+   }
    
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
