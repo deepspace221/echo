@@ -6,7 +6,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     var footer2 = "{footer|icon:" + footerIcon + "} {footer|text:" + footer + "}";
 
     if (author) author = "{author|icon:{usericon}}{author|name:{self}}"; else author = "";
-    var randomColors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226, #26e2c0,#2633e2,#8126e2";
+    var randomColors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2";
     
     if (!thumb || thumb == true) thumb = "{thumb|url:{guild|icon}}";
     else if (thumb == "user") thumb = "{thumb|url:{usericon}}";
