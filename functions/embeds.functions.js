@@ -182,5 +182,5 @@ function getHelpEmbed(){
       {field[9]|inline:false} \
       ";
    
-      return  getExpandableEmbed(title, true, "", "user", description, fields, '', '');  
+      return  getExpandableEmbed(title, false, "", "user", description, fields, '', '');  
 }
