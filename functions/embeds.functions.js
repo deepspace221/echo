@@ -9,6 +9,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
     
     if (!thumb || thumb == true) thumb = "{thumb|url:{guild|icon}}";
+    else if (thumb == "false") thumb = "";
     else if (thumb == "user") thumb = "{thumb|url:{usericon}}";
     else thumb = "{thumb|url:"+ thumb +"}";
     
@@ -37,9 +38,10 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 }
 
 function getSimpleEmbed(title, thumb, description){
-    var color = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
+    if (!color) color = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}"; 
     
     if (!thumb || thumb == true) thumb = "{thumb|url:{guild|icon}}";
+    else if (thumb == "false") thumb = "";
     else if (thumb == "user") thumb = "{thumb|url:{usericon}}";
     else thumb = "{thumb|url:"+ thumb +"}";
 
