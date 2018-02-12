@@ -105,7 +105,7 @@ function getHelpEmbed(){
       var fields = " \
       {field[0]|name:Select language <:blank:352901517004636163>} \
       {field[0]|value: \
-      ```css\
+      ```css\n\
       \n.iam n. english \
       \n.iam f. spanish  \
       \n.iam german  \
@@ -113,7 +113,7 @@ function getHelpEmbed(){
       {field[0]|inline:true} \
       {field[1]|name:Description <:blank:352901517004636163>} \
       {field[1]|value:\
-      ```fix\
+      ```fix\n\
       \nFor native languages \
       \nFor fluent languaages \
       \nFor learning languages \
@@ -121,21 +121,21 @@ function getHelpEmbed(){
       {field[1]|inline:true} \
       {field[2]|name:Memrise <:blank:352901517004636163>} \
       {field[2]|value: \
-      ```css\
+      ```css\n\
       \n.iam memrise \
       \n.iam memrise lvl 13 \
       ```} \
       {field[2]|inline:true} \
       {field[3]|name: <:blank:352901517004636163>} \
       {field[3]|value: \
-      ```fix\
+      ```fix\n\
       \nFor Memrise users \
       \nBetween 10-15 \
       ```} \
       {field[3]|inline:true} \
       {field[4]|name: Duolingo<:blank:352901517004636163>} \
       {field[4]|value: \
-      ```css\
+      ```css\n\
       \n.iam duolingo \
       \n.iam 4 trees completed \
       \n.iam 2 trees lvl 25 \
@@ -143,15 +143,16 @@ function getHelpEmbed(){
       {field[4]|inline:true} \
       {field[5]|name: <:blank:352901517004636163>} \
       {field[5]|value: \
-      ```fix\
+      ```fix\n\
       \nFor Duolingo users \
       \nBetween 1-5 \
       \nBetween 1-3 \
       ```} \
       {field[5]|inline:true} \
-      \n \
+      \n\
       {field[6]|name:Misc <:blank:352901517004636163>} \
-      {field[6]|value:css\
+      {field[6]|value:\
+      ```css\n\
       \n.iam polyglot \
       \n.iam linguistics \
       \n.iam translator \
@@ -161,7 +162,8 @@ function getHelpEmbed(){
       {field[6]|inline:true} \
       \n \
       {field[7]|name: <:blank:352901517004636163>} \
-      {field[7]|value:```fix\
+      {field[7]|value: \
+      ```fix\n\
       \nFluent in 4 or above \
       \nFor linguists \
       \nFor translators \
