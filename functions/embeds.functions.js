@@ -85,7 +85,8 @@ function getEmbed(type){
 
 function getHelpEmbed(){
 
-      var title = "Command examples for {guild|name}"; 
+      var title = "Command examples for {guild|name}";
+      var username = "\{user\}"
       var author = "false";
       var thumb = "user";
       var color = "";
@@ -93,7 +94,7 @@ function getHelpEmbed(){
       var footer = "";
    
       var description = " \
-      \nHello, <@" + UserID + ">! <:cc:337623208243101698> \
+      \nHello, " + username + "! <:cc:337623208243101698> \
       \n \
       \nAccess to features in the this server is dependent upon the roles you have. \
       \n \
