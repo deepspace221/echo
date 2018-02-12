@@ -14,12 +14,12 @@ function updateMonthStats(type){
 	if (server_db["traffic"].date == undefined){
 	    server_db["traffic"].date = JSON.stringify(date);
 	    stats[type + "DayCounter"] = 1;
-        stats[type + "MonthCounter"] = 1;
+            stats[type + "MonthCounter"] = 1;
 	    server_db["traffic"].stats = JSON.stringify(stats);
 	}
 	else {
-		dateDB = JSON.parse(server_db["traffic"].date)
-		stats = JSON.parse(server_db["traffic"].stats)
+		dateDB = JSON.parse(server_db["traffic"].date);
+		stats = JSON.parse(server_db["traffic"].stats);
 		
 		if (date.getDate() == dateDB.getDate()){ 
 			stats[type + "DayCounter"]++;
