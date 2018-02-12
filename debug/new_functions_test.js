@@ -1,4 +1,5 @@
 function updateMonthStats(type){
+	use server_db;
 	var d = new Date();
 	
 	var stats = {
