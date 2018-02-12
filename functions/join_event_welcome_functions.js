@@ -71,5 +71,5 @@ function getWelcomeMsg(){
     \nUser joind with invite code: **" + inviteCodes +"** \
     \n" + lastLine + " \
     ";
-    return link + redirect + welcome + error + role; 
+    return welcome; 
 }
