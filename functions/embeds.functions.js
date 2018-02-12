@@ -106,89 +106,86 @@ function getHelpEmbed(){
 
       var fields = " \
       {field[0]|name:Select language <:blank:352901517004636163>} \
-      {field[0]|value: \
-      ```css\n\
-.iam n. english \
-      \n.iam f. spanish  \
-      \n.iam german  \
-      ```}\
+      {field[0]|value:\
+```css\
+\n.iam n. english\
+\n.iam f. spanish\
+\n.iam german\
+```}\
       {field[0]|inline:true} \
       {field[1]|name:Description <:blank:352901517004636163>} \
       {field[1]|value:\
-      ```fix\n\
-For native languages \
-      \nFor fluent languaages \
-      \nFor learning languages \
-      ```} \
+```fix\
+\nFor native\
+\nFor fluent\
+\nFor learning\
+```} \
       {field[1]|inline:true} \
       {field[2]|name:Memrise <:blank:352901517004636163>} \
       {field[2]|value: \
-      ```css\n\
-.iam memrise \
-      \n.iam memrise lvl 13 \
-      ```} \
+```css\
+\n.iam memrise\
+\n.iam memrise lvl 13 \
+```} \
       {field[2]|inline:true} \
       {field[3]|name: <:blank:352901517004636163>} \
-      {field[3]|value: \
-      ```fix\n\
-For Memrise users \
-      \nBetween 10-15 \
-      ```} \
+      {field[3]|value:\
+```fix\
+\nFor Memrise users \
+\nBetween 10-15\
+```} \
       {field[3]|inline:true} \
       {field[4]|name: Duolingo<:blank:352901517004636163>} \
-      {field[4]|value: \
-      ```css\n\
-.iam duolingo \
-      \n.iam 4 trees completed \
-      \n.iam 2 trees lvl 25 \
-      ```}\
-      {field[4]|inline:true} \
-      {field[5]|name: <:blank:352901517004636163>} \
-      {field[5]|value: \
-      ```fix\n\
-For Duolingo users \
-      \nBetween 1-5 \
-      \nBetween 1-3 \
-      ```} \
-      {field[5]|inline:true} \
-      \n\
-      {field[6]|name:Misc <:blank:352901517004636163>} \
+      {field[4]|value:\
+```css\
+\n.iam duolingo\
+\n.iam 4 trees completed\
+\n.iam 2 trees lvl 25\
+```}\
+      {field[4]|inline:true}\
+      {field[5]|name: <:blank:352901517004636163>}\
+      {field[5]|value:\
+```fix\
+\nFor Duolingo users\
+\nBetween 1-5\
+\nBetween 1-3\
+```} \
+      {field[5]|inline:true}\
+      {field[6]|name:Misc <:blank:352901517004636163>}\
       {field[6]|value:\
-      ```css\n\
-.iam polyglot \
-      \n.iam linguistics \
-      \n.iam translator \
-      \n.iam IPA \
-      \n.iam NSFW \
-      ```} \
-      {field[6]|inline:true} \
-      \n \
-      {field[7]|name: <:blank:352901517004636163>} \
-      {field[7]|value: \
-      ```fix\n\
-Fluent in 4 or above \
-      \nFor linguists \
-      \nFor translators \
-      \nFor IPA literate \
-      \nAge 18+ \
-      ```} \
-      {field[7]|inline:true} \
-      \n \
-      {field[8]|name:Removing a role <:blank:352901517004636163>} \
-      {field[8]|value: \
-      \n"+ icon1 +" To **remove** a role replace `.iam` with `.iamnot` \
-      \n} \
-      {field[8]|inline:false} \
-      \n \
-      {field[9]|name:Additional information} \
-      {field[9]|value: \
-      \n"+ icon2 +" Type: `\\misc` for information on other roles on the server. \
-      \n"+ icon2 +" Type: `\\lang` to view a full list of available languages. \
-      \n"+ icon2 +" Type: `\\views` to view a list of aviliable view options. \
-      \n"+ icon2 +" Type `\\platform` to view a full list of available platforms. \
-      \n"+ icon2 +" Type: `\\cmd` to view a list of additional help commands. \
-      \n} \
-      {field[9]|inline:false} \
+```css\
+\n.iam polyglot \
+\n.iam linguistics\
+\n.iam translator\
+\n.iam IPA\
+\n.iam NSFW\
+```}\
+      {field[6]|inline:true}\
+      \n\
+      {field[7]|name: <:blank:352901517004636163>}\
+      {field[7]|value:\
+```fix\n
+\nFluent in 4 or above\
+\nFor linguists\
+\nFor translators\
+\nFor IPA literate\
+\nAge 18+\
+```}\
+      {field[7]|inline:true}\
+      {field[8]|name:Removing a role <:blank:352901517004636163>}\
+      {field[8]|value:\
+\n"+ icon1 +" To **remove** a role replace `.iam` with `.iamnot`.\
+}\
+      {field[8]|inline:false}\
+      {field[9]|name:Additional information}\
+      {field[9]|value:\
+\n"+ icon2 +" Type: `\\misc` for information on other roles on the server.\
+\n"+ icon2 +" Type: `\\lang` to view a full list of available languages.\
+\n"+ icon2 +" Type: `\\views` to view a list of aviliable view options.\
+\n"+ icon2 +" Type `\\platform` to view a full list of available platforms.\
+\n"+ icon2 +" Type: `\\cmd` to view a list of additional help commands.\
+\n}\
+      {field[9]|inline:false}\
       ";
    
       return  getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);  
