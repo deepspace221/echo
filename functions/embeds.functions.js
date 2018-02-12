@@ -182,11 +182,11 @@ Fluent in 4 or above \
       \n \
       {field[9]|name:Additional information} \
       {field[9]|value: \
-      \n"+ icon2 +" Type: `\misc` for information on other roles on the server. \
-      \n"+ icon2 +" Type: `\lang` to view a full list of available languages. \
-      \n"+ icon2 +" Type: `\views` to view a list of aviliable view options. \
-      \n"+ icon2 +" Type `\platform` to view a full list of available platforms. \
-      \n"+ icon2 +" Type: `\cmd` to view a list of additional help commands. \
+      \n"+ icon2 +" Type: `\\misc` for information on other roles on the server. \
+      \n"+ icon2 +" Type: `\\lang` to view a full list of available languages. \
+      \n"+ icon2 +" Type: `\\views` to view a list of aviliable view options. \
+      \n"+ icon2 +" Type `\\platform` to view a full list of available platforms. \
+      \n"+ icon2 +" Type: `\\cmd` to view a list of additional help commands. \
       \n} \
       {field[9]|inline:false} \
       ";
