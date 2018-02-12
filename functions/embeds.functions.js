@@ -25,7 +25,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
                      {title:" + title +"} \
                      {type: rich} \
                      " + author + " \
-                     {color:{randlist:"+ color +"} \
+                     {color:{randlist:"+ color +"}} \
                       " + thumb + " \
                     {desc: \
                " + description + " \
@@ -43,7 +43,7 @@ function getSimpleEmbed(title, thumb, description){
     var embed = "{embed: \
                      {title:" + title +"} \
                      {type: rich} \
-                     {color:{randlist:"+ color +"} \
+                     {color:{randlist:"+ color +"}} \
                     {thumb|url:"+ thumb +"} \
                     {desc: \
                " + description + " \
