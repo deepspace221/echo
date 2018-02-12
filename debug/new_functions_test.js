@@ -9,7 +9,9 @@ function updateMonthStats(type){
                 leftDayCounter: 0,
 		sameDay: true,
 		sameMonth: true,
-		monthDay: d.getDate()
+		monthDay: d.getDate(),
+		joinYear: [],
+		leftYear: []
 	};
 
 	if (server_db["traffic"] == undefined){
@@ -38,6 +40,7 @@ function updateMonthStats(type){
 			server_db["traffic"].stats = JSON.stringify(stats);
 		}
 		else {
+			stats[type + "Year"].push(stats[type + "MonthCounter"]);
 			stats[type + "DayCounter"] = 1;
 			stats[type + "MonthCounter"] = 1;
 			stats.sameDay = false;
