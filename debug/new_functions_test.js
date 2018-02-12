@@ -4,9 +4,9 @@ function updateMonthStats(type){
 	
 	var stats = {
 		joinMonthCounter: 0,
-                         leftMonthCounter: 0,
+                leftMonthCounter: 0,
 		joinDayCounter: 0,
-                         leftDayCounter: 0,
+                leftDayCounter: 0,
 		sameDay: true,
 		sameMonth: true,
 		currentDay: d.getDate(),
