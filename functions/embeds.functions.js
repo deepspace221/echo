@@ -1,6 +1,6 @@
 
 //Count
-function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
+function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer, UserID){
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
