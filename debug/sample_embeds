@@ -1,0 +1,7 @@
+%auto tst={init}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+var result = getEmbed("help");
+
+resp = result;
+>>
