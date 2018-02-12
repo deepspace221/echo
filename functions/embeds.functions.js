@@ -7,7 +7,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    var Username = "{/user}";
    var userIcon = "{usericon}";
    if (!UserImage){
-         var userOBJ = findUserImageAndUsernameByUserID(UserID)
+         var userOBJ = findUserImageAndUsernameByUserID(UserID);
          var Username = userOBJ.userName;
          var userIcon = userOBJ.userIcon;   
    }
