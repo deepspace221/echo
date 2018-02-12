@@ -98,4 +98,5 @@ function findUserImageAndUsernameByUserID(userID){
 		     var userName = ServerMembers[key].User.Name;
 		     retrun {username: userName, avatar: userIcon};
 	     }	
+	}
 }
