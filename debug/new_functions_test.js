@@ -4,12 +4,12 @@ function updateMonthStats(type){
 	
 	var stats = {
 		joinMonthCounter: 0,
-                leftMonthCounter: 0,
+                         leftMonthCounter: 0,
 		joinDayCounter: 0,
-                leftDayCounter: 0,
+                         leftDayCounter: 0,
 		sameDay: true,
 		sameMonth: true,
-		monthDay: d.getDate(),
+		currentDay: d.getDate(),
 		joinYear: [],
 		leftYear: []
 	};
@@ -17,29 +17,32 @@ function updateMonthStats(type){
 	if (server_db["traffic"] == undefined){
 	    var obj = {};
 	    stats[type + "DayCounter"] = 1;
-            stats[type + "MonthCounter"] = 1;
-	    var obj["stats"] = stats;
-            var obj["date"] = d; 
+                 stats[type + "MonthCounter"] = 1;
+	    obj.stats = stats;
+                 obj.date = {day: d.getDate(), month: d.getMonth()}; 
 	    server_db["traffic"] = JSON.stringify(obj);
 	}
 	else {
-		var d2 = JSON.parse(server_db["traffic"].date)
-		stats = JSON.parse(server_db["traffic"].stats)
+		var d2 = JSON.parse(server_db["traffic"]).date;
+		stats = JSON.parse(server_db["traffic"]).stats;
 		
-		if (d.getDate() == d2.getDate()){ 
+		if (d.getDate() == d2.day){ 
 			stats[type + "DayCounter"]++;
 			stats[type + "MonthCounter"]++;
-			stats.sameDay = true;
+			stats.sameDay = false;
 			stats.sameMonth = true;
-			server_db["traffic"].stats = JSON.stringify(stats);
-			return server_db["traffic"].dayCounter;
+			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
+			return JSON.stringify(server_db["traffic"]);
 		}
-		else if (date.getMonth() == dataDB.getMonth()){
+		else if (date.getMonth() == d2.month){
 			stats[type + "DayCounter"] = 1;
 			stats[type + "MonthCounter"]++;
 			stats.sameDay = false;
 			stats.sameMonth = true;
-			server_db["traffic"].stats = JSON.stringify(stats);
+			d2 = {day: d.getDate(), month: d.getMonth()};
+			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
+			return JSON.stringify(server_db["traffic"]);
+
 		}
 		else {
 			stats[type + "Year"].push(stats[type + "MonthCounter"]);
@@ -47,7 +50,9 @@ function updateMonthStats(type){
 			stats[type + "MonthCounter"] = 1;
 			stats.sameDay = false;
 			stats.sameMonth = false;
-			server_db["traffic"].stats = JSON.stringify(stats);			
+			d2 = {day: d.getDate(), month: d.getMonth()};
+			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
+			return JSON.stringify(server_db["traffic"]);	
 		}
 	}
 }
