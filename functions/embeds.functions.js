@@ -106,7 +106,7 @@ function getHelpEmbed(){
       {field[0]|name:Select language <:blank:352901517004636163>} \
       {field[0]|value: \
       ```css\n\
-      .iam n. english \
+.iam n. english \
       \n.iam f. spanish  \
       \n.iam german  \
       ```}\
@@ -114,7 +114,7 @@ function getHelpEmbed(){
       {field[1]|name:Description <:blank:352901517004636163>} \
       {field[1]|value:\
       ```fix\n\
-      For native languages \
+For native languages \
       \nFor fluent languaages \
       \nFor learning languages \
       ```} \
@@ -122,21 +122,21 @@ function getHelpEmbed(){
       {field[2]|name:Memrise <:blank:352901517004636163>} \
       {field[2]|value: \
       ```css\n\
-      .iam memrise \
+.iam memrise \
       \n.iam memrise lvl 13 \
       ```} \
       {field[2]|inline:true} \
       {field[3]|name: <:blank:352901517004636163>} \
       {field[3]|value: \
       ```fix\n\
-      For Memrise users \
+For Memrise users \
       \nBetween 10-15 \
       ```} \
       {field[3]|inline:true} \
       {field[4]|name: Duolingo<:blank:352901517004636163>} \
       {field[4]|value: \
       ```css\n\
-      .iam duolingo \
+.iam duolingo \
       \n.iam 4 trees completed \
       \n.iam 2 trees lvl 25 \
       ```}\
@@ -144,7 +144,7 @@ function getHelpEmbed(){
       {field[5]|name: <:blank:352901517004636163>} \
       {field[5]|value: \
       ```fix\n\
-      For Duolingo users \
+For Duolingo users \
       \nBetween 1-5 \
       \nBetween 1-3 \
       ```} \
@@ -153,7 +153,7 @@ function getHelpEmbed(){
       {field[6]|name:Misc <:blank:352901517004636163>} \
       {field[6]|value:\
       ```css\n\
-      .iam polyglot \
+.iam polyglot \
       \n.iam linguistics \
       \n.iam translator \
       \n.iam IPA \
@@ -164,7 +164,7 @@ function getHelpEmbed(){
       {field[7]|name: <:blank:352901517004636163>} \
       {field[7]|value: \
       ```fix\n\
-      Fluent in 4 or above \
+Fluent in 4 or above \
       \nFor linguists \
       \nFor translators \
       \nFor IPA literate \
