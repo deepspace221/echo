@@ -20,7 +20,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
     
     if (thumb == "user") thumb = "{thumb|url:"+ userIcon +"}";
-    else if (thumb == "server") thumb = "{thumb|url:guild|icon}";
+    else if (thumb == "server") thumb = "{thumb|url:{guild|icon}}";
     else if (thumb) thumb = "{thumb|url:"+ thumb +"}";
     else if (!thumb) thumb = "";
    
