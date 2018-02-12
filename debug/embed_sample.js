@@ -1,5 +1,3 @@
-%auto tst={init}
-#js >>
 var value = {embed: \
     {title:Command examples for {guild|name}}\
     {type:rich}\
@@ -19,6 +17,3 @@ var value = {embed: \
     }\
 }\
 ";
-resp = value;
->>
-
