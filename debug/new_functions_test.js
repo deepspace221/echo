@@ -29,19 +29,19 @@ function updateMonthStats(type){
 		if (d.getDate() == d2.day){ 
 			stats[type + "DayCounter"]++;
 			stats[type + "MonthCounter"]++;
-			stats.sameDay = false;
+			stats.sameDay = true;
 			stats.sameMonth = true;
 			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
-			return JSON.stringify(server_db["traffic"]);
+			return false;
 		}
-		else if (date.getMonth() == d2.month){
+		else if (d.getMonth() == d2.month){
 			stats[type + "DayCounter"] = 1;
 			stats[type + "MonthCounter"]++;
 			stats.sameDay = false;
 			stats.sameMonth = true;
-			d2 = {day: d.getDate(), month: d.getMonth()};
+			d2.day = d.getDate();
 			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
-			return JSON.stringify(server_db["traffic"]);
+			return "new month";
 
 		}
 		else {
@@ -52,10 +52,11 @@ function updateMonthStats(type){
 			stats.sameMonth = false;
 			d2 = {day: d.getDate(), month: d.getMonth()};
 			server_db["traffic"] = JSON.stringify({stats: stats, date: d2});
-			return JSON.stringify(server_db["traffic"]);	
+			return "new year";	
 		}
 	}
 }
+
 
 function minutesUntilMidnight() {
     var midnight = new Date();
