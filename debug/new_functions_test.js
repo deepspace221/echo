@@ -18,8 +18,8 @@ function updateMonthStats(type){
 	    var obj = {};
 	    stats[type + "DayCounter"] = 1;
             stats[type + "MonthCounter"] = 1;
-	    var obj.stats = stats;
-            var obj.date = d; 
+	    var obj["stats"] = stats;
+            var obj["date"] = d; 
 	    server_db["traffic"] = JSON.stringify(obj);
 	}
 	else {
