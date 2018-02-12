@@ -151,8 +151,7 @@ function getHelpEmbed(){
       {field[5]|inline:true} \
       \n \
       {field[6]|name:Misc <:blank:352901517004636163>} \
-      {field[6]|value: \
-      ```css\
+      {field[6]|value:css\
       \n.iam polyglot \
       \n.iam linguistics \
       \n.iam translator \
@@ -162,8 +161,7 @@ function getHelpEmbed(){
       {field[6]|inline:true} \
       \n \
       {field[7]|name: <:blank:352901517004636163>} \
-      {field[7]|value: \
-      ```fix\
+      {field[7]|value:```fix\
       \nFluent in 4 or above \
       \nFor linguists \
       \nFor translators \
