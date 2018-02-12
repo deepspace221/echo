@@ -1,9 +1,9 @@
 
 //Count
 function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
-    if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
-        var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
-    }
+   // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
+   //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
+   // }
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
     var footer2 = "{footer|icon:" + footerIcon + "} {footer|text:" + footer + "}";
@@ -13,7 +13,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     
     if (!thumb || thumb === true) thumb = "{thumb|url:{guild|icon}}";
     else if (thumb == "false") thumb = "";
-    else if (thumb == "user") thumb = "{thumb|url:"+ avatar +"}";
+    else if (thumb == "user") thumb = "{thumb|url:{usericon}}";
     else thumb = "{thumb|url:"+ thumb +"}";
     
     if (fields == "") fields = "";
