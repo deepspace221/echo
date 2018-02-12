@@ -103,7 +103,7 @@ function getHelpEmbed(){
       var fields = " \
       {field[0]|name:Select language <:blank:352901517004636163>} \
       {field[0]|value: \
-      \n```css \
+      \n```css\
       \n.iam n. english \
       \n.iam f. spanish  \
       \n.iam german  \
@@ -111,7 +111,7 @@ function getHelpEmbed(){
       {field[0]|inline:true} \
       {field[1]|name:Description <:blank:352901517004636163>} \
       {field[1]|value: \
-      \n```fix \
+      \n```fix\
       \nFor native languages \
       \nFor fluent languaages \
       \nFor learning languages \
@@ -119,21 +119,21 @@ function getHelpEmbed(){
       {field[1]|inline:true} \
       {field[2]|name:Memrise <:blank:352901517004636163>} \
       {field[2]|value: \
-      \n```css \
+      \n```css\
       \n.iam memrise \
       \n.iam memrise lvl 13 \
       \n```} \
       {field[2]|inline:true} \
       {field[3]|name: <:blank:352901517004636163>} \
       {field[3]|value: \
-      \n```fix \
+      \n```fix\
       \nFor Memrise users \
       \nBetween 10-15 \
       \n```} \
       {field[3]|inline:true} \
       {field[4]|name: Duolingo<:blank:352901517004636163>} \
       {field[4]|value: \
-      \n```css \
+      \n```css\
       \n.iam duolingo \
       \n.iam 4 trees completed \
       \n.iam 2 trees lvl 25 \
@@ -141,7 +141,7 @@ function getHelpEmbed(){
       {field[4]|inline:true} \
       {field[5]|name: <:blank:352901517004636163>} \
       {field[5]|value: \
-      \n```fix \
+      \n```fix\
       \nFor Duolingo users \
       \nBetween 1-5 \
       \nBetween 1-3 \
@@ -150,7 +150,7 @@ function getHelpEmbed(){
       \n \
       {field[6]|name:Misc <:blank:352901517004636163>} \
       {field[6]|value: \
-      \n```css \
+      \n```css\
       \n.iam polyglot \
       \n.iam linguistics \
       \n.iam translator \
@@ -161,7 +161,7 @@ function getHelpEmbed(){
       \n \
       {field[7]|name: <:blank:352901517004636163>} \
       {field[7]|value: \
-      \n```fix \
+      \n```fix\
       \nFluent in 4 or above \
       \nFor linguists \
       \nFor translators \
