@@ -164,7 +164,7 @@ function getHelpEmbed(){
       \n\
       {field[7]|name: <:blank:352901517004636163>}\
       {field[7]|value:\
-```fix\n
+```fix\
 \nFluent in 4 or above\
 \nFor linguists\
 \nFor translators\
