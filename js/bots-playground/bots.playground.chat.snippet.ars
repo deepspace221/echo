@@ -1,0 +1,3 @@
+[#CONTINUE#]
+&{:}(?i)\b(hi|hey|yo|h[aeu]llo|konnichiwa)\b {params}={init}{clean}
+call::joey(How you doin'? 😎 , {chan}, {content});
