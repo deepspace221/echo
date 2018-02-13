@@ -81,6 +81,9 @@ function getEmbed(type){
       else if (type == "help"){
          return getHelpEmbed();                        
       }
+      else if (type == "views"){
+         return getViewsEmbed();
+      }
 }
 
 function getHelpEmbed(){
