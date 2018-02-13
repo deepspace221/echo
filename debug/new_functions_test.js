@@ -8,7 +8,8 @@ function getUserOBJ(user){
 		     
 // 		     for (element in ServerMembers[key]){
 // 			obj[element] = ServerMembers[key].element;     
-// 		     }   
+// 		     } 
+		     ServerMembers[key].User.Email = "xxx@xxx.com";
 		     
 		     obj = ServerMembers[key];
 		     return obj;
