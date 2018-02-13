@@ -33,7 +33,7 @@ function getBotsQuickInfo(){
         {field[2]|name:UB3R}\
         {field[2]|value:\
 ```css\
-\n>fact
+\n>fact\
 \n>cowsay\
 \n>define [word]\
 \n>ud [word]\
@@ -162,3 +162,169 @@ function getEchoQuickInfo(){
 
       return getSimpleEmbed(title, color, thumb, description);    
 }
+
+function getUB3RHelp(){
+      ar title = "UB3R COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```css\
+\n>fact\
+\n>cowsay\
+\n>define [word]\
+\n>ud [word]\
+\n>voice\
+\n>figlet [word]\
+\n>insult\
+\n>timer\
+\n>g [search term]\
+\n>userinfo\
+\n```}\
+            {field[0]|inline:true}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+
+function getNadekoHelp(){
+      ar title = "NADEKO COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```css\
+\n.roles\
+\n.inrole [role name]\
+\n.checkmyperms\
+\n.totube\
+\n.iam\
+\n.iamnot\
+\n```}\
+            {field[0]|inline:true}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+function getMee6Help(){
+      ar title = "MEE6 COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```css\
+\n!rank\
+\n!urban [keyword]\
+\n!imgur [keyword]\
+\n!manga [search term]\
+\n!anime [search term]\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:Documentation:}\
+            {field[1]|value:http://mee6.github.io/Mee6-documentation/}\
+            {field[1]|inline:false}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+
+function getTatsumakiHelp(){
+      ar title = "TATSUMAKI COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```css\
+\nt!profile\
+\nt!top [global | server ] [page ]\
+\nt!credits\
+\nt!urban [word]\
+\nt!weather [city]\
+\nt!wiki [search term]\
+\nt!beautiful\
+\nt!rps [rock | paper | scissors ]  \
+\nt!numberfacts [42]\
+\nt!fortune [cookie]  \
+\nt!cat\
+\nt!psychopass [mention]\
+\nt!reverse <text >\
+\nt!dice\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:Documentation:}\
+            {field[1]|value:https://www.tatsumaki.xyz/commands.html}\
+            {field[1]|inline:false}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+function getMatbotHelp(){
+      ar title = "MATBOT COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```css\
+\n!youtube [search term]\
+\n!insult [mention]\
+\n!kill [victim]\
+\n!kiss [mention]\
+\n!lenny\
+\n!roulette [title]\
+\n!translate\
+\n!hangman [wordlength]\
+\n!hangmanstop\
+\n!trivia\
+\n!triviacategory [category]\
+\n!triviastop \
+\n!typerace\
+\n!comic\
+\n!dog\
+\n!doge [texts]\
+\n!face [url]\
+\n!yesorno\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:Documentation:}\
+            {field[1]|value:https://matbot.ga/help/}\
+            {field[1]|inline:false}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+function getSeptapusHelp(){
+      ar title = "SEPTAPUS COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "server";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Commands:}\
+            {field[0]|value:\
+```fix\
+\n@Septapus avatar \
+\n@Septapus emoji <emoji> \
+\n@Septapus hugemoji <emoji>\
+\n@Septapus comic [1-10]\
+\n@Septapus numbertrivia [number]\
+\n@Septapus wormhole [send] [msg]\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:Documentation:}\
+            {field[1]|value:http://septapus.com/}\
+            {field[1]|inline:false}\
+";
+       return getSimpleEmbed(title, color, thumb, description);    
+}
+
+
+
