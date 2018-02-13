@@ -57,8 +57,6 @@ function getSimpleEmbed(title, color, thumb, description){
     else if (thumb) thumb = "{thumb|url:"+ thumb +"}";
     else if (!thumb) thumb = "";
 
-discription = "";
-
     var embed = "{embed: \
                      {title:" + title +"} \
                      {type: rich} \
