@@ -1,3 +1,11 @@
 [#CONTINUE#]
 &{:}(?i)\b(hi|hey|yo|h[aeu]llo|konnichiwa)\b {params}={init}{clean}
 call::joey(How you doin'? 😎 , {chan}, {content});
+[#CONTINUE#]
+&{:}(?i)(Thank|THX|TNX|THNX).+Echo={init}
+{user}
+{random}
+You are most welcomed. Nice to feel appreciated around here.,
+What a lovely thing to say. I'm touched., 
+Awwww you're cute!!! :wink:
+{/random}
