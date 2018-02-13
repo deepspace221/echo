@@ -1,0 +1,168 @@
+[#CONTINUE#]
+vcping={init}
+#js >>
+use VOICE;
+
+var jsonLog = JSON.parse(VOICE["vcUserInfoArrOBJ"]);
+var here = false;
+var status = "";
+var result = "";
+var nextLink = "{ars:vcPingLog}";
+var logUserIndex = getUserIndex();
+
+var logEmbed = jsonLog[logUserIndex].logEmbed;
+var logRedirect = jsonLog[logUserIndex].logRedirect;
+var vcName = jsonLog[logUserIndex].vcName;
+var vcid = jsonLog[logUserIndex].vcid;
+var vcUser = jsonLog[logUserIndex].vcUser;
+var vcUserID = jsonLog[logUserIndex].vcUserID;
+var pingSentLocations = jsonLog[logUserIndex].pingSentLocations;
+var status = jsonLog[logUserIndex].status;
+var userIcon = jsonLog[logUserIndex].userIcon;
+var vcUser = jsonLog[logUserIndex].vcUser;
+var logTime = jsonLog[logUserIndex].timeDelay;
+var logDate = jsonLog[logUserIndex].logDate;
+var timeCooldown = jsonLog[logUserIndex].timeCooldown;
+
+if (lhere){
+            result = nextLInk + jsonLog[logUserIndex].pingRedirect +  jsonLog[logUserIndex].pingMsg;
+            jsonLog[logUserIndex].isUserInChannel = false;
+            jsonLog[logUserIndex].cooldown = true; 
+            jsonLog[""]
+            jsonLog["pinglog"] = logRedirect + getLog(status, vcUser, vcName, userIcon);
+            VOICE["pingUserIndex"] = logUserIndex;
+}
+else {
+           result = logging + getLog(status, vcUser, vcName, userIcon);
+           jsonLog = jsonLog[logUserIndex].splice(logUserIndex, 1);
+}
+
+VOICE["vcUserInfoArrOBJ"] = JSON.stringify(jsonLog);
+
+resp = result;
+
+function getUserIndex(){
+    for (i = 0; i < jsonLog.length; i++){
+        if (jsonLog[i].isUserInChannel){
+            here = true;
+            status = "pinged";
+            return i;
+        }
+
+    for (i = 0; i < jsonLog.length; i++){
+       if (jsonLog[i].isUserInChannel == false && jsonLog[i].isCooldown == false) {
+            here = false;
+            status = "buffer";
+            return i;
+       }
+}
+function getLog(type, vcUser, vcName, userIcon){
+
+var logTitle = "";
+var result = ""; 
+var color = "";
+var msg = "";
+var entry = getLogDate() + "-" + getLogTime();
+var subTitle = ""; 
+
+if (vcCounter == undefined)
+        vcCounter = 0;
+
+if (type == "buffer"){
+    pingedChannels = "Aborted";
+    logTitle = " VC PING ABORTED EVENT";
+    color = "#ff0004";
+    emoji = ":no_entry:";
+    msg = " User faild to stay 5 mintues in voice channel - PING ABORTED!" 
+    status = "left";
+    cooldown = false;
+}
+else if (type == "pinged"){
+    logTitle = " VC PING SENT SUCCESSFULLY EVENT";
+    subTitle = " ";
+    color = "#30ff00"; 
+    emoji = ":trophy:";
+    msg = " This VC channel can't send additional pings for the next hour." 
+    status = "waiting";
+    cooldown = "true (60 minutes)";
+}
+                // {thumb|url:" +getUserAvatar() + "} \
+        if (embed){
+            result = "{embed: \
+                {title:"+ emoji + logTitle +"} \
+                {type:rich} \
+                {author|name:" + subTitle +"} \
+                {author|icon:} \
+                {thumb|url:} \
+                {color:"+ color +"} \
+                {desc: \
+                	" + userIcon + msg + " \
+                } \
+            {field[0|name:Entry} \
+            {field[0]|value:"+ logDate + "-" + logTime +"} \
+            {field[0]|inline:false} \
+            {field[2]|name:Channel} \
+            {field[2]|value:"+ vcName +"} \
+            {field[2]|inline:true} \
+            {field[1]|name:User} \
+            {field[1]|value:"+ vcUser +"} \
+            {field[1]|inline:true} \
+            {field[3]|name:Status} \
+            {field[3]|value:" + status +"} \
+            {field[3]|inline:true} \
+            {field[5]|name:Participants} \
+            {field[5]|value:" + vcCounter + "} \
+            {field[5]|inline:true} \
+            {field[8]|name:Cooldown} \
+            {field[8]|value:" + cooldown +"} \
+            {field[8]|inline:true} \
+            {field[9]|name:Entry} \
+            {field[9]|value:"+ entry +"} \
+            {field[9]|inline:true} \
+            {footer|icon:https://fishercenter.bard.edu/images/icons/search-icon.png} \
+            {footer|text:" + new Date() +"} \
+            } \
+            ";
+        }
+        else{
+
+            if (type == "pinged")
+                result = "🏆 " + logDate+ "-"+ logTime +": PIng sent. **" + username + "** successfully stayed the allocated **5 minutes** at **<#" + vcid + ">**.";
+            else if (type == "buffer")
+                result = "⛔ " + logDate+ "-"+ logTime + ": Ping has been **aborted**. User failed to stay **5 minutes** at voice channel."; 
+        }
+        return result; 
+}
+
+>>
+
+[#CONTINUE#]
+vcPingLog={init}
+#js >>
+    use VOICE;
+    var arsLink = "{ars:vcEnglishPing}";
+    var pingLog = VOICE["pinglog"];
+    delete VOICE["pinglog"];
+
+    resp =arsLink + pingLog;
+>>
+
+[#CONTINUE#]
+vcEnglishPing={init}
+#js >>
+    use VOICE;
+    if (VOICE["pingUserIndex"] != undefined){
+            var ping = VOICE["english-ping"];
+            delete VOICE["english-ping"];
+            resp = "{ars:vcSleepCooldown}" + ping;
+    }
+    else
+        resp = "{ars:vcSleepCooldown}" ;
+>>
+
+[#CONTINUE#]
+vcSleepCooldown={init}
+{sleep:30s}
+{ars:vcCooldownCleanup}
+
+

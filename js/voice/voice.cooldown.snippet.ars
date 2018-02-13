@@ -1,0 +1,91 @@
+
+[#CONTINUE#]
+vcCooldownCleanup={init}
+#js >>
+use VOICE;
+var jsonLog = JSON.parse(VOICE["vcUserInfoArrOBJ"]);
+var nextLink = "{ars:vcpinglog}";
+
+var logUserIndex = getUserIndex();
+var logEmbed = jsonLog[logUserIndex].logEmbed;
+var logRedirect = jsonLog[logUserIndex].logRedirect;
+var vcName = jsonLog[logUserIndex].vcName;
+var vcid = jsonLog[logUserIndex].vcid;
+var vcUser = jsonLog[logUserIndex].vcUser;
+var vcUserID = jsonLog[logUserIndex].vcUserID;
+var pingSentLocations = jsonLog[logUserIndex].pingSentLocations;
+var status = jsonLog[logUserIndex].status;
+var userIcon = jsonLog[logUserIndex].userIcon;
+var vcUser = jsonLog[logUserIndex].vcUser;
+var logTime = jsonLog[logUserIndex].timeDelay;
+var logDate = jsonLog[logUserIndex].logDate;
+var timeCooldown = jsonLog[logUserIndex].timeCooldown;
+vcCounter = 
+
+var emoji = ":checkered_flag:"; 
+var logTitle = " VC 1 HOUR COOLDOWN COMPLETED";
+var entry = logDate + "-" + logTime;
+var msg = "The designted **1 hour** buffer since last ping has been completed. Channel has been re-armed to accept pings.";
+var color = #ff9900;
+
+jsonLog = jsonLog[logUserIndex].splice(logUserIndex, 1);
+VOICE["vcUserInfoArrOBJ"] = JSON.stringify(jsonLog);
+
+resp = getLog();
+
+function getUserIndex(){
+
+    for (i = 0; i < jsonLog.length; i++){
+       if (jsonLog[i].isUserInChannel == false && jsonLog[i].isCooldown == false) {
+            here = false;
+            status = "buffer";
+            return i;
+       }
+}
+
+function getLog(){
+
+    var result = "";
+
+    if (vcCounter == undefined)
+            vcCounter = 0;
+    if (logEmbed){
+                          
+         result = "{logEmbed: \
+                    {title:"+ emoji + logTitle +"} \
+                    {type:rich} \
+                    {author|name:} \
+                    {author|icon:} \
+                    {thumb|url:" + userIcon + "} \
+                    {color:"+ color +"} \
+                    {desc: \
+                         " + msg + " \
+                    } \
+                {field[1]|name:Channel} \
+                {field[1]|value:<#"+ vcid +">} \
+                {field[1]|inline:true} \
+                {field[2]|name:Status} \
+                {field[2]|value:re-armed} \
+                {field[2]|inline:true} \
+                {field[3]|name:Members Count} \
+                {field[3]|value:" + vcCounter + "} \
+                {field[3]|inline:true} \
+                {field[4]|name:Cooldown} \
+                {field[4]|value:false} \
+                {field[4]|inline:true} \
+                {field[5]|name:Entry} \
+                {field[5]|value:false} \
+                {field[5]|inline:true} \
+                {field[9]|name:Entry} \
+                {field[9]|value:"+ entry +"} \
+                {field[9]|inline:true} \
+                {footer|icon:https://fishercenter.bard.edu/images/icons/search-icon.png} \
+                {footer|text:" + new Date() +"} \
+                } \
+                ";
+     }else
+        result = "🏁 " + logDate + "-"+ logTime + ": <#" + vcid + "> has been re-armed. The designted **1 hour** buffer since last ping has been completed.";
+
+return result;
+}
+>>

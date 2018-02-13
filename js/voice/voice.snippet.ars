@@ -1,0 +1,704 @@
+[#CONTINUE#]
+vcJoin={init}
+{Event:VoiceJoin}
+#js >>
+use VOICE;
+
+
+var vcidOBJ = {
+    // CentralPark: "370687822304116738",
+    // Music: "361035326107680779",
+    // Karaoke: "407348318172217344",
+    // LectureHall: "370646410573643776",
+    // LangPractice: "370689578396549121",
+    // CoffeeBreak: "335021599482839040",
+    // Gaming: "370687140713070602",
+    // DnM: "363189159319437312",
+    // NoEn: "383746420689338368".
+    IRnGAnWL: ["369604464484679680", "369604380032499712", "369604407651860480", "371057756842491914", "", "407796949253881866"],
+    EN: ["335376778241507328", "408371124183891988", "", "", "", "408371124183891988"],
+    DE: ["335376910391443457", "335047595691081728", "", "", "", ""],
+    DUnAF: ["369149148802580480", "399769766925172736", "369149191051804682", "", "", "335047844371103754", "335047891720601601"],
+    NOnIS: ["360658514777210880", "335047891720601601", "364691582558928896", "", "", "335047891720601601"],
+    SEnDK: ["361032339675152384", "335047543639769091", "335047924650344459", "", "", "335047543639769091"],
+    FRnIT: ["335376845576863744", "399769386052747264", "399770384590962718", "", "", "335047514124189697", "399769386052747264"],
+    SPnPT: ["360659802147258378", "335047535716597761", "335047883319410700", "", "", "408113969530667018"],
+    ESnLA: ["361022550035267587", "338716308583612417", "358746705346428928", "", "", "338716308583612417"],
+    RUnUK: ["360661562995769345", "335047523552985102", "338638100978728970", "", "", "335047523552985102"],
+    POnCZ:  ["", "335049726573412352", "370398699320246278", "", "", ""],
+    BLnMAnCRnSL: ["369138836703412224", "335047612745121792", "371333870332805140", "369098801740382218", "369112617681420289", "369517863850999814"],
+    INnUR: ["361033275336294400", "357932795319943170", "370394355011420160", "", "", ""],
+    CN: ["389992149216657418", "335216579224666112", "335047571573571590", "", "", "335216579224666112"],
+    JPnKR: ["360663509794684928", "335047562094444545", "335047767686774784", "", "", "408115294549311488"],
+    VTnTI: ["370403289293914112", "344490694515097600", "370403234428485642", "", "", "344490694515097600"],
+    AR: ["360672211213877248", "335047863023435779", "", "", "", ""],
+    TRnPR: ["360670613758541826", "361026619718238208", "361026312829403136", "", "", "361026619718238208"],
+    HE: ["360670283088003083", "336480081595596811", "", "", "", ""],
+    GRnHU: ["", "350830381270040586", "338638034901663754", "", "", ""],
+    SW: ["", "361025096351219722", "", "", "", "378420654770356224"],
+    FInES: ["", "339096757516500992", "363330420848328704", "", "", ""]
+};
+
+var langOBJ = {
+    Celtic: "IRnGAnWL",
+    English: "EN",
+    German: "DE",
+    Dutch: "DUnAF",
+    Afrikaans: "DUnAF",
+    Norwegian: "NOnIS",
+    Icelandic: "NOnIS",
+    Swedish: "SEnDK",
+    Danish: "SEnDK",
+    French: "FRnIT",
+    Italian: "FRnIT",
+    Spanish: "SPnPT",
+    Portuguese: "SPnPT",
+    Esperanto: "ESnLA",
+    Latin: "ESnLA",
+    Russian: "RUnUK",
+    Ukrainian: "RUnUK",
+    Balkan: "BLnMAnCRnSL",
+    Hindi: "INnUR",
+    Urdu: "INnUR",
+    Mandarin: "CN",
+    Cantonese: "CN",
+    Japanese:  "JPnKR",
+    Korean: "JPnKR",
+    Vietnamese: "VTnTI",
+    Thai: "VTnTI",
+    Arabic: "AR",
+    Turkish: "TRnPR",
+    Persian: "TRnPR",
+    Hebrew: "HE"
+};
+
+//settings presets
+var ping = "🔔 `<@&407266354115248152>` ";
+var tagLine = "\nYou still here?! Have you lost your marbels? How will you ever become fluent???";
+var del = "{delme:10s}";
+var left = "<#>";
+var loggingRedirect = "{redirect:408371819620597770}";
+var englishPingRedirect = "{redirect:408371124183891988>";
+var delayLink = "{ars:vcpingdelay}";
+var englishPingChan = "<#408371124183891988>";
+var cooldown = 60;
+var pingDelay = 5;
+var cooldown = false;
+var logEmbed = true;
+
+//idexes
+var memberIndex = getMemberIndex();         //good
+
+//user properties
+var vcName = "<#{data|channel}>";       //empty on leave
+var vcid = "{data|channel}";                     //empty on leave
+var vcUserID = "{data|user}";
+var vcUser = "<@{data|user}>";
+var chatty = false;
+var blockChatty = false;
+var vcUserName = getUserName();   //dependet on member index
+var nativeRoles =  getNativeRoles();   //dependent on memberindex      //maybe not needed
+var userIcon = getUserAvatar();             //dependent on memberindex
+
+//time
+var logDate = getDateZeros(new Date());    //good. output 0208
+var logTime = getTimeZeros(new Date());   //good out put 1204
+var timeDelay = getTimeDelay(new Date()); //good but some code is commented out
+var timeCooldown = getTimeCooldown(new Date());  //good but some code is commented out
+
+//calculated info
+var pingSentLocations = "";
+var status = "";
+var engPing = "";   //maybe not needed
+var jsonLog;
+var arrLogOBJ = [];     //an array of log objects. what i need to push into jsonlog
+
+
+//settings object
+
+var vcSettingsOBJ = {
+    logEmbed: logEmbed,
+    englishPingRedirect: englishPingRedirect,
+    logRedirect: loggingRedirect,
+    tagLine: tagLine,
+    del: del,
+    pingDelayLink: delayLink,
+    date: ""
+};
+
+//user object
+
+var logOBJ = {
+    isUserInChannel: true,
+    isCooldown: false,
+    pingMsg: "",
+    pingRedirect: "",
+    engPing: engPing,
+    logMsg: "",
+    userRoles: "",
+    pingSentLocations: "",
+    status: "",
+    vcid: "",               // do i know this value?
+    vcName: "",      // do i know this value?   
+    vcUserID:  vcUserID,
+    vcUser: vcUser,
+    vcUserName: vcUserName,
+    userIcon: userIcon,
+    memberIndex: memberIndex,
+    logDate: logDate,
+    timeDelay: timeDelay,
+    timeCooldown: timeCooldown,
+    chatty: chatty,
+    blockChatty: blockChatty
+};
+
+//channel counter object
+
+var vcCounterOBJ = {
+    vcid: "",
+    counter: ""
+};
+var arrVCCounterOBJ = [];
+
+var vcCounterIndex = getVCCounterIndex();      //need arrVCCounterOBJ to be defined
+
+
+//intialize jsonlog
+
+arrLogOBJ = arrLogOBJ.push(logOBJ);
+
+if (VOICE["vcUserInfoArrOBJ"] !== undefined){
+    jsonLog = JSON.parse(VOICE["vcUserInfoArrOBJ"]);
+}
+else{
+    jsonLog = arrLogOBJ;
+}
+
+var logUserIndex = getJsonLogUserIndex();   // !!!!! jsonlog should come before
+
+//MAIN CODE SECTION START HERE
+
+checkNewDay();       //dependent on json log. looks good
+checkUserStatus();
+
+var leavelog = getLog("leave");
+var joinswitchlog = getLog("join");
+var cooldownLog = getLog("cooldown");
+var publiclog = getLog("public");
+
+switch (vcid) {
+
+    //Public voice channels
+
+    case vcidOBJ.publicChannels.CentralPark:
+    case vcidOBJ.publicChannels.Practice:
+    case vcidOBJ.publicChannels.CoffeeBreak:
+    case vcidOBJ.publicChannels.Gaming:
+    case vcidOBJ.publicChannels.DnM:
+    case vcidOBJ.publicChannels.LectureHall:
+    case vcidOBJ.publicChannels.NoEn:
+    case vcidOBJ.publicChannels.Karaoke:
+        if (!cooldown){
+                VOICE["english-ping"] = "{redirect:" + vcidOBJ.EN[5] + "}" + engPing;
+              
+                var lang = nativeRoles.substring(3);
+                var firstpinglog = getPingsInfo(lang, "", "", "", vcidOBJ[langOBJ[lang]]);
+                var secondpinglog = firstpinglog.replace(/\.$/g, "") + " and <#" + vcidOBJ.EN[5] + ">.";
+                pingSentLocations = pingSentLocations + " " + englishPingChan;
+                resp = secondpinglog;
+                break;
+        }
+    case vcidOBJ.publicChannels.Music:
+        resp = loggingRedirect + publiclog;
+        break;
+
+    //Voice categories
+
+    case vcidOBJ.IRnGAnWL[0]:
+        resp = getPingsInfo("Celtic", "Irish", "Gaelic", "Welsh", vcidOBJ.IRnGAnWL);
+        break;
+    case vcidOBJ.EN[0]:
+        resp = getPingsInfo("English", "", "", "", vcidOBJ.EN);
+        break;
+    case vcidOBJ.DE[0]:
+        resp = getPingsInfo("German", "", "", "", vcidOBJ.DE);
+        break;
+    case vcidOBJ.DUnAF[0]:
+        resp = getPingsInfo("Dutch", "Afrikaans", "", "", vcidOBJ.DUnAF);
+        break;
+    case vcidOBJ.NOnIS[0]:
+        resp = getPingsInfo("Norwegian", "Icelandic", "", "", vcidOBJ.NOnIS);
+        break;
+    case vcidOBJ.SEnDK[0]:
+        resp = getPingsInfo("Swedish", "Danish", "", "", vcidOBJ.SEnDK);
+        break;
+    case vcidOBJ.FRnIT[0]:
+        resp = getPingsInfo("French", "Italian", "", "", vcidOBJ.FRnIT);
+        break;
+    case vcidOBJ.SPnPT[0]:
+        resp = getPingsInfo("Spanish", "Portuguese", "", "", vcidOBJ.SPnPT);
+        break;
+    case vcidOBJ.ESnLA[0]:
+        resp = getPingsInfo("Esperanto", "Latin", "", "", vcidOBJ.ESnLA);
+        break;
+    case vcidOBJ.RUnUK[0]:
+        resp = getPingsInfo("Russian", "Ukrainian", "", "", vcidOBJ.RUnUK);
+        break;
+    case vcidOBJ.BLnMAnCRnSL[0]:
+        resp = getPingsInfo("Bulgarian", "Macedonian", "Serbo-Croatian", "Slovenian", vcidOBJ.BLnMAnCRnSL);
+        break;
+    case vcidOBJ.INnUR[0]:
+        resp = getPingsInfo("Hindi", "Urdu", "", "", vcidOBJ.INnUR);
+        break;
+    case vcidOBJ.CN[0]:
+        resp = getPingsInfo("Mandarin", "Cantonese", "", "", vcidOBJ.CN);
+        break;
+    case vcidOBJ.JPnKR[0]:
+        resp = getPingsInfo("Japanese", "Korean", "", "", vcidOBJ.JPnKR);
+        break;
+    case vcidOBJ.VTnTI[0]:
+        resp = getPingsInfo("Vietnamese", "Thai", "", "", vcidOBJ.VTnTI);
+        break;
+    case vcidOBJ.AR[0]:
+        resp = getPingsInfo("Arabic", "", "", "", "", vcidOBJ.AR);
+        break;
+    case vcidOBJ.TRnPR[0]:
+        resp = getPingsInfo("Turkish", "Persian", "", "", vcidOBJ.TRnPR);
+        break;
+    case vcidOBJ.HE[0]:
+        resp = getPingsInfo("Hebrew", "", "", "", vcidOBJ.HE);
+        break;
+
+    //Voice leave event
+
+    case "":
+        resp = loggingRedirect + leavelog;
+        delete VOICE[vcUserID];
+        break;
+
+    //Case unknowen
+
+    default:
+        resp = loggingRedirect + joinswitchlog;
+        break;
+};
+
+function getPingsInfo(lang1, lang2, lang3, lang4, arr) {
+
+        if (jsonLog[jsonLogIndex].isUserInChannel && !cooldown) {
+
+            var result = "";
+            var arrLangs = [lang1,lang2,lang3,lang4];
+            var userRoles = getUserLangRoles(arrLangs);
+            var msg = getPIngMsg(userRoles);
+
+            result = ping + msg;
+
+            arrLogOBJ.pingSentLocations = "<#" + redirect + ">";
+            arrLogOBJ.pingMsg = result;
+            arrLogOBJ.pingRedirect = "{redirect:" +  redirect +"}"; 
+            arrLogOBJ.userRoles = userRoles;
+            arrLogOBJ.logMsg = joinswitchlog + "<#" + redirect + ">."
+            VOICE["vcUserInfoArrOBJ"] = JSON.stringify(arrLogOBJ);
+        }
+        else {
+            return loggingRedirect + cooldownLog;
+        }
+}
+
+//Status functions
+
+function isCooldown(){
+    for (value in VOICE) {
+        if (VOICE[vcid + "-pinged"]  == undefined)
+            return false;
+    }
+    return true;
+}
+
+//User information functions
+
+function getMemberIndex(){
+        var memberIndex = 0;
+
+        for (i = 0; i < ServerMembers.length; i++) {
+                if (ServerMembers[i].User.ID == vcUserID) {
+                    memberIndex = i;
+                     break;
+                }
+         }
+         return memberIndex;
+}
+
+function getUserName(){
+        return ServerMembers[memberIndex].User.Username;
+}
+function getUserAvatar(){
+    return "https://discordapp.com/api/v6/users/" + ServerMembers[memberIndex].User.ID + "/avatars/" + ServerMembers[memberIndex].User.Avatar + ".jpg"
+}
+function getNativeRoles(){
+
+        var nativeRoles = "";
+
+        for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+                        if (GetRoleName(ServerMembers[memberIndex].Roles[x]).indexOf("n.") != -1){
+                            nativeRoles = GetRoleName(ServerMembers[memberIndex].Roles[x]);
+                            break;
+                        }
+        }
+
+        return nativeRoles;
+}
+
+//TIme functions
+
+function checkNewDay(){
+
+        var d = new Date();
+        currentdate = d.getFullYear() + d.getMonth() + d.getDate();
+
+        var settings =JSON.parse(VOICE[vcSettingsOBJ]);
+
+        if (settings.date == undefined)
+            settings.date = currentdate;
+        else  if (settings.date < currentdate){
+                delete VOICE["vcUserInfoArrOBJ"]; 
+        }
+}
+function getTimeDelay(d){
+        d.setTime(d.getTime() + 5*60*1000);
+        d = getTimeZeros(d).slice(0,2)+ ":" + getTimeZeros(d).slice(-2);
+        return d;
+}
+function getTimeCooldown(d){
+        d.setTime(d.getTime() + 65*60*1000);
+        d = getTimeZeros(d).slice(0,2)+ ":" + getTimeZeros(d).slice(-2);
+        return d;
+}
+function getTimeZeros(d) {
+
+        var hours = "";
+        var minutes = "";
+
+        if (d.getHours() <= 9)
+            hours = "0" + d.getHours();
+        else
+            hours = d.getHours();
+
+        if (d.getMinutes() <= 9)
+            minutes = "0" + d.getMinutes();
+        else
+            minutes = d.getMinutes();
+
+        return hours +""+ minutes;
+}
+function getDateZeros(d) {
+
+        var month = 0; 
+        var day = 0;
+
+        if (d.getMonth() < 9)
+            var month = "0" + parseInt(d.getMonth()+1);
+        else
+            var month = parseInt(d.getMonth()+1);
+
+        if (d.getDate() <= 9)
+            var day = "0" + d.getDate();
+        else
+            day = d.getDate();
+
+        return month + day;
+}
+function chkChatty(){
+
+        for (i = 0; i < ServerMembers[memberIndex].Roles.length; i++) {
+        if (GetRoleName(ServerMembers[memberIndex].Roles[i]) == "Chatty") 
+             chatty = true;        
+         else if (GetRoleName(ServerMembers[memberIndex].Roles[i]) == "Block Chatty") 
+             blockChatty = true;
+        }
+}
+function getPIngMsg(userRoles){
+
+            var mag; 
+
+            if (isPublicChannels()){
+
+            }
+            else{
+                //if user has 2 languages in the category
+                if (userRoles.natives.all.length >= 1 && userRoles.natives.all[0] != userRoles.natives.all[1]){             
+                        if (userRoles.natives.length > 0){
+                                 msg = getCustomPIngMsg("native", langsToPractice(userRoles.all));   
+                        }
+                        else if  (userRoles.fluent.length > 0){
+                                msg = getCustomPIngMsg("fluent", langsToPractice(userRoles.all));   
+                        }
+                        else if (userRoles.fluent.length > 0){
+                                msg = getCustomPIngMsg("learning", langsToPractice(userRoles.all));   
+                        }   
+                        msg = arr[5] + msg;
+                }  
+                //if user has 1 language in the category
+                else if (userRoles.natives.all.length == 0){
+
+                }
+                //user has no languages in the category. must be staff or god mode.
+                else{
+
+                }
+            }
+
+            return msg;    
+}
+function getCustomPIngMsg(type, lang){
+
+        var result; 
+
+        var msgGreeting = "Jolly news! ";
+        var typeAndLang = "A `" + type + " " + lang + "` ";
+        var msgMiddle =  vcUser + " has joined VC **" + vcName + "**";
+        var msgEnd = "!! :scream: "
+
+        if (type == "learner")
+            result = msgGreeting + vcUser + msgMiddle +" and wish to practice `" + lang + "` with you" + msgEnd;
+        else if (type == "fluent")
+            result = msgGreeting + typeAndLang + msgMiddle + msgEnd;
+        else if (type == "native")
+            result = msgGreeting + typeAndLang + msgMiddle + msgEnd;
+
+        return result;
+}
+function langsToPractice(arr){
+
+        var str = "";
+
+        // arr = removeDuplicates(arr);
+
+         if (arr.length >= 2){
+             for (i = 0; i< arr.length; i++){
+
+                    if (arr[i].length  == i + 1){
+                         str += str + " and" + arr[i] ;
+                     }
+
+                    str += str + ", " + arr[i] ;
+             }               
+         }
+         else if (arr.length = 1){
+            str = arr[0] + " and " + arr[1];
+         }
+         else {
+            str = arr[0];
+        }
+   return str;
+}
+// function removeDuplicates(arr){
+
+//     var uniqueArray = []
+
+//     for(i = 0; i < arr.length; i++){
+//         if(uniqueArray.indexOf(arr[i]) == -1)
+//             uniqueArray.push(arr[i])
+//     }
+
+//     return uniqueArray
+// }
+function isPublicChannels(){
+        for (i = 0; i < vcidOBJ.publicChannels.length; i++)
+            if (vcidOBJ.publicChannels[i] == vcid)
+                return true;
+            else
+                return false;
+}
+function getUserLangRoles(arrLangs){
+
+        var userRoles = {
+            natives: [],
+            fluent: [],
+            learning: [],
+            all: []
+        };
+
+         for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+                for (i = 0; i < arrLangs.length; i++){
+                    if (arrLangs[i] != ""){
+
+                         var role = GetRoleName(ServerMembers[memberIndex].Roles[x]);
+
+                         if (role == arrLangs[i]){
+                                userRoles.learning = userRoles.learning.push(role);
+                                all = userRoles.all.push(role);
+                         }
+                         else if (role == "f. " + arrLangs[i]){
+                                userRoles.fluent = userRoles.learning.push(role.slice(3));
+                                all = userRoles.all.push(role.slice(3));
+                         }
+                         else if (role == "n. " + arrLangs[i]){
+                                userRoles.native = userRoles.learning.push(role.slice(3))
+                                all = userRoles.all.push(role.slice(3))
+                         }
+                    }
+          }
+         return userRoles;
+}
+function getVCCounterIndex(){
+        for (i = 0; i < arrVCCounterOBJ.length; i++){
+            if (arrVCCounterOBJ[i].vcid == vcid)
+                return i;
+        }          
+}
+function updateVCCounter(operation){
+            if (operation == "add"){
+                    if (arrVCCounterOBJ[vcCounterIndex] == undefined){
+                        vcCounterOBJ.name = vcid;
+                        vcCounterOBJ.counter = 1;
+                        arrVCCounterOBJ  = vcCounterOBJ; 
+                    }
+                    else
+                        arrVCCounterOBJ[vcCounterIndex].counter  += 1
+            } else if (operation == "substract") {
+                    if (arrVCCounterOBJ[jsonLog[logUserIndex].vcid].counter >= 1)
+                            arrVCCounterOBJ[jsonLog[logUserIndex].vcid].counter -= 1;
+            }
+}
+function getJsonLogUserIndex(){
+
+    for (i = 0; i < jsonLog.length; i++) {
+            if (jsonLog[i].vcUserID == vcUserID){
+                 return i;
+           }
+    }
+    return ""; 
+}
+function checkUserStatus(){
+
+            if (vcid == "") { //user left voice channel
+                updateVCCounter("substract");
+                jsonLog[jsonLogIndex].isUserInChannel == false;
+                status = "left";
+                jsonLog[jsonLogIndex].status = "left";
+            }
+            else if (jsonLog[jsonLogIndex].vcid != vcid){ //user switched voice channels
+                updateVCCounter("substract")
+                updateVCCounter("add")
+                jsonLog[jsonLogIndex].isUserInChannel == false;
+                status = "switched";
+                jsonLog[jsonLogIndex].status = "switched";
+            }
+            else if (vcid != "") { //user joined voice chat
+                updateVCCounter("add");
+                status = "joined";
+                 jsonLog[jsonLogIndex].status = "joined";
+          }
+}
+//Embeds
+
+function getLog(type) {
+
+        var logTitle = "";
+        var result = ""; 
+        var color;
+        var msg;
+        var timeDelay = new Date().getHours() +":" + new Date().getMinutes();
+        var emoji;
+        var subTitle = ""; 
+        var entry = logDate + "-" + logTime;
+
+        if (type == "leave"){
+            pingSentLocations = "<#43432434333>";
+            logTitle = " VC LEAVE EVENT";
+            color = "#fbff0d";
+            emoji = ":notebook_with_decorative_cover:";
+            if (vcCounter == undefined)
+                vcCounter = 0;
+
+            if (isCooldown())
+                msg = " User left the voice channel."
+            else
+                msg = " User must re-enter the channel and stay for **5 minutes** for ping to be executed.";
+        }
+        else if (type == "join"){
+            logTitle = " VC JOIN/SWITCH EVENT";
+            color = "#8ac6f8"; 
+            emoji = ":alarm_clock:";
+            msg = " Ping is scheduled to be executed in **5 minutes**.\nYou must stay in the voice channel for the duration of that time."; 
+        }
+        else if (type == "cooldown"){
+            logTitle = " VC JOIN/SWITCH EVENT";
+            subTitle = " ping has been aborted"; 
+            color = "#ff0004";
+            emoji = ":warning:";
+            msg = " Ping is already in progress or 1 hour cooldown is in effect.\nYou may try later or switch to a different voice channel."
+            pingSentLocations = "NaN";
+            timeDelay = "NaN"; 
+        }
+        else if (type == "public"){
+            logTitle = " VC JOIN/SWITCH PUBLIC EVENT";
+            color = "#fbff0d";
+            emoji = ":warning:";
+            msg = " No pinging is scheduled for this channel.";
+            timeDelay = "NaN"; 
+        }
+
+        if (embed){
+                    result = "{embed: \
+                        {title:"+ emoji + logTitle +"} \
+                        {type:rich} \
+                        {author|name:"+ subTitle +"} \
+                        {author|icon:} \
+                        {thumb|url:" + userIcon + "} \
+                        {color:"+ color +"} \
+                        {desc: \
+                           " + msg + " \
+                        } \
+                    {field[0|name:Entry} \
+                    {field[0]|value:"+ logDate + "-" + logTime +"} \
+                    {field[0]|inline:false} \
+                    {field[2]|name:Channel} \
+                    {field[2]|value:"+ vcName +"} \
+                    {field[2]|inline:true} \
+                    {field[1]|name:User} \
+                    {field[1]|value:"+ vcUser +"} \
+                    {field[1]|inline:true} \
+                    {field[3]|name:Status} \
+                    {field[3]|value:" + status +"} \
+                    {field[3]|inline:true} \
+                    {field[5]|name:Participants} \
+                    {field[5]|value:" + vcCounter + "} \
+                    {field[5]|inline:true} \
+                    {field[6]|name:Pings location} \
+                    {field[6]|value:"+ pingSentLocations +"} \
+                    {field[6]|inline:true} \
+                    {field[7]|name:Ping ETA} \
+                    {field[7]|value:"+ timeDelay +"} \
+                    {field[7]|inline:true} \
+                    {field[8]|name:Cooldown} \
+                    {field[8]|value:" + isCooldown() +"} \
+                    {field[8]|inline:true} \
+                    {field[9]|name:Entry} \
+                    {field[9]|value:"+ entry +"} \
+                    {field[9]|inline:true} \
+                    {footer|icon:https://fishercenter.bard.edu/images/icons/search-icon.png} \
+                    {footer|text:" + new Date() +"} \
+                    } \
+                    ";
+        } else {
+                    if (type == "join")
+                        result = "⏰ " + logDate + "-" + logTime + ": " + vcCounter + " " + vcUserName + " `" + status + "` **" + vcName + "**. Ping is scheduled to be executed at **"+ timeDelay +"** in ";
+                    else if (type == "leave")
+                        result = "📔 " + logDate + "-" + logTime + ": " + vcUserName + " has **" + status + "** voice channel **<#" + VOICE[vcUserID] + ">**. \n⚠ " + logDate + "-" + logTime +": User must re-enter channel and stay there until **" + timeDelay + "** for ping to be executed.";
+                    else if (type == "cooldown")
+                        result = "⚠ " + logDate+ "-" +logTime + ": The designeted **1 hour** buffer (" + timeCooldown +") from last ping has not been reached. Ping for " + vcUserName  +" at **" + vcName + "** has been aborted.";
+                    else if (type == "public")
+                        result = "⚠ " + logDate+ "-" + logTime + ": " + vcUserName + " has **" + status + "** voice channel **" + vcName + "**. No pinging is scheduled for this channel";
+        }       
+        return result; 
+}}
+>>
+
+[#CONTINUE#]
+vcpingdelay={init}
+{sleep:20s}
+{ars:vcping}
+

@@ -1,0 +1,294 @@
+[#CONTINUE#
+vcJoin={init}
+{Event:VoiceJoin}
+#js >>
+use VOICE;
+
+var vcname = "<#{data|channel}>";
+var vcid = "{data|channel}";
+var vcuser = "<@{data|user}>";
+var vcuserid = "{data|user}";
+
+var del = "{delme:10s}";
+var left = "<#>";
+var status= "";
+
+if (vcid == "") { //user left voice channel
+    delete VOICE[vcuserid + "-" + VOICE[vcuserid]];
+    status = "Left";
+}
+else if (VOICE[vcuserid + "-" + VOICE[vcuserid]] != undefined){ //user switched voice channels
+    delete VOICE[vcuserid + "-" + VOICE[vcuserid]]; //delete old flag
+    VOICE[vcuserid] = vcid; //store new channel id
+    VOICE[vcuserid + "-" + vcid] = true; //store flag for sleep
+    status = "Switched";
+}
+else if (vcid != "") { //user joined voice chat
+    VOICE[vcuserid] = vcid;  //store channel name
+    VOICE[vcuserid + "-" + vcid] = true; //store flag for sleep
+    Status = "Joined";
+}
+
+var vcidobj = {
+
+    CentralPark: "370687822304116738",
+    Music: "361035326107680779",
+    Karaoke: "407348318172217344",
+    LectureHall: "370646410573643776",
+    LangPractice: "370689578396549121",
+    CoffeeBreak: "335021599482839040",
+    Gaming: "370687140713070602",
+    DnM: "363189159319437312",
+    NoEn: "383746420689338368",
+
+    IRnGAnWL: ["369604464484679680", "369604380032499712", "369604407651860480", "371057756842491914", "", "407796949253881866"],
+    EN: ["335376778241507328", "407549543442546688", "", "", "", "407549543442546688"],
+    DE: ["335376910391443457", "335047595691081728", "", "", "", ""],
+    DUnAF: ["369149148802580480", "399769766925172736", "369149191051804682", "", "", "335047891720601601"],
+    NOnIS: ["360658514777210880", "335047891720601601", "364691582558928896", "", "", "335047891720601601"],
+    SEnDK: ["361032339675152384", "335047543639769091", "335047924650344459", "", "", "335047543639769091"],
+    FRnIT: ["335376845576863744", "399769386052747264", "399770384590962718", "", "", "399769386052747264"],
+    SPnPT: ["360659802147258378", "335047535716597761", "335047883319410700", "", "", "408113969530667018"],
+    ESnLA: ["361022550035267587", "338716308583612417", "358746705346428928", "", "", "338716308583612417"],
+    RUnUK: ["360661562995769345", "335047523552985102", "338638100978728970", "", "", "335047523552985102"],
+    POnCZ:  ["", "335049726573412352", "370398699320246278", "", "", ""],
+    BLnMAnCRnSL: ["369138836703412224", "335047612745121792", "371333870332805140", "369098801740382218", "369112617681420289", "369517863850999814"],
+    INnUR: ["361033275336294400", "357932795319943170", "370394355011420160", "", "", ""],
+    CN: ["389992149216657418", "335216579224666112", "335047571573571590", "", "", "335216579224666112"],
+    JPnKR: ["360663509794684928", "335047562094444545", "335047767686774784", "", "", "408115294549311488"],
+    VTnTI: ["370403289293914112", "344490694515097600", "370403234428485642", "", "", "344490694515097600"],
+    AR: ["360672211213877248", "335047863023435779", "", "", "", ""],
+    TRnPR: ["360670613758541826", "361026619718238208", "361026312829403136", "", "", "361026619718238208"],
+    HE: ["360670283088003083", "336480081595596811", "", "", "", ""],
+    GRnHU: ["", "350830381270040586", "338638034901663754", "", "", ""],
+    SW: ["", "361025096351219722", "", "", "", "378420654770356224"],
+    FInES: ["", "339096757516500992", "363330420848328704", "", "", ""]
+};
+
+switch (vcid) {
+    case vcidobj.CentralPark:
+    case vcidobj.LangPractice:
+    case vcidobj.CoffeeBreak:
+    case vcidobj.Gaming:
+    case vcidobj.DnM:  
+        resp = WhichLang("English", "NULL", "NULL");
+        break; 
+    case vcidobj.LectureHall:
+        resp =;
+        break; 
+    case vcidobj.NoEn:
+        resp = ;
+        break; 
+    case vcidobj.Music: 
+    case vcidobj.Karaoke:
+        resp = ;
+        break;
+
+    case vcidobj.CL[0]:
+        resp = WhichLang("Celtic", "Irish", "Gaelic", "Welsh", vcidobj.IRnGAnWL[6]);
+        break;
+    case vcidobj.EN[0]:
+        resp = WhichLang("English", "NULL", "", "", vcidobj.EN[6]);
+        break; 
+    case vcidobj.DE[0]:
+        resp = del + WhichLang("German", "", "", "", "");
+        break; 
+    case vcidobj.DUnAF[0]:
+        resp = WhichLang("Dutch", "Afrikaans", "", "", "");
+        break; 
+    case vcidobj.NOnIS[0]:
+        resp = WhichLang("Norwegian", "Icelandic", "", "", "");
+        break; 
+    case vcidobj.SEnDK[0]:
+        resp = WhichLang("Swedish", "Danish", "", "", "");
+        break; 
+    case vcidobj.FRnIT[0]:
+        resp = WhichLang("French", "Italian", "", "", "");
+        break; 
+    case vcidobj.SPnPT[0]:
+        resp = WhichLang("Spanish", "Portuguese", "", "", vcidobj.SPnPT[6]);
+        break; 
+    case vcidobj.ESnLA[0]:
+        resp = WhichLang("Esperanto", "Latin", "", "", "");
+        break; 
+    case vcidobj.RUnUK[0]:
+        resp = WhichLang("Russian", "Ukrainian", "", "", "");
+        break; 
+    case vcidobj.BL[0]:
+        resp = WhichLang("Balkan", "", "", "", "", "");
+        break; 
+    case vcidobj.INnUR[0]:
+        resp = WhichLang("Hindi", "Urdu", "", "", "");
+        break; 
+    case vcidobj.CN[0]:
+        resp = WhichLang("Mandarin", "Cantonese", "", "", vcidobj.CN[6]);
+        break; 
+    case vcidobj.JPnKR[0]:
+        resp = WhichLang("Japanese", "Korean", "", "", vcidobj.JPnKR[6]);
+        break; 
+    case vcidobj.VTnTI[0]:
+        resp = WhichLang("Vietnamese", "Thai", "", "", "");
+        break; 
+    case vcidobj.AR[0]:
+        resp = WhichLang("Arabic", "", "", "", "", "");
+        break; 
+    case vcidobj.TRnPR[0]:
+        resp = WhichLang("Turkish", "Persian", "", "", "");
+        break; 
+    case vcidobj.HE[0]:
+        resp = WhichLang("Hebrew", "NULL", "", "", "");
+        break; 
+    case "":
+        resp = "{redirect:372477657021153290}" + "**" + status + "** " + vcuser + " has left **<#" + VOICE[vcuserid] + ">** voice channel.";
+        delete VOICE[vcuserid];
+        break;
+    default:
+        resp = "{redirect:372477657021153290}" + "**" + status + "** " + vcuser + " has joined **" + vcname + "** ("  +  vcid + ") voice channel.";
+        break;
+};
+
+function WhichLang(lang1, lang2, ,lang3, lang4, shared) {
+if (VOICE[vcuserid + "-" + vcid] && VOICE[vcid + "-pinged"]  == undefined) {
+    var redirect = ;
+    var msg = ;
+    var ping = 🔔 `<@&407266354115248152>`;
+    var result = ;
+    var timestamp = "\n TImestamp: **{timestamp:**03:04 PM MST, 02-01-2006}**";
+
+    var bol1 = {
+        Native: false;,
+        Fluent: false;,
+        Learning: false
+    };
+
+    var bol2 = {
+        Native: false;,
+        Fluent: false;,
+        Learning: false
+    };
+
+          for (i = 0; i < ServerMembers.length; i++) {
+                 if (ServerMembers[i].User.ID == vcuserid) {
+                             for (x = 0; x < ServerMembers[i].Roles.length; x++) {
+                                    if (GetRoleName(ServerMembers[i].Roles[x]) == lang1)
+                                             bol1.Learning = true;
+                                    else if (GetRoleName(ServerMembers[i].Roles[x])== "f. " + lang2)
+                                             bol1.Fluent = true;
+                                    else if (GetRoleName(ServerMembers[i].Roles[x]) == "n. " + lang1)
+                                             bol1.Native = true;
+
+                                    else if (GetRoleName(ServerMembers[i].Roles[x])== lang1)
+                                              bol2.Learning = true;
+                                   else if (GetRoleName(ServerMembers[i].Roles[x]) == "f. " + lang2)
+                                              bol1.Fluent = true;
+                                    else if (GetRoleName(ServerMembers[i].Roles[x])== "n. " + lang2)
+                                              bol2.Native = true;
+                            }
+                            break;
+                    }
+        }
+
+        if (bol1.Learning && bol2.Learning){
+           redirect = "{redirect:" + shared + "}";
+           msg =  "Jolly news! " + vcuser + " Has joined VC **" + vcname + "** and wish to practice `" + lang1 + "` and `" + lang2 + "` with you!! :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";
+        }
+        else if (bol1.Learning){
+            redirect = "{redirect:" + langchanobg[lang1] + "}";
+            msg = "Jolly news! " + vcuser + " Has joined VC **" + vcname + "** and wish to practice `" + lang1 + "` with you!! :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";
+        }
+        else if (bol2.Learning){
+            redirect = "{redirect:" + langchanobg[lang2] + "}";
+            msg =  "Jolly news! " + vcuser + " Has joined VC `" + vcname + "` and wish to practice `" + lang2 + "` with you!!  :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";      
+        }
+        else if ((bol1.Native || bol1.Fluent) && (bo2.Native || bo2.Fluent) ){
+            redirect = "{redirect:" + shared + "}";
+            msg =  "Jolly news! A fluent user, " + vcuser + ", Has joined VC **" + vcname + "** and wish to help you practice both `" + lang1 + "` and `" + lang2 + "`!! :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";
+        }
+        else if (bol1.Native || bol1.Fluent){
+            redirect = "{redirect:" + langchanobg[lang1] + "}"
+            msg = "Jolly news! A fluent speaker, " + vcuser + ", Has joined VC **" + vcname + "** and wish to practice `" + lang1 + "` with you!! :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";
+        }
+        else if (bol2.Native || bol2.Fluent){
+            redirect = "{redirect:" + langchanobg[lang2] + "}";
+            msg = "Jolly news! A fluent speaker, " + vcuser + ", Has joined VC `" + vcname + "` and wish to practice `" + lang2 + "` with you!!  :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";      
+        }
+        else{
+            redirect = "{redirect:" + langchanobg.English + "}";
+            msg = "Jolly news! " + vcuser + " Has joined VC `" + vcname + "` and wish to practice `English` with you!!  :scream: \n ```md\n# You still here?! Have you lost your marbels? How will you ever become fluent???```";      
+        }
+
+    result = ping + msg + timestamp;
+
+    VOICE[vcuserid + "-" + vcid] = del + redirect + result;
+    return "{ars:vcpingdelay}{redirect:383815819488133140}" + result;
+    }
+else 
+    return "Sechduled pinged canceled. User faild to stay 5m in a voice channel."
+}
+
+>>
+[#CONTINUE#]
+vcpingdelay={init}
+{sleep:1m}
+{ars:vcping}
+
+[#CONTINUE#]
+vcping={init}
+var temp;
+# js >>
+for each (value in VOICE) {
+  If (value.indexOf("Jolly news!") !== -1){
+        temp = value;
+        delete value;
+        VOICE[vcid + "-pinged"] = "1h";
+        resp = "{ars:vcsleep1h}" + temp;
+  }
+}
+>>
+
+[#CONTINUE#]
+vcsleep1h={init}
+{sleep:1h}
+{ars:vcdel1h}
+
+[#CONTINUE#]
+vcdel1h={init}
+# js >>
+for each (value in VOICE) {
+  If (value == "1h")
+        delete value;
+}
+>>
+
+// var langchanobg = {
+//     Celtic: "407796949253881866",
+//     English: "407549543442546688",
+//     German: "335047595691081728",
+//     Dutch: "399769766925172736",
+//     Afrikaans: "369149191051804682",
+//     Norwegian: "335047891720601601",
+//     Icelandic: "364691582558928896",
+//     Swedish: "335047543639769091",
+//     Danish: "335047924650344459",
+//     French: "399769386052747264",
+//     Italian: "399770384590962718",
+//     Spanish: "335047535716597761",
+//     Portuguese: "335047883319410700",
+//     Esperanto: "338716308583612417",
+//     Latin: "358746705346428928",
+//     Russian: "335047523552985102",
+//     Ukrainian: "338638100978728970",
+//     Balkan: "369517863850999814",
+//     Hindi: "357932795319943170",
+//     Urdu: "370394355011420160",
+//     Mandarin: "335216579224666112",
+//     Cantonese: "335047571573571590",
+//     Japanese:  "335047562094444545",
+//     Korean: "335047767686774784",
+//     Vietnamese: "344490694515097600",
+//     Thai: "370403234428485642",
+//     Arabic: "335047863023435779",
+//     Turkish:"361026619718238208",
+//     Persian: "361026312829403136",
+//     Hebrew: "336480081595596811"
+// };

@@ -1,0 +1,376 @@
+[#CONTINUE#]
+vcJoin={init}
+{Event:VoiceJoin}
+#js >>
+    use VOICE;
+
+
+var vcidOBJ = {
+    // CentralPark: "370687822304116738",
+    // Music: "361035326107680779",
+    // Karaoke: "407348318172217344",
+    // LectureHall: "370646410573643776",
+    // LangPractice: "370689578396549121",
+    // CoffeeBreak: "335021599482839040",
+    // Gaming: "370687140713070602",
+    // DnM: "363189159319437312",
+    // NoEn: "383746420689338368".
+    IRnGAnWL: ["369604464484679680", "369604380032499712", "369604407651860480", "371057756842491914", "", "407796949253881866"],
+    EN: ["335376778241507328", "408371124183891988", "", "", "", "408371124183891988"],
+    DE: ["335376910391443457", "335047595691081728", "", "", "", ""],
+    DUnAF: ["369149148802580480", "399769766925172736", "369149191051804682", "", "", "335047844371103754", "335047891720601601"],
+    NOnIS: ["360658514777210880", "335047891720601601", "364691582558928896", "", "", "335047891720601601"],
+    SEnDK: ["361032339675152384", "335047543639769091", "335047924650344459", "", "", "335047543639769091"],
+    FRnIT: ["335376845576863744", "399769386052747264", "399770384590962718", "", "", "335047514124189697", "399769386052747264"],
+    SPnPT: ["360659802147258378", "335047535716597761", "335047883319410700", "", "", "408113969530667018"],
+    ESnLA: ["361022550035267587", "338716308583612417", "358746705346428928", "", "", "338716308583612417"],
+    RUnUK: ["360661562995769345", "335047523552985102", "338638100978728970", "", "", "335047523552985102"],
+    POnCZ: ["", "335049726573412352", "370398699320246278", "", "", ""],
+    BLnMAnCRnSL: ["369138836703412224", "335047612745121792", "371333870332805140", "369098801740382218", "369112617681420289", "369517863850999814"],
+    INnUR: ["361033275336294400", "357932795319943170", "370394355011420160", "", "", ""],
+    CN: ["389992149216657418", "335216579224666112", "335047571573571590", "", "", "335216579224666112"],
+    JPnKR: ["360663509794684928", "335047562094444545", "335047767686774784", "", "", "408115294549311488"],
+    VTnTI: ["370403289293914112", "344490694515097600", "370403234428485642", "", "", "344490694515097600"],
+    AR: ["360672211213877248", "335047863023435779", "", "", "", ""],
+    TRnPR: ["360670613758541826", "361026619718238208", "361026312829403136", "", "", "361026619718238208"],
+    HE: ["360670283088003083", "336480081595596811", "", "", "", ""],
+    GRnHU: ["", "350830381270040586", "338638034901663754", "", "", ""],
+    SW: ["", "361025096351219722", "", "", "", "378420654770356224"],
+    FInES: ["", "339096757516500992", "363330420848328704", "", "", ""]
+};
+
+var langOBJ = {
+    Celtic: "IRnGAnWL",
+    English: "EN",
+    German: "DE",
+    Dutch: "DUnAF",
+    Afrikaans: "DUnAF",
+    Norwegian: "NOnIS",
+    Icelandic: "NOnIS",
+    Swedish: "SEnDK",
+    Danish: "SEnDK",
+    French: "FRnIT",
+    Italian: "FRnIT",
+    Spanish: "SPnPT",
+    Portuguese: "SPnPT",
+    Esperanto: "ESnLA",
+    Latin: "ESnLA",
+    Russian: "RUnUK",
+    Ukrainian: "RUnUK",
+    Balkan: "BLnMAnCRnSL",
+    Hindi: "INnUR",
+    Urdu: "INnUR",
+    Mandarin: "CN",
+    Cantonese: "CN",
+    Japanese: "JPnKR",
+    Korean: "JPnKR",
+    Vietnamese: "VTnTI",
+    Thai: "VTnTI",
+    Arabic: "AR",
+    Turkish: "TRnPR",
+    Persian: "TRnPR",
+    Hebrew: "HE"
+};
+
+//user properties
+var vcName = "<#{data|channel}>"; //empty on leave
+var vcid = "{data|channel}"; //empty on leave
+var vcUserID = "{data|user}";
+var vcUser = "<@{data|user}>";
+
+
+//settings presets
+var ping = "🔔 `<@&407266354115248152>` ";
+var tagLine = "\nYou still here?! Have you lost your marbels? How will you ever become fluent???";
+var del = "{delme:10s}";
+var left = "<#>";
+var loggingRedirect = "{redirect:408371819620597770}";
+var englishPingRedirect = "{redirect:408371124183891988>";
+var delayLink = "{ars:vcpingdelay}";
+var englishPingChan = "<#408371124183891988>";
+var cooldown = 60;
+var pingDelay = 5;
+var cooldown = false;
+var logEmbed = true;
+
+//indexes
+var memberIndex = getMemberIndex(); //WORKING need to be below vcuser
+var vcUserName = getUserName(); //WORKING. dependet on member index
+var nativeRoles = getNativeRoles(); //WROKING on memberindex      //maybe not needed
+var userIcon = getUserAvatar(); //WORKING. dependent on memberindex
+var chatty = chkChatty(); //WORKING
+var blockChatty = chkBlockChatty(); //WORKINGS
+//time
+var logDate = getDateZeros(new Date()); //WORKING. output 0208
+var logTime = getTimeZeros(new Date()); //WORKING  output 1204
+var timeDelay = getTimeDelay(new Date()); //WORKING  output 12:03
+var timeCooldown = getTimeCooldown(new Date()); //WORKING 14:03
+
+//calculated info
+var pingSentLocations = "";
+var status = "";
+var engPing = ""; //maybe not needed
+var jsonLog;
+var arrLogOBJ = []; //an array of log objects. what i need to push into jsonlog
+var jsonLogIndex;
+var test = 0;
+
+//settings object
+
+var vcSettingsOBJ = {
+    logEmbed: logEmbed,
+    englishPingRedirect: englishPingRedirect,
+    logRedirect: loggingRedirect,
+    tagLine: tagLine,
+    del: del,
+    pingDelayLink: delayLink,
+    date: ""
+};
+
+//user object
+
+var logOBJ = {
+    isUserInChannel: true, //?
+    isCooldown: false, // ?
+    pingMsg: "", //EMPTY
+    pingRedirect: "", //EMPTY
+    engPing: engPing, //EMPTY
+    logMsg: "", //EMPTY
+    userRoles: "", //empty
+    nativeRoles: nativeRoles, //VALID
+    pingSentLocations: "", //EMPTY
+    status: "", //empty
+    vcid: vcid, // VALID
+    vcName: vcName, // VALID
+    vcUserID: vcUserID, //VALID
+    vcUser: vcUser, //VALID
+    vcUserName: vcUserName, //VALID
+    userIcon: userIcon, //VALID
+    memberIndex: memberIndex, //VALID 
+    logDate: logDate, //VALID   0203
+    timeDelay: timeDelay, //VALID     23:50
+    timeCooldown: timeCooldown, //VALID     00:50
+    chatty: chatty, //VALID
+    blockChatty: blockChatty // VALID
+};
+
+//channel counter object
+
+var vcCounterOBJ = {};
+var arrVCCounterOBJ = [];
+
+
+
+initJsonLog();
+var vcCounterIndex = getVCCounterIndex(); //good arrVCCounterOBJ needs to defined
+
+if (VOICE["arrVCCounterOBJ"] != undefined)
+    arrVCCounterOBJ = JSON.parse(VOICE["arrVCCounterOBJ"]); ///need to be before checuser statuts
+
+
+//intialize jsonlog
+
+arrLogOBJ.push(logOBJ);
+
+
+
+//MAIN CODE SECTION START HERE
+
+
+
+
+VOICE["vcUserInfoArrOBJ"] = JSON.stringify(jsonLog);
+VOICE["arrVCCounterOBJ"] = JSON.stringify(arrVCCounterOBJ);
+
+
+
+resp = "{redirect:383815819488133140}" +  test;
+
+//User information functions
+
+
+function getJsonLogUserIndex() {
+
+    for (i = 0; i < jsonLog.length; i++) {
+        if (jsonLog[i].vcUserID == vcUserID) {
+            return i;
+        }
+    }
+}
+
+//Time functions.
+
+function checkNewDay() {
+
+    var d = new Date();
+    currentdate = d.getFullYear() + d.getMonth() + d.getDate();
+
+    var settings = JSON.parse(VOICE[vcSettingsOBJ]);
+
+    if (settings.date == undefined)
+        settings.date = currentdate;
+    else if (settings.date < currentdate) {
+        delete VOICE["vcUserInfoArrOBJ"];
+    }
+}
+
+
+function getTimeDelay(d) { //WORKING
+    d.setTime(d.getTime() + 5 * 60 * 1000);
+    d = getTimeZeros(d).slice(0, 2) + ":" + getTimeZeros(d).slice(-2);
+    return d;
+}
+
+function getTimeCooldown(d) { //WORKING
+    d.setTime(d.getTime() + 65 * 60 * 1000);
+    d = getTimeZeros(d).slice(0, 2) + ":" + getTimeZeros(d).slice(-2);
+    return d;
+}
+
+function getTimeZeros(d) { //WORKING
+
+    var hours = "";
+    var minutes = "";
+
+    if (d.getHours() <= 9)
+        hours = "0" + d.getHours();
+    else
+        hours = d.getHours();
+
+    if (d.getMinutes() <= 9)
+        minutes = "0" + d.getMinutes();
+    else
+        minutes = d.getMinutes();
+
+    return hours + "" + minutes;
+}
+
+function getDateZeros(d) { //WORKING
+
+    var month = 0;
+    var day = 0;
+
+    if (d.getMonth() < 9)
+        var month = "0" + parseInt(d.getMonth() + 1);
+    else
+        var month = parseInt(d.getMonth() + 1);
+
+    if (d.getDate() <= 9)
+        var day = "0" + d.getDate();
+    else
+        day = d.getDate();
+
+    return month + day;
+}
+
+//Functions using ServerMembers
+
+function getUserAvatar() { //WORKING
+    return "https://discordapp.com/api/v6/users/" + ServerMembers[183].User.ID + "/avatars/" + ServerMembers[183].User.Avatar + ".jpg"
+}
+
+function getUserName() { //WORKING
+    return ServerMembers[memberIndex].User.Username;
+}
+
+function getMemberIndex() { //WORKING
+    var memberIndex = 0;
+
+    for (i = 0; i < ServerMembers.length; i++) {
+        if (ServerMembers[i].User.ID == vcUserID) {
+            memberIndex = i;
+            break;
+        }
+    }
+    return memberIndex;
+}
+
+function getNativeRoles() { //WOKRING
+
+    var nativeRoles = [];
+
+    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+        if (GetRoleName(ServerMembers[memberIndex].Roles[x]).indexOf("n.") != -1) {
+            nativeRoles.push(GetRoleName(ServerMembers[memberIndex].Roles[x]));
+        }
+    }
+
+    return nativeRoles;
+}
+
+function chkChatty() { //WORKING
+
+    for (i = 0; i < ServerMembers[memberIndex].Roles.length; i++) {
+        if (GetRoleName(ServerMembers[memberIndex].Roles[i]) == "Chatty")
+            return true;
+    }
+    return false;
+}
+
+function chkBlockChatty() { //WORKING
+
+    var blockChatty = "";
+
+    for (i = 0; i < ServerMembers[memberIndex].Roles.length; i++) {
+        if (GetRoleName(ServerMembers[memberIndex].Roles[i]) == "Block Chatty")
+            return true;
+    }
+    return false;
+}
+
+
+
+function checkUserStatus() {
+
+    if (vcid == "") { //user left voice channel
+        updateVCCounter("substract");
+        jsonLog[jsonLogIndex].isUserInChannel = false;
+        status = "left";
+        jsonLog[jsonLogIndex].status = "left";
+    } else if (jsonLog[jsonLogIndex].vcid != vcid && jsonLog[jsonLogIndex].status != "left") { //user switched voice channels
+        // updateVCCounter("substract")
+        // updateVCCounter("add")
+        jsonLog[jsonLogIndex].isUserInChannel = false;
+        status = "switched";
+        jsonLog[jsonLogIndex].status = "switched";
+    } else if (vcid != "") { //user joined voice chat
+        updateVCCounter("add");
+        status = "joined";
+        jsonLog[jsonLogIndex].status = "joined";
+    }
+}
+
+function getVCCounterIndex() {
+    for (i = 0; i < arrVCCounterOBJ.length; i++) {
+        if (arrVCCounterOBJ[i][jsonLog[jsonLogIndex].vcid] != undefined)
+            return i;
+    }
+    return "";
+}
+
+function updateVCCounter(operation) {
+    if (operation == "add") {
+        if (vcCounterIndex == "") { 
+            vcCounterOBJ[vcid] = {counter: 1,cooldown: false};
+            arrVCCounterOBJ.push(vcCounterOBJ);
+        } 
+        else
+            arrVCCounterOBJ[vcCounterIndex][vcid].counter += 7;
+    } else if (operation == "substract") {
+        // if (arrVCCounterOBJ[vcCounterIndex][jsonLog[jsonLogIndex].vcid].counter >= 1)
+            // arrVCCounterOBJ[vcCounterIndex][jsonLog[jsonLogIndex].vcid].counter -= 1;
+    }
+}
+
+function initJsonLog() {
+    if (VOICE["vcUserInfoArrOBJ"] == undefined) {
+        jsonLog = arrLogOBJ;
+    } else {
+        jsonLog = JSON.parse(VOICE["vcUserInfoArrOBJ"]);
+        if (getJsonLogUserIndex() != undefined) {} // user is in the database!
+        else
+            jsonLog.push(logOBJ); //add current user to the database.
+    }
+    jsonLogIndex = getJsonLogUserIndex(); // !!!!! jsonlog should come before
+} 
+>>
