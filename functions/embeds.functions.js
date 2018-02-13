@@ -107,7 +107,15 @@ function getEmbed(type){
       }   
       else if (type == "mee6 help"){
           return getMee6Help();
-      }     
+      }  
+   
+      else if (type == "tatsumaki help"){
+          return getTatsumakiHelp();
+      } 
+      else if (type == "septapus help"){
+          return getSeptapusHelp();
+      } 
+   
    
 }
 
