@@ -93,6 +93,9 @@ function getEmbed(type){
       else if (type == "misc"){
          return getMiscEmbed();
       }
+      else if (type == "bots quick info"){
+          return getBotsQuickInfo()   
+      }
 }
 
 import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/help_messages_functions.js";
