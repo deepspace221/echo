@@ -5,7 +5,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
 
-   var authorName = Username;
+   var authorName = ServerMembers[138].User.Username;
    var authorIcon = "{usericon}";
    var Username = "a {/user\} g";
    var userIcon = "{usericon}";
