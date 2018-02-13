@@ -1,5 +1,3 @@
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
-
 function getHelpEmbed(){
       var icon1 = ":point_right:";
       var icon2 = ":diamond_shape_with_a_dot_inside:";
