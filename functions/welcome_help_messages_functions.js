@@ -144,3 +144,75 @@ var description = " \
       return getSimpleEmbed(title, color, thumb, description);
    
 }
+
+function getPlatformEmbed(){
+      var title = LANGUAGE PLATFORM ROLES;
+      var colors = "";
+      var description = "\
+\nTell us which resourses do you use in your studies by tagging yourself with **.iam [role name]** commands.\
+\n\    
+\nRoles marked with **[access]** will grant you access to additional rooms which are related to these roles.\
+";
+      var feilds = "\
+            {field[0]|name:Platform roles: <:blank:352901517004636163>}\
+            {field[0]|value:\
+```css\
+\n# Memrise [access]\
+\n# Duolingo [access]\
+\n# Anki [access]\
+\n# Tinycards [access]\
+\n# Lang-8 \
+\n# Readlang\
+\n# LingQ\
+\n# Clozemaster\
+\n# Glossika\
+\n# Lingvist\
+\n# Yabla\
+\n# FluentU\
+\n# HelloTalk\
+\n# iTalki\
+\n```}\
+            {field[0]|inline:true}\
+";
+
+       return getSimpleEmbed(title, color, thumb, description);
+
+}
+
+
+function getWelcomeHelpEmbed(){
+      var title = "WELCOME CHANNEL COMMANDS QUICK INFORMATION";    
+      var color = "";
+      var description = "A list of frequent commands to help you get started and setup your profile.";
+      var fields = "\
+            {field[0]|name:Roles help commands:} \
+            {field[0]|value: \
+```css \
+\n\help \
+\n\lang \
+\n\timezone \
+\n\platform \
+\n\misc \
+\n```} \
+            {field[0]|inline:true} \
+            {field[1]|name:General server commands:} \
+            {field[1]|value: \
+```css \
+\n\server \
+\n\request [MSG] \
+\n \
+```\n} \
+            {field[1]|inline:true} \
+            {field[2]|name:Adding/Removing roles:} \
+            {field[2]|value: \
+```css \
+\n.iam [role name] \
+\n.iamnot [role name] \
+\n \
+```\n} \
+            {field[2]|inline:false} \
+";
+      
+      
+       return getSimpleEmbed(title, color, thumb, description);
+}
