@@ -1,0 +1,40 @@
+.auto &.guess {params}={init}
+#js >>
+use Ticker;
+var isnum = /^\d+$/.test(Params);
+var answer = Math.floor(Math.random() * 6) + 1;
+if(isnum == false) {
+    resp = "Sorry " + Username + " You need to choose a number between 1 and 6";
+} else {
+    if(parseInt(Params) == answer) {
+    // They guess the number correctly. Give them a tick!
+        if (Ticker.hasOwnProperty(UserID)) {
+            var t = parseInt(Ticker[UserID]);
+            t++;
+            Ticker[UserID] = t;
+            resp = Username + " You now have " + t + " ticks.";
+        } else {
+            Ticker[UserID] = "1";
+            resp = Username + " You now have a tick!";
+        }
+    } else {
+    // They guess the number incorrectly. Take a tick if they have one.
+        if (Ticker.hasOwnProperty(UserID)) {
+            var t = parseInt(Ticker[UserID]);
+            if(t > 0) {
+                // They have a tick to take, do it!
+                t--;
+                Ticker[UserID] = t;
+                resp = Username + " You have lost 1 tick. You now have " + t + " ticks";
+            } else {
+                // They don't have a tick to take.
+                resp = Username + " You have no ticks for me to take...sad";
+            }
+        } else {
+            // They are new to the system.
+            Ticker[UserID] = "0";
+            resp = Username + " You have no ticks for me to take.";
+        }
+    }
+}
+>>

@@ -1,0 +1,36 @@
+[CREATE DB:mutedppl]
+&.mute {params}={init}
+use | Administrators
+{if(hasrole):
+   {redirect:channel-id}
+   {role:Prisoner}{del} 
+   {user}, you have been muted for misconduct or `{params}`.
+   {ars:moreMute}
+} (else) {
+    You are not an admin, {user}!
+}
+[#CONTINUE#]
+moreMute={init}
+{arslock}
+{m?mutedppl:{rawid}} := {params}
+[#CONTINUE#]
+&.unmute={init}
+{req:Administrators} 
+DB:mutedppl.{rawid}?:{ars:takemuted}
+Response.nil?:The `@user` is incorrect or he/she does not exist in the prison system!
+[#CONTINUE#]
+takemuted={init}
+{arslock}
+{/user} is no longer muted. {d?mutedppl:{rawid}}{take:Prisoner}
+[#CONTINUE#]
+&.reason={init}
+use | Administrators
+{if(hasrole):
+   DB:mutedppl.{rawid}?:{user} mute reason: `{r?mutedppl:{rawid}}`
+   String.{/rawid} == {rawid}?:You, yourself is not muted! Lol!
+   Response.nil?:{/user} does not exist in the prison system.
+} (else) {
+    You are not an admin, {user}!
+}
+
+/*Most stuff is configurable to your desire. Do not change the bedrock code, only change the {redirect} key, the messages, and the role names*/

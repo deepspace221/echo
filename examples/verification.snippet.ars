@@ -1,0 +1,33 @@
+[CREATE DB:verify]
+jnverify={init}{Event:Join}
+String.{r?verify:active}==true?:{role:Unverified}{pm}Welcome  {/user}. You have to verify yourself. To do that use `!verify {rand:0,999999}` in a channel you have access to. If you won't verify you will be kicked in 3 minutes. {m?verify:{rawid}} := {rand:0,999999}{ars:verSniffer}
+Response.nil?:{role:Verified}
+[#CONTINUE#]
+verSniffer={init}{arslock}{sleep:3m}
+DB:verify.{rawid}?:{d?verify:{rawid}} {/user} hasn't verified. Bye! {kick}
+Response.nil?:{take:Unverified}
+[#CONTINUE#]
+&.verify {params}={init}{req:Staff,Team,Admin}
+Params.enable?: Verification has been `enabled` {del:10s}{delme:30s}{m?verify:active}:=true
+Params.disable?: Verification has been `disabled` {del:10s}{delme:30s}{m?verify:active}:=false
+Params.status?: Verification enabled: `{r?verify:active}`. {del:10s}{delme:30s}
+Response.nil?: There are just 3 Options: `enable`, `disable` and `status`. {del:10s}{delme:30s}
+[#CONTINUE#]
+&!verify {params}={init}{req:Unverified}
+Params.{r?verify:{rawid}}?:{tclear:25}{del:10s}Thanks for verifying {/user}. It can take up to three Minutes to set the correct roles for your account. {d?verify:{rawid}}{delme: 180s}{role:Verified}
+Response.nil?:The code you entered was wrong. Try again.{delme:10s}{del:30s}
+
+/*You can change the messages and Roles ({req} and {role}) to your liking*/
+
+/*
+USAGE:
+Before First usage you have to do '.verify enable'
+
+Default Roles:
+- Verified
+- Unverified
+- Staff/Team/Admin
+
+!verify {number} - Verification for the User
+.verify enable/disable/status - Set or See the Status of the System.
+*/
