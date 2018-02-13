@@ -4,11 +4,13 @@ function getUserOBJ(user){
 	for (key in ServerMembers){
 	     if (ServerMembers[key].User.ID == user || /regexp/.test(ServerMembers[key].User.Username)){
 		     var obj = {};
-		     obj.userImage = "https://discordapp.com/api/v6/users/" + ServerMembers[key].User.ID + "/avatars/" + ServerMembers[key].User.Avatar + ".jpg";
+// 		     obj.userImage = "https://discordapp.com/api/v6/users/" + ServerMembers[key].User.ID + "/avatars/" + ServerMembers[key].User.Avatar + ".jpg";
 		     
-		     for (element in ServerMembers[key]){
-			obj[element] = ServerMembers[key].element;     
-		     }   	 
+// 		     for (element in ServerMembers[key]){
+// 			obj[element] = ServerMembers[key].element;     
+// 		     }   
+		     
+		     obj = ServerMembers[key];
 		     return obj;
 	     }	
 	}
