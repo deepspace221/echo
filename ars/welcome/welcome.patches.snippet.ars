@@ -1,0 +1,16 @@
+[#CONTINUE#]
+.iam linguistics={init}
+{role:Linguists}
+{user} You now have Linguists role.
+[#CONTINUE#]
+ &.iam 1 trees completed={init}
+{user} You now have **1 Tree Completed** role.
+[#CONTINUE#]
+.iamnot chatty={init}
+{role:Block Chatty}
+[#CONTINUE#]
+.iamn chatty={init}
+{role:Block Chatty}
+[#CONTINUE#]
+.iam chatty={init}
+{take:Block Chatty}

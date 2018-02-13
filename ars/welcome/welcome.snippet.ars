@@ -1,50 +1,88 @@
 [#CONTINUE#]
-E-jnevnt9LogNew={init}
+&{:}(?i)^\.(iamn|iamnot) n\. {params}={init}
+{sleep:1s}
+ParamRegex.(?i)(Arabic)?:{role:n. Arabic}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Bulgarian)?:{role:n. Bulgarian} {ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Cantonese)?:{role:n. Cantonese} {ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Czech)?:{role:n. Czech}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Danish)?:{role:n. Danish} {ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Dutch)?:{role:n. Dutch}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(English)?:{role:n. English}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Finnish)?:{role:n. Finnish}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Flemish)?:{role:n. Flemish}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(French)?:{role:n. French}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Greek)?:{role:n. Greek}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(German)?:{role:n. German}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Hebrew)?:{role:n. Hebrew}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Hungarian)?:{role:n. Hungarian}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Indonesian)?:{role:n. Indonesian}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Italian)?:{role:n. Italian}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Japanese)?:{role:n. Japanese}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Korean)?:{role:n. Korean}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Mandarin)?:{role:n. Mandarin}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Norwegian)?:{role:n. Norwegian}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Polish)?:{role:n. Polish}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Portuguese)?:{role:n. Portuguese}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Romanian)?:{role:n. Romanian}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Spanish)?:{role:n. Spanish}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Swedish)?:{role:n. Swedish}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Telugu)?:{role:n. Telugu}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Turkish)?:{role:n. Turkish}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Ukrainian)?:{role:n. Ukrainian}{ars:ErrRemoveNativeLang} 
+ParamRegex.(?i)(Vietnamese)?:{role:n. Vietnamese}{ars:ErrRemoveNativeLang}
+ParamRegex.(?i)(Other)?:{role:n. Other}{ars:ErrRemoveNativeLang}
+Response.nil?:{ars:ErrNoNativeLang}
+[#CONTINUE#]
+ErrNoNativeLang={init}
 {arslock}
-use server_db;
-{e?servercount:membercount(+1)}
-{redirect:{r?servercount:channel}}
-{embed:
-    {title:Member Joined}
-    {type:rich}
-    {author|icon:{usericon}}
-    {author|name:{/user}}
-    {color:
-        {randlist:
-             #ff0000,#00ff00,#ffffff,#4286f4,
-             #f45642,#262525,#e2d626,#87e226,
-             #26e2c0,#2633e2,#8126e2
-        }
-    }
-    {thumb|url:{usericon}}
-    {desc:
-{user} has joined the server!
-}
-    {footer|icon:https://xtclabs.net/img/favicon-new.png}
-    {footer|text: Current membes count: {math:{r?servercount:membercount}+1}}
-}
-{role:New}
-{ars:E-jnevnt10Ping}
+No such language exists in the database and the removing of a native language has been disabled. 
+If you need help you can send a message to the staff with `\request YOUR_MESSAGE`
 [#CONTINUE#]
+ErrRemoveNativeLang={init}
+{arslock}
+**The last command has not been executed.** Removing of a native language has been disabled. 
+Please a contact a staff member to remove a native language role.
+You can send a request with the command `\request YOUR_MESSAGE`
 [#CONTINUE#]
-E-levent={init}
-{Event:Leave}
-{embed:
-    {title:Member Left}
-    {type:rich}
-    {author|icon:{usericon}}
-    {author|name:{self}}
-    {color:
-        {randlist:
-             #ff0000,#00ff00,#ffffff,#4286f4,
-             #f45642,#262525,#e2d626,#87e226,
-             #26e2c0,#2633e2,#8126e2
-        }
-    }
-    {thumb|url:{usericon}}
-    {desc:
-{user} has left the server!
+sortmembers={init}
+{arslock}
+use | European 
+{if(hasrole):
+    {stop}
+} (else) {
+ParamRegex.(?i)((Bulgarian|Czech|Danish|Dutch|Finnish|Flemish|Greek|Hungarian|Norwegian|Polish|Romanian|Swedish|Ukrainian))?:{ars:removenew}{role:European}{take:World}
+ParamRegex.(?i)((Arabic|Cantonese|Hebrew|Indonesian|Korean|Telugu|Turkish|Vietnamese|Other))?:{role:World}{take:New}
+Response.nil?:{take:New}
 }
-    {footer|icon:https://xtclabs.net/img/favicon-new.png}
-    {footer|text: Current members count: {math:{r?servercount:membercount}-1}}
+[#CONTINUE#]
+removenew={init}
+{take:New}
+[#CONTINUE#]
+&.iam .n={init}
+use | 337513163853529088
+{if(ischannel):
+    Pay attention to the dot, {user}. Here is an example:  ```.iam n. spanish```
+} (else) {
 }
+[#CONTINUE#]
+&{:}\.iam memrise lvl [0-9]$={init}
+The lowest available level is 10.
+[#CONTINUE#]
+&{:}^\/.+={init}
+Please use backward slash `\` to access echo commands.
+[#CONTINUE#]
+&{:}(?i)iam (Lakota|.+ASL|Ancient Greek|f. Swahili|f. Persian|Klingon|Vlayrian|.+estonian) {params}={init}
+ContentRegex.(?i)(lakota)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #lakota here.
+ContentRegex.(?i)(Ancient Greek)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #ancient-greek here.
+ContentRegex.(?i)(f. Persian)?:{role:Persian}{user} You now have **Persian** role.
+ContentRegex.(?i)(Klingon)?:{role:Conlang}{user}  You now have **Conlang** role. You can acces #klingon here.
+ContentRegex.(?i)(Vlayrian)?:{role:Conlang}{user} You now have **Conlang** role. You can acces #high-valyrian here.
+ContentRegex.(?i)(f. Swahili)?:{role:Swahili}{user} You now have **Swahili** role. 
+ContentRegex.(?i)((n\.|f\.) ASL)?:{role:ASL}{user} You now have **ALS** role.
+ContentRegex.(?i)(estonian)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #estonian here.
+[#CONTINUE#]
+&{:}(?i)^\.iam (n\.\s|f\.\s)?(Arabic|Bulgarian|Cantonese|Czech|Danish|Dutch|English|Finnish|Flemish|French|Greek|German|Hebrew|Hindi|Hungarian|Indonesian|Italian|Japanese|Korean|Mandarin|Norwegian|Persian|Polish|Portuguese|Romanian|Russian|Spanish|Swahili|Swedish|Telugu|Turkish|Ukrainian|Vietnamese|Other)$={init}
+ContentRegex.(n\.)?:{sleep:1s}{ars:sortmembers}{role:Basic}{take:Unassigned}
+ContentRegex.(.)?:{take:New}
+Response.nil?:{stop}
+
