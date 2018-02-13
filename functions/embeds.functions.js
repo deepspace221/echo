@@ -48,7 +48,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     return embed;
 }
 
-function getSimpleEmbed(title, thumb, description, color){
+function getSimpleEmbed(title, color, thumb, description){
     if (!color) color = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}"; 
     
    
@@ -197,6 +197,7 @@ function getHelpEmbed(){
 function getViewsEmbed(){
  
 var title = "View options"; 
+var color = "";
 var thumb = "server";
 var icon = ":diamond_shape_with_a_dot_inside:";
    
@@ -228,6 +229,6 @@ var description = " \
       \n```.iamnot updates```\
 ";   
  
-      resp = getSimpleEmbed(title, thumb, description);
+      resp = getSimpleEmbed(title, color, thumb, description);
    
 }
