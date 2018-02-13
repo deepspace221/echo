@@ -1,0 +1,25 @@
+%define func webhookdelmsg(channel, msg):
+{redirect:351919983690776586}
+Webhook deleted at **<#{0}>**: {1}
+
+%define func timezonemsg(timezonerole):
+{embed:
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {desc:
+{user} You now have **{0}** role.
+    }
+}
+
+%define func joey(msg,  channel,  {params}):
+{redirect:347311506108448769}
+{webhook}
+    {id:350688825216991232}
+{0}
+
+{/webhook}
