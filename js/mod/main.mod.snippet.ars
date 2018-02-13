@@ -1,0 +1,12 @@
+[#CONTINUE#]
+&\mute {params}={init}
+{req:Staff}
+Silence!!  òó
+...
+I keel u, {user]!! ÒÓ
+{role:Mute}{take:All}
+[#CONTINUE#]
+&\unmute {params}={init}
+{req:Staff}
+{params} speak!
+{role:All}{take:Mute}
