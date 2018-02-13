@@ -1,4 +1,3 @@
-// import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/help_messages_functions.js";
 //Count
 function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer, username){
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
