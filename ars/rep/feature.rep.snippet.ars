@@ -1,0 +1,63 @@
+[#CONTINUE#]
+createUserRepView={init}
+{arslock}
+{m?rep:{rawid}} := 0
+{ars:viewRep}
+[#CONTINUE#]
+&\viewrep={init}
+DB:rep.@{/user}?:{ars:viewRep}
+Response.nil?:{ars:createUserRepView}
+[#CONTINUE#]
+viewRepDB={init}
+{delme}%view -db rep
+[#CONTINUE#]
+takeRep={init}
+{arslock}
+{e?rep:@{/user}(-1)}
+{self} I have taken 1 from {/user}'s reputation.
+{ars:sleeprep}{m?repCooldown:{/rawid}-{rawid}} := -
+[#CONTINUE#]
+&-rep={init}
+{sleep:1s}
+String.{rawid} == {/rawid}?:Mention the member you want to give -rep.
+String.{r?repCooldown:{/rawid}-{rawid}} == -?:You have already given this user -rep! Please wait 24h before trying again.
+DB:rep.@{/user}?:{ars:takeRep}
+Response.nil?:{ars:createUserRepM}
+[#CONTINUE#]
+&\rep={init}
+**Community members' reputation: **
+{ars:viewRepDB}
+[#CONTINUE#]
+createUserRepP={init}
+{arslock}
+{m?rep:@{/user}} := 0
+{ars:addRep}
+[#CONTINUE#]
+addRep={init}
+{arslock}
+{sleep:1s}
+{e?rep:@{/user}(+1)}
+{ars:sleeprep} {m?repCooldown:{/rawid}-{rawid}} := +
+{self} I have added 1 to {/user}'s reputation.
+[#CONTINUE#]
+createUserRepM={init}
+{arslock}
+{m?rep:@{/user}} := 0
+{ars:takeRep}
+[#CONTINUE#]
+sleeprep={init}
+{sleep:20s}
+{m?repCooldown:{/rawid}-{rawid}}:=0
+[#CONTINUE#]
+&+rep={init}
+{sleep:3s}
+String.{rawid} == {/rawid}?:Mention the member you want to give +rep.
+String.{r?repCooldown:{/rawid}-{rawid}} == +?:You have already given this user +rep! Please wait 24h before trying again.
+DB:rep.@{/user}?:{ars:addRep}
+Response.nil?:{ars:createUserRepP}
+[#CONTINUE#]
+viewRep={init}
+{arslock}
+**{/user}'s Reputation:** *{r?rep:@{/user}}*
+
+
