@@ -1,0 +1,393 @@
+[#CONTINUE#]
+&\lang {params}={init}
+#js >>
+use resources_db;
+try {
+	var params = "{params}".toLowerCase(); 
+	if (params == "platform")
+		params = "platforms";
+	var arrResources = JSON.parse(resources_db[params]);
+
+	var output = getArrOutput(arrResources)[0];
+
+
+	var title = "";
+	var color = "";
+	var thumb = "https://images-ext-1.discordapp.net/external/Gzl0XG3nWwTNhcwHU69Onr9YmevH3wf7zVj1yN9PDE4/https/cdn.discordapp.com/icons/335021599059345408/55e56fb9d7850f3a1a9cfe8626c0a0d9.jpg"; 
+
+	switch (params) {
+	   case "euronews":
+	        title = "Euronews livestreams in 12 languages";
+	        color = "#ff0000";
+	        break;
+	    case "dictionaries":
+	        title = "Universal dictionaries";
+	        color = "#00ff00";     
+	        break;
+	    case "platforms":
+	        title = "Best language platforms";
+	        color = "#ffffff"; 
+	    case "easy languages":
+	        title = "Easy Languages Youtube channels";
+	        color = "#4286f4";
+	        break;
+	    case "tools":
+	        title = "General purpose tools";
+	        color = "#f45642";
+	        break;
+	    case "tv":
+	        title = "Media in different languages";
+	        color = "#00ff00";      
+	        break;
+	    case "info":
+	        title = "General textual information about languages";
+	        color = "#ffffff"; 
+	    case "app":
+	        title = "Best general apps for learning languages";
+	        color = "#4286f4";
+	        break;
+	    case "games":
+	        title = "Language games";
+	        color = "#f45642";
+	        break;
+	    case "duolingo":
+	        title = "Links for Duolingo";
+	        color = "#ffffff"; 
+	    case "memrise":
+	        title = "Links for Memrise";
+	        color = "#4286f4";
+	        break;
+	    case "speaking":
+	        title = "Speaking platforms";
+	        color = "#f45642";
+	        break;
+	}
+	result = getEmbed();
+}
+catch(err) {
+	result = "{embed: {color:#ff0000} {desc:**Input was invalid**. Please correct your input.\nType **\\help** to view help information, or send pm to <@307663491832086548>.\n ```" + err +"```}";	
+}
+
+resp = result;
+
+function getEmbed(){
+var embed = "{embed: \
+	    {title:" + title +"} \
+	    {type:rich} \
+	    {author|name:} \
+	    {author|icon:} \
+	    {author|url:} \
+	    {thumb|url:"+ thumb +"} \
+	    {color:" + color +"} \
+	    {thumb|url:{guild|icon}} \
+	    {desc: \
+	    " + output +" \
+	    } \
+	   {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
+   	   {footer|text:Info provided by the Memrise & Duolingo language server} \
+} \
+";
+	return embed;
+}
+function getArrOutput(arrResources)
+{
+	var str = []; 
+	var counter = 0;
+	var size = "";
+	var sizeIndex = 0;
+	for (index in arrResources){
+		counter += 1;
+		// var size = str + str += "\n" + counter +". **" + arrResources[index][0] + ":** \n[" + /.+\.\w{2,3}\//.exec(arrResources[index][1]) + arrResources[index][0].replace(" ", "").toLowerCase() +"](" + arrResources[index][1] + ")";
+  //    	             if (size >= 2000){
+  //    	             	sizeIndex += 1;
+
+
+  //    	             }
+     	             str[0] += getStringLIne(arrResources, index, counter);
+	}
+
+	return str;
+}
+function paginateSring(str){
+	resources_db[category] = "";
+}
+function getStringLIne(arrResources, index, counter){
+	return "\n" + counter +". **" + arrResources[index][0] + ":** \n[" + /.+\.\w{2,3}\//.exec(arrResources[index][1]) + arrResources[index][0].replace(" ", "").toLowerCase() +"](" + arrResources[index][1] + ")";
+
+}
+
+function getArrOBJOutput(arrResources)
+{
+	var str = "";
+	for (index in arrResources)
+		 for (key in arrResources[index])
+		 	str += "[" + key + ": " + arrResources[index][key];
+	return str;
+}
+>>
+
+[#CONTINUE#]
+\update={init}
+#js >>
+use resources_db;
+var guild_id = Server.ID;
+var guild_original = "335021599059345408";
+if (guild_id == guild_original)
+{
+	var euronews = [
+		["English", "http://www.euronews.com/live"],
+		["French", "http://fr.euronews.com/live"],
+		["Spanish", "http://es.euronews.com/live"],
+		["Italian", "http://it.euronews.com/live"],
+		["German", "http://de.euronews.com/live"],
+		["Portuguese", "http://pt.euronews.com/live"],
+		["Russian", "http://ru.euronews.com/live"],
+		["Turkish", "http://tr.euronews.com/live"],
+		["Greek", "http://gr.euronews.com/live"],
+		["Hungarian", "http://hu.euronews.com/live"],
+		["Farsi", "http://fa.euronews.com/live"],
+		["Arabic", "http://arabic.euronews.com/live"]
+	];
+
+	var easy_languages =[
+		["Easy Spanish", "https://www.youtube.com/watch?v=gDTFro4H6VY&list=PLQGxDRfENoxLjuS5SVOsASrAuJfakQQ13"],
+		["Easy German", "https://www.youtube.com/watch?list=PL3936178A38BB5F87&v=qFDZu0CDHYs"],
+		["Easy French", "https://www.youtube.com/watch?list=PLA5UIoabheFMYWWnGFFxl8_nvVZWZSykc&v=CWdm32em3xQ"],
+		["Easy Russian", "https://www.youtube.com/watch?list=PLA5UIoabheFNOmTYF_LDqbO42p8Ng0LLa&v=tvQs6kwBMJk"],
+		["Easy Japanese", "https://www.youtube.com/watch?list=PLA5UIoabheFO87Zs0a2W-5ZMzWBjhg_Ap&v=qK--SAlGD0Q"],
+		["Easy Arabic", "https://www.youtube.com/watch?list=PLA5UIoabheFOTBS03VwXlFXQQHtp3xxiC&v=yutt-bl9ODY"],
+		["Easy Polish", "https://www.youtube.com/watch?list=PLA5UIoabheFN7GIhcfUGQT2S5_U5sWnhK&v=O0i4eljCtN4"],
+		["Easy Portuguese", "https://www.youtube.com/watch?list=PLA5UIoabheFNAGFhgXBeZ4795eXY47oCH&v=SGvgrCItt8c"]
+	];
+
+	var lang_platforms =[
+			["Duolingo", "https://www.duolingo.com/"],
+			["Memrise", "https://www.memrise.com"],
+			["Anki", "https://apps.ankiweb.net/"],
+			["LinQ", "https://www.lingq.com/"],
+			["Tinycards", "https://tinycards.duolingo.com/"],
+			["ReadLang", "http://readlang.com/"],
+			["Clozemaster", "https://www.clozemaster.com/"],
+			["FluentU", "https://www.fluentu.com/"],
+			["Yabla", "https://www.yabla.com/"],
+			["Glossika", "https://glossika.com"],
+			["Lang-8", "http://lang-8.com/"],
+			["Language transfer", "http://www.languagetransfer.org/"],
+			["bliubliu", "https://bliubliu.com"],
+			["Lingvist", "https://lingvist.com/"]
+	];
+
+	var lang_dictionaries=[
+		["Google Translate", "https://translate.google.com/"],
+		["DeepL", "https://www.deepl.com/translator"],
+		["Revorso", "http://www.reverso.net/text_translation.aspx?lang=EN"],
+		["Forvo", "https://forvo.com"],
+		["Glosbe", "https://glosbe.com/"],
+		["Bab.la", "https://en.bab.la/dictionary/"]
+	];
+
+	var lang_tools=[
+		["Easy Subtitles", "http://easysubtitles.com/#!home"],
+		["FlipWord", "https://flipword.co/"],
+		["YT Downloader", "http://www.yousubtitles.com/"],
+		["PotPlayer", "https://potplayer.daum.net/"]
+	];
+
+	var lang_games =[
+		["Babadum", "https://babadum.com/"],
+		["Lingotopia", "https://www.kickstarter.com/projects/1843347561/lingotopia-a-language-learning-game"],
+		["Lyrics Training", "https://lyricstraining.com/"]
+	];
+
+	var lang_tv =[
+	   	["Wlext", "http://wlext.net/"]
+	];
+
+	var lang_info =[
+		["I Kinda Like Languages", "http://ikindalikelanguages.com/"],
+		["FSI Languages", "https://fsi-languages.yojik.eu/"],
+		["Book Bound Polyglot", "https://bookboundpolyglot.wordpress.com"]
+	];
+
+	var lang_app =[
+		["LingoDeer", "https://www.lingodeer.com/"],
+		["Flash Academy", "https://flashacademy.com"],
+		["Language Drops", "https://languagedrops.com"],
+		["LingoZING!", "https://www.lingozing.com/"]
+	];
+
+	var lang_speaking =[
+		["iTalki", "https://www.italki.com/"],
+		["HiNative", "https://hinative.com/"],
+		["Hellotalk", "https://www.hellotalk.com/"],
+		["Verbling", "https://www.verbling.com/"],
+		["Speaky", "https://www.speaky.com/"]
+	];
+
+	var memrise =[
+		["Subs2srs", "http://learnanylanguage.wikia.com/wiki/Subs2srs"]
+	];
+
+	var duolingo =[
+		["Scripts", "http://duolingo.wikia.com/wiki/Duolingo_Userscripts"],
+		["Duolingo Grammar Guides", "https://drive.google.com/drive/folders/0B0mBzz3rOdzxSnBiWFNQUEVQa1k"],
+		["Smarter Duo", "https://chrome.google.com/webstore/detail/smarter-duo/haomnjjgbbhdekldmabddhnciffplcbn"],
+		["Duolingo Chinese-Word definitions", "https://chrome.google.com/webstore/detail/duolingo-chinese-word-def/clnnjdojceobnkhkocigpboialomopfk"]
+	];
+
+	resources_db["euronews"] = JSON.stringify(euronews);
+	resources_db["easy languages"] = JSON.stringify(easy_languages);
+	resources_db["platforms"] = JSON.stringify(lang_platforms);
+	resources_db["dictionaries"] = JSON.stringify(lang_dictionaries);
+	resources_db["tools"] = JSON.stringify(lang_tools);
+	resources_db["games"] = JSON.stringify(lang_games);
+	resources_db["tv"] = JSON.stringify(lang_tv);
+	resources_db["info"] = JSON.stringify(lang_info);
+	resources_db["app"] = JSON.stringify(lang_app);
+	resources_db["speaking"] = JSON.stringify(lang_speaking);
+	resources_db["memrise"] = JSON.stringify(memrise);
+	resources_db["duolingo"] = JSON.stringify(duolingo);
+
+	result = "Resources list has been reseted to default";
+} else
+{
+	result = "You aren't the orginial guild. Command has been aborted."; 
+}
+resp = result; 
+>>
+
+[#CONTINUE#]
+&\add {params}={init}
+{req:Staff}
+#js >>
+use resources_db;
+var guild_id = Server.ID;
+var guild_original = "335021599059345408";
+var result = "";
+try{
+if (guild_id == guild_original)
+{
+	var params = "{params}".split(" ");
+	var category = params[0].toLowerCase();
+	var resources = JSON.parse(resources_db[category]);
+	params.shift();
+	resources.push(params); 
+	resources_db[category] = JSON.stringify(resources);
+
+	result = "New resource has been added to **" + jsUcfirst(category) + "**.";
+} else
+	result = "You aren't the orginial guild. Command has been aborted.";
+} 
+catch (err ){
+	result = "{embed: {color:#ff0000} {desc:**Input was invalid**. Please correct your input.\nType **\\help** to view help information, or send pm to <@307663491832086548>.\n ```" + err +"```}";	
+}
+
+resp = result;
+
+function jsUcfirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+>>
+
+[#CONTINUE#]
+&\remove {params}={init}
+{req:Staff}
+#js >>
+use resources_db;
+var guild_id = Server.ID;
+var guild_original = "335021599059345408";
+var result = "";
+var succeed = false;
+
+try{
+	if (guild_id == guild_original)
+	{
+		var params = "{params}".split(" ");
+		var category = params[0].toLowerCase();
+		var resources = JSON.parse(resources_db[category]);
+		succeed = removeElement(resources, params[1]);
+		resources_db[category] = JSON.stringify(resources);
+
+		if (succeed){
+			result = "Resource has been removed from **" + jsUcfirst(category) + "**.";
+		} else{
+			result = "Resource was not found in **" + jsUcfirst(category) + "**. Please try again.";
+		}
+	} else {
+		result = "You aren't the orginial guild. Command has been aborted." + guild_id;
+	}
+}
+catch(err){
+	result = "{embed: {color:#ff0000} {desc:**Input was invalid**. Please correct your input.\nType **\\help** to view help information, or send pm to <@307663491832086548>.\n ```" + err +"```}";	
+}
+
+resp = result;
+
+function jsUcfirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+function removeElement(arr, search_term)
+{	
+	if (/^\d\d?$/.test(search_term)){
+		arr.splice(search_term-1, 1);
+		return true;
+	} else {
+		var str;
+		for (index1 in arr){
+			for (index2 in arr[index1]){
+				pattern = new RegExp(search_term, "gi"); 
+				if (pattern.test(arr[index1][index2])){	
+					arr.splice(index1, 1);
+					return true;
+				}
+			}
+		}
+		return false;		
+	}
+
+}
+>>
+[#CONTINUE#]
+\help={init}
+#js >>
+var title = "Commands help for ars://memriseandduolingo intralink server. ";
+var color = "#dcf608";
+var thumb = "https://images-ext-1.discordapp.net/external/Gzl0XG3nWwTNhcwHU69Onr9YmevH3wf7zVj1yN9PDE4/https/cdn.discordapp.com/icons/335021599059345408/55e56fb9d7850f3a1a9cfe8626c0a0d9.jpg"; 
+
+
+var output = " \
+\n`\\lang euronews` \
+\n`\\lang easy languages` \
+\n`\\lang platforms` \
+\n`\\lang dictionaries` \
+\n`\\lang tools` \
+\n`\\lang games` \
+\n`\\lang tv` \
+\n`\\lang info` \
+\n`\\lang speaking` \
+\n`\\lang duolingo` \
+\n`\\lang memrise` \
+\n`\\add [category] [name] [link]` \
+\n`\\remove [category] [search_term]` \
+";
+var embed = "{embed: \
+	    {title:" + title +"} \
+	    {type:rich} \
+	    {author|name:} \
+	    {author|icon:} \
+	    {author|url:} \
+	    {thumb|url:"+ thumb +"} \
+	    {color:" + color +"} \
+	    {thumb|url:{guild|icon}} \
+	    {desc: \
+	    " + output +" \
+	    } \
+	   {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
+   	   {footer|text:Info provided by the Memrise & Duolingo language server} \
+} \
+";
+
+resp = embed;
+>>
