@@ -216,3 +216,48 @@ function getWelcomeHelpEmbed(){
       
        return getSimpleEmbed(title, color, thumb, description);
 }
+
+function getMiscEmbed(){
+      var title = "MISCELLANEOUS ROLES";
+      var color = "";
+      var description = "Information on other available roles on the server.";
+      var fields = "
+            \n{field[0]|name:Misc:}\
+            \n{field[0]|value:\
+```css\
+\n# Course Creator [access]\
+\n# NSFW [access]\
+\n# Polyglot [access]\
+\n# Correct Me\
+\n# Ask a Native\
+\n# linguistics\
+\n# IPA\
+\n# Mobile User\   
+\n# XP Contests\
+\n# LGBT\
+\n```}\
+            {field[1]|inline:true}\
+            {field[1]|name:Hobbies:}\
+            {field[1]|value:\
+```css\
+\n# Anime [access]\
+\n# programmer\
+\n# Satellites [access]\
+\n# Gamer\
+\n# Traveler\
+\n# Chess\
+\m```}\
+            {field[1]|inline:true}\
+            {field[2]|name:Notes:}\
+            {field[2]|value:\
+\n👉 You should only give yourself the **Polyglot** role if you're confident in your ability **in 4 languages or above**. This role will grant you access to some channels.\
+\n\
+\n👉 The **Mobile User** role if ment for users who spent more than 70% of their time on mobile.\
+\n\
+\n👉  The **Course Creator** role is only intended for course creators. It will grant you write access to the channels <#335566625749336084> and <#338302446591803392>. You will need to contact a staff member with your memrise username in order to receive it.\
+\n}\
+            {field[2]|inline:false}\
+";
+
+      return getSimpleEmbed(title, color, thumb, description);    
+}
