@@ -232,7 +232,7 @@ function getMiscEmbed(){
 \n# Ask a Native\
 \n# linguistics\
 \n# IPA\
-\n# Mobile User\   
+\n# Mobile User\
 \n# XP Contests\
 \n# LGBT\
 \n```}\
