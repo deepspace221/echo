@@ -1,0 +1,41 @@
+&\view={init}
+{embed:
+    {title:View options}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:
+
+**Information on how to customize your user's view.**
+
+💠 The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server. 
+To remove it from your view you can run the command `.iamnot hooks` at <#337513163853529088> .
+
+💠 The **v. Mobile** role is connected to the **Mobile** category and it's by default assigned to every member on this server. 
+To remove it from your view you can run the command `.iamnot v. mobile` at <#337513163853529088>.
+
+💠 The **v. Private** role is connected to the **Private** voice category and it's by default assigned to every member on this server. 
+To remove it from your view you can run the command `.iamnot v. private` at <#337513163853529088>.
+
+💠 The **v. Recycle Bin** role is connected to the **recycle bin** category. By default it is not assigned to members on this server.
+To add it to your view run the command `.iam v. Recycle Bin` at <#337513163853529088>.
+
+💠 The **God Mode** role will allow you to see all the language categories (about 360 channels) irrespectively to the roles assigned to your profile. It will overwrite them. If you wish to view also sub-genre hooks you can, as an addenum to god mod, also add the **Extras** role (about 60 additional channels). 
+
+To add **God Mode** run: `.iam god mode`
+To add **Extras** run: `.iam Extras`
+
+Please don't use the extras role without god mode. It is not ment to function this way. 
+
+If you wish to be added to a specific sub-genre hooks channel, without having the god mode/extras role, you can request to be added to the exclusion list of those channels at <#337513299765755905>.
+
+💠 You can unsubscribe from server's <#335379990424059905> by running:
+```.iamnot updates``` 
+      }
+}
