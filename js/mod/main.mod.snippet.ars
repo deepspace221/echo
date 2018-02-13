@@ -35,3 +35,15 @@ I keel u, {user]!! ÒÓ
 {user} {content}
     }
 {del:5s}{delme:10s}{msg: {user} Your message has been forwarded to the staff and will be handled shortly!}
+
+
+ [#CONTINUE#]
+&\avatar={init}
+{req:Staff}
+{usericon}
+[#CONTINUE#]
+&\userid={init}
+id: {rawid}
+[#CONTINUE#]
+\bots={init}
+Current bots count is {botcount}.
