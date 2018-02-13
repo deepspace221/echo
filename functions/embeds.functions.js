@@ -215,7 +215,7 @@ var description = " \
       \n" + icon + " The **v. Recycle Bin** role is connected to the **recycle bin** category. By default it is not assigned to members on this server.\
       \nTo add it to your view run the command `.iam v. Recycle Bin` at <#337513163853529088>.\
       \n\
-      \n" + icon + " The **God Mode** role will allow you to see all the language categories (about 360 channels) irrespectively to the roles assigned to your profile. It will overwrite them. If you wish to view also sub-genre hooks you can, as an addenum to god mod, also add the **Extras** role (about 60 additional channels).\ 
+      \n" + icon + " The **God Mode** role will allow you to see all the language categories (about 360 channels) irrespectively to the roles assigned to your profile. It will overwrite them. If you wish to view also sub-genre hooks you can, as an addenum to god mod, also add the **Extras** role (about 60 additional channels).\
       \n\
       \nTo add **God Mode** run: `.iam god mode`\
       \nTo add **Extras** run: `.iam Extras`\
