@@ -1,0 +1,114 @@
+[#CONTINUE#]
+&\count {params}={init}
+#js >>
+use temp;
+import "https://raw.githubusercontent.com/deepspace221/xmltv-israel/master/echo.functions.js";
+
+var staff = getStaffRoleName();
+var description = "";
+var roleName;
+var topRole = getRolePosition("n. Afrikaans");
+var bottomRole = getRolePosition("Yiddish");
+var debug = 1;
+var error
+var arrStudyLangs = [];
+var title = "";
+var roleName = isRole(Params);
+var fields = "";
+var footer = "";
+var thumb = "";
+
+        if (ChannelID == 349824543424118784 || MemberHasRole(335021599059345408, UserID, staff)){
+
+                        if (Params == "") {
+                              description = "{user} You didn't specify any input.";
+                        }
+                        else if (/lang/i.test(Params)){
+                              var type = Params.match(/(native|fluent|learning)/i);
+                              arrStudyLangs = getArrStudyLangs(bottomRole, topRole);
+                              var indexLangOBJ = findFirstIndexFluentAndNativeOBJ(arrStudyLangs)
+                              var langsOBJ = getLangsInfoOBJ(arrStudyLangs, indexLangOBJ.fluentIndex, indexLangOBJ.nativeIndex);
+                              temp["arrStudyLangs"] = JSON.stringify(arrStudyLangs)                    
+                              temp["langsOBJ"] = JSON.stringify(langsOBJ)                    
+                              // {membercount:{params}}  
+
+                              //for all languages
+                              title = "Statistics for all languages" 
+                              description = "General overview."
+                              field0Name = "Native";
+                              field0Value = langsOBJ.nativeField;                              
+                              field1Name = "Fluent";
+                              field1Value = langsOBJ.fluentField;                              
+                              field2 = "\
+                                                    {field[2]|name:Learning} \
+                                                    {field[2]|value:a" + langsOBJ.learningField  + "} \
+                                                    {field[2]|inline:true} \
+                                          ";
+                              footer = "Run: \\count lang [native|fluent|learning] for additional views options.";
+                              //for types display (native/fluent etc)
+                              if (type != null){
+                                    type = type[0];
+                                    title = "Statistics for " + type +" languages";
+                                    thumb = "{guild|icon}";
+                                    description = type +" languages"
+                                    field0Name = type.charAt(0).toUpperCase() + type.slice(1);
+                                    field0Value = langsOBJ[type + "Names"];                              
+                                    field1Name = "Num";
+                                    field1Value = "**" + langsOBJ[type + "Num"] + "**";  
+                                    field2 = "";   
+                                    footer = "Run: \\count lang for a general languages view."
+                              }
+                              fields = " \
+                                                        {field[0]|name:a" + field0Name + "} \
+                                                        {field[0]|value:a" + field0Value + "}  \
+                                                        {field[0]|inline:true} \
+                                                        {field[1]|name:a" + field1Name +"} \
+                                                        {field[1]|value:a" + field1Value  + "} \
+                                                        {field[1]|inline:true} \
+                                                        " + field2 + " \
+                                                       {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
+                                                       {footer|text:" + footer +"} \
+                                                        ";                      
+   
+                        }
+                        else if (roleName == undefined) {
+                                        description = "{user} You didn't specify a vaild role name. Please try again.";
+                        } 
+                        else if (isLanguageRole(roleName)){
+                                            debug = 6;
+                                            langCounters = getLangCounterOBJ(roleName);
+                                            title = "Statistics for the "+ roleName + " language:";
+                                            // description = " \
+                                            //         \n```Native " + roleName + " users count: " + langCounters.nativeCount +"``` \
+                                            //         \n```Fluent " + roleName + " users count: " + langCounters.fluentCount +"``` \
+                                            //         \n```Learning " + roleName + " users count: " + langCounters.learningCount +"``` \
+                                            //         \nTotal number of users: " + langCounters.total +" \
+                                            //         ";
+                                            description = "Here is the information we have.";
+                                            fields = " \
+                                                        {field[0]|name:Native} \
+                                                        {field[0]|value:"+ langCounters.nativeCount + "}  \
+                                                        {field[0]|inline:true} \
+                                                        {field[1]|name:Fluent} \
+                                                        {field[1]|value:" + langCounters.fluentCount  + "} \
+                                                        {field[1]|inline:true} \
+                                                        {field[2]|name:Learning} \
+                                                        {field[2]|value:" + langCounters.learningCount  + "} \
+                                                        {field[2]|inline:true} \
+                                                        {field[3]|name:Total} \
+                                                        {field[3]|value:" + langCounters.total + "} \
+                                                        {field[3]|inline:false} \
+                                                        ";
+                        }
+                        else{
+                                            roleCount = countRoleMembers(roleName);
+                                            title = "The number of "+ roleName + " users:";
+                                            description = " \
+                                                    \nThe total number of users in role " + roleName +" is: " + roleCount +" \
+                                                    ";
+                        }
+        }
+
+resp = getEmbed();
+            // resp = "Descriptio: " + description + "\narrStudyLangs length: " + arrStudyLangs.length +  "\nRolename: " + roleName + "\nParams: " + Params + "\nStaff: " + staff + "\ndebug: " + debug + "\ntop role: " + topRole + "\nbottom role: " +bottomRole ;
+>> 
