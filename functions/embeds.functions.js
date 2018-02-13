@@ -115,6 +115,9 @@ function getEmbed(type){
       else if (type == "septapus help"){
           return getSeptapusHelp();
       } 
+      else if (type == "matbot help"){
+          return getMatbotHelp();
+      }   
    
    
 }
