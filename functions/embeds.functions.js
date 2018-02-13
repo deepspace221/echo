@@ -3,9 +3,9 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
-
-   var authorName = ServerMembers[138].User.Username;
-   var authorIcon = "{usericon}";
+   userOBJ = getUserOBJ("trailblazer");
+   var authorName = userOBJ.Username;
+   var authorIcon = userOBJ.userImage;
    var Username = "{/user\}";
    var userIcon = "{usericon}";
    if (Trigger == "E-levent"){
