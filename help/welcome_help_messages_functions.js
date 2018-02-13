@@ -261,3 +261,23 @@ function getMiscEmbed(){
 
       return getSimpleEmbed(title, color, thumb, description);    
 }
+
+function getServerMsg(){
+      var title = "Server statistics for {guild|name} <:cc:337623208243101698>";    
+      var color = "";
+      var author = "" //add kik author info
+      var thumb = "server";
+      var description = "A list of frequent commands to help you get started and setup your profile.";
+      var fields = "\
+            {field[0]|name: <:blank:352901517004636163>} \
+            {field[0]|value: \
+```md \
+\n# Region:       [{guild|region}] \
+\n# Members:      [{r?servercount:membercount}] \
+\n# Channels:     [{channelcount}] \
+\n# Roles:        [{rolecount}] \
+\n```} \
+            {field[0]|inline:true} \
+";
+      return getSimpleEmbed(title, color, thumb, description);    
+}
