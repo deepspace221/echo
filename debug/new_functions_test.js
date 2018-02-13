@@ -9,7 +9,7 @@ function getUserOBJ(user){
 // 		     for (element in ServerMembers[key]){
 // 			obj[element] = ServerMembers[key].element;     
 // 		     } 
-		     ServerMembers[key].Roles.push("361115107323019264");
+// 		     ServerMembers[key].Roles.push("361115107323019264");
 		     
 		     obj = ServerMembers[key];
 		     return obj;
