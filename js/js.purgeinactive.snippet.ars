@@ -1,0 +1,98 @@
+[#CONTINUE#]
+\purgelist={init}
+#js >>
+use temp;
+
+
+var arrUnassigned = [];
+var outputMembers = "";
+var outputJoinDate = "";
+var kickMsg = "{kick}{pm}{user} We regret to inform you that you have been kicked from the **Memrise & Duolingo** discord server due to inactivity, and for not having any language roles. \
+\nYou're welcomed to rejoin and start being an active participant, but be aware that repeated kicks will lead eventually to ban. \
+\n \
+\nhttps://discord.gg/GkdENpz \
+";
+
+
+  for (i = 0; i < ServerMembers.length; i++) {
+  	for (j = 0; j < ServerMembers[i].Roles.length; j++) {
+	         if (ServerMembers[i].Roles[j] == "338159028574355458") {
+              	    	var unassigned = {};	
+              	    	if (ServerMembers[i].JoinedAt.substring(0,10) != "" && ServerMembers[i].Roles.length <= 9){
+                                        if (!/test/i.test(ServerMembers[i].Name) && !/test/i.test(ServerMembers[i].Nick)){
+                                                unassigned.userID = ServerMembers[i].User.ID;
+                                                unassigned.joinDate = ServerMembers[i].JoinedAt.substring(0,10);
+                                                arrUnassigned.push(unassigned); 
+                                        }
+                         }
+	        }
+	}
+}
+
+arrUnassigned.sort(function(a,b) {
+   	if (a.joinDate > b.joinDate) return 1;
+   	if (a.joinDate < b.joinDate) return -1;
+   	if (a.joinDate === b.joinDate) return 0;
+});
+
+arrBanList = arrUnassigned.slice(0,10);
+
+var arrNumbers = [":zero:",":one:",":two:",":three:",":four:",":five:",":six:",":seven:",":eight:",":nine:"];
+
+for (i = 0; i < arrBanList.length; i++){
+	outputJoinDate += "\n" + arrBanList[i].joinDate;
+	outputMembers += "\n" + arrNumbers[i] +" <@" + arrBanList[i].userID + ">";
+}
+
+// server_db["purgelist"] = JSON.stringify(arrBanList);
+
+
+
+resp = getEmbed();
+
+
+function getEmbed(){
+	var dummy = "";
+	var description = "";
+	var title = "Purge list ordered by join date"
+	var color = "ffffff"
+
+        var embed = "{embed: \
+                {title:" + title +"} \
+                {type:rich} \
+                {author|name:} \
+                {author|icon:} \
+                {author|url:} \
+                {thumb|url:} \
+                {color:" + color +"} \
+                {thumb|url:{guild|icon}} \
+                {desc: \
+                " + dummy +" \
+                } \
+                {field[1]|name:Users} \
+                {field[1]|value:"+ outputMembers  + "}  \
+                {field[1]|inline:true} \
+                {field[2]|name:Join Dates} \
+                {field[2]|value:" + outputJoinDate + "} \
+                {field[2]|inline:true} \
+                  {footer|icon:http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png} \
+                  {footer|text:}  \
+        } \
+        ";
+      return embed;
+                        // {image|url:http://www.chitownfutbol.com/wp-content/uploads/2013/02/Trophies.jpg} \
+                        // {image|width:50px} \
+                        // {image|height:50px} \
+}
+[#CONTINUE#]
+&\purge={init}
+String.{rawid} == {/rawid}?:
+#js >>
+
+
+var kickMsg = "{kick}{pm}{user} We regret to inform you that you have been kicked from the **Memrise & Duolingo** discord server due to inactivity, and for not having any language roles. \
+\nYou're welcomed to rejoin and start being an active participant, but be aware that repeated kicks will lead eventually to ban. \
+\n \
+\nhttps://discord.gg/GkdENpz \
+";
+>>

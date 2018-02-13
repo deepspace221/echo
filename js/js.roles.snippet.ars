@@ -1,0 +1,124 @@
+[#CONTINUE#]
+&\give {params}={init}
+#js >>
+use server_db;
+
+// import "https://github.com/deepspace221/echo/edit/master/functions/general_purpose_functions.js";
+
+// var polyglot = "false";
+
+// var roles = {
+//     userid: UserID,
+//     give: [],
+//     take: [],
+//     errMsg: [],
+// };
+
+// var output = {
+//     give: "",
+//     giveMsg: "",
+//     take: "",
+//     takeMsg: "",
+//     errMsg: ""
+// };
+
+var seniorModsPermissions = {
+	Admins: 335021703140737034,
+	Bot Dev: 403799057472028672, 
+	Senior Mods: 371606096189587458, 
+	Mods: 337640237931036682 
+}
+var activityRoles = {
+	voiceMedia: 346415797544943626,
+	lvl5: 349227376489660426,
+	lvl15: 349227583570837514,
+	lvl30: 349227712868515840,
+	lvl50: 406879215854682132
+}
+
+var arrRestrictedRoles = getRestrictedRoles();
+var arrParams = Params.toLowerCase().split(", ");
+var paramsRegExp = "";
+var arrSortedUserRoles = sortRolesByPosition();
+
+for (i = 0; i < arrParams.length; i++){
+		var paramsRegExp = new RegExp(arrParams[i].replace(/\./i, "\\."), 'i');
+		serverRole = isUnique(arrParams[i], paramsRegExp);
+		 if (serverRole != undefined && !isRoleRestricted(serverRole, arrRestrictedRoles)) {
+				if (!MemberHasRole(Server.ID, UserID, serverRole))
+					 	roles.give.push(serverRole);
+				else
+					 	roles.take.push(serverRole);		 		
+		 }
+}
+
+debug(JSON.stringify(roles));
+
+resp = "done";
+
+function isUnique(params, paramsRegExp){
+	var arr = [];
+
+	for (k = 0; k < ServerRoles.length; k++){
+		if (paramsRegExp.test(ServerRoles[k]["Name"])) {
+			arr.push(ServerRoles[k]["Name"]);
+		}
+	}
+
+	if (arr.length > 4){
+		roles.errMsg = "\nRole `" + params + "` isn't unique enough. Too many results. Quitting.";
+	}
+	else if (arr.length == 4 || arr.length == 3 || arr.length == 2){
+		var min = Math.min.apply(Math, arr.map(function(str) { return str.length; }));
+		for (i = 0; i < arr.length; i++){
+			if (arr[i].length == min)
+				return arr[i];
+		}
+	}else if (arr.length == 1){
+		return arr[0];
+	}
+}
+
+function isRoleRestricted(role, arrRestrictedRoles) {
+	//For staff.
+	if (MemberHasRole(335021599059345408, UserID, getStaffRoleName()){
+		if (isRoleHigherThanUserTopRole()){
+			roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
+			return true;
+		}
+		else {
+			for (key in activityRoles)
+				if (role = activityRoles[key]){
+					roles.errMsg.push("{user } This role is an activity role and it's only handled automatically by Mee6.");
+					return true;
+				}
+		}
+		return false
+	}
+	//check to see if user try to assign a role equale or above staff.
+	var staffRolePosition = getStaffRoleName();
+	var position = getRolePosition();
+
+	if (position >= staffRolePosition){
+		roles.errMsg("{user} You're not staff. What are you tring to do?");
+		return true;
+	}
+
+	//final check. check against an array of restricted roles.
+ 	for (i=0; i < arrRestrictedRoles.length; i++){
+		if (role == arrRestrictedRoles[i]){
+			roles.errMsg = "\nThis role `" + role +"` is restricted. You don't have sufficent permission";
+			return true;
+		}
+	}					
+	return false;
+}
+
+function isRoleHigherThanUserTopRole(roleName, arrSortedUserRoles){
+	var position = getRolePosition(roleName)
+	if (position <= arrSortedUserRoles[0])
+		return false;
+	else
+		return true;
+}
+>>
