@@ -84,6 +84,13 @@ function getEmbed(type){
       else if (type == "views"){
          return getViewsEmbed();
       }
+      else if (type == "platform"){
+         return getPlatformEmbed();
+      }
+      else if (type == "welcome help"){
+         return getWelcomeHelpEmbed();
+      }
+  
 }
 
 import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/help_messages_functions.js";
