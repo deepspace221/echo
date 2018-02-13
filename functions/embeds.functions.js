@@ -118,7 +118,9 @@ function getEmbed(type){
       else if (type == "matbot help"){
           return getMatbotHelp();
       }   
-   
+       else if (type == "server"){
+          return getServerMsg();
+      }     
    
 }
 
