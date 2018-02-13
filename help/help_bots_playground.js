@@ -125,3 +125,40 @@ function getBotsQuickInfo(){
 ";  
       return getSimpleEmbed(title, color, thumb, description);    
 }
+
+
+function getEchoQuickInfo(){
+      var title = "ECHO COMMANDS QUICK INFORMATION";
+      var color = "";
+      var thumb = "";
+      var description = "A list of frequent commands for easy access.";
+      var fields = "\
+            {field[0]|name:Echo}\
+            {field[0]|value:\
+\n```css\
+\n\server\
+\n\afk\
+\n\afkmsg [MSG]\
+\n\request [MSG]\
+\n\count [lang]\
+\n\sky\
+\n\space\
+\n\joke\
+\n\meme\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:Echo whoami}\
+            {field[1]|value:\
+```css\
+\n\whoami\
+\n\help whoami\
+\n\about [MSG]\
+\n\partner [MSG]\
+\n\flag [COUNTRY]\
+\n\setflag [COUNTRY] [URL]\
+\n```}\
+            {field[1]|inline:true}\
+";
+
+      return getSimpleEmbed(title, color, thumb, description);    
+}
