@@ -1,0 +1,318 @@
+[#CONTINUE#]
+&\iam {params}={init}
+#js >>
+
+var roles = {
+    userid: UserID,
+    give: [],
+    take: [],
+    errMsg: [],
+    polyglot: "false"
+};
+
+(function() {
+    use roles_db;
+
+    var output = {
+        give: "",
+        giveMsg: "",
+        take: "",
+        takeMsg: "",
+        errMsg: ""
+    };
+
+    if (/,/.test(Params)) {
+                    var arrParams = Params.toLowerCase().split(", ");
+                    for (i = 0; i < arrParams.length; i++)
+                        AddRolesObj(arrParams[i].split(" "));
+                    for (i = 0; i < (roles.give.length); i++) {
+                        roles_db["role" + i] = roles.give[i];
+                        if (i == (roles.give.length - 1)) {
+                            output.giveMsg = output.giveMsg + " `" + roles.give[i] + "`";
+                            output.give = "{role}" + "Dummy, " + output.give + "" + roles.give[i] + "{/role}";
+                        } else {
+                            output.giveMsg = output.giveMsg + " `" + roles.give[i] + "`, ";
+                            output.give = output.give + "" + roles.give[i] + ", ";
+                        }
+                    }
+
+                    for (i = 0; i < (roles.take.length); i++) {
+                        roles_db["take" + i] = roles.take[i];
+                        if (i == (roles.take.length - 1)) {
+                            output.take = "{take}" + "Dummy, " + output.take + "" + roles.take[i] + "{/take}";
+                            output.takeMsg = output.takeMsg + " `" + roles.take[i] + "`";
+                        } else {
+                            output.takeMsg = output.takeMsg + " `" + roles.take[i] + "`, ";
+                            output.take = output.take + "" + roles.take[i] + ", ";
+                        }
+                    }
+
+                    for (i = 0; i < (roles.errMsg.length); i++) {
+                        output.errMsg = output.errMsg + "" + roles.errMsg[i] + "'\n";
+                    }
+                    roles_db["give"] = output.give;
+                    roles_db["giveMsg"] = output.giveMsg;
+                    roles_db["take"] = output.take;
+                    roles_db["takeMsg"] = output.takeMsg;
+                    roles_db["err"] = output.errMsg;
+                    roles_db["polyglot"] = roles.polyglot;
+                    resp = "{ars:next0}";
+    } else
+        AddRole(Params.toLowerCase().split(" "));
+
+})();
+
+function AddRolesObj(params) {
+
+    var arrExclude = [],
+        params,
+        roleName,
+        fluentOrNative;
+
+for (i=0; i < ServerRoles.length; i++){
+    if (/^[^\d]\s/.test(GetRoleName(ServerRoles[i]["ID"])))
+        arrExclude.push(GetRoleName(ServerRoles[i]["ID"]).toLowerCase());
+}
+    // arrExclude = arrExclude.map(function(value) {
+    //     return value.toLowerCase();
+    // });
+
+    if (params[0].charAt(1) === ".")
+        fluentOrNative = params.shift();
+    else if (params[0] === 'fluent' || params[0] === 'native')
+        fluentOrNative = params.shift().substr(0, 1) + '.';
+    else if (params[0] === 'learning')
+        params = new Array(params[1]);
+
+    roleName = params.join(" ");
+    roleName = roleName.charAt(0).toUpperCase() + roleName.slice(1);
+    roleName = (fluentOrNative) ? [fluentOrNative, roleName].join(" ") : roleName;
+    roles_db["roleName"] = roleName.toLowerCase();
+
+    if (!GetRoleID(roleName))
+        roles.errMsg.push("The role `" + roleName + "` does not exist.");
+    else if (roleName.toLowerCase() === "polyglot")
+        roles.errMsg.push("The role `" + roleName + "` is automaticaly given and taken and is not self removable.");
+    else if (MemberHasRole(Server.ID, UserID, "nsfw"))
+        roles.take.push("nsfw");
+    else if (roleName.toLowerCase() === "nsfw")
+         roles.give.push("nsfw");
+    else if (arrExclude.indexOf(roleName.toLowerCase()) === -1) {
+            if (MemberHasRole(Server.ID, UserID, roleName)) {
+                    if (roleName.split(" ")[0] === "n.") {
+                            var roles2 = "";
+                            for (i = 0; i < UserRoles.length; i++)
+                                roles2 = roles2 + GetRoleName(UserRoles[i]) + ", ";
+                            if (/(.*n\.){2}/.test(roles2)) {
+                                roles.take.push(roleName);
+                                roles.polyglot = true;
+                            } else
+                                roles.errMsg.push("You can't remove `" + roleName + "` if it's your only native language! Please contect a staff member if you need help.");
+                    } else {
+                        roles.take.push(roleName);
+                        roles.polyglot = true;
+                    }
+            } else {
+                roles.give.push(roleName);
+                roles.polyglot = true;
+            }
+    } else {
+        roles.errMsg.push("The role `" + roleName + "` is not self-assignable. Nice try.");
+    }
+}
+
+function AddRole(params) {
+
+    var arrExclude = ["Admins", "Mods", "Dyno", "Nadeko", "Botwinder Mk.II", "UB3R-B0T", "Mee6", "Tatsumaki", "FredBoat♪♪", "Welcomer", "dabBot", "Septapus", "Google Translate", "DiscordServers.com", "HawkBot", "Chess Bot", "MatBot", "ServerHound", "The Directory", "Ambassadors", "Staff", "Patron", "Echo", "Main Bots", "Administrative (B)", "Music (B)", "nsfw (B)", "Sandbox (B)", "Contributors", "Partners", "Tech Support", "Course Creator", "Polyglot", "Memrise Champion", "TL50", "TL40", "TL30", "TL20", "TL15", "TL10", "v. Lang", "European", "World", "Voice-media", "All", "Basic", "Lang (B)", "Social (B)", "Games (B)", "Bots", "Unassigned", "New", "Mute", "test account", "server", "nickname"],
+        params,
+        roleName,
+        fluentOrNative;
+
+    arrExclude = arrExclude.map(function(value) {
+        return value.toLowerCase();
+    });
+
+    if (params[0].charAt(1) === ".")
+        fluentOrNative = params.shift();
+    else if (params[0] === 'fluent' || params[0] === 'native')
+        fluentOrNative = params.shift().substr(0, 1) + '.';
+    else if (params[0] === 'learning')
+        params = new Array(params[1]);
+
+    roleName = params.join(" ");
+    roleName = roleName.charAt(0).toUpperCase() + roleName.slice(1);
+    roleName = (fluentOrNative) ? [fluentOrNative, roleName].join(" ") : roleName;
+
+
+    if (!GetRoleID(roleName))
+        resp = "{user} The role `" + roleName + "` does not exist.";
+    else if (roleName.toLowerCase() === "polyglot")
+        resp = "{user} The role `" + roleName + "` is automaticaly given and taken and is not removable.";
+    else if (arrExclude.indexOf(roleName.toLowerCase()) === -1) {
+        if (MemberHasRole(Server.ID, UserID, "nsfw"))
+            resp = "{user} Took away the role `" + roleName + "`.\n {take:nsfw}";
+        else if (roleName.toLowerCase() === "nsfw")
+            resp = "{user} Gave you the role `" + roleName + "`. \n {role:nsfw}";
+        else if (MemberHasRole(Server.ID, UserID, roleName))
+            if (roleName.split(" ")[0] === "n.") {
+                var roles2 = "";
+                for (i = 0; i < UserRoles.length; i++)
+                    roles2 = roles2 + GetRoleName(UserRoles[i]) + ", ";
+                if (/(.*n\.){2}/.test(roles2))
+                    resp = "{user} Took away the role `" + roleName + "`.\n {ars:polyglot} {take:" + roleName + "}";
+                else
+                    resp = "{user} You can't remove your only native language! Please contect a staff member if you need help.";
+            }
+        else
+            resp = "{user} Took away the role `" + roleName + "`.\n {ars:polyglot} {take:" + roleName + "}";
+        else
+            resp = "{user} Gave you the role `" + roleName + "`.\n {role:" + roleName + "} {ars:polyglot}";
+    } else {
+        resp = "{user} The role `" + roleName + "` is not self-assignable. Nice try.";
+    }
+}
+
+>>
+[#CONTINUE#]
+polyglot={init}
+{arslock}
+#js >>
+   var roles = "";
+   for (i = 0; i < UserRoles.length; i++) {
+   roles = roles + GetRoleName(UserRoles[i]) + ", ";
+   }
+   var polyglot=/(.*(f\.|n\.)){4}/.test(roles);
+   if (polyglot == true) {
+        if (MemberHasRole(Server.ID, UserID, "Polyglot")) { 
+            resp ="{stop}";
+        }
+        else
+           resp = "{user} Gave you the role `Polyglot`. \n{role:Polyglot}";
+   } 
+   else if (MemberHasRole(Server.ID, UserID, "Polyglot")) { 
+            resp = "{user} Took away the role `Polyglot`. \n{take:Polyglot}";
+   }
+   else {
+            resp ="{stop}";
+   }      
+>>
+
+
+[#CONTINUE#]
+next0={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "{ars:next1}";
+var rolesErr = roles_db["err"];
+var give = "";
+var take = "";
+
+if (roles_db["role0"])
+    give = "{user} You recevied the following roles: " + roles_db["giveMsg"] + " " + roles_db["role0"];
+
+if (roles_db["take0"])
+    take = "You have removed the following roles: " + roles_db["takeMsg"] + " " + roles_db["take0"];
+
+resp = nextLink + rolesErr + "\n" + give + "\n" + take;
+>>
+
+[#CONTINUE#]
+next1={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "{ars:next2}";
+var give = "";
+var take = "";
+
+if (roles_db["role1"])
+    give = roles_db["role1"];
+
+if (roles_db["take1"])
+    take = roles_db["take1"];
+
+resp = nextLink + "\n" + give + "\n" + take;
+>>
+
+[#CONTINUE#]
+next2={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "{ars:next3}";
+var give = "";
+var take = "";
+
+if (roles_db["role2"])
+    give = roles_db["role1"];
+
+if (roles_db["take2"])
+    take = roles_db["take2"];
+
+resp = nextLink + "\n" + give + "\n" + take;
+>>
+
+[#CONTINUE#]
+next3={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "{ars:next4}";
+var give = "";
+var take = "";
+
+if (roles_db["role3"])
+    give = roles_db["role3"];
+
+if (roles_db["take3"])
+    take = roles_db["take3"];
+
+resp = nextLink + "\n" + give + "\n" + take;
+>>
+
+[#CONTINUE#]
+next4={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "{ars:next5}";
+var give = "";
+var take = "";
+
+if (roles_db["role4"])
+    give = roles_db["role4"];
+
+if (roles_db["take4"])
+    take = roles_db["take4"];
+
+resp = nextLink + "\n" + give + "\n" + take;
+>>
+
+[#CONTINUE#]
+next5={init}
+{arslock}
+#js >>
+use roles_db;
+var nextLink = "";
+var give = "";
+var take = "";
+
+if (roles_db["role5"])
+    give = roles_db["role5"];
+
+if (roles_db["take5"])
+    take = roles_db["take5"];
+
+resp = nextLink + "\n" + give + "\n" + take;
+>>
+
+
+[#CONTINUE#]
+displayrolesmsg22={init}
+{arslock}
+{user} You recevied the following roles: {r?roles_db:giveMsg}
+You have removed the following roles: {r?roles_db:takeMsg}
+{r?roles_db:err}
+{m?roles_db:silence} := ```{r?roles_db:give}```
+{m?roles_db:silence} := ```{r?roles_db:take}```
