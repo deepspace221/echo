@@ -1,0 +1,386 @@
+&\cmd={init}
+{embed:
+    {title:BOTS COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:
+································································································································································································································
+    }
+{field[0]|name:Echo}
+{field[0]|value:
+```css
+
+\server
+\afk
+\afkmsg [MSG]
+\request [MSG]
+\count [lang]
+\sky
+\space
+\joke
+\meme
+```}
+{field[0]|inline:true}
+
+{field[1]|name:Echo whoami}
+{field[1]|value:
+```css
+\whoami
+\help whoami
+\about [MSG]
+\partner [MSG]
+\flag [COUNTRY]
+\setflag [COUNTRY] [URL]
+```}
+{field[1]|inline:true}
+
+{field[2]|name:UB3R}
+{field[2]|value:
+```css
+>fact
+>cowsay
+>define [word]
+>ud [word]
+>voice
+>figlet [word]
+>insult
+>timer
+>g [search term]
+>userinfo
+```}
+{field[2]|inline:true}
+
+{field[3]|name:Nadeko}
+{field[3]|value:
+```css
+.roles
+.inrole [role name]
+.checkmyperms
+.totube
+.iam
+.iamnot
+```}
+{field[3]|inline:true}
+
+{field[7]|name:Mee6}
+{field[7]|value:
+```css
+!rank
+!urban [keyword]
+!imgur [keyword]
+!manga [search term]
+!anime [search term]
+```}
+{field[7]|inline:true}
+
+{field[4]|name:Tatsumaki}
+{field[4]|value:
+```css
+t!profile
+t!top [global | server ] [page ]
+t!credits
+t!urban [word]
+t!weather [city]
+t!wiki [search term]
+t!beautiful
+t!rps [rock | paper | scissors ]  
+t!numberfacts [42]
+t!fortune [cookie]  
+t!cat
+t!psychopass [mention]
+t!reverse <text >
+t!dice
+```}
+{field[4]|inline:true}
+
+{field[6]|name:Septapus}
+{field[6]|value:
+```fix
+@Septapus avatar 
+@Septapus emoji <emoji> 
+@Septapus hugemoji <emoji>
+@Septapus comic [1-10]
+@Septapus numbertrivia [number]
+@Septapus wormhole [send] [msg]
+```}
+{field[6]|inline:true}
+
+{field[5]|name:Matbot}
+{field[5]|value:
+```css
+!youtube [search term]
+!insult [mention]
+!kill [victim]
+!kiss [mention]
+!lenny
+!roulette [title]
+!translate
+!hangman [wordlength]
+!hangmanstop
+!trivia
+!triviacategory [category]
+!triviastop 
+!typerace
+!comic
+!dog
+!doge [texts]
+!face [url]
+!yesorno
+```}
+{field[5]|inline:true}
+
+{field[8]|name:Do you know a cool command?}
+{field[8]|value: Let us know and we will add it to the list.}
+{field[8]|inline:false}
+
+[#CONTINUE#]
+&\help echo={init}
+{embed:
+    {title:ECHO COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Echo}
+{field[0]|value:
+```css
+
+\server
+\afk
+\afkmsg [MSG]
+\request [MSG]
+\count [lang]
+\sky
+\space
+\joke
+\meme
+```}
+{field[0]|inline:true}
+
+{field[1]|name:Echo whoami}
+{field[1]|value:
+```css
+\whoami
+\help whoami
+\about [MSG]
+\partner [MSG]
+\flag [COUNTRY]
+\setflag [COUNTRY] [URL]
+```}
+{field[1]|inline:true}
+}
+[#CONTINUE#]
+&\help UB3R={init}
+{embed:
+    {title:UB3R COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```css
+>fact
+>cowsay
+>define [word]
+>ud [word]
+>voice
+>figlet [word]
+>insult
+>timer
+>g [search term]
+>userinfo
+```}
+{field[0]|inline:true}
+}
+[#CONTINUE#]
+&\help nadeko={init}
+{embed:
+    {title:NADEKO COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```css
+.roles
+.inrole [role name]
+.checkmyperms
+.totube
+.iam
+.iamnot
+```}
+{field[0]|inline:true}
+}
+[#CONTINUE#]
+&\help mee6={init}
+{embed:
+    {title:MEE6 COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```css
+!rank
+!urban [keyword]
+!imgur [keyword]
+!manga [search term]
+!anime [search term]
+```}
+{field[0]|inline:true}
+{field[1]|name:Documentation:}
+{field[1]|value:http://mee6.github.io/Mee6-documentation/}
+{field[1]|inline:false}
+}
+[#CONTINUE#]
+&\help tatsumaki={init}
+{embed:
+    {title:TATSUMAKI COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```css
+t!profile
+t!top [global | server ] [page ]
+t!credits
+t!urban [word]
+t!weather [city]
+t!wiki [search term]
+t!beautiful
+t!rps [rock | paper | scissors ]  
+t!numberfacts [42]
+t!fortune [cookie]  
+t!cat
+t!psychopass [mention]
+t!reverse <text >
+t!dice
+```}
+{field[0]|inline:true}
+{field[1]|name:Documentation:}
+{field[1]|value:https://www.tatsumaki.xyz/commands.html}
+{field[1]|inline:false}
+}
+[#CONTINUE#]
+&\help matbot={init}
+{embed:
+    {title:MATBOT COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```css
+!youtube [search term]
+!insult [mention]
+!kill [victim]
+!kiss [mention]
+!lenny
+!roulette [title]
+!translate
+!hangman [wordlength]
+!hangmanstop
+!trivia
+!triviacategory [category]
+!triviastop 
+!typerace
+!comic
+!dog
+!doge [texts]
+!face [url]
+!yesorno
+```}
+{field[0]|inline:true}
+{field[1]|name:Documentation:}
+{field[1]|value:https://matbot.ga/help/}
+{field[1]|inline:false}
+}
+[#CONTINUE#]
+&\help septapus={init}
+{embed:
+    {title:SEPTAPUS COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands for easy access. 
+    }
+{field[0]|name:Commands:}
+{field[0]|value:
+```fix
+@Septapus avatar 
+@Septapus emoji <emoji> 
+@Septapus hugemoji <emoji>
+@Septapus comic [1-10]
+@Septapus numbertrivia [number]
+@Septapus wormhole [send] [msg]
+```}
+{field[0]|inline:true}
+{field[1]|name:Documentation:}
+{field[1]|value:http://septapus.com/}
+{field[1]|inline:false}
+}
+[#CONTINUE#]
+\help={init}
+Please run this command in the <#337513163853529088> channel. 
+It is best to assign roles in that channel as there are additional help scripts which are only active and available there.
