@@ -1,0 +1,14 @@
+[#CONTINUE#]
+&snippet.ars={init}
+{inherit:
+    {profile:public}
+    {trigger:&snippet.ars}
+}
+[#CONTINUE#]
+&autoresponse.json={init}
+{inherit:
+    {profile:public}
+    {trigger:&autoresponse.ars}
+}
+
+
