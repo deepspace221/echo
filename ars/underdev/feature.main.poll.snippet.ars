@@ -1,0 +1,64 @@
+[#CONTINUE#]
+\initpolldb={init}
+{req:Staff}
+{user} Command completed successfully. 
+{m?poll:yn} := YES/NO POLL
+{m?poll:12} := SELECT AN OPTION POLL
+{m?poll:123} := SELECT AN OPTION POLL
+{m?poll:1234} := SELECT AN OPTION POLL
+{m?poll:12345} := SELECT AN OPTION POLL
+[#CONTINUE#]
+pollmsglog={init}
+{redirect:359887069276798977}
+Poll **[{params}]** has been created at <#{chanid}> at `{timestamp:02/01/2006 03:04 PM EST}` by **{/user}**
+[#CONTINUE#]
+&\poll {params}={init}
+{split:|}
+{embed:
+    {title:{r?poll:{/p0}}}
+    {type:rich}
+    {thumb|url:https://moosocial.com/wp-content/uploads/2016/01/Community-Poll-icon-resizes.png}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {desc:
+{/p1}
+String.{/p0} == 12?:**OPTIONS:** :one: {/p2} :two: {/p3} {reactbot:  :one: :two:}
+String.{/p0} == 123?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} {reactbot:  :one: :two: :three:}
+String.{/p0} == 1234?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} :four: {/p5} {reactbot:  :one: :two: :three: :four:}
+String.{/p0} == 12345?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} :four: {/p5} :five: {/p6} {reactbot:  :one: :two: :three: :four: :five:}
+}
+    {footer|icon:{usericon}}
+    {footer|text: Poll as been request by {/user}}
+}
+String.{/p0} == yn?:{reactbot: :regional_indicator_y: :regional_indicator_n: }
+{ars:pollmsglog}
+[#CONTINUE#]
+&\poll {params}={init}
+{split:|}
+{embed:
+    {title:{r?poll:{/p0}}}
+    {type:rich}
+    {thumb|url:https://moosocial.com/wp-content/uploads/2016/01/Community-Poll-icon-resizes.png}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {desc:
+{/p1}
+String.{/p0} == 2?:**OPTIONS:** :one: {/p2} :two: {/p3} {reactbot:  :one: :two:}
+String.{/p0} == 3?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} {reactbot:  :one: :two: :three:}
+String.{/p0} == 4?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} :four: {/p5} {reactbot:  :one: :two: :three: :four:}
+String.{/p6} == 5?:**OPTIONS:** :one: {/p2} :two: {/p3} :three: {/p4} :four: {/p5} :five: {/p6} {reactbot:  :one: :two: :three: :four: :five:}
+}
+    {footer|icon:{usericon}}
+    {footer|text: Poll as been request by {/user}}
+}
+String.{/p0} == yn?:{reactbot: :regional_indicator_y: :regional_indicator_n: }
