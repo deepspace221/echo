@@ -96,12 +96,18 @@ function getEmbed(type){
       else if (type == "bots quick info"){
           return getBotsQuickInfo();
       }
-      else if (type == "bots quick info"){
+      else if (type == "echo quick info"){
           return getEchoQuickInfo();
       }
       else if (type == "ub3r help"){
           return getUB3RHelp();
       }
+      else if (type == "nadeko help"){
+          return getNadekoHelp();
+      }   
+      else if (type == "mee6 help"){
+          return getMee6Help();
+      }     
    
 }
 
