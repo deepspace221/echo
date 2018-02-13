@@ -6,7 +6,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 
    var authorName = ServerMembers[138].User.Username;
    var authorIcon = "{usericon}";
-   var Username = "a {/user\} g";
+   var Username = "{/user\}";
    var userIcon = "{usericon}";
    if (Trigger == "E-levent"){
 //          var userOBJ = findUserImageAndUsernameByUserID(UserID);
@@ -18,7 +18,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
     var footer2 = "{footer|icon:" + footerIcon + "} {footer|text:" + footer + "}";
 
-    if (author) author = "{author|icon:" + authorIcon + "}{author|name:"+ Username +"}"; else author = "";
+    if (author) author = "{author|icon:" + authorIcon + "}{author|name:"+ authorName +"}"; else author = "";
     var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
     
     if (thumb == "user") thumb = "{thumb|url:"+ userIcon +"}";
