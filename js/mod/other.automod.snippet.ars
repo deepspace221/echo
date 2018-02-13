@@ -1,0 +1,57 @@
+[#CONTINUE#]
+mentionroles={init}
+{m?mention:roles} := {allroles}
+[#CONTINUE#]
+&{:}(?i)@.={init}{-mention}
+{exc:Staff}
+String.{f:mention:{content}} == 1?:{ars:mentioncheckmsg}
+Response.nil?:{stop}
+[#CONTINUE#]
+mentioncheckmsg={init}
+ContentRegex.(@.+@.+@.+@.+@.+@)?:{ars:mentiondel}{take:All}{role:Mute}
+ContentRegex.(@(here|everyone).+@(here|everyone).+@(here|everyone))?:{ars:mentiondel}{take:All}{role:Mute}
+Response.nil?:{ars:mention}
+[#CONTINUE#]
+mention={init}
+{arslock}
+DB:mention.{/rawid}?:{ars:mentioncounter}
+Response.nil?:{ars:mentionsleepcheck}{m?mention:{/rawid}} := 0
+[#CONTINUE#]
+mentioncounter={init}
+{arslock}
+Count.{r?mention:{/rawid}} >= 4?:{ars:mentionmute}
+Response.nil?:{ars:mentionsleepcheck}
+[#CONTINUE#]
+mentionmute={init}
+{arslock}
+DB:mention.{r?mention:mute}?:{ars:mentionreset}
+Response.nil?:{ars:mentiondel}{take:All}{role:Mute}
+[#CONTINUE#]
+mentionsleepcheck={init}
+{arslock}
+DB:mention.{r?mention:{/rawid}true}?:{e?mention:{/rawid}(++)} 
+Response.nil?:{ars:mentionsleep}{m?mention:{/rawid}true} := true
+[#CONTINUE#]
+mentionsleep={init}
+{arslock}
+{sleep:60s}
+{d?mention:{/rawid}}{d?mention:{/rawid}true}
+[#CONTINUE#]
+mentiondel={init}
+{readonly:welcome}
+{m?mention:mute} := true
+{tclear:15}
+Silence!!  òó
+...
+I keel u, {user}!! ÒÓ
+{ars:mentionlog}{take:Basic}
+[#CONTINUE#]
+mentionlog={init}
+{arslock}
+{redirect:361428933469667328}
+{user} spammed mentions **{r?mention:{/rawid}}** times in <#{chanid}> within a duration of 60s and has been muted.
+{d?mention:{/rawid}}{d?mention:{/rawid}true}{take:Voice-media}
+[#CONTINUE#]
+mentionreset={init}
+{sleep:1m}
+{d?mention:mute}
