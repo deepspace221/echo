@@ -202,7 +202,7 @@ var color = "";
 var thumb = "server";
 var icon = ":diamond_shape_with_a_dot_inside:";
    
-var description = " \
+var description = "\
       \n**Information on how to customize your user's view.**\
       \n\
       \n" + icon + " The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server.\
@@ -229,6 +229,7 @@ var description = " \
       \n" + icon + " You can unsubscribe from server's <#335379990424059905> by running:\
       \n```.iamnot updates```\
 ";   
+description = "hello";
  
       return getSimpleEmbed(title, color, thumb, description);
    
