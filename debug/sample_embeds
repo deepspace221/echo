@@ -1,6 +1,8 @@
 %auto tst={init}
 #js >>
 import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/help/welcome_help_messages_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/help/help_bots_playground.js";
 var result = getEmbed("help");
 
 resp = result;
