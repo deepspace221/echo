@@ -1,0 +1,281 @@
+[#CONTINUE#]
+E-jnevnt1Welcome={init}
+{Event:Join}
+{m?server_db:currentuser} := {invcode} {invowner}
+{role:All}
+{ars:E-jnevnt2Unassigned}
+
+[#CONTINUE#]
+E-jnevnt2Unassigned={init}
+{arslock}
+{role:✗ Unassigned}
+{ars:E-jnevnt3WelcomeUpdates}
+
+[#CONTINUE#]
+E-jnevnt3WelcomeUpdates={init}
+{sleep:1s}
+#js >>
+use server_db;
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/join_event_welcome_functions.js";
+var redirect = "{redirect:337513163853529088}";
+var role="{role:Updates}";
+var link = "{ars:E-jnevnt4Chatty}";
+var error = "";
+var inviteCodes = "";
+var username = "";
+var userID = "";
+var json;
+var lastLine = "";
+var arrInviteCodes = [,1];
+
+try {
+    inviteCodes = server_db["currentuser"].split(" ")[0];
+    username = server_db["currentuser"].split(" ")[1];
+    arrInviteCodes = [inviteCodes,1];
+    var obj = initInviteOBJ(username);
+    if (obj != undefined){
+                if (server_db["invites"] == undefined){
+                    server_db["invites"] = JSON.stringify(obj);
+                }
+                else{
+                    json = JSON.parse(server_db["invites"]);
+                    var index = getDBUserIDIndex(json, userID);
+                    if (index != undefined){
+                        json[index].counter += 1;
+                        if (userID != "") json[index].userID = userID;
+                        if (!updateInviteCodeCounter(index)){
+                             json[index].inviteCodes.push(arrInviteCodes);
+                        }   
+                        server_db["invites"] = JSON.stringify(json);
+                    }
+                    else {
+                        json.push(obj);
+                        server_db["invites"] = JSON.stringify(json);
+                    }
+            }
+            delete server_db.currentuser;
+
+            if (userID != ""){
+                toggle = chkPingToggleState(userID);
+
+                if (toggle = "on")
+                    lastLine = "Posted by: <@" + userID + ">";
+                else if (toggle = "off")
+                    lastLine = "Posted by: " + username + ">";
+            }  
+        }
+}
+catch (err) {
+    error = err;
+    if (inviteCodes == undefined) inviteCodes = "";
+    if (username == undefined) username = "";
+}
+
+resp = link + redirect + getWelcomeMsg() + error + role; 
+>>
+[#CONTINUE#]
+E-jnevnt4Chatty={init}
+{arslock}
+#js >>
+var role = "{role:Chatty}";
+var link = "{ars:E-jnevnt5Hooks}"; 
+resp = link + role 
+>>
+
+[#CONTINUE#]
+E-jnevnt5Hooks={init}
+{arslock}
+#js >>
+var role = "{role:v. Hooks}";
+var link = "{ars:E-jnevnt6Mobile}"; 
+resp = link + role ;
+>>
+
+[#CONTINUE#]
+E-jnevnt6Mobile={init}
+{arslock}
+#js >>
+var role = "{role:v. Mobile}";
+var link = "{ars:E-jnevnt7Partners}"; 
+resp = link + role ;
+>>
+
+[#CONTINUE#]
+E-jnevnt7Partners={init}
+{arslock}
+#js >>
+var role = "{role:v. Partners}";
+var link = "{ars:E-jnevnt8Private}"; 
+resp = link + role ;
+>>
+
+[#CONTINUE#]
+E-jnevnt8Private={init}
+{arslock}
+#js >>
+var role = "{role:v. Private}";
+var link = "{ars:E-jnevnt9LogNew}"; 
+var statsLink = "{ars:P-displayDailyStats}"; 
+if (updateMonthStats("join") == "new month"){
+        statsLink = "{ars:P-displayMonthStats}";
+};
+
+var sleep = "{sleep}{time:" + minutesUntilMidnight() +"m}" + statsLink +"{/sleep}";
+resp = link + role + sleep;
+>>
+
+[#CONTINUE#]
+E-jnevnt9LogNew={init}
+{arslock}
+#js >>
+use server_db;
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/date_and_time_function.js";
+
+var color = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/css-color-names.json");
+var redirect = "{redirect:351919983690776586}";
+var link = "{sleep}{time:1s}{ars:E-jnevnt10Ping}{/sleep}";
+var role = "{role:New}";
+var title = "";
+// var description = "<@" + UserID + "> has left the server!";
+var description = "User has joined the server";
+var color = color.green; 
+var fields = " \
+{field[0]|name:Joined} \
+{field[0]|value:<@" + UserID + ">} \
+{field[0]|inline:true} \
+{field[1]|name:Members Count} \
+{field[1]|value:"+ getMembersCount("users") + "} \
+{field[1]|inline:true}";
+// var footer = "Current members count: " + getMembersCount("users");
+
+resp = redirect + link + role + getExpandableEmbed(title, true, color, "user", description, fields, '', '');
+>>
+
+[#CONTINUE#]
+E-jnevnt10Ping={init}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+var redirect = "{redirect:337513163853529088}";
+var take = "{take:" + getRegexRoleName("new") +"}"
+resp = redirect + getHelpMessage() + take
+>>
+
+[#CONTINUE#]
+E-levent={init}
+{Event:Leave}
+#js >>
+use server_db;
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/date_and_time_function.js";
+var color = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/css-color-names.json");
+
+if (updateMonthStats("left") == "new month"){
+        var link = {ars:P-displayMonthStats};
+};
+
+var redirect = "{redirect:383789043248267264}";
+var title = "Member Left";
+// var description = "<@" + UserID + "> has left the server!";
+var userOBJ = findUserImageAndUsernameByUserID(UserID);
+var description = "User has left the server\n" + JSON.stringify(userOBJ);
+var color = color.red; 
+var thumb = userOBJ.avatar;
+var username = userOBJ.username;
+var fields = " \
+{field[0]|name:Left} \
+{field[0]|value:<@" + UserID + ">} \
+{field[0]|inline:true} \
+{field[1]|name:Members Count} \
+{field[1]|value:"+ getMembersCount("users") + "} \
+{field[1]|inline:true}";
+// var footer = "Current members count: " + getMembersCount("users");
+// resp = redirect + getSimpleEmbed(title, true, description);
+resp = redirect + link + getExpandableEmbed(title, true, color, thumb, description, fields, '', '', username);
+>>
+
+[#CONTINUE#]
+P-dailyStats={init}
+{arslock}
+#js >>
+use server_db;
+stats = JSON.parse(server_db["traffic"]).
+
+var date = new Date().toDateString();
+var month = date.getMonth();
+var statsJoinedDay = joinDayCounter;
+var statsLeftDay = leftDayCounter;
+var statsJoinedMonth = statsDate.joinMonthCounter;
+var statsLeftMonth = statsDate.leftMonthCounter;
+
+var title = "Daily statistics";
+var description = "The comming and goings today.";
+var color = color.red; 
+var fields = " \
+{field[0]|name:Date} \
+{field[0]|value:" + date + "} \
+{field[0]|inline:false} \
+{field[1]|name:Joined} \
+{field[1]|value:" + statsJoinedDay + "} \
+{field[1]|inline:true} \
+{field[2]|name:Left} \
+{field[2]|value:" + statsLeftDay + "} \
+{field[2]|inline:true} \
+{field[3]|name:Joined " + month + "} \
+{field[3]|value:" + statsJoinedMonth + "} \
+{field[3]|inline:true} \
+{field[4]|name:Left " + month + "} \
+{field[4]|value:"+ statsLeftMonth + "} \
+{field[4]|inline:true}";
+resp = redirect + getExpandableEmbed(title, false, color, "", description, fields, '', '');
+>>
+
+[#CONTINUE#]
+P-displayMonthStats={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+var redirect = "{redirect:337513163853529088}";
+
+resp = redirect + getEmbed("month");
+>>
+
+[#CONTINUE#]
+P-displayDailyStats={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+var redirect = "{redirect:337513163853529088}";
+resp = redirect + getEmbed("daily");
+
+>>
+
+[#CONTINUE#]
+\toggleinvites {params}={init}
+{arslock}
+#js >>
+var toggle = invitesPingToggle(UserID);
+var value = "";
+
+if (toggle == "off")
+    value = "{user} Command has been completed successfuly: **invites off**"; 
+else if (toggle == "on")
+    value = "{user} Command has been completed successfuly: **invites off**"; 
+
+resp = value;
+>>
+
+[#CONTINUE#]
+&\greet {params}={init}
+{req:Staff,Ambassadors}
+#js >>
+    var msg = " \
+\n**<@{/rawid}> welcomes you to the server, {user} !** <:happy_panda:402271860340817930>\
+\nWhat are your native/fluent/learning languages? We need this information in order to tag you.\
+\nRun **\\help** to view instructions how to do it by yourself. \
+\nIf you're unsure what to do please just write the information in plain English and a staff member will assist you.\
+";
+resp = msg;
+>>
