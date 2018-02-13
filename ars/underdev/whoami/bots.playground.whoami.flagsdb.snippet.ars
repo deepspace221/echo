@@ -1,0 +1,47 @@
+[#CONTINUE#]
+%defaultflag={init}
+{req:Admins}
+{m?DEFAULTFLAG:argentina} := http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/128/Argentina-Flag-icon.png
+{m?DEFAULTFLAG:bulgaria} := http://icons.iconarchive.com/icons/hopstarter/flag-borderless/128/Bulgaria-icon.png
+{m?DEFAULTFLAG:brazil} := http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/128/Brazil-Flag-icon.png
+{m?DEFAULTFLAG:canada} :=  http://icons.iconarchive.com/icons/iconscity/flags/128/canada-icon.png    
+{m?DEFAULTFLAG:china} :=http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/128/China-Flag-icon.png
+{m?DEFAULTFLAG:czech} := http://icons.iconarchive.com/icons/iconscity/flags/128/czech-icon.png
+{m?DEFAULTFLAG:denmark} := http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/128/Denmark-Flag-icon.png
+{m?DEFAULTFLAG:egypt} := http://icons.iconarchive.com/icons/mayosoft/no-patriot/128/Masr-Egypt-icon.png
+{m?DEFAULTFLAG:finland} := http://icons.iconarchive.com/icons/iconscity/flags/128/finland-icon.png
+{m?DEFAULTFLAG:france} := http://icons.iconarchive.com/icons/iconscity/flags/128/france-icon.png
+{m?DEFAULTFLAG:holand} := http://icons.iconarchive.com/icons/iconscity/flags/128/netherlands-icon.png
+{m?DEFAULTFLAG:greece} := http://icons.iconarchive.com/icons/pan-tera/flags/128/Greece-Flag-icon.png
+{m?DEFAULTFLAG:germany} := http://icons.iconarchive.com/icons/pan-tera/flags/128/Germany-Flag-icon.png
+{m?DEFAULTFLAG:hungary} := http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Hungary-Flag-icon.png
+{m?DEFAULTFLAG:indonesia} := http://icons.iconarchive.com/icons/iconscity/flags/128/indonesia-icon.png
+{m?DEFAULTFLAG:india} :=  http://icons.iconarchive.com/icons/iconscity/flags/128/india-icon.png  
+{m?DEFAULTFLAG:israel} := https://momentumisrael.files.wordpress.com/2013/07/israeli-flag-3.jpg?w=200
+{m?DEFAULTFLAG:italy} := http://icons.iconarchive.com/icons/iconscity/flags/128/italy-icon.png
+{m?DEFAULTFLAG:japan} := http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/128/Japan-Flag-icon.png
+{m?DEFAULTFLAG:korea} := http://icons.iconarchive.com/icons/pan-tera/flags/128/South-Korea-Flag-icon.png
+{m?DEFAULTFLAG:mexico} :=  http://icons.iconarchive.com/icons/pan-tera/flags/128/Mexico-Flag-icon.png  
+{m?DEFAULTFLAG:norvegia} := http://img.freeflagicons.com/thumb/flag_background/norway/norway_640.png
+{m?DEFAULTFLAG:poland} := http://icons.iconarchive.com/icons/iconscity/flags/128/poland-icon.png  
+{m?DEFAULTFLAG:portugal := http://icons.iconarchive.com/icons/iconscity/flags/128/portugal-icon.png
+{m?DEFAULTFLAG:russia} := http://icons.iconarchive.com/icons/mayosoft/no-patriot/128/Rossiya-Russia-icon.png
+{m?DEFAULTFLAG:romania} := http://icons.iconarchive.com/icons/iconscity/flags/128/romania-icon.png
+{m?DEFAULTFLAG:spain} := http://icons.iconarchive.com/icons/mayosoft/no-patriot/128/Espanya-Spain-icon.png
+{m?DEFAULTFLAG:sweden} := http://icons.iconarchive.com/icons/iconscity/flags/128/sweden-icon.png
+{m?DEFAULTFLAG:turkey} := http://icons.iconarchive.com/icons/iconscity/flags/128/turkey-icon.png
+{m?DEFAULTFLAG:ukraine} := http://icons.iconarchive.com/icons/pan-tera/flags/128/South-Korea-Flag-icon.png   
+{m?DEFAULTFLAG:uk} :=  http://icons.iconarchive.com/icons/pan-tera/flags/128/Great-Britain-Flag-icon.png
+{m?DEFAULTFLAG:usa} :=  http://icons.iconarchive.com/icons/pan-tera/flags/128/USA-Flag-icon.png
+{m?DEFAULTFLAG:vietnam} := http://icons.iconarchive.com/icons/hopstarter/flag-borderless/256/Vietnam-icon.png
+{m?DEFAULTFLAG:other} := NaN
+
+██░░░░░░░░░░░░░░░░░░
+████░░░░░░░░░░░░░░░░
+██████░░░░░░░░░░░░░░
+████████░░░░░░░░░░░░
+██████████░░░░░░░░░░
+████████████░░░░░░░░
+████████████████████
+
+

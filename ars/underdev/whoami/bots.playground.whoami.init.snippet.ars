@@ -1,0 +1,64 @@
+[#CONTINUE#]
+&%reset {params}={init}
+{req:Staff}
+String.{params} == flag?:{user} Your `flag` data has been reseted {m?FLAGSURL:{rawid}-{/user}}:=https://google.com/
+String.{params} == country?:{user} Your `country` data has been reseted {m?COUNTRY:{rawid}-{/user}}:=NaN
+String.{params} == about?:{user} Your `about` data has been reseted {m?ABOUT:{rawid}-{/user}}:=NaN
+String.{params} == partner?:{user} Your `partner` data has been reseted {d?PARTNER:{rawid}-{/user}}
+String.{params} == whoami?:{user} Your `whoami` data has been reseted {d?WHOAMI:{rawid}-{/user}}
+Response.nil?:{user} Please provide one of the following parameters: `flag`, `country`, `about`, `partner`, `whoami`
+[#CONTINUE#]
+&\reset {params}={init}{-mentions}
+String.{params} == flag?:{user} Your `flag` data has been reseted {m?FLAGSURL:{/rawid}-{/user}}:=https://google.com/
+String.{params} == country?:{user} Your `country` data has been reseted {m?COUNTRY:{/rawid}-{/user}}:=NaN
+String.{params} == about?:{user} Your `about` data has been reseted {m?ABOUT:{/rawid}-{/user}}:=NaN
+String.{params} == partner?:{user} Your `partner` data has been reseted {d?PARTNER:{/rawid}-{/user}}
+String.{params} == whoami?:{user} Your `whoami` data has been reseted {d?WHOAMI:{/rawid}-{/user}}
+Response.nil?:{user} Please provide one of the following parameters: `flag`, `country`, `about`, `partner`, `whoami`
+
+[#CONTINUE#]
+\reset={init}{-mentions}
+{m?FLAGSURL:{/rawid}-{/user}}:=https://google.com/
+{m?COUNTRY:{/rawid}-{/user}}:=NaN
+{m?ABOUT:{/rawid}-{/user}}:=NaN
+{m?PARTNER:{/rawid}-{/user}}:=NaN
+{d?WHOAMI:{/rawid}-{/user}}
+{user} All your profile data has been reseted to default. 
+
+
+[#CONTINUE#]
+\init={init}
+DB:FLAGS.{rawid}-{/user}}?:{ars:whoamicountryinit}
+Response.nil?: {ars:whoamicountryinit}{m?FLAGSURL:{rawid}-{/user}}:=https://google.com/
+[#CONTINUE#]
+whoamicountryinit={init}
+DB:COUNTRY.{rawid}-{/user}}?:{ars:whoamiaboutinit}
+Response.nil?:{ars:whoamiaboutinit} {m?COUNTRY:{rawid}-{/user}}:=NaN
+[#CONTINUE#]
+whoamiaboutinit={init}
+DB:ABOUT.{rawid}-{/user}?:{ars:whoamipartnerinit}
+Response.nil?: {ars:whoamipartnerinit}
+[#CONTINUE#]
+whoamipartnerinit={init}
+DB:PARTNER.{rawid}-{/user}?: {stop}
+Response.nil?:{m?PARTNER:{rawid}-{/user}}:=NaN
+
+[#CONTINUE#]
+%initemoji={init}
+{req:Staff}
+{m?EMOJI:memrise}:=<:memrise1:337621895312834560>
+{m?EMOJI:duolingo}:=<:duolingo:352946192176513026>
+{m?EMOJI:nsfw}:=<:nsfw:352718002774605824>
+{m?EMOJI:polyglot}:=<:polyglot:352931044472782848>
+{m?EMOJI:cc}:=<:memrise:337621895576944650>
+{m?EMOJI:question}:=<:Speech_Bubble_Emoji_42x42:337623277809827850>
+{m?EMOJI:voice}:=:notes:
+{m?EMOJI:true}:=:white_check_mark: 
+{m?EMOJI:false}:=:negative_squared_cross_mark: 
+{user} The command has been completed successfully. 
+
+[#CONTINUE#]
+&%defaultimg {params}={init} 
+{req:Staff}
+{m?helpers:blankimg}:={params}
+{user} Your default img has been set. Type `\whoami` to view changes.

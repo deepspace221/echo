@@ -1,0 +1,206 @@
+[#CONTINUE#]
+&\flag {params}={init}{-mentions}
+ParamRegex.(?i)(Argentina|ar)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_ar:  {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:argentina}
+ParamRegex.(?i)(Brazil|br)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_br:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:brazil}
+ParamRegex.(?i)(Bulgaria|bg)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_bg:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:bulgaria}  
+ParamRegex.(?i)(Canada|ca)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_ca:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:canada} 
+ParamRegex.(?i)(China|cn)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_cn: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:china} 
+ParamRegex.(?i)(Czech|cz)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_cz: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:czech}
+ParamRegex.(?i)(Denmark|dk)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_dk: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:denmark} 
+ParamRegex.(?i)(Egypt|eg)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_eg: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:egypt} 
+ParamRegex.(?i)(Finland|fi)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_fi: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:finland} 
+ParamRegex.(?i)(France|fr)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_fr: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:france}
+ParamRegex.(?i)(Holland|netherlands|nl)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_nl: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:holand} 
+ParamRegex.(?i)(Hungary|hu)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_hu: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:hungary} 
+ParamRegex.(?i)(Greece|gr)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_gr: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:greek}
+ParamRegex.(?i)(Germany|de)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_de: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:germany}
+ParamRegex.(?i)(Indonesia|id)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_id:  {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:Indonesia}
+ParamRegex.(?i)(India|in)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_in: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:india}
+ParamRegex.(?i)(Israel|il)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_il: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:israel}
+ParamRegex.(?i)(Italy|it)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_it: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:italy}
+ParamRegex.(?i)(Japan|jp)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_jp: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:japan}
+ParamRegex.(?i)(Korea|kr)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_kr: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:korea} 
+ParamRegex.(?i)(Mexico|mx)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_mx: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:mexico} 
+ParamRegex.(?i)(norvegia|no)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_no: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:norwegian}
+ParamRegex.(?i)(Poland|pl)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_pl: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:poland}
+ParamRegex.(?i)(Portugal|pt)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_pt: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:portugal}
+ParamRegex.(?i)(Romania|ro)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_ro: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:romania}
+ParamRegex.(?i)(Russia|USSR|Soviet Union|ru)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_ru: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:russia}
+ParamRegex.(?i)(Spain|es)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_es:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:spain}
+ParamRegex.(?i)(Sweden|se)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_se:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:sweden} 
+ParamRegex.(?i)(Turkey|tr)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_tr: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:turkey}
+ParamRegex.(?i)(Ukraine|ua)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_ua: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:ukraine}
+ParamRegex.(?i)(UK|Britain|United Kingdom|gb)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_gb: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:uk}
+ParamRegex.(?i)(US|United States|USA)?: Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_us: {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:usa} 
+ParamRegex.(?i)(Vietnam|vn)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=:flag_vn:{m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:vietnam}
+ParamRegex.(?i)(Other)?:Your `\whoami` flag has been set. {m?COUNTRY:{/rawid}-{/user}}:=Unknown {m?fLAGSURL:{/rawid}-{/user}}:={r?DEFAULTFLAG:other}
+Response.nil?: {user} Sorry! Your country was not found in the database. 
+
+Type `\listcountries` to see the current aviliable options. 
+
+If your country is not listed you can still set a custom pic using the follwing command example: 
+```\custompic www.domain.com\pic.jpg```
+[#CONTINUE#]
+%helpers={init}
+{req:Staff}
+{m?helpers:zeroparam}:={/p0}
+{m?helpers:oneparam}:={/p1}
+{m?helpers:twoparam}:={/p2}
+{m?helpers:threeparam}:={/p3}
+{m?helpers:fourparam}:={/p4}
+{m?helpers:fiveparam}:={/p5}
+{m?helpers:silence}:=true
+[#CONTINUE#]
+&\custompic {params}={init}{-mentions}
+{split:|}
+String.{/p0} == ?:{user} The command expects 2 values. Your 1st value is empty. ```\custompic france | http://www.domain.com/pic.jpg```
+String.{/p0} == {r?helpers:zeroparam}?:{ars:whoamicheckurl1}
+String.{/p1} != ?:{ars:whoamicheckurl} 
+Response.nil?:{user} The command expects 2 values. Your 2nd value is empty. ```\custompic france | http://www.domain.com/pic.jpg```
+[#CONTINUE#]
+&\updatecustompic {params}={init}
+{req:Staff}
+{split:|}
+String.{/p0} == ?:{user} The command expects 2 values. Your 1st value is empty. ```\custompic france | http://www.domain.com/pic.jpg```
+String.{/p0} == {r?helpers:zeroparam}?:{ars:whoamicheckurl1}
+String.{/p1} != ?:{ars:whoamicheckurl} 
+Response.nil?:{user} The command expects 2 values. Your 2nd value is empty. ```\custompic france | http://www.domain.com/pic.jpg```
+
+[#CONTINUE#]
+whoamicheckurl={init}
+{arslock}
+ParamRegex.(?i)((www|http).*(jpg|png))?:{ars:whoamiassignvalues}
+Response.nil?: Please provide a valid jpg/png URL file for the 2nd param: ```\custompic france | http://www.domain.com/pic.jpg```
+[#CONTINUE#]
+whoamiassignvalues={init}
+{arslock}
+{split:|}
+{m?COUNTRY:{rawid}-{/user}}:={/p0} {m?FLAGSURL:{rawid}-{/user}}:={/p1}
+{user} Your `\whoami` pic and country has been set. 
+
+[#CONTINUE#]
+whoamicheckurl1={init}
+{arslock}
+ParamRegex.(?i)((www|http).*(jpg|png))?:{ars:whoamiassignvalues1}
+Response.nil?: Please provide a valid jpg/png URL file: ```\custompic http://www.domain.com/pic.jpg```
+[#CONTINUE#]
+whoamiassignvalues1={init}
+{arslock}
+{m?FLAGSURL:{rawid}-{/user}}:={params}
+{user} Your `\whoami` pic has been set. 
+
+
+
+[#CONTINUE#]
+\listcountries={init}
+The available options for the `\flag [country]` command:
+```css
+Argentina,Brazil,Bulgaria,Canada,China,Czech,Denmark,Egypt,Finland,France,Holland,Hungary,Greece,Germany,Indonesia,India,Israel,Italy,Japan,Korea,Mexico,norvegia,Poland,Portugal,Romania,Russia,Spain,Sweden,Turkey,Ukraine,Britain,USA,Vietnam,Other
+```
+
+[#CONTINUE#]
+&\about {params}={init}{-mentions}
+#js >>
+      use ABOUT;
+      if(Params=="") {
+                ABOUT[{/rawid}+"-"+Username]="NaN";
+                resp="{user} Your information has been rested to default."; 
+      } else {
+                 ABOUT[{/rawid}+"-"+Username]=Params;
+                resp="{user} Your data has been saved. Type `\\whoami` to view changes.";
+      }
+>>
+
+[#CONTINUE#]
+&\oldabout {params}={init}{-mentions}
+{arslock}
+Params.?: {user} Your information has been reseted to default. {m?ABOUT:{/rawid}-{/user}}:=NaN
+Response.nil?: {user} Your data has been saved. Type `\whoami` to view changes. {m?ABOUT:{/rawid}-{/user}}:={stripspecial:{params}}
+
+[#CONTINUE#]
+&\updateabout {params}={init}
+{req:Staff}
+Params.?: {user} Your information has been reseted to default. {m?ABOUT:{rawid}-{/user}}:=NaN
+Response.nil?: {user} Your data has been saved. Type `\whoami` to view changes. {m?ABOUT:{rawid}-{/user}}:={params}
+
+[#CONTINUE#]
+
+&\partner {params}={init}{-mentions}
+#js >>
+      use PARTNER;
+      if(Params=="") {
+                PARTNER[{/rawid}+"-"+Username]="NaN";
+                resp="{user} Your information has been rested to default."; 
+      } else {
+                 PARTNER[{/rawid}+"-"+Username]=Params;
+                resp="{user} Your data has been saved. Type \whoami to view changes.";
+      }
+>>
+
+[#CONTINUE#]
+&\oldpartner {params}={init}{-mentions}
+{arslock}
+Params.?: {user} Your information has been reseted to default. {m?PARTNER:{/rawid}-{/user}}:=NaN 
+Response.nil?:  {user} Your data has been saved. Type `\whoami` to view changes.  {m?PARTNER:{/rawid}-{/user}}:={stripspecial:{params}}
+
+[#CONTINUE#]
+&\updatepartner {params}={init}
+{req:Staff}
+Params.?: {user} Your information has been reseted to default. {m?PARTNER:{rawid}-{/user}}:=NaN 
+Response.nil?:  {user} Your data has been saved. Type `\whoami` to view changes.  {m?PARTNER:{rawid}-{/user}}:={params}
+
+
+[#CONTINUE#]
+&\country {params}={init}{-mentions}
+{m?COUNTRY:{/rawid}-{/user}}:={params}
+{user} Your country **{params}** has been saved to the database. Run `\whoami` to view changes.
+
+
+[#CONTINUE#]
+\help whoami={init}
+{embed:
+    {title:WHOAMI command information help}
+    {type:rich}
+    {author|icon:{usericon}}
+    {author|name:{/user}}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {desc:
+To set your **about** info type the following command:
+```css
+\about [msg]        
+```
+To set your **partner search** info type the following command:
+```css
+\partner [msg]     
+```
+To set your only your **country** information type the follwing command:
+```css
+\country [country]
+```
+To set your **country and flag** info type the follwing command:
+```css
+\flag [country]
+```
+If you want to set a custom **picture**.
+```css
+\custompic [http://www.domain.com/pic.jpg]
+```
+To check information of another user (note that this will ping them):
+```css
+\whoami [@username] 
+```
+To update information for another user:
+```css
+\update1 [@username]
+\update2 [@username]
+```
+If the whoami embed isn't loading, you can try this command to reset all your data to default values: 
+```css
+\reset
+```}
