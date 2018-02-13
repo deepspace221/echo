@@ -1,0 +1,242 @@
+[#CONTINUE#]
+&\lang={init}
+{embed:
+    {title:Currently available languages}
+    {type:rich}
+    {thumb|url:{guild|icon}}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {desc: If your language is not listed, please contact a member of our staff and it will be dealt with promptly.}
+{field[0]|name:Languages: <:blank:352901517004636163>}
+{field[0]|value:
+```md
+# Afrikaans
+# Albanian
+# Arabic
+# Armenian
+# ASL
+# Bengali
+# Berber
+# Bosnian
+# Bulgarian
+# Cantonese
+# Catalan
+# Celtic
+# Croatian
+# Czech
+# Danish
+# Dutch
+# English
+# Esperanto 
+# Estonian 
+# Finnish 
+# Flemish
+# French
+# Georgian
+# German
+# Greek
+# Hausa
+# Hebrew
+# Hindi
+# Hungarian
+# Icelandic
+# Indonesian
+# Irish
+# Italian
+# Javanese
+# Japanese
+```}
+{field[0]|inline:true}
+
+{field[1]|name:<:blank:352901517004636163>}
+{field[1]|value:
+```md
+# Kannada
+# Kurdish
+# Korean
+# Lakota
+# Latin
+# Ladino
+# Macedonian
+# Malaysian
+# Malay
+# Mandarin
+# Norwegian
+# Lithuanian
+# Persian
+# Polish
+# Portuguese
+# Punjabi
+# Romanian
+# Russian
+# Scottish
+# Serbian
+# Sindhi
+# Slovak
+# Spanish
+# Swahili
+# Swedish
+# Tagalog
+# Tamil
+# Telugu
+# Thai
+# Turkish
+# Ukrainian
+# Vietnamese 
+# Urdu
+# Welsh
+# Yiddish
+# Other Langs
+# Dead Langs
+# Conlang
+```}
+{field[1]|inline:true}
+}
+[#CONTINUE#]
+&\platform={init}
+{embed:
+    {title:LANGUAGE PLATFORM ROLES}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:
+Tell us which resourses do you use in your studies by tagging yourself with **.iam [role name]** commands. 
+    
+Roles marked with **[access]** will grant you access to additional rooms which are related to these roles.
+    }
+{field[0]|name:Platform roles: <:blank:352901517004636163>}
+{field[0]|value:
+```css
+# Memrise [access]
+# Duolingo [access]
+# Anki [access]
+# Tinycards [access]
+# Lang-8 
+# Readlang
+# LingQ
+# Clozemaster
+# Glossika
+# Lingvist
+# Yabla
+# FluentU
+# HelloTalk
+# iTalki
+```}
+{field[0]|inline:true}
+
+
+[#CONTINUE#]
+&\cmd={init}
+{embed:
+    {title:WELCOME CHANNEL COMMANDS QUICK INFORMATION}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:A list of frequent commands to help you get started and setup your profile. 
+    }
+{field[0]|name:Roles help commands:}
+{field[0]|value:
+```css
+\help
+\lang
+\timezone
+\platform
+\misc
+```}
+{field[0]|inline:true}
+{field[1]|name:General server commands:}
+{field[1]|value:
+```css
+\server
+\request [MSG]
+```
+}
+{field[1]|inline:true}
+{field[2]|name:Adding/Removing roles:}
+{field[2]|value:
+```css
+.iam [role name]
+.iamnot [role name]
+```
+}
+{field[2]|inline:false}
+}
+[#CONTINUE#]
+&\misc={init}
+{embed:
+    {title:MISCELLANEOUS ROLES}
+    {type:rich}
+    {color:
+        {randlist:
+             #ff0000,#00ff00,#ffffff,#4286f4,
+             #f45642,#262525,#e2d626,#87e226,
+             #26e2c0,#2633e2,#8126e2
+        }
+    }
+    {thumb|url:{guild|icon}}
+    {desc:
+
+Information on other available roles on the server. 
+    }
+{field[0]|name:Misc:}
+{field[0]|value:
+```css
+# Course Creator [access]
+# NSFW [access]
+# Polyglot [access]
+# Correct Me
+# Ask a Native
+# linguistics
+# IPA
+# Mobile User     
+# XP Contests
+# LGBT
+
+```}
+{field[1]|inline:true}
+{field[1]|name:Hobbies:}
+{field[1]|value:
+```css
+# Anime [access]
+# programmer
+# Satellites [access]
+# Gamer
+# Traveler
+# Chess
+```
+}
+{field[1]|inline:true}
+{field[2]|name:Notes:}
+{field[2]|value:
+👉 You should only give yourself the **Polyglot** role if you're confident in your ability **in 4 languages or above**. This role will grant you access to some channels.
+
+👉 The **Mobile User** role if ment for users who spent more than 70% of their time on mobile.
+
+👉  The **Course Creator** role is only intended for course creators. It will grant you write access to the channels <#335566625749336084> and <#338302446591803392>. You will need to contact a staff member with your memrise username in order to receive it.
+}
+{field[2]|inline:false}
+}
+[#CONTINUE#]
+&\greet={init}
+{req:Staff,Ambassadors}
+**<@{/rawid}> welcomes you to the server, {user} !** :happy_panda:
+What are your native/fluent/learning languages? We need this information in order to tag you.
+Run **\help** to view instructions how to do it by yourself. 
+If you're unsure what to do please just write the information in plain English and a staff member will assist you.
