@@ -199,10 +199,10 @@ function getViewsEmbed(){
 var title = "View options"; 
 var thumb = "server";
    
-var description = "\
+var description = " \
       \n**Information on how to customize your user's view.**\
       \n\
-      \n💠 The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server. \
+      \n💠 The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server.\
       \nTo remove it from your view you can run the command `.iamnot hooks` at <#337513163853529088>.\
       \n\
       \n💠 The **v. Mobile** role is connected to the **Mobile** category and it's by default assigned to every member on this server.\ 
@@ -219,7 +219,7 @@ var description = "\
       \nTo add **God Mode** run: `.iam god mode`\
       \nTo add **Extras** run: `.iam Extras`\
       \n\
-      \nPlease don't use the extras role without god mode. It is not ment to function this way. \
+      \nPlease don't use the extras role without god mode. It is not ment to function this way.\
       \n\
       \nIf you wish to be added to a specific sub-genre hooks channel, without having the god mode/extras role, you can request to be added to the exclusion list of those channels at <#337513299765755905>.\
       \n\
