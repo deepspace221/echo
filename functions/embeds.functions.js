@@ -99,7 +99,10 @@ function getEmbed(type){
       else if (type == "bots quick info"){
           return getEchoQuickInfo();
       }
-
+      else if (type == "ub3r help"){
+          return getUB3RHelp();
+      }
+   
 }
 
 import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/help_messages_functions.js";
