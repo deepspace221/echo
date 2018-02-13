@@ -124,4 +124,3 @@ function getEmbed(type){
    
 }
 
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/help_messages_functions.js";
