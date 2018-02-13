@@ -229,7 +229,6 @@ var description = "\
       \n" + icon + " You can unsubscribe from server's <#335379990424059905> by running:\
       \n```.iamnot updates```\
 ";   
-description = "hello";
  
       return getSimpleEmbed(title, color, thumb, description);
    
