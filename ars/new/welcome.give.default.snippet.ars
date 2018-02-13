@@ -1,0 +1,29 @@
+[#CONTINUE#]
+&%dfroles={init}
+{req:Staff}
+{role:All}{ars:role2}
+[#CONTINUE#]
+role2={init}
+{arslock}
+{role:Updates}{ars:role3}
+[#CONTINUE#]
+role3={init}
+{arslock}
+{role:Chatty}{ars:role4}
+[#CONTINUE#]
+role4={init}
+{arslock}
+{role:v. Hooks}{ars:role5}
+[#CONTINUE#]
+role5={init}
+{arslock}
+{role:v. Mobile}{ars:role6}
+[#CONTINUE#]
+role6={init}
+{arslock}
+{role:v. Partners}{ars:role7}
+[#CONTINUE#]
+role7={init}
+{arslock}
+{role:v. Private}
+Command has been completed successfully. 
