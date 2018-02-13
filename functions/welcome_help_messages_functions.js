@@ -150,7 +150,7 @@ function getPlatformEmbed(){
       var colors = "";
       var description = "\
 \nTell us which resourses do you use in your studies by tagging yourself with **.iam [role name]** commands.\
-\n\    
+\n\
 \nRoles marked with **[access]** will grant you access to additional rooms which are related to these roles.\
 ";
       var feilds = "\
