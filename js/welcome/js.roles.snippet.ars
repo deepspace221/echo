@@ -120,5 +120,20 @@ function isRoleHigherThanUserTopRole(roleName, arrSortedUserRoles){
 		return false;
 	else
 		return true;
+
+
+
+ErrNoNativeLang={init}
+{arslock}
+No such language exists in the database and the removing of a native language has been disabled. 
+If you need help you can send a message to the staff with `\request YOUR_MESSAGE`
+[#CONTINUE#]
+ErrRemoveNativeLang={init}
+{arslock}
+**The last command has not been executed.** Removing of a native language has been disabled. 
+Please a contact a staff member to remove a native language role.
+You can send a request with the command `\request YOUR_MESSAGE`
+(Bulgarian|Czech|Danish|Dutch|Finnish|Flemish|Greek|Hungarian|Norwegian|Polish|Romanian|Swedish|Ukrainian))?:{ars:removenew}{role:European}{take:World}
+ParamRegex.(?i)((Arabic|Cantonese|Hebrew|Indonesian|Korean|Telugu|Turkish|Vietnamese|Other)
 }
 >>
