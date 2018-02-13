@@ -229,6 +229,6 @@ var description = " \
       \n```.iamnot updates```\
 ";   
  
-      resp = getSimpleEmbed(title, color, thumb, description);
+      return getSimpleEmbed(title, color, thumb, description);
    
 }
