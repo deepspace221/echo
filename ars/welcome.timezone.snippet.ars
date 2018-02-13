@@ -1,0 +1,61 @@
+[#CONTINUE#]
+&{:}(?i)\biam utc\b {params}={init}
+ParamRegex.(?i)(\+10)?:{role:UTC+10–11}{user} you now have **UTC+10–11** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+10:00
+ParamRegex.(?i)(\+11)?:{role:UTC+10–11}{user} you now have **UTC+10–11** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+11:00
+ParamRegex.(?i)(\+12)?:{role:UTC+12–14}{user} you now have **UTC+12–14** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+12:00
+ParamRegex.(?i)(\+13)?:{role:UTC+12–14}{user} you now have **UTC+12–14** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+13:00
+ParamRegex.(?i)(\+14)?:{role:UTC+12–14}{user} you now have **UTC+12–14** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+14:00
+ParamRegex.(?i)(-12)?:{role:UTC-12–11}{user} you now have **UTC-12–11** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-12:00
+ParamRegex.(?i)(-11)?:{role:UTC-12–11}{user} you now have **UTC-12–11** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-11:00
+ParamRegex.(?i)(-10)?:{role:UTC-10–9}{user} you now have **UTC-10–9** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-10:00
+ParamRegex.(?i)(-9)?:{role:UTC-10–9}{user} you now have **UTC-10–9** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-09:00
+ParamRegex.(?i)(-8)?:{role:UTC-8–7}{user} you now have **UTC-8–7** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-08:00
+ParamRegex.(?i)(-7)?:{role:UTC-8–7}{user} you now have **UTC-8–7** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-07:00
+ParamRegex.(?i)(-6)?:{role:UTC-6–5}{user} you now have **UTC-6–5** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-06:00
+ParamRegex.(?i)(-5)?:{role:UTC-6–5}{user} you now have **UTC-6–5** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-05:00
+ParamRegex.(?i)(-4)?:{role:UTC-4–3}{user} you now have **UTC-4–3** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-04:00
+ParamRegex.(?i)(-3)?:{role:UTC-4–3}{user} you now have **UTC-4–3** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-03:00
+ParamRegex.(?i)(-2)?:{role:UTC-2–1}{user} you now have **UTC-2–1** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-02:00
+ParamRegex.(?i)(-1)?:{role:UTC-2–1}{user} you now have **UTC-2–1** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC-01:00
+ParamRegex.(?i)((-|\+|)0)?:{role:UTC+0–1}{user} you now have **UTC+0–1** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC±00:00
+ParamRegex.(?i)(\+1$)?:{role:UTC+0–1}{user} you now have **UTC+0–1** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+01:00
+ParamRegex.(?i)(\+2)?:{role:UTC+2–3}{user} you now have **UTC+2–3** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+02:00
+ParamRegex.(?i)(\+3)?:{role:UTC+2–3}{user} you now have **UTC+2–3** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+03:00
+ParamRegex.(?i)(\+4)?:{role:UTC+4–5}{user} you now have **UTC+4–5** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+04:00
+ParamRegex.(?i)(\+5)?:{role:UTC+4–5}{user} you now have **UTC+4–5** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+05:00
+ParamRegex.(?i)(\+6)?:{role:UTC+6–7}{user} you now have **UTC+6–7** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+06:00
+ParamRegex.(?i)(\+7)?:{role:UTC+6–7}{user} you now have **UTC+6–7** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+07:00
+ParamRegex.(?i)(\+8)?:{role:UTC+8–9}{user} you now have **UTC+8–9** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+08:00
+ParamRegex.(?i)(\+9)?:{role:UTC+8–9}{user} you now have **UTC+8–9** role. {m?TIMEZONE1:{rawid}-{/user}}:=UTC+09:00
+Response.nil?:Did you forget to put +/- sign in your timezone? Please correct your input.
+[#CONTINUE#]
+&{:}(?i)\biamnot utc\b {params}={init}
+ParamRegex.(?i)(\+10)?:{take:UTC+10–11h}{user} you no longer have **UTC+10–11** role.
+ParamRegex.(?i)(\+11)?:{take:UTC+10–11h}{user} you no longer have **UTC+10–11** role.
+ParamRegex.(?i)(\+12)?:{take:UTC+12–14h}{user} you no longer have **UTC+12–14** role.
+ParamRegex.(?i)(\+13)?:{take:UTC+12–14h}{user} you no longer have **UTC+12–14** role.
+ParamRegex.(?i)(\+14)?:{take:UTC+12–14h}{user} you no longer have **UTC+12–14** role.
+ParamRegex.(?i)(-12)?:{take:UTC-12–11h}{user} you now no longer have **UTC-12–11** role.  
+ParamRegex.(?i)(-11)?:{take:UTC-12–11h}{user} you now hano longer have **UTC-12–11** role. 
+ParamRegex.(?i)(-10)?:{take:UTC-10–9h}{user} you now no longer have **UTC-10–9** role. 
+ParamRegex.(?i)(-9)?:{take:UTC-10–9h}{user} you now no longer have **UTC-10–9** role. 
+ParamRegex.(?i)(-8)?:{take:UTC-8–7h}{user} you now no longer have **UTC-8–7** role. 
+ParamRegex.(?i)(-7)?:{take:UTC-8–7h}{user} you now no longer have **UTC-8–7** role.
+ParamRegex.(?i)(-6)?:{take:UTC-6–5h}{user} you now no longer have **UTC-6–5** role. 
+ParamRegex.(?i)(-5)?:{take:UTC-6–5h}{user} you now no longer have **UTC-6–5** role.
+ParamRegex.(?i)(-4)?:{take:UTC-4–3h}{user} you now no longer have **UTC-4–3** role. 
+ParamRegex.(?i)(-3)?:{take:UTC-4–3h}{user} you now no longer have **UTC-4–3** role.
+ParamRegex.(?i)(-2)?:{take:UTC-2–1h}{user} you now no longer have **UTC-2–1** role.
+ParamRegex.(?i)(-1)?:{take:UTC-2–1h}{user} you now no longer have **UTC-2–1** role. 
+ParamRegex.(?i)((-|\+|)0)?:{take:UTC+0–1h}{user} you now no longer have **UTC+0–1** role.
+ParamRegex.(?i)(\+1)?:{take:UTC+0–1h}{user} you now no longer have **UTC+0–1** role.
+ParamRegex.(?i)(\+2)?:{take:UTC+2–3h}{user} you now no longer have **UTC+2–3** role.
+ParamRegex.(?i)(\+3)?:{take:UTC+2–3h}{user} you now no longer have **UTC+2–3** role.
+ParamRegex.(?i)(\+4)?:{take:UTC+4–5h}{user} you now no longer have **UTC+4–5** role.
+ParamRegex.(?i)(\+5)?:{take:UTC+4–5h}{user} you now no longer have **UTC+4–5** role.
+ParamRegex.(?i)(\+6)?:{take:UTC+6–7h}{user} you now no longer have **UTC+6–7** role.
+ParamRegex.(?i)(\+7)?:{take:UTC+6–7h}{user} you now no longer have **UTC+6–7** role.
+ParamRegex.(?i)(\+8)?:{take:UTC+8–9h}{user} you now no longer have **UTC+8–9** role.
+ParamRegex.(?i)(\+9)?:{take:UTC+8–9h}{user} you now no longer have **UTC+8–9** role.
+Response.nil?:Did you forget to put +/- sign in your timezone? Please correct your input.
+[#CONTINUE#]
