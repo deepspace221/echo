@@ -1,0 +1,36 @@
+[#CONTINUE#]
+makeAFK={init}
+{arslock}
+{m?afk:{/rawid}-on} := {usernick}
+{m?afk:{/rawid}} := true
+{ars:putAFK}
+[#CONTINUE#]
+&\afkmsg {params}={init}
+Params.?:Default message restored. {m?AFKMSG:{/rawid}} := {/user} is AFK
+Response.nil?:Message saved successfully. {m?AFKMSG:{/rawid}} := {/user} is AFK: {params}
+[#CONTINUE#]
+takeAFK={init}
+{arslock}
+{m?afk:{/rawid}} := false
+String.{r?afk:{/rawid}-on} == none?:{nickname:{/user}}
+Response.nil?:{nickname:{r?afk:{/rawid}-on}}
+[#CONTINUE#]
+\afk={init}
+String.{r?afk:{/rawid}} == false?:{ars:putAFK}{m?afk:{/rawid}-on} := {usernick}
+String.{r?afk:{/rawid}} == true?:{ars:takeAFK}
+[#CONTINUE#]
+putAFK={init}
+{arslock}
+{m?afk:{/rawid}} := true
+String.{r?afk:{/rawid}-on} == none?:{nickname:[AFK]{/user}}
+Response.nil?:{nickname:[AFK]{usernick}} You're in afk mod 
+[#CONTINUE#]
+&{:}<@.*> {params}={init}
+String.{usernick} == [AFK]{/user}?:{ars:afkmsg}
+Response.nil?:{stop}
+[#CONTINUE#]
+afkmsg={init}
+{arslock}
+DB:AFKMSG.{rawid}?:{r?AFKMSG:{rawid}}
+Response.nil?:{/user} is AFK
+
