@@ -122,6 +122,25 @@ function isRoleHigherThanUserTopRole(roleName, arrSortedUserRoles){
 		return true;
 
 
+}
+>>
+
+
+[#CONTINUE#]
+&{:}(?i)iam (Lakota|.+ASL|Ancient Greek|f. Swahili|f. Persian|Klingon|Vlayrian|.+estonian) {params}={init}
+ContentRegex.(?i)(lakota)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #lakota here.
+ContentRegex.(?i)(Ancient Greek)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #ancient-greek here.
+ContentRegex.(?i)(f. Persian)?:{role:Persian}{user} You now have **Persian** role.
+ContentRegex.(?i)(Klingon)?:{role:Conlang}{user}  You now have **Conlang** role. You can acces #klingon here.
+ContentRegex.(?i)(Vlayrian)?:{role:Conlang}{user} You now have **Conlang** role. You can acces #high-valyrian here.
+ContentRegex.(?i)(f. Swahili)?:{role:Swahili}{user} You now have **Swahili** role. 
+ContentRegex.(?i)((n\.|f\.) ASL)?:{role:ASL}{user} You now have **ALS** role.
+ContentRegex.(?i)(estonian)?:{role:Other Languages}{user} You now have **Other Languages** role. You can access #estonian here.
+[#CONTINUE#]
+&{:}(?i)^\.iam (n\.\s|f\.\s)?(Arabic|Bulgarian|Cantonese|Czech|Danish|Dutch|English|Finnish|Flemish|French|Greek|German|Hebrew|Hindi|Hungarian|Indonesian|Italian|Japanese|Korean|Mandarin|Norwegian|Persian|Polish|Portuguese|Romanian|Russian|Spanish|Swahili|Swedish|Telugu|Turkish|Ukrainian|Vietnamese|Other)$={init}
+ContentRegex.(n\.)?:{sleep:1s}{ars:sortmembers}{role:Basic}{take:Unassigned}
+ContentRegex.(.)?:{take:New}
+Response.nil?:{stop}
 
 ErrNoNativeLang={init}
 {arslock}
@@ -135,5 +154,3 @@ Please a contact a staff member to remove a native language role.
 You can send a request with the command `\request YOUR_MESSAGE`
 (Bulgarian|Czech|Danish|Dutch|Finnish|Flemish|Greek|Hungarian|Norwegian|Polish|Romanian|Swedish|Ukrainian))?:{ars:removenew}{role:European}{take:World}
 ParamRegex.(?i)((Arabic|Cantonese|Hebrew|Indonesian|Korean|Telugu|Turkish|Vietnamese|Other)
-}
->>
