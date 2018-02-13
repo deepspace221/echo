@@ -1,41 +1,33 @@
 [#CONTINUE#]
 \joke={init}
-{embed:
-    {title:Random Jokes!}
-    {url:https://api.xtclabs.net}
-    {type:rich}
-    {color:
-        {randlist2:
-            #ff0000,#00ff00,#ffffff,#4286f4,
-            #f45642,#262525,#e2d626,#87e226,
-            #26e2c0,#2633e2,#8126e2
-        }
-    }
-    {desc:
-        {joke}
-    }
-    {footer|text:Requested: {/user}}
-    {footer|icon:{usericon}}
-}
+#js >>
+      var title = "Random Jokes!";
+      var color = "";
+      var thumb = "";
+      var description = "{joke}";
+      var footerIcon = "{usericon};
+      var footer = "Requested: " + UserID;
+
+      resp = getSimpleEmbed(title, color, thumb, description);    
+>>
+
 [#CONTINUE#]
 &{:}(?:)(\\meme|pls meme)={init}
-{embed:
-    {title:Random Memes!}
-    {url:https://api.xtclabs.net}
-    {type:rich}
-    {color:
-        {randlist2:
-            #ff0000,#00ff00,#ffffff,#4286f4,
-            #f45642,#262525,#e2d626,#87e226,
-            #26e2c0,#2633e2,#8126e2
-        }
-    }
-    {image|url:{meme}}
-    {image|width:250}
-    {image|height:250}
-    {footer|text:Requested: {/user}}
-    {footer|icon:{usericon}}
-}
+#js >>
+      var title = "Random Memes!";
+      var color = "";
+      var thumb = "";
+      var description = "\
+            {image|url:{meme}}\
+            {image|width:250}\
+            {image|height:250}\     
+      ";
+      var footerIcon = "{usericon};
+      var footer = "Requested: " + UserID;
+        
+      resp = getSimpleEmbed(title, color, thumb, description);    
+>>
+
 [#CONTINUE#]
 \wrecks={init}
 {wrecks}
