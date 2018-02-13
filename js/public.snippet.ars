@@ -1,0 +1,27 @@
+[#CONTINUE#]
+&40726635411524815={init}{-mentions}
+{exc:Staff}
+{user} ⚠ Pinging of the **Chatty** role in public channels is strictly **forbidden**! 
+You've been temporiarly muted. Repeated offences will result in a ban.  
+To check if a channel is public type: `is this public?`
+{ars:offenceChatty}
+[#CONTINUE#]
+offenceChatty={init}
+{redirect:403828387430268948}
+{role:Muted}
+:warning: `Offence:` **{self}#{discrim}** pinged **Chatty** role.
+[#CONTINUE#]
+&337347693854588928={init}{-mentions}
+{exc:Staff}
+{user} ⚠ Pinging of the **All** role in public channels is strictly **forbidden**! 
+You've been temporiarly muted. Repeated offences will result in a ban.  
+To check if a channel is public type: `is this public?`
+{ars:offenceAll}
+[#CONTINUE#]
+offenceAll={init}
+{redirect:403828387430268948}
+{role:Muted}
+:warning: `Offence:` **{self}#{discrim}** pinged **All** role in public channels.
+[#CONTINUE#]
+&is this public={init}
+{reactme:⚠ 🇾 🇪 🇸}
