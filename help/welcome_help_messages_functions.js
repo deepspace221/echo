@@ -146,7 +146,7 @@ var description = " \
 }
 
 function getPlatformEmbed(){
-      var title = LANGUAGE PLATFORM ROLES;
+      var title = "LANGUAGE PLATFORM ROLES";
       var colors = "";
       var description = "\
 \nTell us which resourses do you use in your studies by tagging yourself with **.iam [role name]** commands.\
