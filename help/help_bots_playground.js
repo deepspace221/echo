@@ -123,7 +123,7 @@ function getBotsQuickInfo(){
       {field[8]|value: Let us know and we will add it to the list.}\
       {field[8]|inline:false}\
 ";  
-       return getSimpleEmbed(title, color, thumb, description, fields); 
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 
@@ -159,7 +159,7 @@ function getEchoQuickInfo(){
 ```}\
             {field[1]|inline:true}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields);      
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getUB3RHelp(){
@@ -184,7 +184,7 @@ function getUB3RHelp(){
 \n```}\
             {field[0]|inline:true}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields);    
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 
@@ -206,7 +206,7 @@ function getNadekoHelp(){
 \n```}\
             {field[0]|inline:true}\
 ";
-        return getSimpleEmbed(title, color, thumb, description, fields); 
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getMee6Help(){
@@ -229,7 +229,7 @@ function getMee6Help(){
             {field[1]|value:http://mee6.github.io/Mee6-documentation/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields);    
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 
@@ -262,7 +262,7 @@ function getTatsumakiHelp(){
             {field[1]|value:https://www.tatsumaki.xyz/commands.html}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields); 
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getMatbotHelp(){
@@ -298,7 +298,7 @@ function getMatbotHelp(){
             {field[1]|value:https://matbot.ga/help/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields); 
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getSeptapusHelp(){
@@ -322,7 +322,7 @@ function getSeptapusHelp(){
             {field[1]|value:http://septapus.com/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description, fields);  
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 
