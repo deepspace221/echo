@@ -116,13 +116,13 @@ function getUserOBJ(user){
         return false;
 }
 
-function getNumSupported(){ //working
+function getNumSupported(){
         var ctr = 0;
-        bottomRole = getRolePosition("Yiddish")
-        topRole = getRolePosition("Afrikaans")       
-        for (i=0; i < ServerRoles.length; i++){
-                if (ServerRoles[i].Position >= bottomRole && ServerRoles[i].Position <= topRole){
-                    ctr++    
+        bottomRole = getRolePosition("Yiddish");
+        topRole = getRolePosition("Afrikaans");     
+        for (i=0; i < ServerRoles.length; i++)
+                if (ServerRoles[i].Position >= bottomRole && ServerRoles[i].Position <= topRole)
+                    ctr++;   
         return ctr;
 }
 
