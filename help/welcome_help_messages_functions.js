@@ -274,7 +274,7 @@ function getServerMsg(){
             {field[0]|value:\
 ```md\
 \n# Region:       [{guild|region}]\
-\n# Members:      [{r?servercount:membercount}]\
+\n# Members:      [" + getMembersCount("users") +"]\
 \n# Channels:     [{channelcount}]\
 \n# Roles:        [{rolecount}]\
 ```}\
