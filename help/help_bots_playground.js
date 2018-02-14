@@ -164,7 +164,7 @@ function getEchoQuickInfo(){
 }
 
 function getUB3RHelp(){
-      ar title = "UB3R COMMANDS QUICK INFORMATION";
+      var title = "UB3R COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
