@@ -74,7 +74,7 @@ function getSimpleEmbed(title, color, thumb, description){
 function getEmbed(type){
    
    
-switch(type) {
+switch (type) {
       case "daily":
       case "monthly":
            break; 
