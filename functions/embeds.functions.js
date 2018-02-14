@@ -100,7 +100,7 @@ switch(type) {
            getWelcomeHelpEmbed();
            break;
        case "languages":
-           ggetLanguagesEmbed();
+           getLanguagesEmbed();
            break;         
       case "bots quick info":
            getBotsQuickInfo();
