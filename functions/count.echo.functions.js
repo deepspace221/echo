@@ -60,12 +60,12 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             produceOutput("Learning");
 
             function produceOutput(type){
+                    var length = langsSliceOBJ["arr" + type].length - 1;
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
-                        var length = langsSliceOBJ["arr" + type].length-1;
                         typeLC = type.toLowerCase();
-                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length-i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n";
-                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length-i].name + "\n";
-                        outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length-i].count + "\n";
+                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n";
+                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
+                        outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length - i].count + "\n";
                     }
             }
 
