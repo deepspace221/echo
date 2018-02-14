@@ -18,10 +18,10 @@ function getBotsQuickInfo(){
 \n\\joke\
 \n\\meme\
 \n```}\
-        {field[0]|inline:true}\\
-        {field[1]|name:Echo whoami}\\
-        {field[1]|value:\\
-```css\\
+        {field[0]|inline:true}\
+        {field[1]|name:Echo whoami}\
+        {field[1]|value:\
+```css\
 \n\\whoami\
 \n\\help whoami\
 \n\\about [MSG]\
