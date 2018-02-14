@@ -162,7 +162,7 @@ function getPlatformEmbed(){
 \n# Duolingo [access]\
 \n# Anki [access]\
 \n# Tinycards [access]\
-\n# Lang-8 \
+\n# Lang-8\
 \n# Readlang\
 \n# LingQ\
 \n# Clozemaster\
@@ -172,7 +172,7 @@ function getPlatformEmbed(){
 \n# FluentU\
 \n# HelloTalk\
 \n# iTalki\
-\n```}\
+```}\
             {field[0]|inline:true}\
 ";
 
@@ -195,23 +195,21 @@ function getWelcomeHelpEmbed(){
 \n\timezone\
 \n\platform\
 \n\misc\
-\n```}\
+```}\
             {field[0]|inline:true}\
             {field[1]|name:General server commands:}\
             {field[1]|value:\
 ```css\
 \n\server\
 \n\request [MSG]\
-\n\
-```\n}\
+```}\
             {field[1]|inline:true}\
             {field[2]|name:Adding/Removing roles:}\
             {field[2]|value:\
 ```css\
 \n.iam [role name]\
 \n.iamnot [role name]\
-\n \
-```\n}\
+```}\
             {field[2]|inline:false}\
 ";
       
@@ -238,7 +236,7 @@ function getMiscEmbed(){
 \n# Mobile User\
 \n# XP Contests\
 \n# LGBT\
-\n```}\
+```}\
             {field[1]|inline:true}\
             {field[1]|name:Hobbies:}\
             {field[1]|value:\
@@ -279,7 +277,7 @@ function getServerMsg(){
 \n# Members:      [{r?servercount:membercount}]\
 \n# Channels:     [{channelcount}]\
 \n# Roles:        [{rolecount}]\
-\n```}\
+```}\
             {field[0]|inline:true}\
 ";
        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");   
@@ -296,14 +294,14 @@ function getLanguagesEmbed(){
 ```md\
 \n# Afrikaans\
 \n# Albanian\
-\n```}\
+```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
 ```md\
 \n# Kannada\
 \n# Kurdish\
-\n```}\
+```}\
             {field[1]|inline:true}\
 ";
          
