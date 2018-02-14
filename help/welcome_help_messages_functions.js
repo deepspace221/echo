@@ -282,27 +282,27 @@ function getServerMsg(){
       return getSimpleEmbed(title, color, thumb, description);    
 }
 
-function getLanguagesEmbed(){
-      var title = "Currently available languages";
-      var color = "";
-      var thumb = "server";
-      var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
-      var fields = "\
-{field[0]|name:Languages: <:blank:352901517004636163>}\
-{field[0]|value:\
-```md\
-# Afrikaans\
-# Albanian\
-```}\
-            {field[0]|inline:true}\
-            {field[1]|name:<:blank:352901517004636163>}\
-            {field[1]|value:\
-```md\
-# Kannada\
-# Kurdish\
-```}\
-            {field[1]|inline:true}\
-";
+// function getLanguagesEmbed(){
+//       var title = "Currently available languages";
+//       var color = "";
+//       var thumb = "server";
+//       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
+//       var fields = "\
+// {field[0]|name:Languages: <:blank:352901517004636163>}\
+// {field[0]|value:\
+// ```md\
+// \n# Afrikaans\
+// \n# Albanian\
+// \n```}\
+//             {field[0]|inline:true}\
+//             {field[1]|name:<:blank:352901517004636163>}\
+//             {field[1]|value:\
+// ```md\
+// \n# Kannada\
+// \n# Kurdish\
+// \n```}\
+//             {field[1]|inline:true}\
+// ";
          
-      return getSimpleEmbed(title, color, thumb, description);    
-}
+//       return getSimpleEmbed(title, color, thumb, description);    
+// }
