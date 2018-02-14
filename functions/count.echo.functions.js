@@ -164,6 +164,7 @@ function getArrStudyLangs(bottomRole, topRole){ //working
                     obj.name = ServerRoles[i].Name;
                     obj.position = ServerRoles[i].Position;
                     obj.count = countRoleMembers(ServerRoles[i].Name);
+                    dbg(obj);
                     arr.push(obj);
                 }
         }
