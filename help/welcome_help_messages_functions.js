@@ -154,7 +154,7 @@ function getPlatformEmbed(){
 \n\
 \nRoles marked with **[access]** will grant you access to additional rooms which are related to these roles.\
 ";
-      var feilds = "\
+      var fields = "\
             {field[0]|name:Platform roles: <:blank:352901517004636163>}\
             {field[0]|value:\
 ```css\
