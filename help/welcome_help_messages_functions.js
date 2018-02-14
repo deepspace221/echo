@@ -114,14 +114,34 @@ var thumb = "server";
 var icon = ":diamond_shape_with_a_dot_inside:";
    
 var description = "\
-      \n**Information on how to customize your user's view.**\
-      \n\
-      \n" + icon + " The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server.\
-      \nTo remove it from your view you can run the command `.iamnot hooks` at <#337513163853529088>.\
-      \n\
+\n**Information on how to customize your user's view.**\
+\n\
+\n" + icon + " The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server.\
+\nTo remove it from your view you can run the command `.iamnot hooks` at <#337513163853529088>.\
+\n\
+\n" + icon + " The **v. Mobile** role is connected to the **Mobile** category and it's by default assigned to every member on this server.\
+\nTo remove it from your view you can run the command `.iamnot v. mobile` at <#337513163853529088>.\
+\n\
+\n" + icon + " The **v. Private** role is connected to the **Private** voice category and it's by default assigned to every member on this server.\
+\nTo remove it from your view you can run the command `.iamnot v. private` at <#337513163853529088>.\
+\n\
+\n" + icon + " The **v. Recycle Bin** role is connected to the **recycle bin** category. By default it is not assigned to members on this server.\
+\nTo add it to your view run the command `.iam v. Recycle Bin` at <#337513163853529088>.\
+\n\
+\n" + icon + " The **God Mode** role will allow you to see all the language categories (about 360 channels) irrespectively to the roles assigned to your profile. It will overwrite them. If you wish to view also sub-genre hooks you can, as an addenum to god mod, also add the **Extras** role (about 60 additional channels).\
+\n\
+\nTo add **God Mode** run: `.iam god mode`\
+\nTo add **Extras** run: `.iam Extras`\
+\n\
+\nPlease don't use the extras role without god mode. It is not ment to function this way.\
+\n\
+\nIf you wish to be added to a specific sub-genre hooks channel, without having the god mode/extras role, you can request to be added to the exclusion list of those channels at <#337513299765755905>.\
+\n\
+\n" + icon + " You can unsubscribe from server's <#335379990424059905> by running:\
+\n```.iamnot updates```\
 ";   
  
-      return getSimpleEmbed(title, color, thumb, description);
+      return  getExpandableEmbed(title, "", color, thumb, description, "", "", "");  
    
 }
 
