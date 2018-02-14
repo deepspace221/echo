@@ -78,7 +78,7 @@ switch(type) {
       case "daily":
       case "monthly":
            break; 
-      case true:
+      case "views":
            getViewsEmbed();
            break;
       case "help":
@@ -127,6 +127,7 @@ switch(type) {
            getMatbotHelp();
            break;                       
        default:
+          resp = "dd"
           break;           
     }  
 }
