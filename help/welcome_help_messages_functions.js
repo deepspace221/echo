@@ -190,18 +190,18 @@ function getWelcomeHelpEmbed(){
             {field[0]|name:Roles help commands:}\
             {field[0]|value:\
 ```css\
-\n\help\
-\n\lang\
-\n\timezone\
-\n\platform\
-\n\misc\
+\n\\help\
+\n\\lang\
+\n\\timezone\
+\n\\platform\
+\n\\misc\
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:General server commands:}\
             {field[1]|value:\
 ```css\
-\n\server\
-\n\request [MSG]\
+\n\\server\
+\n\\request [MSG]\
 ```}\
             {field[1]|inline:true}\
             {field[2]|name:Adding/Removing roles:}\
