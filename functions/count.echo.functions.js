@@ -1,8 +1,8 @@
 function countRoleMembers(roleName){
         var counter = 0;
-        for (i=0; i < ServerMembers.length; i++){
-            for (k = 0; k < ServerMembers[i].Roles.length; k++){
-                if (GetRoleName(ServerMembers[i].Roles[k]) == roleName)
+        for (key in ServerMembers){
+            for (k = 0; k < ServerMembers[key].Roles.length; k++){
+                if (GetRoleName(ServerMembers[key].Roles[k]) == roleName)
                     counter++;
             }
         } 
