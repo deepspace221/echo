@@ -72,55 +72,62 @@ function getSimpleEmbed(title, color, thumb, description){
 }
 
 function getEmbed(type){
-      if (type == "daily"){
-         
-      }  
-      else if (type == "monthly"){
-         
-      }
-      else if (type == "help"){
-         return getHelpEmbed();                        
-      }
-      else if (type == "views"){
-         return getViewsEmbed();
-      }
-      else if (type == "platform"){
-         return getPlatformEmbed();
-      }
-      else if (type == "welcome help"){
-         return getWelcomeHelpEmbed();
-      }
-      else if (type == "misc"){
-         return getMiscEmbed();
-      }
-      else if (type == "bots quick info"){
-          return getBotsQuickInfo();
-      }
-      else if (type == "echo quick info"){
-          return getEchoQuickInfo();
-      }
-      else if (type == "ub3r help"){
-          return getUB3RHelp();
-      }
-      else if (type == "nadeko help"){
-          return getNadekoHelp();
-      }   
-      else if (type == "mee6 help"){
-          return getMee6Help();
-      }  
    
-      else if (type == "tatsumaki help"){
-          return getTatsumakiHelp();
-      } 
-      else if (type == "septapus help"){
-          return getSeptapusHelp();
-      } 
-      else if (type == "matbot help"){
-          return getMatbotHelp();
-      }   
-       else if (type == "server"){
-          return getServerMsg();
-      }     
    
+   switch(type) {
+      case "daily":
+      case "monthly":
+           break;
+         
+      case "views":
+           getViewsEmbed();
+           break;
+      case "help":
+           getHelpEmbed();
+           break;         
+       case "platform":
+           getPlatformEmbed();
+           break;        
+       case "welcome help":
+           getWelcomeHelpEmbed()
+           break;                
+      case "misc":
+           getMiscEmbed();
+           break;         
+       case "server":
+           getServerMsg();
+           break;        
+       case "welcome help":
+           getWelcomeHelpEmbed()
+           break;
+         
+      case "bots quick info":
+           getBotsQuickInfo();
+           break;         
+       case "echo quick info":
+           getEchoQuickInfo();
+           break;        
+       case "ub3r help":
+           getUB3RHelp();
+           break;      
+       case "nadeko help":
+           getNadekoHelp();
+           break;         
+       case "mee6 help":
+           getMee6Help();
+           break;        
+       case "tatsumaki help":
+           getTatsumakiHelp();
+           break;
+      case "septapus help":
+           getSeptapusHelp();
+           break;         
+       case "matbot help":
+           getMatbotHelp();
+           break;                       
+       default:
+          break;       
+    }  
+  
 }
 
