@@ -42,9 +42,10 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             outputOBJ.nativeRolesCount = langsSliceOBJ.arrNative.length;
             outputOBJ.fluentRolesCount = langsSliceOBJ.arrFluent.length;
             outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length;
+            
+  
+              
         
-           temp["langsSliceOBJ"] = JSON.stringify(langsSliceOBJ);                         
-
             // function compare(a, b) {
             //         if (a.count > b.count) return 1;
             //         if (a.count < b.count) return -1;
@@ -60,10 +61,11 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
 
             function produceOutput(type){
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
+                        var length = langsSliceOBJ["arr" + type].length;
                         typeLC = type.toLowerCase();
-                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n";
-                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][i].name + "\n";
-                        outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][i].count + "\n";
+                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length-i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n";
+                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length-i].name + "\n";
+                        outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length-i].count + "\n";
                     }
             }
 
