@@ -71,7 +71,7 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                         outputOBJ[typeLC + "Num"] += "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
                     }
             }
-
+            dbg(outputOBJ);
             // for (i=0; i < arrStudyLangs.length; i++){
             //     if (i < fluentIndex) {
             //         outputOBJ.learningField += arrStudyLangs[i].name + ": " + "**{membercount:" + arrStudyLangs[i].name + "}**\n";
@@ -175,9 +175,9 @@ function getArrStudyLangs(bottomRole, topRole){ //working
                     ctr++
                     obj.name = ServerRoles[i].Name;
                     obj.position = ServerRoles[i].Position;
-                //    if (false)
-                       //   obj.count = countRoleMembers(ServerRoles[i].Name);      
-                 //   else obj.count = 0;                             //countRoleMembers(ServerRoles[i].Name);
+                 //    if (false)
+                 //   obj.count = countRoleMembers(ServerRoles[i].Name);      
+                 //   else obj.count = 0;                         
                     arr.push(obj);
                 }
         }
