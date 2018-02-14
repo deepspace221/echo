@@ -148,6 +148,7 @@ var description = " \
 function getPlatformEmbed(){
       var title = "LANGUAGE PLATFORM ROLES";
       var color = "";
+      var thumb = "server";
       var description = "\
 \nTell us which resourses do you use in your studies by tagging yourself with **.iam [role name]** commands.\
 \n\
@@ -184,6 +185,7 @@ function getWelcomeHelpEmbed(){
       var title = "WELCOME CHANNEL COMMANDS QUICK INFORMATION";    
       var color = "";
       var description = "A list of frequent commands to help you get started and setup your profile.";
+      var thumb = "server";
       var fields = "\
             {field[0]|name:Roles help commands:} \
             {field[0]|value: \
@@ -220,6 +222,7 @@ function getWelcomeHelpEmbed(){
 function getMiscEmbed(){
       var title = "MISCELLANEOUS ROLES";
       var color = "";
+      var thumb = "server"
       var description = "Information on other available roles on the server.";
       var fields = "\
             \n{field[0]|name:Misc:}\
