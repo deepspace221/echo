@@ -55,8 +55,8 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
                         typeLC = type.toLowerCase();
                         outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n";
-                        // outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][i].name + "\n";
-                        // outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][i].count + "\n";
+                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][i].name + "\n";
+                        outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][i].count + "\n";
                     }
             }
 
