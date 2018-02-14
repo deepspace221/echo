@@ -66,9 +66,9 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
 //                         outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n**";
 //                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
 //                         outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length - i].count + "\n";
-                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": **{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n**";
+                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n**";
                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
-                        outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
+                        outputOBJ[typeLC + "Num"] += "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
                     }
             }
 
@@ -175,14 +175,12 @@ function getArrStudyLangs(bottomRole, topRole){ //working
                     ctr++
                     obj.name = ServerRoles[i].Name;
                     obj.position = ServerRoles[i].Position;
-                    if (false)
-                          obj.count = countRoleMembers(ServerRoles[i].Name);      
-                    else obj.count = 0;                             //countRoleMembers(ServerRoles[i].Name);
-              //      dbg(obj);
+                //    if (false)
+                       //   obj.count = countRoleMembers(ServerRoles[i].Name);      
+                 //   else obj.count = 0;                             //countRoleMembers(ServerRoles[i].Name);
                     arr.push(obj);
                 }
         }
-        dbg(arr);
         arr.sort(function(a, b) {
                 return a.position - b.position;
         });
