@@ -74,11 +74,10 @@ function getSimpleEmbed(title, color, thumb, description){
 function getEmbed(type){
    
    
-   switch(type) {
+switch(type) {
       case "daily":
       case "monthly":
-           break;
-         
+           break; 
       case "views":
            getViewsEmbed();
            break;
@@ -102,9 +101,7 @@ function getEmbed(type){
            break;
        case "languages":
            ggetLanguagesEmbed();
-           break;
-         
-         
+           break;         
       case "bots quick info":
            getBotsQuickInfo();
            break;         
@@ -132,6 +129,5 @@ function getEmbed(type){
        default:
           break;       
     }  
-  
 }
 
