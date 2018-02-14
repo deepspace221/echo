@@ -78,7 +78,7 @@ switch(type) {
       case "daily":
       case "monthly":
            break; 
-      case "views":
+      case true:
            getViewsEmbed();
            break;
       case "help":
