@@ -176,7 +176,7 @@ function getPlatformEmbed(){
             {field[0]|inline:true}\
 ";
 
-       return getSimpleEmbed(title, color, thumb, description);
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 
 }
 
@@ -216,7 +216,7 @@ function getWelcomeHelpEmbed(){
 ";
       
       
-       return getSimpleEmbed(title, color, thumb, description);
+      return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getMiscEmbed(){
@@ -262,7 +262,7 @@ function getMiscEmbed(){
             {field[2]|inline:false}\
 ";
 
-      return getSimpleEmbed(title, color, thumb, description);    
+        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getServerMsg(){
@@ -282,7 +282,7 @@ function getServerMsg(){
 \n```} \
             {field[0]|inline:true} \
 ";
-      return getSimpleEmbed(title, color, thumb, description);    
+       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");   
 }
 
 function getLanguagesEmbed(){
@@ -307,5 +307,5 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
 ";
          
-      return getSimpleEmbed(title, color, thumb, description);    
+       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
 }
