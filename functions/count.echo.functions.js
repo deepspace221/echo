@@ -167,7 +167,7 @@ function getArrStudyLangs(bottomRole, topRole){ //working
                     arr.push(obj);
                 }
         }
-        dbg(arr);
+        dbg([3,3,5]);
         arr.sort(function(a, b) {
                 return a.position - b.position;
         });
