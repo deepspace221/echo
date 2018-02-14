@@ -14,14 +14,17 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                 nativeField: "",
                 nativeNames: "",
                 nativeNum: "",
+                nativeRolesCount: "",
 
                 fluentField: "",
                 fluentNames: "",
                 fluentNum: "",
+                fluentRolesCount: "",
 
                 learningField: "",
                 learningNames: "",
-                learningNum: ""
+                learningNum: "",
+                learningRolesCount: "",
             };
 
             var firstPosition = arrStudyLangs[0].position;
@@ -36,6 +39,10 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             langsSliceOBJ.arrFluent = arrStudyLangs.slice(fluentIndex, nativeIndex);
             langsSliceOBJ.arrNative = arrStudyLangs.slice(nativeIndex);
 
+            outputOBJ.nativeRolesCount = langsSliceOBJ.arrNative.length;
+            outputOBJ.fluentRolesCount = langsSliceOBJ.arrFluent.length;
+            outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length;
+        
            temp["langsSliceOBJ"] = JSON.stringify(langsSliceOBJ);                         
 
             // function compare(a, b) {
