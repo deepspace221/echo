@@ -221,7 +221,7 @@ function getMiscEmbed(){
       var title = "MISCELLANEOUS ROLES";
       var color = "";
       var description = "Information on other available roles on the server.";
-      var fields = "
+      var fields = "\
             \n{field[0]|name:Misc:}\
             \n{field[0]|value:\
 ```css\
