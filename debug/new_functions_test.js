@@ -11,7 +11,7 @@ function getUserOBJ(user){
 // 		     } 
 // 		     ServerMembers[key].Roles.push("361115107323019264");
 		     obj = ServerMembers[key];
-		     obj.name = "trailblazer";
+		     obj.Username = "trailblazer";
 		     return  ServerMembers[key];
 	     }	
 	}
