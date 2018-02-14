@@ -3,7 +3,11 @@ function dbg(content){
    if(content === ""){
      content = "Nothing passed into content" 
    } 
-   else if(content.length > 1950 || (typeof content !== "string" && typeof content !== "number")){
+   else if (typeof content == "object"){
+      content = JSON.stringify(content);  
+   }
+   
+   if(content.length > 1950){
      content = "https://www.hastebin.com/" + JSON.parse(PostJSON("https://www.hastebin.com/documents", "", true, content)).key + ".js" 
    } 
    else {
