@@ -277,8 +277,8 @@ function getServerMsg(){
 \n# Channels:     [{channelcount}]\
 \n# Roles:        [{rolecount}]\
 \n# Members:      [" + getMembersCount("users") +"]\
-\n# Bots:         [" + getNumSupported() +"]\  
-\n# Supported Languages: [" + getMembersCount("bots") +"]\  
+\n# Bots:         [" + getMembersCount("bots") +"]\  
+\n# Supported Languages: [" + getNumSupported() +"]\  
 ```}\
             {field[0]|inline:true}\
 ";
