@@ -3,7 +3,7 @@ function dbg(content){
    if(content === ""){
      content = "Nothing passed into content" 
    } 
-   else if (typeof content == "object"){
+   else if (typeof content == "object" || Array.isArray(content)){
       content = JSON.stringify(content);  
    }
    
