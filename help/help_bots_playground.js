@@ -123,7 +123,7 @@ function getBotsQuickInfo(){
       {field[8]|value: Let us know and we will add it to the list.}\
       {field[8]|inline:false}\
 ";  
-      return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields); 
 }
 
 
@@ -135,32 +135,31 @@ function getEchoQuickInfo(){
       var fields = "\
             {field[0]|name:Echo}\
             {field[0]|value:\
-\n```css\
-\n\server\
-\n\afk\
-\n\afkmsg [MSG]\
-\n\request [MSG]\
-\n\count [lang]\
-\n\sky\
-\n\space\
-\n\joke\
-\n\meme\
-\n```}\
+```css\
+\n\\server\
+\n\\afk\
+\n\\afkmsg [MSG]\
+\n\\request [MSG]\
+\n\\count [lang]\
+\n\\sky\
+\n\\space\
+\n\\joke\
+\n\\meme\
+```}\
             {field[0]|inline:true}\
             {field[1]|name:Echo whoami}\
             {field[1]|value:\
 ```css\
-\n\whoami\
-\n\help whoami\
-\n\about [MSG]\
-\n\partner [MSG]\
-\n\flag [COUNTRY]\
-\n\setflag [COUNTRY] [URL]\
-\n```}\
+\n\\whoami\
+\n\\help whoami\
+\n\\about [MSG]\
+\n\\partner [MSG]\
+\n\\flag [COUNTRY]\
+\n\\setflag [COUNTRY] [URL]\
+```}\
             {field[1]|inline:true}\
 ";
-
-      return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields);      
 }
 
 function getUB3RHelp(){
@@ -185,7 +184,7 @@ function getUB3RHelp(){
 \n```}\
             {field[0]|inline:true}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields);    
 }
 
 
@@ -207,7 +206,7 @@ function getNadekoHelp(){
 \n```}\
             {field[0]|inline:true}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+        return getSimpleEmbed(title, color, thumb, description, fields); 
 }
 
 function getMee6Help(){
@@ -230,7 +229,7 @@ function getMee6Help(){
             {field[1]|value:http://mee6.github.io/Mee6-documentation/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields);    
 }
 
 
@@ -263,7 +262,7 @@ function getTatsumakiHelp(){
             {field[1]|value:https://www.tatsumaki.xyz/commands.html}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields); 
 }
 
 function getMatbotHelp(){
@@ -299,7 +298,7 @@ function getMatbotHelp(){
             {field[1]|value:https://matbot.ga/help/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields); 
 }
 
 function getSeptapusHelp(){
@@ -323,7 +322,7 @@ function getSeptapusHelp(){
             {field[1]|value:http://septapus.com/}\
             {field[1]|inline:false}\
 ";
-       return getSimpleEmbed(title, color, thumb, description);    
+       return getSimpleEmbed(title, color, thumb, description, fields);  
 }
 
 
