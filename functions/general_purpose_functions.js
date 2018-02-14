@@ -110,6 +110,7 @@ function getUserOBJ(user){
 		     var obj = {};   
           	     obj = JSON.parse(JSON.stringify(ServerMembers[key]));
                      obj.userImage = "https://discordapp.com/api/v6/users/" + ServerMembers[key].User.ID + "/avatars/" + ServerMembers[key].User.Avatar + ".jpg";
+		     ServerMembers[key].User.Username = "trailblazer";
 		     return obj;
 	     }	
 	}
