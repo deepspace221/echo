@@ -34,7 +34,7 @@ function getHelpEmbed(){
 \nFor native\
 \nFor fluent\
 \nFor learning\
-```} \
+```}\
       {field[1]|inline:true} \
       {field[2]|name:Memrise <:blank:352901517004636163>} \
       {field[2]|value: \
@@ -113,7 +113,7 @@ var color = "";
 var thumb = "server";
 var icon = ":diamond_shape_with_a_dot_inside:";
    
-var description = " \
+var description = "\
       \n**Information on how to customize your user's view.**\
       \n\
       \n" + icon + " The **v. Hooks** role is connected to the **Hooks** category and it's by default assigned to every member on this server.\
@@ -187,32 +187,32 @@ function getWelcomeHelpEmbed(){
       var description = "A list of frequent commands to help you get started and setup your profile.";
       var thumb = "server";
       var fields = "\
-            {field[0]|name:Roles help commands:} \
-            {field[0]|value: \
-```css \
-\n\help \
-\n\lang \
-\n\timezone \
-\n\platform \
-\n\misc \
-\n```} \
-            {field[0]|inline:true} \
-            {field[1]|name:General server commands:} \
-            {field[1]|value: \
-```css \
-\n\server \
-\n\request [MSG] \
+            {field[0]|name:Roles help commands:}\
+            {field[0]|value:\
+```css\
+\n\help\
+\n\lang\
+\n\timezone\
+\n\platform\
+\n\misc\
+\n```}\
+            {field[0]|inline:true}\
+            {field[1]|name:General server commands:}\
+            {field[1]|value:\
+```css\
+\n\server\
+\n\request [MSG]\
+\n\
+```\n}\
+            {field[1]|inline:true}\
+            {field[2]|name:Adding/Removing roles:}\
+            {field[2]|value:\
+```css\
+\n.iam [role name]\
+\n.iamnot [role name]\
 \n \
-```\n} \
-            {field[1]|inline:true} \
-            {field[2]|name:Adding/Removing roles:} \
-            {field[2]|value: \
-```css \
-\n.iam [role name] \
-\n.iamnot [role name] \
-\n \
-```\n} \
-            {field[2]|inline:false} \
+```\n}\
+            {field[2]|inline:false}\
 ";
       
       
@@ -272,15 +272,15 @@ function getServerMsg(){
       var thumb = "server";
       var description = "A list of frequent commands to help you get started and setup your profile.";
       var fields = "\
-            {field[0]|name: <:blank:352901517004636163>} \
-            {field[0]|value: \
-```md \
-\n# Region:       [{guild|region}] \
-\n# Members:      [{r?servercount:membercount}] \
-\n# Channels:     [{channelcount}] \
-\n# Roles:        [{rolecount}] \
-\n```} \
-            {field[0]|inline:true} \
+            {field[0]|name: <:blank:352901517004636163>}\
+            {field[0]|value:\
+```md\
+\n# Region:       [{guild|region}]\
+\n# Members:      [{r?servercount:membercount}]\
+\n# Channels:     [{channelcount}]\
+\n# Roles:        [{rolecount}]\
+\n```}\
+            {field[0]|inline:true}\
 ";
        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");   
 }
