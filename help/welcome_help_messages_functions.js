@@ -270,7 +270,7 @@ function getServerMsg(){
       var thumb = "server";
       var description = "A list of frequent commands to help you get started and setup your profile.";
       var fields = "\
-            {field[0]|name: <:blank:352901517004636163>}\
+            {field[0]|name:Server Info>}\
             {field[0]|value:\
 ```md\
 \n# Region:       [{guild|region}]\
