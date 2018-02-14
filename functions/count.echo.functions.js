@@ -163,11 +163,11 @@ function getArrStudyLangs(bottomRole, topRole){ //working
                     ctr++
                     obj.name = ServerRoles[i].Name;
                     obj.position = ServerRoles[i].Position;
-                    obj.count = countRoleMembers(ServerRoles[i].Name);
+                    obj.count = 0;                             //countRoleMembers(ServerRoles[i].Name);
                     arr.push(obj);
                 }
         }
-        dbg([3,3,5]);
+        dbg(arr);
         arr.sort(function(a, b) {
                 return a.position - b.position;
         });
