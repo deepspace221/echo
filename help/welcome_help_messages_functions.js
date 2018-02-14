@@ -274,9 +274,11 @@ function getServerMsg(){
             {field[0]|value:\
 ```md\
 \n# Region:       [{guild|region}]\
-\n# Members:      [" + getMembersCount("users") +"]\
 \n# Channels:     [{channelcount}]\
 \n# Roles:        [{rolecount}]\
+\n# Members:      [" + getMembersCount("users") +"]\
+\n# Bots:         [" + getNumSupported() +"]\  
+\n# Supported Languages: [" + getMembersCount("bots") +"]\  
 ```}\
             {field[0]|inline:true}\
 ";
