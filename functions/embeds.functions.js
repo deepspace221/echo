@@ -127,8 +127,7 @@ switch (type) {
            getMatbotHelp();
            break;                       
        default:
-          resp = "dd"
           break;           
-    }  
+    };
 }
 
