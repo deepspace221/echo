@@ -83,7 +83,51 @@ switch(type) {
            break;
       case "help":
            getHelpEmbed();
-           break;         
+           break;   
+//        case "platform":
+//            getPlatformEmbed();
+//            break;        
+//        case "welcome help":
+//            getWelcomeHelpEmbed();
+//            break;                
+//       case "misc":
+//            getMiscEmbed();
+//            break;         
+//        case "server":
+//            getServerMsg();
+//            break;        
+//        case "welcome help":
+//            getWelcomeHelpEmbed();
+//            break;
+//        case "languages":
+//            ggetLanguagesEmbed();
+//            break;         
+//       case "bots quick info":
+//            getBotsQuickInfo();
+//            break;         
+//        case "echo quick info":
+//            getEchoQuickInfo();
+//            break;        
+//        case "ub3r help":
+//            getUB3RHelp();
+//            break;      
+//        case "nadeko help":
+//            getNadekoHelp();
+//            break;         
+//        case "mee6 help":
+//            getMee6Help();
+//            break;        
+//        case "tatsumaki help":
+//            getTatsumakiHelp();
+//            break;
+//       case "septapus help":
+//            getSeptapusHelp();
+//            break;         
+//        case "matbot help":
+//            getMatbotHelp();
+//            break;                       
+//        default:
+//           break;           
     }  
 }
 
