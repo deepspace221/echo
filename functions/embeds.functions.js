@@ -89,7 +89,7 @@ function getEmbed(type){
            getPlatformEmbed();
            break;        
        case "welcome help":
-           getWelcomeHelpEmbed()
+           getWelcomeHelpEmbed();
            break;                
       case "misc":
            getMiscEmbed();
@@ -98,8 +98,12 @@ function getEmbed(type){
            getServerMsg();
            break;        
        case "welcome help":
-           getWelcomeHelpEmbed()
+           getWelcomeHelpEmbed();
            break;
+       case "languages":
+           ggetLanguagesEmbed();
+           break;
+         
          
       case "bots quick info":
            getBotsQuickInfo();
