@@ -77,54 +77,55 @@ function getEmbed(type){
       case "monthly":
            break; 
       case "views":
-           getViewsEmbed();
+           return getViewsEmbed();
            break;
       case "help":
-           getHelpEmbed();
+           return getHelpEmbed();
            break;   
        case "platform":
-           getPlatformEmbed();
+           return getPlatformEmbed();
            break;        
        case "welcome help":
-           getWelcomeHelpEmbed();
+           return getWelcomeHelpEmbed();
            break;                
       case "misc":
-           getMiscEmbed();
+           return getMiscEmbed();
            break;         
        case "server":
-           getServerMsg();
+           return getServerMsg();
            break;        
        case "welcome help":
-           getWelcomeHelpEmbed();
+           return getWelcomeHelpEmbed();
            break;
        case "languages":
-           getLanguagesEmbed();
+           return getLanguagesEmbed();
            break;         
       case "bots quick info":
-           getBotsQuickInfo();
+           return getBotsQuickInfo();
            break;         
        case "echo quick info":
-           getEchoQuickInfo();
+           return getEchoQuickInfo();
            break;        
        case "ub3r help":
-           getUB3RHelp();
+           return getUB3RHelp();
            break;      
        case "nadeko help":
-           getNadekoHelp();
+           return getNadekoHelp();
            break;         
        case "mee6 help":
-           getMee6Help();
+           return getMee6Help();
            break;        
        case "tatsumaki help":
-           getTatsumakiHelp();
+           return getTatsumakiHelp();
            break;
       case "septapus help":
-           getSeptapusHelp();
+           return getSeptapusHelp();
            break;         
        case "matbot help":
-           getMatbotHelp();
+           return getMatbotHelp();
            break;                       
        default:
+           return false;
           break;           
     };
 }
