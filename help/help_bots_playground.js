@@ -190,7 +190,7 @@ function getUB3RHelp(){
 
 
 function getNadekoHelp(){
-      ar title = "NADEKO COMMANDS QUICK INFORMATION";
+      var title = "NADEKO COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
@@ -211,7 +211,7 @@ function getNadekoHelp(){
 }
 
 function getMee6Help(){
-      ar title = "MEE6 COMMANDS QUICK INFORMATION";
+      var title = "MEE6 COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
@@ -235,7 +235,7 @@ function getMee6Help(){
 
 
 function getTatsumakiHelp(){
-      ar title = "TATSUMAKI COMMANDS QUICK INFORMATION";
+      var title = "TATSUMAKI COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
@@ -267,7 +267,7 @@ function getTatsumakiHelp(){
 }
 
 function getMatbotHelp(){
-      ar title = "MATBOT COMMANDS QUICK INFORMATION";
+      var title = "MATBOT COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
@@ -303,7 +303,7 @@ function getMatbotHelp(){
 }
 
 function getSeptapusHelp(){
-      ar title = "SEPTAPUS COMMANDS QUICK INFORMATION";
+      var title = "SEPTAPUS COMMANDS QUICK INFORMATION";
       var color = "";
       var thumb = "server";
       var description = "A list of frequent commands for easy access.";
