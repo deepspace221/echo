@@ -75,7 +75,7 @@ function getWelcomeMsg(){
 }
 
 
-invitesPingToggle(UserID){
+function invitesPingToggle(UserID){
         use server_db;
         invites = JSON.parse(server_db["invites"]);
         
