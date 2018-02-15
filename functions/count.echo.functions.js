@@ -68,12 +68,12 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
 //                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
 //                         outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length - i].count + "\n";
                             
-                        if (i == length && ((length % 2) == 0)){
-                                outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
-                                outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
-                                outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n"; 
-                                continue;
-                        }
+//                         if (i == length && ((length % 2) == 0)){
+//                                 outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
+//                                 outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
+//                                 outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n"; 
+//                                 continue;
+//                         }
                         outputOBJ[typeLC + "Field"] += ctr + " " + langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n**";
                         outputOBJ[typeLC + "Names"] += ctr + " " + langsSliceOBJ["arr" + type][length - i].name + "\n**";
                         outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
