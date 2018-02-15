@@ -68,7 +68,7 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
 //                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
 //                         outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length - i].count + "\n";
                             
-                        if (i == length - 1 && ((length - 1) % 2) == 0){
+                        if (i == length - 2 && ((length - 1) % 2) == 1){
                                 outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
                                 outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
                                 outputOBJ[typeLC + "Num"] += "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";  
