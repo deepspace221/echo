@@ -11,19 +11,19 @@ function countRoleMembers(roleName){
 
 function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             var outputOBJ = {
-                nativeField: "",
-                nativeNames: "",
-                nativeNum: "",
+                nativeField: [],
+//                 nativeNames: [],
+//                 nativeNum: [],
                 nativeRolesCount: "",
 
-                fluentField: "",
-                fluentNames: "",
-                fluentNum: "",
+                fluentField: [],
+//                 fluentNames: [],
+//                 fluentNum: [],
                 fluentRolesCount: "",
 
-                learningField: "",
-                learningNames: "",
-                learningNum: "",
+                learningField: [],
+//                 learningNames: [],
+//                 learningNum: [],
                 learningRolesCount: "",
             };
 
@@ -51,16 +51,16 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                     var length = langsSliceOBJ["arr" + type].length - 1;
                     var ctr = 0;
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
-                        typeLC = type.toLowerCase();                        
-                        if (i == length && ((length % 2) == 0)){
-                                outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
-                                outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
-                                outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n"; 
-                                continue;
-                        }
-                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n**";
-                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n**";
-                        outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
+                        typeLC = type.toLowerCase();  
+//                         if (i == length && ((length % 2) == 0)){
+//                                 outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
+//                                 outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
+//                                 outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n"; 
+//                                 continue;
+//                         }
+                        outputOBJ[typeLC + "Field"].push({name: langsSliceOBJ["arr" + type][length - i].name, count: "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}"};
+//                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n**";
+//                         outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
                     }
             }
             return outputOBJ;
