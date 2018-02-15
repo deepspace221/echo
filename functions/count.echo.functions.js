@@ -60,8 +60,10 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
 
             function produceOutput(type){
                     var length = langsSliceOBJ["arr" + type].length - 1;
+                    var ctr = 0;
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
                         typeLC = type.toLowerCase();
+                        ctr++;
 //                         outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": **" + langsSliceOBJ["arr" + type][i].count + "**\n**";
 //                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
 //                         outputOBJ[typeLC + "Num"] += langsSliceOBJ["arr" + type][length - i].count + "\n";
@@ -72,9 +74,9 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                                 outputOBJ[typeLC + "Num"] += "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";  
                                 break;                  
                         }
-                        outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n**";
-                        outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n**";
-                        outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
+                        outputOBJ[typeLC + "Field"] += ctr + " " + langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n**";
+                        outputOBJ[typeLC + "Names"] += ctr + " " + langsSliceOBJ["arr" + type][length - i].name + "\n**";
+                        outputOBJ[typeLC + "Num"] += ctr + " " + "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
                     }
             }
             // for (i=0; i < arrStudyLangs.length; i++){
