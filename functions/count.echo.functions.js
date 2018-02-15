@@ -43,7 +43,7 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             outputOBJ.fluentRolesCount = langsSliceOBJ.arrFluent.length;
             outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length;
             
-      
+          
         
             // function compare(a, b) {
             //         if (a.count > b.count) return 1;
@@ -79,6 +79,8 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                         outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
                     }
             }
+
+              dbg(outputOBJ);
             // for (i=0; i < arrStudyLangs.length; i++){
             //     if (i < fluentIndex) {
             //         outputOBJ.learningField += arrStudyLangs[i].name + ": " + "**{membercount:" + arrStudyLangs[i].name + "}**\n";
