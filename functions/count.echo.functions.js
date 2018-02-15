@@ -43,9 +43,7 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             outputOBJ.fluentRolesCount = langsSliceOBJ.arrFluent.length;
             outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length;
             
-             dbg(outputOBJ);
-    
-              
+             dbg(outputOBJ);         
         
             // function compare(a, b) {
             //         if (a.count > b.count) return 1;
