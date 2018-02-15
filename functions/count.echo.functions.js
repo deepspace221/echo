@@ -39,9 +39,9 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             langsSliceOBJ.arrFluent = arrStudyLangs.slice(fluentIndex, nativeIndex);
             langsSliceOBJ.arrNative = arrStudyLangs.slice(nativeIndex);
 
-            outputOBJ.nativeRolesCount = langsSliceOBJ.arrNative.length -1;
+            outputOBJ.nativeRolesCount = langsSliceOBJ.arrNative.length;
             outputOBJ.fluentRolesCount = langsSliceOBJ.arrFluent.length;
-            outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length -1;
+            outputOBJ.learningRolesCount = langsSliceOBJ.arrLearning.length;
             
       
         
