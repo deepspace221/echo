@@ -52,15 +52,10 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
                     var ctr = 0;
                     for (i = 0; i < langsSliceOBJ["arr" + type].length; i++){
                         typeLC = type.toLowerCase();  
-//                         if (i == length && ((length % 2) == 0)){
-//                                 outputOBJ[typeLC + "Field"] += langsSliceOBJ["arr" + type][length - i].name + ": {membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}\n";
-//                                 outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n";
-//                                 outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n"; 
-//                                 continue;
-//                         }
-                        outputOBJ[typeLC + "Field"].push({name: langsSliceOBJ["arr" + type][length - i].name, count: "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}"});
-//                         outputOBJ[typeLC + "Names"] += langsSliceOBJ["arr" + type][length - i].name + "\n**";
-//                         outputOBJ[typeLC + "Num"] += "**{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}**\n";
+                        var roleName = langsSliceOBJ["arr" + type][length - i].name;    
+                        var roleCount = "{membercount:" + langsSliceOBJ["arr" + type][length - i].name + "}";
+                        var obj = {name: roleName, count: roleCount};
+                        outputOBJ[typeLC + "Field"].push(obj);
                     }
             }
             return outputOBJ;
