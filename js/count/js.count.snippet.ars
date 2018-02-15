@@ -2,7 +2,10 @@
 &\count {params}={init}
 #js >>
 use temp;
-import "https://raw.githubusercontent.com/deepspace221/xmltv-israel/master/echo.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/count.echo.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
 
 var staff = getStaffRoleName();
 var description = "";
@@ -17,6 +20,9 @@ var roleName = isRole(Params);
 var fields = "";
 var footer = "";
 var thumb = "";
+var footerIcon ="";
+var color = "";
+var author= "";
 
         if (ChannelID == 349824543424118784 || MemberHasRole(335021599059345408, UserID, staff)){
 
@@ -30,40 +36,39 @@ var thumb = "";
                               var langsOBJ = getLangsInfoOBJ(arrStudyLangs, indexLangOBJ.fluentIndex, indexLangOBJ.nativeIndex);
                               temp["arrStudyLangs"] = JSON.stringify(arrStudyLangs)                    
                               temp["langsOBJ"] = JSON.stringify(langsOBJ)                    
-                              // {membercount:{params}}  
 
                               //for all languages
                               title = "Statistics for all languages" 
                               description = "General overview."
-                              field0Name = "Native";
+                              field0Name = "Native (" + langsOBJ.nativeRolesCount + ")";
                               field0Value = langsOBJ.nativeField;                              
-                              field1Name = "Fluent";
+                              field1Name = "Fluent (" + langsOBJ.fluentRolesCount + ")";
                               field1Value = langsOBJ.fluentField;                              
                               field2 = "\
-                                                    {field[2]|name:Learning} \
-                                                    {field[2]|value:a" + langsOBJ.learningField  + "} \
+                                                    {field[2]|name:Learning (" + langsOBJ.learningRolesCount + ")} \
+                                                    {field[2]|value:" + langsOBJ.learningField  + "} \
                                                     {field[2]|inline:true} \
                                           ";
-                              footer = "Run: \\count lang [native|fluent|learning] for additional views options.";
+                              footer = "Run: \\count lang [native|fluent|learning] for additional view options.";
                               //for types display (native/fluent etc)
                               if (type != null){
                                     type = type[0];
                                     title = "Statistics for " + type +" languages";
-                                    thumb = "{guild|icon}";
+                                    thumb = "";
                                     description = type +" languages"
-                                    field0Name = type.charAt(0).toUpperCase() + type.slice(1);
+                                    field0Name = type.charAt(0).toUpperCase() + type.slice(1) +" (" + langsOBJ[type + 'RolesCount'] + ")";
                                     field0Value = langsOBJ[type + "Names"];                              
-                                    field1Name = "Num";
-                                    field1Value = "**" + langsOBJ[type + "Num"] + "**";  
+                                    field1Name = "Count";
+                                    field1Value = langsOBJ[type + "Num"];  
                                     field2 = "";   
                                     footer = "Run: \\count lang for a general languages view."
                               }
                               fields = " \
-                                                        {field[0]|name:a" + field0Name + "} \
-                                                        {field[0]|value:a" + field0Value + "}  \
+                                                        {field[0]|name:" + field0Name + "} \
+                                                        {field[0]|value:" + field0Value + "}  \
                                                         {field[0]|inline:true} \
-                                                        {field[1]|name:a" + field1Name +"} \
-                                                        {field[1]|value:a" + field1Value  + "} \
+                                                        {field[1]|name:" + field1Name +"} \
+                                                        {field[1]|value:" + field1Value  + "} \
                                                         {field[1]|inline:true} \
                                                         " + field2 + " \
                                                        {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
@@ -109,6 +114,6 @@ var thumb = "";
                         }
         }
 
-resp = getEmbed();
+resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
             // resp = "Descriptio: " + description + "\narrStudyLangs length: " + arrStudyLangs.length +  "\nRolename: " + roleName + "\nParams: " + Params + "\nStaff: " + staff + "\ndebug: " + debug + "\ntop role: " + topRole + "\nbottom role: " +bottomRole ;
 >> 
