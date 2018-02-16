@@ -305,8 +305,8 @@
     "ga":{
         "name":"Irish",
         "nativeName":"Gaeilge",
-        "countryCode":"Ireland",
-        "country":"IE"
+        "countryCode":"IE",
+        "country":"Ireland"
     },
     "ig":{
         "name":"Igbo",
