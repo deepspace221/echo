@@ -187,7 +187,7 @@
     },
     "eo":{
         "name":"Esperanto",
-        "nativeName":"Esperanto"
+        "nativeName":"Esperanto",
         "countryCode":"",
         "country":""       
     },
@@ -217,7 +217,7 @@
     },
     "fr":{
         "name":"French",
-        "nativeName":"Français"
+        "nativeName":"Français",
         "countryCode":"FR",
         "country":"Frence"
     },
@@ -241,7 +241,7 @@
     },
     "el":{
         "name":"Greek",
-        "nativeName":"Ελληνικά"
+        "nativeName":"Ελληνικά",
         "countryCode":"GR",
         "counrty":"Greece"
     },
@@ -364,7 +364,7 @@
     },
     "ks":{
         "name":"Kashmiri",
-        "nativeName":"कश्मीरी, كشميري‎"
+        "nativeName":"कश्मीरी, كشميري"
     },
     "kk":{
         "name":"Kazakh",
@@ -402,7 +402,7 @@
     },
     "ku":{
         "name":"Kurdish",
-        "nativeName":"Kurdî, كوردی‎"
+        "nativeName":"Kurdî, كوردی"
     },
     "kj":{
         "name":"Kwanyama, Kuanyama",
@@ -462,7 +462,7 @@
     },
     "ms":{
         "name":"Malay",
-        "nativeName":"bahasa Melayu, بهاس ملايو‎"
+        "nativeName":"bahasa Melayu, بهاس ملايو"
     },
     "ml":{
         "name":"Malayalam",
@@ -548,7 +548,7 @@
     },
     "pa":{
         "name":"Panjabi, Punjabi",
-        "nativeName":"ਪੰਜਾਬੀ, پنجابی‎"
+        "nativeName":"ਪੰਜਾਬੀ, پنجابی"
     },
     "pi":{
         "name":"Pāli",
@@ -562,7 +562,7 @@
     },
     "pl":{
         "name":"Polish",
-        "nativeName":"polski"
+        "nativeName":"polski",
         "countryCode":"PL",
         "country":"Poland"
     },
@@ -594,7 +594,7 @@
     },
     "ru":{
         "name":"Russian",
-        "nativeName":"русский язык"
+        "nativeName":"русский язык",
         "countryCode":"RU",
         "country":"Russia" 
     },
@@ -608,7 +608,7 @@
     },
     "sd":{
         "name":"Sindhi",
-        "nativeName":"सिन्धी, سنڌي، سندھی‎"
+        "nativeName":"सिन्धी, سنڌي، سندھی"
     },
     "se":{
         "name":"Northern Sami",
@@ -700,7 +700,7 @@
     },
     "tg":{
         "name":"Tajik",
-        "nativeName":"тоҷикӣ, toğikī, تاجیکی‎"
+        "nativeName":"тоҷикӣ, toğikī, تاجیکی"
     },
     "th":{
         "name":"Thai",
@@ -746,7 +746,7 @@
     },
     "tt":{
         "name":"Tatar",
-        "nativeName":"татарча, tatarça, تاتارچا‎"
+        "nativeName":"татарча, tatarça, تاتارچا"
     },
     "tw":{
         "name":"Twi",
@@ -758,7 +758,7 @@
     },
     "ug":{
         "name":"Uighur, Uyghur",
-        "nativeName":"Uyƣurqə, ئۇيغۇرچە‎"
+        "nativeName":"Uyƣurqə, ئۇيغۇرچە"
     },
     "uk":{
         "name":"Ukrainian",
@@ -774,7 +774,7 @@
     },
     "uz":{
         "name":"Uzbek",
-        "nativeName":"zbek, Ўзбек, أۇزبېك‎"
+        "nativeName":"zbek, Ўзбек, أۇزبېك"
     },
     "ve":{
         "name":"Venda",
