@@ -8,10 +8,10 @@ function dbg(content){
    }
    
    if(content.length > 1950){
-     content = "https://www.hastebin.com/" + JSON.parse(PostJSON("https://www.hastebin.com/documents", "", true, content)).key + ".js" 
+     content = "https://www.hastebin.com/" + JSON.parse(PostJSON("https://www.hastebin.com/documents", "", true, content)).key + ".js";
    } 
    else {
-     content = "```js\n" + content + "\n```" 
+     content = "```js\n" + content + "\n```";
    }
-   PostJSON(webhook_url, "", false, {content: content})
+   PostJSON(webhook_url, "", false, {content: content});
 } 
