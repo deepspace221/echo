@@ -23,6 +23,7 @@ var thumb = "";
 var footerIcon ="";
 var color = "";
 var author= "";
+var link = "";
 
         if (ChannelID == 349824543424118784 || MemberHasRole(335021599059345408, UserID, staff)){
 
@@ -30,51 +31,17 @@ var author= "";
                               description = "{user} You didn't specify any input.";
                         }
                         else if (/lang/i.test(Params)){
-                              var type = Params.match(/(native|fluent|learning)/i);
+                              var type = (Params.match(/(native|fluent|learning)/i) != null) ? Params.match(/(native|fluent|learning)/i)[0] : "";
+                              var limit = (Params.match(/\d\d?/) != null) ? Params.match(/\d\d?/) : 0;
+                              var top = (Params.match(/top/i) != null) ? true : false;
                               arrStudyLangs = getArrStudyLangs(bottomRole, topRole);
                               var indexLangOBJ = findFirstIndexFluentAndNativeOBJ(arrStudyLangs)
                               var langsOBJ = getLangsInfoOBJ(arrStudyLangs, indexLangOBJ.fluentIndex, indexLangOBJ.nativeIndex);
-                              temp["arrStudyLangs"] = JSON.stringify(arrStudyLangs)                    
-                              temp["langsOBJ"] = JSON.stringify(langsOBJ)                    
-
-                              //for all languages
-                              title = "Statistics for all languages" 
-                              description = "General overview."
-                              field0Name = "Native (" + langsOBJ.nativeRolesCount + ")";
-                              field0Value = langsOBJ.nativeField;                              
-                              field1Name = "Fluent (" + langsOBJ.fluentRolesCount + ")";
-                              field1Value = langsOBJ.fluentField;                              
-                              field2 = "\
-                                                    {field[2]|name:Learning (" + langsOBJ.learningRolesCount + ")} \
-                                                    {field[2]|value:" + langsOBJ.learningField  + "} \
-                                                    {field[2]|inline:true} \
-                                          ";
-                              footer = "Run: \\count lang [native|fluent|learning] for additional view options.";
-                              //for types display (native/fluent etc)
-                              if (type != null){
-                                    type = type[0];
-                                    title = "Statistics for " + type +" languages";
-                                    thumb = "";
-                                    description = type +" languages"
-                                    field0Name = type.charAt(0).toUpperCase() + type.slice(1) +" (" + langsOBJ[type + 'RolesCount'] + ")";
-                                    field0Value = langsOBJ[type + "Names"];                              
-                                    field1Name = "Count";
-                                    field1Value = langsOBJ[type + "Num"];  
-                                    field2 = "";   
-                                    footer = "Run: \\count lang for a general languages view."
-                              }
-                              fields = " \
-                                                        {field[0]|name:" + field0Name + "} \
-                                                        {field[0]|value:" + field0Value + "}  \
-                                                        {field[0]|inline:true} \
-                                                        {field[1]|name:" + field1Name +"} \
-                                                        {field[1]|value:" + field1Value  + "} \
-                                                        {field[1]|inline:true} \
-                                                        " + field2 + " \
-                                                       {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
-                                                       {footer|text:" + footer +"} \
-                                                        ";                      
-   
+                              link = "{ars:P-sortCount}";
+  
+                              langsOBJ["type"] = type;
+                              langsOBJ["limit"] = limit;
+                              langsOBJ["top"] = top;
                         }
                         else if (roleName == undefined) {
                                         description = "{user} You didn't specify a vaild role name. Please try again.";
@@ -114,6 +81,196 @@ var author= "";
                         }
         }
 
-resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
+if (link == "")
+      resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
+else resp = link + "{m?temp:langsOBJ} := " + JSON.stringify(langsOBJ);
             // resp = "Descriptio: " + description + "\narrStudyLangs length: " + arrStudyLangs.length +  "\nRolename: " + roleName + "\nParams: " + Params + "\nStaff: " + staff + "\ndebug: " + debug + "\ntop role: " + topRole + "\nbottom role: " +bottomRole ;
 >> 
+
+[#CONTINUE#]
+P-sortCount={init}
+{ars:P-sortCount2}
+[#CONTINUE#]
+P-sortCount2={init}
+#js >>
+use temp;
+use temp2;
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/count.echo.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+
+var langsOBJ = JSON.parse(temp["langsOBJ"]);
+
+sortByCountOBJ(langsOBJ);
+
+var title = "";
+var author =""
+var color = "";
+var thumb = "";
+var footer = "";
+var footerIcon = "";
+var type = langsOBJ.type; 
+var limit = langsOBJ.limit;
+var top = langsOBJ.top;
+
+output = getOutput(langsOBJ, limit);
+
+// dbg(output);
+// dbg(langsOBJ);
+
+
+        if (type == "" && !top){
+              var userLimit = (output.limit == true) ? " Displaying results for top **" + limit + "** items.": "";
+              var title = "Statistics for all languages";
+              var description = "General overview." + userLimit;
+              var fields = "\
+                        {field[0]|name:Native (" + langsOBJ.nativeRolesCount + ")} \
+                        {field[0]|value:" + output.nativeField + "}  \
+                        {field[0]|inline:true} \
+                        {field[1]|name:Fluent (" + langsOBJ.fluentRolesCount +")} \
+                        {field[1]|value:" + output.fluentField  + "} \
+                        {field[1]|inline:true} \
+                        {field[2]|name:Learning (" + langsOBJ.learningRolesCount + ")} \
+                        {field[2]|value:" + output.learningField  + "} \
+                        {field[2]|inline:true} \
+        ";    
+              var footer = "Run: \\count lang [native|fluent|learning] [1-54] for additional view options.";
+
+             resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
+        }
+        else if (top) {
+                 var userLimit = (output.limit == true) ? " Displaying results for top **" + limit + "** items." : "";
+                 var title = "Top languages";
+                 var thumb = "";
+                 var description = "Totals of the **native**, **fluent** and **learning** roles put together!\nThe most popular languages." + userLimit;
+                 var footer  = "Run: \\count lang [1-54] for a general languages view."
+                 var fields = " \
+                    {field[0]|name:Language} \
+                    {field[0]|value:" + output["learningNames"] + "}  \
+                    {field[0]|inline:true} \
+                    {field[1]|name:Count} \
+                    {field[1]|value:" +  output["learningNum"]  + "} \
+                    {field[1]|inline:true} \
+                    ";     
+               resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);                     
+        }
+        else {
+                  var userLimit = (output.limit == true) ? " Displaying results for top **" + limit + "** items.": "";
+                  var title = "Statistics for " + type +" languages";
+                  var typeUC = type.charAt(0).toUpperCase() + type.toLowerCase().slice(1);
+                  var thumb = "";
+                  var description = typeUC +" languages." + userLimit;
+                  var footer  = "Run: \\count lang [1-54] for a general languages view."
+                  var field0Name = typeUC +" (" + langsOBJ[type + 'RolesCount'] + ")";
+                  var field0Value = output[type + "Names"];                              
+                  var field1Name = "Count";
+                  var field1Value = output[type + "Num"];  
+                  var fields = " \
+                                      {field[0]|name:" + field0Name + "} \
+                                      {field[0]|value:" + field0Value + "}  \
+                                      {field[0]|inline:true} \
+                                      {field[1]|name:" + field1Name +"} \
+                                      {field[1]|value:" + field1Value  + "} \
+                                      {field[1]|inline:true} \
+                                      ";    
+
+               resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);                     
+        }     
+
+function sortByCountOBJ(langsOBJ){
+      var arr = ["native", "fluent", "learning"];
+
+      for (i = 0; i < arr.length; i++){
+          langsOBJ[arr[i] + "Field"].sort(function(a, b) {
+                        return a.count - b.count;
+          });
+      }
+}
+
+function getOutput(langsOBJ, limit){
+         var outputOBJ = {
+                nativeField: "",
+                nativeNames: "",
+                nativeNum: "",
+
+                nativeRolesCount: "",
+
+                fluentField: "",
+                fluentNames: "",
+                fluentNum: "",
+                fluentRolesCount: "",
+
+                learningField: "",
+                learningNames: "",
+                learningNum: "",
+                learningRolesCount: "",
+            };
+
+        var topResults = []
+
+            if (type == 0 && !top){
+                produceOutput("native");
+                produceOutput("fluent");
+                produceOutput("learning");
+            } else if (top) {
+                produceTop();  
+            }
+            else produceOutput(type);
+
+
+
+            function produceTop(){
+                  var limit2 = (limit > 0 && limit < langsOBJ["learningField"].length) ? limit : 20;
+                  var length = langsOBJ["learningField"].length - 1;
+                  if (limit2 == limit) outputOBJ.limit = true;
+
+                  for (i = 0; i < limit2; i++){
+                        var lang = langsOBJ["learningField"][length - i].name;
+                        var count = parseInt(langsOBJ["learningField"][length - i].count);
+                        var sum = count + findLangCount("f. " + lang, "fluent") + findLangCount("n. " + lang, "native");
+                        topResults.push({name: langsOBJ["learningField"][length - i].name, count: sum});
+                  }
+                  topResults.sort(function(a,b){
+                          return b.count - a.count;
+                  });
+
+                  for (i = 0; i < limit2; i++){
+                          outputOBJ["learningNames"] += topResults[i].name + "\n**";
+                          outputOBJ["learningNum"] += "**" + topResults[i].count + "**\n";
+                  }
+
+            }
+
+            function findLangCount(lang, type) {
+                  var result = 0;
+                  for (k=0; k < langsOBJ[type + "Field"].length; k++){
+                        if (langsOBJ[type + "Field"][k].name == lang){
+                                   result = langsOBJ[type + "Field"][k].count;
+                                   break;         
+                        }
+                  }
+                return parseInt(result);          
+            }
+
+
+            function produceOutput(type){
+                    var limit2 = (limit > 0 && limit < langsOBJ[type + "Field"].length) ? limit : langsOBJ[type + "Field"].length;
+                    var length = langsOBJ[type + "Field"].length - 1;
+                    if (limit2 == limit) outputOBJ.limit = true;
+                    for (i = 0; i < limit2; i++){
+                        if ((i == limit2 -1) && ((limit2 % 2) == 1)){
+                                outputOBJ[type + "Field"] += langsOBJ[type + "Field"][length - i].name + ": " + langsOBJ[type + "Field"][length - i].count + "\n";
+                                outputOBJ[type + "Names"] += langsOBJ[type + "Field"][length - i].name + "\n";
+                                outputOBJ[type + "Num"] += "**" + langsOBJ[type + "Field"][length - i].count + "**\n"; 
+                                break;
+                        }
+                        outputOBJ[type + "Field"] += langsOBJ[type + "Field"][length - i].name + ": " + langsOBJ[type + "Field"][length - i].count + "\n**";
+                        outputOBJ[type + "Names"] += langsOBJ[type + "Field"][length - i].name + "\n**";
+                        outputOBJ[type + "Num"] += "**" + langsOBJ[type + "Field"][length - i].count + "**\n";
+                    }
+            }
+
+            return outputOBJ;
+}     
+>>
