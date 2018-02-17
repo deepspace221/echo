@@ -1,22 +1,22 @@
-// function sortRolesByPosition() {
-//         var arr = new Array();
-//         for (var i = 0; i < UserRoles.length; i++) {
-//             for (var j = 0; j < ServerRoles.length; j++) {
-//                 if (UserRoles[i] === ServerRoles[j]["ID"]) {
-//                     var role = {
-//                         Position: ServerRoles[j]["Position"],
-//                         Name: GetRoleName(UserRoles[i])
-//                     };
-//                     arr.push(role);
-//                 }
-//             }
-//         }
-//         var byPos = arr.slice(0);
-//         byPos.sort(function(a,b) {
-//             return b.Position - a.Position;
-//         });
-//         return byPos;
-// }
+function sortRolesByPosition() {
+        var arr = new Array();
+        for (var i = 0; i < UserRoles.length; i++) {
+            for (var j = 0; j < ServerRoles.length; j++) {
+                if (UserRoles[i] === ServerRoles[j]["ID"]) {
+                    var role = {
+                        Position: ServerRoles[j]["Position"],
+                        Name: GetRoleName(UserRoles[i])
+                    };
+                    arr.push(role);
+                }
+            }
+        }
+        var byPos = arr.slice(0);
+        byPos.sort(function(a,b) {
+            return b.Position - a.Position;
+        });
+        return byPos;
+}
 
 //GIVINIG ROLES. Returns an array of restricted roles
 function getRestrictedRoles(){
@@ -43,7 +43,7 @@ function getStaffRoleName(){ //working
         }
 }
 function getRegexRoleName(roleName){
-	var regex = new RegExp(roleName, 'i')
+	var regex = new RegExp(roleName, 'i');
 	var ctr = 0;
 	for (i = 0; ServerRoles.length; i++){
 		if (/regex/i.test(ServerRoles["Name"])){
@@ -93,7 +93,7 @@ function isRoleRestricted(role, regexRestrictedRoles) {
 					return true;
 				}
 		}
-		return false
+		return false;
 	}
 	//check to see if user try to assign a role equale or above staff.
 	var staffRolePosition = getRolePosition(getStaffRoleName());
