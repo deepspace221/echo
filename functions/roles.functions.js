@@ -21,7 +21,7 @@ function getArrSortedRolesByPosition() {
 //GIVINIG ROLES. Returns an array of restricted roles
 function getRestrictedRoles(){
 	var arr = [];
-	for (i=0; i < ServerRoles.length; i++){
+	for (var i = 0; i < ServerRoles.length; i++){
    		 if (/^[^\d]\s/.test(ServerRoles[i]["Name"]))
      			 arr.push(ServerRoles[i]["Name"]);
 	}
@@ -30,14 +30,14 @@ function getRestrictedRoles(){
 
 //Count. Returns a role position.
 function getRolePosition(roleName){
-        for (i=0; i < ServerRoles.length; i++){
+        for (var i = 0; i < ServerRoles.length; i++){
             if (ServerRoles[i].Name == roleName)
                 return ServerRoles[i].Position;
         }
 }
 //Count|Roles get staff role name. You can also use the function GetRoleName(337966506191224834)
 function getStaffRoleName(){ //working
-        for (i=0; i < ServerRoles.length; i++){
+        for (var i = 0; i < ServerRoles.length; i++){
             if (ServerRoles[i].ID == 337966506191224834)
                 return ServerRoles[i].Name;
         }
@@ -45,7 +45,7 @@ function getStaffRoleName(){ //working
 function getRegexRoleName(roleName){
 	var regex = new RegExp(roleName, 'i');
 	var ctr = 0;
-	for (i = 0; ServerRoles.length; i++){
+	for (var i = 0; ServerRoles.length; i++){
 		if (/regex/i.test(ServerRoles["Name"])){
 			ctr++;
 			roleName = ServerRoles["Name"];	
@@ -60,7 +60,7 @@ function getUniqueRole(role, roles){
 	var roleRGX = new RegExp(role.replace(/\./i, "\\."), 'i');
 	var arr = [];
 
-	for (k = 0; k < ServerRoles.length; k++){
+	for (var k = 0; k < ServerRoles.length; k++){
 		if (roleRGX.test(ServerRoles[k]["Name"])) {
 			arr.push(ServerRoles[k]["Name"]);
 		}
@@ -111,7 +111,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		}
 
 		//final check. check against an array of restricted roles.
-		for (i=0; i < regexRestrictedRoles.length; i++){
+		for (var i = 0; i < regexRestrictedRoles.length; i++){
 			if (role == regexRestrictedRoles[i]){
 				roles.errMsg.push("\nThe role `" + role +"` is restricted. You don't have sufficent permissions!");
 				return true;
