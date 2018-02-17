@@ -157,3 +157,54 @@ function getArrStudyLangs(bottomRole, topRole){ //working
         return arr;
 }
 
+function produceTypeOutput(outputOBJ, langsOBJ, type, limit){
+                var limit2 = (limit > 0 && limit < langsOBJ[type + "Field"].length) ? limit : langsOBJ[type + "Field"].length;
+                var length = langsOBJ[type + "Field"].length - 1;
+                if (limit2 == limit) outputOBJ.limit = true;
+                for (i = 0; i < limit2; i++){
+                    if ((i == limit2 -1) && ((limit2 % 2) == 1)){
+                            outputOBJ[type + "Field"] += langsOBJ[type + "Field"][length - i].name + ": " + langsOBJ[type + "Field"][length - i].count + "\n";
+                            outputOBJ[type + "Names"] += langsOBJ[type + "Field"][length - i].name + "\n";
+                            outputOBJ[type + "Num"] += "**" + langsOBJ[type + "Field"][length - i].count + "**\n"; 
+                            break;
+                    }
+                    outputOBJ[type + "Field"] += langsOBJ[type + "Field"][length - i].name + ": " + langsOBJ[type + "Field"][length - i].count + "\n**";
+                    outputOBJ[type + "Names"] += langsOBJ[type + "Field"][length - i].name + "\n**";
+                    outputOBJ[type + "Num"] += "**" + langsOBJ[type + "Field"][length - i].count + "**\n";
+                }
+                return outputOBJ;
+}
+
+function produceTop(outputOBJ, langsOBJ, limit){
+                  var topResults = []
+                  var limit2 = (limit > 0 && limit < langsOBJ["learningField"].length) ? limit : 20;
+                  var length = langsOBJ["learningField"].length - 1;
+                  if (limit2 == limit) outputOBJ.limit = true;
+
+                  for (i = 0; i < limit2; i++){
+                        var lang = langsOBJ["learningField"][length - i].name;
+                        var count = parseInt(langsOBJ["learningField"][length - i].count);
+                        var sum = count + findLangCount(langsOBJ, "f. " + lang, "fluent") + findLangCount(langsOBJ, "n. " + lang, "native");
+                        topResults.push({name: langsOBJ["learningField"][length - i].name, count: sum});
+                  }
+                  topResults.sort(function(a,b){
+                          return b.count - a.count;
+                  });
+
+                  for (i = 0; i < limit2; i++){
+                          outputOBJ["learningNames"] += topResults[i].name + "\n**";
+                          outputOBJ["learningNum"] += "**" + topResults[i].count + "**\n";
+                  }
+                return outputOBJ;
+}
+
+function findLangCount(langsOBJ, lang, type) {
+                  var result = 0;
+                  for (k=0; k < langsOBJ[type + "Field"].length; k++){
+                        if (langsOBJ[type + "Field"][k].name == lang){
+                                   result = langsOBJ[type + "Field"][k].count;
+                                   break;         
+                        }
+                  }
+                return parseInt(result);          
+}
