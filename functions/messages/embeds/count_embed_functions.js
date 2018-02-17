@@ -16,10 +16,10 @@ function getEmbedSingleLangCount(roleName, counters, total, nativeName, wiki, lo
     if (!nativeName) nativeName = "NaN"; 
     if (!wiki) wiki = "NaN";      
     if (!locations) locations = "NaN"; 
+    if (!thumb) thumb = "";
 
     var title = "Statistics for the "+ roleName + " language:";     
     var author= "";
-    var thumb = "";
     var color = "";
     var footer = "";
     var footerIcon ="";
