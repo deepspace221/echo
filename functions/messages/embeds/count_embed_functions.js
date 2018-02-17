@@ -12,7 +12,7 @@ function getEmbedSingleRoleCount(roleName, roleCount){
         return getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
 }
 
-function getEmbedSingleLangCount(roleName, counters, total, nativeName, wiki, locations){
+function getEmbedSingleLangCount(roleName, counters, total, thumb, nativeName, wiki, locations){
     if (!nativeName) nativeName = "NaN"; 
     if (!wiki) wiki = "NaN";      
     if (!locations) locations = "NaN"; 
