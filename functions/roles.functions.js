@@ -56,7 +56,7 @@ function getRegexRoleName(roleName){
 	else return roleName;
 }
 
-function getUniqueRole(role){
+function getUniqueRole(role, roles){
 	var roleRGX = new RegExp(role.replace(/\./i, "\\."), 'i');
 	var arr = [];
 
@@ -68,6 +68,7 @@ function getUniqueRole(role){
 
 	if (arr.length > 4){
 		roles.errMsg = "\nRole `" + role + "` isn't unique enough. Too many results. Quitting.";
+		return false;
 	}
 	else if (arr.length == 4 || arr.length == 3 || arr.length == 2){
 		return findShortestStringInArr(arr);
