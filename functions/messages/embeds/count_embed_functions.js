@@ -112,5 +112,5 @@ function getCountTypeEmbed(output, type, userLimit, langsOBJ){
                               {field[1]|inline:true} \
                               ";    
 
-       resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);         
+       return getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);         
 }
