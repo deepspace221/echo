@@ -2,9 +2,7 @@
 function getMembersCount(type){
 	var ctr = 0;
 	if (!type){
-		for (key in ServerMembers){
-			ctr++;
-		}
+		ctr = Server.MembersCount;
 	}	
 	else if (type == "users"){
 		for (key in ServerMembers){
