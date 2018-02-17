@@ -81,7 +81,7 @@ function getUniqueRole(role){
 
 function isRoleRestricted(role, regexRestrictedRoles) {
 	//For staff.
-	if (MemberHasRole(335021599059345408, UserID, getStaffRoleName()){
+	if (MemberHasRole(335021599059345408, UserID, getStaffRoleName())){
 		if (isRoleHigherThanUserTopRole()){
 			roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
 			return true;
