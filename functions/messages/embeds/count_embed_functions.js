@@ -9,5 +9,5 @@ function getSingleRoleCount(roleName, roleCount){
         description = " \
                 \nThe total number of users in role " + roleName +" is: " + roleCount +" \
                 ";              
-        resp = getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
+        return getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer);
 }
