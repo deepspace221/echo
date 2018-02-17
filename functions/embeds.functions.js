@@ -72,7 +72,6 @@ function getSimpleEmbed(title, color, thumb, description){
 }
 
 function getBasicEmbed(){
-    var title = 
     var embed = " \
         {embed: \
                  {type: rich} \
