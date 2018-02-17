@@ -122,9 +122,11 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 }
 
 function isRoleHigherThanUserTopRole(roleName){
-	var userTopMostRolePosition = getRolePosition(getArrSortedRolesByPosition()[0]);
-	var position = getRolePosition(roleName);
+	var topRole = getArrSortedRolesByPosition()[0];
+	dbg (topRole);
+	var userTopMostRolePosition = getRolePosition(topRole);
 	dbg(userTopMostRolePosition);
+	var position = getRolePosition(roleName);
 	dbg(position);
 	if (position <= userTopMostRolePosition)
 		return false;
