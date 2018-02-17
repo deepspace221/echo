@@ -84,11 +84,13 @@ function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestri
 		return true;
 	}
 	else {
-		for (key in staffRestrictedRoles)
+		for (key in staffRestrictedRoles) {
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
-				roles.errMsg.push("{user } This role `" + role +"` is handled automatically.");
+				roles.errMsg.push("{user} This role `" + role +"` is handled automatically.");
 				return true;
 			}
+		}
+		dbg("after");
 	}
 	return false;
 }
