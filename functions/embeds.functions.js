@@ -131,9 +131,9 @@ function getEmbed(type){
 }
 
 function getEmbed(){
+    var title = 
     var embed = " \
         {embed: \
-                 {title:" + title +"} \
                  {type: rich} \
                  {color: \
                         {randlist: \
@@ -141,11 +141,9 @@ function getEmbed(){
                                  #f45642,#262525,#e2d626,#87e226, \
                                  #26e2c0,#2633e2,#8126e2 \
                        } \
-                {thumb|url:"+ thumb +"} \
                 {desc: \
            " + description + " \
                   } \
-            " + fields + " \
          } \
     ";
     return embed;
