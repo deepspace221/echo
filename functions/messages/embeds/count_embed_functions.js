@@ -48,11 +48,11 @@ function getEmbedSingleLangCount(roleName, counters, total, thumb, nativeName, w
 
 function getCountLangEmbed(output, userLimit){
       var title = "Statistics for all languages";
-      var author;
-      var color;
-      var thumb;
+      var author = "";
+      var color = "";
+      var thumb = "";
       var description = "General overview." + userLimit;
-      var footerIcon;
+      var footerIcon = "";
       var footer = "Run: \\count lang [native|fluent|learning] [1-54] for additional view options.";
       var fields = "\
                 {field[0]|name:Native (" + output.nativeRolesCount + ")} \
@@ -70,11 +70,11 @@ function getCountLangEmbed(output, userLimit){
 
 function getCountTopEmbed(output, userLimit){
          var title = "Top languages";
-         var author;
-         var color;
-         var thumb;
+         var author = "";
+         var color = "";
+         var thumb = "";
          var description = "Totals of the **native**, **fluent** and **learning** roles put together!\nThe most popular languages." + userLimit; 
-         var footerIcon;
+         var footerIcon = "";
          var footer  = "Run: \\count lang [1-54] for a general languages view."
          
          var fields = " \
@@ -92,12 +92,12 @@ function getCountTopEmbed(output, userLimit){
 function getCountTypeEmbed(output, type, userLimit){
           var typeUC = type.charAt(0).toUpperCase() + type.toLowerCase().slice(1);
           var title = "Statistics for " + type +" languages";
-          var author;
-          var color;
-          var thumb;
+          var author = "";
+          var color = "";
+          var thumb = "";
           var description = typeUC +" languages." + userLimit;
           var footer  = "Run: \\count lang [1-54] for a general languages view."
-          var footerIcon;
+          var footerIcon = "";
         
           var field0Name = typeUC +" (" + output[type + 'RolesCount'] + ")";
           var field0Value = output[type + "Names"];                              
