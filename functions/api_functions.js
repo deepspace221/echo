@@ -20,9 +20,6 @@ function getWikiLink(key, json){
 
             return "[" + json[key].name.split(";")[0] +  " wiki](https://en.wikipedia.org/wiki/" + lang + "_language)";
 }
-function getRendom(length){
-          return Math.floor((Math.random() * length) + 0);
-}
 
 function getLocations(roleName){
         var url = "http://countryapi.gear.host/v1/Country/getCountries?pNativeLanguage=ger";
@@ -41,3 +38,25 @@ function getLocations(roleName){
         dbg(locations);
         return (locations) ? locations : "NaN";
 }
+
+function getLangMetaData(roleName){
+            var obj = {
+                    nativeName: "",
+                    wiki: "",
+                    thumb: undefined,
+                    locations: ""
+            }
+            var json = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/languages.json");
+            var key = getLangKey(roleName, json);
+            dbg(key);
+            if (key){
+                      obj.nativeName = json[key].nativeName;
+                      obj.wiki = getWikiLink(key, json);
+                      obj.thumb = getLangFlag(key, "", json);
+            }
+           // obj.locations = getLocations(roleName);
+
+           return obj;
+}
+
+
