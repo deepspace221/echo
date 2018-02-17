@@ -65,7 +65,6 @@ function getUniqueRole(role, roles){
 			arr.push(ServerRoles[k]["Name"]);
 		}
 	}
-	dbg(arr);
 	if (arr.length > 4){
 		roles.errMsg = "\nRole `" + role + "` isn't unique enough. Too many results. Quitting.";
 		return false;
