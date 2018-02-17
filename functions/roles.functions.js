@@ -55,3 +55,69 @@ function getRegexRoleName(roleName){
 		return;
 	else return roleName;
 }
+
+function getUniqueRole(role){
+	var roleRGX = new RegExp(role.replace(/\./i, "\\."), 'i');
+	var arr = [];
+
+	for (k = 0; k < ServerRoles.length; k++){
+		if (roleRGX.test(ServerRoles[k]["Name"])) {
+			arr.push(ServerRoles[k]["Name"]);
+		}
+	}
+
+	if (arr.length > 4){
+		roles.errMsg = "\nRole `" + role + "` isn't unique enough. Too many results. Quitting.";
+	}
+	else if (arr.length == 4 || arr.length == 3 || arr.length == 2){
+		return findShortestStringInArr(arr);
+	}
+	else if (arr.length == 1){
+		return arr[0];
+	}
+	retrun false
+}
+
+
+function isRoleRestricted(role, regexRestrictedRoles) {
+	//For staff.
+	if (MemberHasRole(335021599059345408, UserID, getStaffRoleName()){
+		if (isRoleHigherThanUserTopRole()){
+			roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
+			return true;
+		}
+		else {
+			for (key in staffRestrictedRoles)
+				if (GetRoleID(role) == activityRoles[key]) {
+					roles.errMsg.push("{user } This role is an activity role and it's only handled automatically by Mee6.");
+					return true;
+				}
+		}
+		return false
+	}
+	//check to see if user try to assign a role equale or above staff.
+	var staffRolePosition = getRolePosition(getStaffRoleName());
+	var position = getRolePosition(role);
+
+	if (position >= staffRolePosition){
+		roles.errMsg("{user} You're not staff. These roles are restricted!");
+		return true;
+	}
+
+	//final check. check against an array of restricted roles.
+ 	for (i=0; i < regexRestrictedRoles.length; i++){
+		if (role == regexRestrictedRoles[i]){
+			roles.errMsg = "\nThis role `" + role +"` is restricted. You don't have sufficent permission";
+			return true;
+		}
+	}					
+	return false;
+}
+
+function isRoleHigherThanUserTopRole(roleName, arrSortedUserRoles){
+	var position = getRolePosition(roleName)
+	if (position <= arrSortedUserRoles[0])
+		return false;
+	else
+		return true;
+}
