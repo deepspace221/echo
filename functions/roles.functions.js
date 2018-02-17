@@ -87,6 +87,7 @@ function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestri
 		for (key in staffRestrictedRoles) {
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
 				roles.errMsg.push("{user} This role `" + role +"` is handled automatically.");
+				dbg("restricted for staff");
 				return true;
 			}
 		}
