@@ -1,4 +1,4 @@
-function sortRolesByPosition() {
+function getArrSortRolesByPosition() {
         var arr = new Array();
         for (var i = 0; i < UserRoles.length; i++) {
             for (var j = 0; j < ServerRoles.length; j++) {
@@ -80,42 +80,49 @@ function getUniqueRole(role, roles){
 }
 
 
-function isRoleRestricted(role, regexRestrictedRoles) {
-	//For staff.
-	if (MemberHasRole(335021599059345408, UserID, getStaffRoleName())){
-		if (isRoleHigherThanUserTopRole()){
-			roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
-			return true;
-		}
-		else {
-			for (key in staffRestrictedRoles)
-				if (GetRoleID(role) == activityRoles[key]) {
-					roles.errMsg.push("{user } This role is an activity role and it's only handled automatically by Mee6.");
-					return true;
-				}
-		}
-		return false;
-	}
-	//check to see if user try to assign a role equale or above staff.
-	var staffRolePosition = getRolePosition(getStaffRoleName());
-	var position = getRolePosition(role);
-
-	if (position >= staffRolePosition){
-		roles.errMsg("{user} You're not staff. These roles are restricted!");
+function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles){
+	if (isRoleHigherThanUserTopRole(role)){
+		roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
 		return true;
 	}
-
-	//final check. check against an array of restricted roles.
- 	for (i=0; i < regexRestrictedRoles.length; i++){
-		if (role == regexRestrictedRoles[i]){
-			roles.errMsg = "\nThis role `" + role +"` is restricted. You don't have sufficent permission";
-			return true;
-		}
-	}					
+	else {
+		for (key in staffRestrictedRoles)
+			if (GetRoleID(role) == staffRestrictedRoles[key]) {
+				roles.errMsg.push("{user } This role is an activity role and it's only handled automatically by Mee6.");
+				return true;
+			}
+	}
 	return false;
 }
 
-function isRoleHigherThanUserTopRole(roleName, arrSortedUserRoles){
+function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRoles) {
+	//For staff.
+	if (MemberHasRole(Server.ID, UserID, getStaffRoleName())){
+		return isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles)
+	}
+	else{
+		//check to see if user try to assign a role equale or above staff.
+		var staffRolePosition = getRolePosition(getStaffRoleName());
+		var position = getRolePosition(role);
+
+		if (position >= staffRolePosition){
+			roles.errMsg("{user} You're not staff. These roles are restricted!");
+			return true;
+		}
+
+		//final check. check against an array of restricted roles.
+		for (i=0; i < regexRestrictedRoles.length; i++){
+			if (role == regexRestrictedRoles[i]){
+				roles.errMsg = "\nThis role `" + role +"` is restricted. You don't have sufficent permission";
+				return true;
+			}
+		}	
+		return false;
+	}			
+}
+
+function isRoleHigherThanUserTopRole(roleName){
+	arrSortedUserRoles = getArrSortRolesByPosition();
 	var position = getRolePosition(roleName)
 	if (position <= arrSortedUserRoles[0])
 		return false;
