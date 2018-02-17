@@ -60,6 +60,7 @@ function getLangsInfoOBJ(arrStudyLangs, fluentIndex, nativeIndex){
             }
             return outputOBJ;
 }
+
 function findFirstIndexFluentAndNativeOBJ(arrStudyLangs){
             var obj = {
                 nativeIndex: 0,
