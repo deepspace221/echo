@@ -126,8 +126,8 @@ function isRoleHigherThanUserTopRole(roleName){
 	var position = getRolePosition(roleName);
 // 	dbg(userTopMostRolePosition);
 // 	dbg(position);
-// 	if (position <= userTopMostRolePosition)
-// 		return false;
-// 	else
+	if (position <= userTopMostRolePosition)
+		return false;
+	else
 		return true;
 }
