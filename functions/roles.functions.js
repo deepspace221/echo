@@ -66,7 +66,7 @@ function getUniqueRole(role, roles){
 		}
 	}
 	if (arr.length > 4){
-		roles.errMsg = "\nRole `" + role + "` isn't unique enough. Too many results. Quitting.";
+		roles.errMsg.push("\nRole `" + role + "` isn't unique enough. Too many results. Quitting.");
 		return false;
 	}
 	else if (arr.length == 4 || arr.length == 3 || arr.length == 2){
@@ -105,14 +105,14 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		var position = getRolePosition(role);
 
 		if (position >= staffRolePosition){
-			roles.errMsg("{user} You're not staff. These roles are restricted!");
+			roles.errMsg.push("{user} You're not staff. These roles are restricted!");
 			return true;
 		}
 
 		//final check. check against an array of restricted roles.
 		for (i=0; i < regexRestrictedRoles.length; i++){
 			if (role == regexRestrictedRoles[i]){
-				roles.errMsg = "\nThis role `" + role +"` is restricted. You don't have sufficent permission";
+				roles.errMsg.push("\nThis role `" + role +"` is restricted. You don't have sufficent permission");
 				return true;
 			}
 		}	
