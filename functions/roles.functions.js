@@ -4,8 +4,8 @@ function getArrSortedRolesByPosition() {
             for (var j = 0; j < ServerRoles.length; j++) {
                 if (UserRoles[i] === ServerRoles[j]["ID"]) {
                     var role = {
-                        Position: ServerRoles[j]["Position"],
-                        Name: GetRoleName(UserRoles[i])
+                        position: ServerRoles[j]["Position"],
+                        name: GetRoleName(UserRoles[i])
                     };
                     arr.push(role);
                 }
@@ -13,7 +13,7 @@ function getArrSortedRolesByPosition() {
         }
         var byPos = arr.slice(0);
         byPos.sort(function(a,b) {
-            return b.Position - a.Position;
+            return b.position - a.position;
         });
         return byPos;
 }
@@ -122,9 +122,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 }
 
 function isRoleHigherThanUserTopRole(roleName){
-	var topRole = getArrSortedRolesByPosition()[0];
-	dbg (topRole);
-	var userTopMostRolePosition = getRolePosition(topRole);
+	var userTopMostRolePosition = getArrSortedRolesByPosition()[0].position;
 	dbg(userTopMostRolePosition);
 	var position = getRolePosition(roleName);
 	dbg(position);
