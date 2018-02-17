@@ -1,4 +1,4 @@
-function getArrSortRolesByPosition() {
+function getArrSortedRolesByPosition() {
         var arr = new Array();
         for (var i = 0; i < UserRoles.length; i++) {
             for (var j = 0; j < ServerRoles.length; j++) {
@@ -122,7 +122,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 }
 
 function isRoleHigherThanUserTopRole(roleName){
-	arrSortedUserRoles = getArrSortRolesByPosition();
+	arrSortedUserRoles = getArrSortedRolesByPosition();
 	var position = getRolePosition(roleName)
 	if (position <= arrSortedUserRoles[0])
 		return false;
