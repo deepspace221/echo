@@ -1,10 +1,4 @@
 {
-   "err": "",
-   "give": "{role}Dummy, n. Spanish{/role}",
-   "giveMsg": " `n. Spanish`",
-   "polyglot": "true",
-   "role0": "n. Spanish",
-   "roleName": "n. spanish",
    "roles": [
       {
          "Color": 15277667,
@@ -2507,10 +2501,5 @@
          "Position": 36
       }
    ],
-   "take": "",
-   "take0": "n. Spanish",
-   "takeMsg": ""
 }
 
-
-Settings
