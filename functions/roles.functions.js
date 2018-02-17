@@ -78,16 +78,15 @@ function getUniqueRole(role, roles){
 	return false;
 }
 
-
 function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles){
 	if (isRoleHigherThanUserTopRole(role)){
-		roles.errMsg.push("{user} Staff, this role is above your level of permissions.");
+		roles.errMsg.push("{user} Staff, the role `" + role + "` is above your clearance level!");
 		return true;
 	}
 	else {
 		for (key in staffRestrictedRoles)
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
-				roles.errMsg.push("{user } This role is an activity role and it's only handled automatically by Mee6.");
+				roles.errMsg.push("{user } This role `" + role +"` is handled automatically.");
 				return true;
 			}
 	}
@@ -105,14 +104,14 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		var position = getRolePosition(role);
 
 		if (position >= staffRolePosition){
-			roles.errMsg.push("{user} You're not staff. These roles are restricted!");
+			roles.errMsg.push("{user} Stop Monkeying around! The role `" + role +"` is above your pay grade!");
 			return true;
 		}
 
 		//final check. check against an array of restricted roles.
 		for (i=0; i < regexRestrictedRoles.length; i++){
 			if (role == regexRestrictedRoles[i]){
-				roles.errMsg.push("\nThis role `" + role +"` is restricted. You don't have sufficent permission");
+				roles.errMsg.push("\nThe role `" + role +"` is restricted. You don't have sufficent permissions!");
 				return true;
 			}
 		}	
