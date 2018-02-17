@@ -6,6 +6,17 @@ function findShortestStringInArr(arr){
 	}	
 }
 
-function escapeRegExp(str) {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+function escapeRegExp(str) { 
+  str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  dbg(str);
+  return str;
 }
+
+// function escapeRegExp(str) {
+// 	var arr = ["\-","\[","\]","\/","\{","\}","\(","\)","\*","\+","\?","\.","\\","\^","\$","\|"]
+// 	for (var i = 0; i < arr.length; i++){
+// 		str.replace(arr[i], "\\$&");
+// 	}
+// 	return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+// }
+
