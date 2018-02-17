@@ -15,7 +15,8 @@ function findShortestStringInArr(arr){
 function escapeRegExp(str) {
 	var arr = ["\-","\[","\]","\/","\{","\}","\(","\)","\*","\+","\?","\.","\\","\^","\$","\|"];
 	for (var i = 0; i < arr.length; i++){
-		str.replace(arr[i], "\\" + arr[i]);
+		var regExp = new RegExp(arr[i], "g")
+		str.replace(regExp, "\\" + arr[i]);
 	}
 	return str;
 }
