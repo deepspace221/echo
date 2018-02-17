@@ -53,4 +53,6 @@ function getNumSupported(){
                     ctr++;   
         return ctr;
 }
-
+function getRendom(num){
+          return Math.floor((Math.random() * num) + 0);
+}
