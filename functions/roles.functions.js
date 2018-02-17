@@ -75,7 +75,7 @@ function getUniqueRole(role){
 	else if (arr.length == 1){
 		return arr[0];
 	}
-	retrun false;
+	return false;
 }
 
 
