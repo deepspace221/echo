@@ -2,7 +2,7 @@ function getRolesEmbed(roles){
       var roleList = "";
       var takeList = ""; 
       var polyglot = "false";
-      var errMsg = ""
+      var errMsg = "";
         
 	for (var i = 0; i < roles.giveMsg.length; i++){
 	       roleList += "`" + roles.giveMsg[i] + "` ";
@@ -17,7 +17,7 @@ function getRolesEmbed(roles){
       var title = "ROLES TOGGLE INFO";
       var color = "";
       var thumb = "";
-      var description = outputMsg;
+      var description = "Here is a quick overview of what we have done.";
       var footIcon = "";
       var footer = "";
       var fields = "";
@@ -26,7 +26,7 @@ function getRolesEmbed(roles){
           {field[0]|name:Give} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:true} \
-          {field[1]|name:take} \
+          {field[1]|name:Take} \
           {field[1]|value:" + takeList + "} \
           {field[1]|inline:true} \
           {field[2]|name:Polyglot} \
