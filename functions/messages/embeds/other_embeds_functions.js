@@ -1,8 +1,8 @@
 function getRolesEmbed(roles){
-      var roleList = "a";
-      var takeList = "a"; 
+      var roleList = "";
+      var takeList = ""; 
       var polyglot = "false";
-      var errMsg = "a";
+      var errMsg = "";
         
 	for (var i = 0; i < roles.giveMsg.length; i++){
 	       roleList += roles.giveMsg[i] + ", ";
@@ -13,6 +13,11 @@ function getRolesEmbed(roles){
 	for (var i = 0; i < roles.errMsg.length; i++){
 	       errMsg += roles.errMsg[i];
 	}
+	
+      if (roleList == "") roleList = "NaN";
+      if (takeList == "") takeList = "NaN";
+      if (errMsg == "") errMsg = "Completed Successfully";
+	
   
       var title = "ROLES TOGGLE INFO";
       var color = "";
