@@ -175,8 +175,8 @@ function getRolesMessages(roles){
 // 	        return element + "\n"
 // 	});
 	
-	if (roleList != "") giveMsg += roleList + "\n"; giveMsg = "";
-	if (takeList != "") takeMsg += takeList + "\n"; takeMsg = "";
+	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
+	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
 	output = user + giveMsg + takeMsg + errMsg;
 	dbg("messages: " + output);
 	return output;
