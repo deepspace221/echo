@@ -1,5 +1,5 @@
 function getRolesEmbed(outputMsg){
-      var title = "Role Assignment";
+      var title = "ROLES TOGGLE INFO";
       var color = "";
       var thumb = "";
       var description = outputMsg;
