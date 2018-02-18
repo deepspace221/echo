@@ -138,51 +138,51 @@ function getRolesOutput(roles){
 	var give = "";
 	var take = "";
 	var output = "";
-	if (roles.give.length == 2){
-                give = "\n{m?roles_db:givequite}:={role}" + roles.give.shift() + ", " + roles.give.shift() + ", Basic{/role}";
+	if (roles.give.length >= 2){
+                give = "{m?roles_db:givequite}:={role}" + roles.give.shift() + ", " + roles.give.shift() + ", Basic{/role}";
 	}
 	else if (roles.give.length == 1){
 	        give = "{role:" + roles.give.shift() +"}";
 	}
 
-	if (roles.take.length == 2){
-                take = "{m?roles_db:takequite}:={take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+	if (roles.take.length >= 2){
+                take = "{m?roles_db:takequite}:={take}" + roles.take.shift() + ", " + roles.take.shift() + ", Basic{/take}";
 	}
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
 	}
-	if (give != "") output += give + "\n";
-	if (take != "") output += take + "\n";
+	if (give != "") output += "\n" + give + "\n";
+	if (take != "") output += "\n" + take + "\n";
 
 // 	dbg("give and take: " + output);
 	return output;
 }
 
-// function getRolesMessages(roles){
-// 	var errMsg = "";
-// 	var giveMsg = "I have given you the roles: ";
-// 	var takeMsg = "I have taken from you the roles: ";
-// 	var roleList = "";
-// 	var takeList = "";
-// 	var output = "";
-// 	var user = "<@" + UserID + "> \n";
+function getRolesMessages(roles){
+	var errMsg = "";
+	var giveMsg = "I have given you the roles: ";
+	var takeMsg = "I have taken from you the roles: ";
+	var roleList = "";
+	var takeList = "";
+	var output = "";
+	var user = "<@" + UserID + "> \n";
 	
-// 	for (var i = 0; i < roles.giveMsg.length; i++){
-// 	       roleList += "`" + roles.giveMsg.shift() + "` ";
-// 	}
-// 	for (var i = 0; i < roles.takeMsg.length; i++){
-// 	       takeList += "`" +roles.takeMsg.shift() + "` ";
-// 	}
-// // 	errMsg += roles.errMsg.forEach(function (element){
-// // 	        return element + "\n"
-// // 	});
+	for (var i = 0; i < roles.giveMsg.length; i++){
+	       roleList += "`" + roles.giveMsg.shift() + "` ";
+	}
+	for (var i = 0; i < roles.takeMsg.length; i++){
+	       takeList += "`" +roles.takeMsg.shift() + "` ";
+	}
+// 	errMsg += roles.errMsg.forEach(function (element){
+// 	        return element + "\n"
+// 	});
 	
-// 	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
-// 	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
-// 	output = user + giveMsg + takeMsg + errMsg;
-// // 	dbg("messages: " + output);
-// 	return output;
-// }
+	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
+	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
+	output = user + giveMsg + takeMsg + errMsg;
+// 	dbg("messages: " + output);
+	return output;
+}
 
 function getRolesLeftovers(roles){
 	var give = "";
