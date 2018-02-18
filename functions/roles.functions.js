@@ -94,7 +94,7 @@ function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestri
 				return true;
 			}
 		}
-		dbg("staffRestrictedRoles check retured false");
+// 		dbg("staffRestrictedRoles check retured false");
 	}
 	return false;
 }
