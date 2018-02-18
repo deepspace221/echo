@@ -173,7 +173,7 @@ function getRolesMessages(roles){
 	
 	giveMsg += roleList + "\n";
 	takeMsg += takeList + "\n";		
-	output = "{user} " + giveMsg + takeMsg + errMsg;
+	output = "<@" + UserID + "> " + giveMsg + takeMsg + errMsg;
 	return output;
 }
 
