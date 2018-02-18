@@ -172,3 +172,22 @@ function getRolesMessages(roles){
 
 	return outputMsg;
 }
+
+function getRolesLeftovers(roles){
+	var give = "";
+	var take = "";
+	var giveErrMsg = "'Too many roles at once ERROR. I couldn't assign the following roles: ";
+	var giveErrMsg = "'Too many roles at once ERROR. I couldn't take the following roles: ";
+	var output = "";
+	
+	for (var i = 0; i < roles.give.length; i++)
+		give = "` " + roles.give.shift() + "` ";	
+
+	for (var i = 0; i < roles.take.length; i++)
+		take = "` " + roles.take.shift() + "` ";
+
+	if (give != "") output += giveMsg + give + "\n";
+	if (take != "") output += takeMsg + take + "\n";
+
+	return output;
+}
