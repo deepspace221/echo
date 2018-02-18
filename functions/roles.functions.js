@@ -151,7 +151,9 @@ function getRolesOutput(roles){
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
 	}
-	output = give + take
+	if (give != "") output += give + "\n";
+	if (take != "") output += take + "\n";
+
 // 	dbg("give and take: " + output);
 	return output;
 }
