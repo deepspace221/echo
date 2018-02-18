@@ -166,10 +166,10 @@ function getRolesMessages(roles){
 	var user = "<@" + UserID + "> ";
 	
 	for (var i = 0; i < roles.giveMsg.length; i++){
-	       roleList += "`" +roles.giveMsg.shift() + "` ";;
+	       roleList += "`" + roles.giveMsg.shift() + "` ";
 	}
 	for (var i = 0; i < roles.takeMsg.length; i++){
-	       takeList += "`" +roles.takeMsg.shift() + "` ";;
+	       takeList += "`" +roles.takeMsg.shift() + "` ";
 	}
 // 	errMsg += roles.errMsg.forEach(function (element){
 // 	        return element + "\n"
