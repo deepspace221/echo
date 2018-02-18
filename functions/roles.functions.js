@@ -168,9 +168,9 @@ function getRolesMessages(roles){
 	for (var i = 0; i < roles.takeMsg.length; i++){
 	       takeList += "`" +roles.takeMsg.shift() + "` ";;
 	}
-	errMsg += roles.errMsg.forEach(function (element){
-	        return element + "\n"
-	});
+// 	errMsg += roles.errMsg.forEach(function (element){
+// 	        return element + "\n"
+// 	});
 	
 	if (roleList != "") giveMsg += roleList + "\n"; giveMsg = "";
 	if (takeList != "") takeMsg += takeList + "\n"; takeMsg = "";
