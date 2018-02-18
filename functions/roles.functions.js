@@ -139,14 +139,14 @@ function getRolesOutput(roles){
 	var take = "";
 	var output = "";
 	if (roles.give.length == 2){
-                give = "{m?roles_db:givequite}:="\n" + {role}\ndummy,\n" + roles.give.shift() + ",\n" + roles.give.shift() + "\n{/role}";
+                give = "\n{m?roles_db:givequite}:={role}Basic," + roles.give.shift() + "," + roles.give.shift() + "{/role}";
 	}
 	else if (roles.give.length == 1){
 	        give = "{role:" + roles.give.shift() +"}";
 	}
 
 	if (roles.take.length == 2){
-                take = "{m?roles_db:takequite}:="\n" + {take}\ndummy,\n" + roles.take.shift() + ",\n" + roles.take.shift() + "\n{/take}";
+                take = "\n{m?roles_db:takequite}:={take}Basic," + roles.take.shift() + "," + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
