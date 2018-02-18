@@ -152,7 +152,7 @@ function getRolesOutput(roles){
 	        take = "{take:" + roles.take.shift() + "}";
 	}
 	output = give + take
-	dbg("give and take: " + output);
+// 	dbg("give and take: " + output);
 	return output;
 }
 
@@ -178,7 +178,7 @@ function getRolesMessages(roles){
 	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
 	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
 	output = user + giveMsg + takeMsg + errMsg;
-	dbg("messages: " + output);
+// 	dbg("messages: " + output);
 	return output;
 }
 
