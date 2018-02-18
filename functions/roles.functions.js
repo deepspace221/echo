@@ -57,7 +57,8 @@ function getRegexRoleName(roleName){
 }
 
 function getUniqueRole(role, roles){
-	var roleRGX = new RegExp(escapeRegExp(role));
+// 	var roleRGX = new RegExp(escapeRegExp(role));
+	var roleRGX = new RegExp(role, "i");
 	var arr = [];
 
 	for (var k = 0; k < ServerRoles.length; k++){
