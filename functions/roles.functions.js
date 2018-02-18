@@ -66,7 +66,7 @@ function getUniqueRole(role, roles){
 		}
 	}
 
-	dbg(arr);
+	dbg("array regex: " + arr);
 	if (arr.length > 4){
 		roles.errMsg.push("\nRole `" + role + "` isn't unique enough. Too many results. Quitting.");
 		return false;
@@ -93,7 +93,7 @@ function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestri
 				return true;
 			}
 		}
-		dbg("after");
+		dbg("staffRestrictedRoles check retured false");
 	}
 	return false;
 }
