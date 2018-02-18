@@ -146,7 +146,7 @@ function getRolesOutput(roles){
 	}
 
 	if (roles.take.length == 2){
-                take = "\n{m?roles_db:takequite}:={take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+                take = "{m?roles_db:takequite}:={take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
@@ -156,31 +156,31 @@ function getRolesOutput(roles){
 	return output;
 }
 
-function getRolesMessages(roles){
-	var errMsg = "";
-	var giveMsg = "I have given you the roles: ";
-	var takeMsg = "I have taken from you the roles: ";
-	var roleList = "";
-	var takeList = "";
-	var output = "";
-	var user = "<@" + UserID + "> \n";
+// function getRolesMessages(roles){
+// 	var errMsg = "";
+// 	var giveMsg = "I have given you the roles: ";
+// 	var takeMsg = "I have taken from you the roles: ";
+// 	var roleList = "";
+// 	var takeList = "";
+// 	var output = "";
+// 	var user = "<@" + UserID + "> \n";
 	
-	for (var i = 0; i < roles.giveMsg.length; i++){
-	       roleList += "`" + roles.giveMsg.shift() + "` ";
-	}
-	for (var i = 0; i < roles.takeMsg.length; i++){
-	       takeList += "`" +roles.takeMsg.shift() + "` ";
-	}
-// 	errMsg += roles.errMsg.forEach(function (element){
-// 	        return element + "\n"
-// 	});
+// 	for (var i = 0; i < roles.giveMsg.length; i++){
+// 	       roleList += "`" + roles.giveMsg.shift() + "` ";
+// 	}
+// 	for (var i = 0; i < roles.takeMsg.length; i++){
+// 	       takeList += "`" +roles.takeMsg.shift() + "` ";
+// 	}
+// // 	errMsg += roles.errMsg.forEach(function (element){
+// // 	        return element + "\n"
+// // 	});
 	
-	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
-	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
-	output = user + giveMsg + takeMsg + errMsg;
-// 	dbg("messages: " + output);
-	return output;
-}
+// 	if (roleList != "") giveMsg += roleList + "\n"; else giveMsg = "";
+// 	if (takeList != "") takeMsg += takeList + "\n"; else takeMsg = "";
+// 	output = user + giveMsg + takeMsg + errMsg;
+// // 	dbg("messages: " + output);
+// 	return output;
+// }
 
 function getRolesLeftovers(roles){
 	var give = "";
