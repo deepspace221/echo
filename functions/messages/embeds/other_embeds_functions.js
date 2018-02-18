@@ -1,8 +1,8 @@
 function getRolesEmbed(roles){
-      var roleList = "";
-      var takeList = ""; 
+      var roleList = "a";
+      var takeList = "a"; 
       var polyglot = "false";
-      var errMsg = "";
+      var errMsg = "a";
         
 	for (var i = 0; i < roles.giveMsg.length; i++){
 	       roleList += "`" + roles.giveMsg[i] + "` ";
