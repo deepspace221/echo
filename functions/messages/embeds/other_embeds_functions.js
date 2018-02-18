@@ -5,13 +5,13 @@ function getRolesEmbed(roles){
       var errMsg = "a";
         
 	for (var i = 0; i < roles.giveMsg.length; i++){
-	       roleList += "`" + roles.giveMsg[i] + "` ";
+	       roleList += roles.giveMsg[i] + ", ";
 	}
 	for (var i = 0; i < roles.takeMsg.length; i++){
-	       takeList += "`" + roles.takeMsg[i] + "` ";
+	       takeList += roles.takeMsg[i] + ", ";
 	}
 	for (var i = 0; i < roles.errMsg.length; i++){
-	       errMsg += "`" + roles.errMsg[i] + "` ";
+	       errMsg += roles.errMsg[i];
 	}
   
       var title = "ROLES TOGGLE INFO";
