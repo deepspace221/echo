@@ -163,7 +163,7 @@ function getRolesMessages(roles){
 	var roleList = "";
 	var takeList = "";
 	var output = "";
-	var user = "<@" + UserID + "> ";
+	var user = "<@" + UserID + "> \n";
 	
 	for (var i = 0; i < roles.giveMsg.length; i++){
 	       roleList += "`" + roles.giveMsg.shift() + "` ";
