@@ -132,3 +132,43 @@ function isRoleHigherThanUserTopRole(roleName){
 	else
 		return true;
 }
+
+function getRolesOutput(roles){
+	if (roles.give.length == 2){
+                      give = "{m?roles_db:givequite}{role}dummy, " + roles.give.shift() + ", " + roles.give.shift() + "{/role}";
+	}
+	else if (roles.give.length == 1){
+	         give = "{role:" + roles.give.shift() +"}";
+	}
+
+	if (roles.take.length == 2){
+                      take = "{m?roles_db:takequite}{take}dummy, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+	}
+	else if (roles.take.length == 1){
+	         take = "{take:" + roles.take.shift() +"}";
+	}
+	return give + take;
+}
+
+function getRolesMessages(roles){
+	var errMsg = "";
+	if (roles.giveMsg.length == 2){
+                      var giveMsg = "I have given you the roles: `" + roles.giveMsg.shift() + "` and `" + roles.giveMsg.shift() + "`.\n";
+	}
+	else if (roles.giveMsg.length == 1){
+                      var giveMsg = "I have given you the role: `" + roles.giveMsg.shift() + "`.\n";
+	}
+
+	if (roles.takeMsg.length == 2){
+                      var takeMsg = "I have taken from you the role: `" + roles.takeMsg.shift() + "` and `" + roles.takeMsg.shift() + "`.\n";
+	}
+	else if (roles.takeMsg.length == 1){
+	         var takeMsg = "I have taken from you the role: `" + roles.takeMsg.shift() + "`.\n";
+	}
+	errMsg += roles.errMsg.forEach(function (element){
+		return element + "\n"
+	});
+	var outputMsg = "{user} " + giveMsg + takeMsg + errMsg;
+
+	return outputMsg;
+}
