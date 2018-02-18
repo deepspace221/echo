@@ -67,7 +67,7 @@ function getUniqueRole(role, roles){
 		}
 	}
 
-	dbg("array regex: " + arr);
+// 	dbg("array regex: " + arr);
 	if (arr.length > 4){
 		roles.errMsg.push("\nRole `" + role + "` isn't unique enough. Too many results. Quitting.");
 		return false;
