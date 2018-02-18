@@ -35,7 +35,6 @@ function getRolesEmbed(roles){
           {field[3]|name:Errors} \
           {field[3]|value:" + errMsg + "} \
           {field[3]|inline:false} \
-
           ";
 
       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");     
