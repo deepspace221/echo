@@ -148,7 +148,7 @@ function getRolesOutput(roles){
                 take = "{m?roles_db:takequite}{take}dummy, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
-	        take = "{take:" + roles.take.shift() +"}";
+	        take = "{take:" + roles.take.shift() + "}";
 	}
 	return give + take;
 }
@@ -156,7 +156,7 @@ function getRolesOutput(roles){
 function getRolesMessages(roles){
 	var errMsg = "";
 	var giveMsg = "I have given you the roles: ";
-	var takeMsg = "I have given you the role: ";
+	var takeMsg = "I have taken from you the role: ";
 	var roleList = "";
 	var takeList = "";
 	var output = "";
