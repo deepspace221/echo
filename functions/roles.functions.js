@@ -156,7 +156,7 @@ function getRolesOutput(roles){
 function getRolesMessages(roles){
 	var errMsg = "";
 	var giveMsg = "I have given you the roles: ";
-	var takeMsg = "I have taken from you the role: ";
+	var takeMsg = "I have taken from you the roles: ";
 	var roleList = "";
 	var takeList = "";
 	var output = "";
