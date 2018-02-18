@@ -137,6 +137,7 @@ function isRoleHigherThanUserTopRole(roleName){
 function getRolesOutput(roles){
 	var give = "";
 	var take = "";
+	var output = "";
 	if (roles.give.length == 2){
                 give = "{m?roles_db:givequite}{role}dummy, " + roles.give.shift() + ", " + roles.give.shift() + "{/role}";
 	}
@@ -150,7 +151,9 @@ function getRolesOutput(roles){
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
 	}
-	return give + take;
+	output = give + take
+	dbg("give and take: " + output);
+	return output;
 }
 
 function getRolesMessages(roles){
@@ -175,7 +178,7 @@ function getRolesMessages(roles){
 	if (roleList != "") giveMsg += roleList + "\n"; giveMsg = "";
 	if (takeList != "") takeMsg += takeList + "\n"; takeMsg = "";
 	output = user + giveMsg + takeMsg + errMsg;
-	
+	dbg("messages: " + output);
 	return output;
 }
 
