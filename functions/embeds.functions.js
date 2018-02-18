@@ -1,11 +1,21 @@
-//Count
+function getUserImage(){
+       return "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";
+}
+
 function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer, username){
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
-   userOBJ = getUserOBJ("trailblazer");
-   var authorName = userOBJ.User.Username;
-   var authorIcon = userOBJ.userImage;
+   
+   var authorName = Username;
+   var authorIcon = getUserImage();
+   
+   if (author == "trailblazer"){
+      obj = getUserOBJ("trailblazer");
+      authorName = obj.User.Username;
+      authorIcon = obj.User.userImage;
+   }
+   
    var Username = "{/user\}";
    var userIcon = "{usericon}";
    if (Trigger == "E-levent"){
