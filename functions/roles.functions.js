@@ -135,50 +135,53 @@ function isRoleHigherThanUserTopRole(roleName){
 }
 
 function getRolesOutput(roles){
+	var give = "";
+	var take = "";
 	if (roles.give.length == 2){
-                var give = "{m?roles_db:givequite}{role}dummy, " + roles.give.shift() + ", " + roles.give.shift() + "{/role}";
+                give = "{m?roles_db:givequite}{role}dummy, " + roles.give.shift() + ", " + roles.give.shift() + "{/role}";
 	}
 	else if (roles.give.length == 1){
-	        var give = "{role:" + roles.give.shift() +"}";
+	        give = "{role:" + roles.give.shift() +"}";
 	}
 
 	if (roles.take.length == 2){
-                var take = "{m?roles_db:takequite}{take}dummy, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+                take = "{m?roles_db:takequite}{take}dummy, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
-	        var take = "{take:" + roles.take.shift() +"}";
+	        take = "{take:" + roles.take.shift() +"}";
 	}
 	return give + take;
 }
 
 function getRolesMessages(roles){
 	var errMsg = "";
-	if (roles.giveMsg.length == 2){
-               var giveMsg = "I have given you the roles: `" + roles.giveMsg.shift() + "` and `" + roles.giveMsg.shift() + "`.\n";
+	var giveMsg = "I have given you the roles: ";
+	var takeMsg = "I have given you the role: ";
+	var roleList = "";
+	var takeList = "";
+	var output = "";
+	
+	for (var i = 0; i < roles.giveMsg.length; i++){
+	       roleList += "`" +roles.giveMsg.shift() + "` ";;
 	}
-	else if (roles.giveMsg.length == 1){
-               var giveMsg = "I have given you the role: `" + roles.giveMsg.shift() + "`.\n";
-	}
-
-	if (roles.takeMsg.length == 2){
-               var takeMsg = "I have taken from you the role: `" + roles.takeMsg.shift() + "` and `" + roles.takeMsg.shift() + "`.\n";
-	}
-	else if (roles.takeMsg.length == 1){
-	       var takeMsg = "I have taken from you the role: `" + roles.takeMsg.shift() + "`.\n";
+	for (var i = 0; i < roles.takeMsg.length; i++){
+	       takeList += "`" +roles.takeMsg.shift() + "` ";;
 	}
 	errMsg += roles.errMsg.forEach(function (element){
 	        return element + "\n"
 	});
-	var outputMsg = "{user} " + giveMsg + takeMsg + errMsg;
-
-	return outputMsg;
+	
+	giveMsg += roleList + "\n";
+	takeMsg += takeList + "\n";		
+	output = "{user} " + giveMsg + takeMsg + errMsg;
+	return output;
 }
 
 function getRolesLeftovers(roles){
 	var give = "";
 	var take = "";
 	var giveErrMsg = "'Too many roles at once ERROR. I couldn't assign the following roles: ";
-	var giveErrMsg = "'Too many roles at once ERROR. I couldn't take the following roles: ";
+	var takeErrMsg = "'Too many roles at once ERROR. I couldn't take the following roles: ";
 	var output = "";
 	
 	for (var i = 0; i < roles.give.length; i++)
@@ -187,8 +190,8 @@ function getRolesLeftovers(roles){
 	for (var i = 0; i < roles.take.length; i++)
 		take = "` " + roles.take.shift() + "` ";
 
-	if (give != "") output += giveMsg + give + "\n";
-	if (take != "") output += takeMsg + take + "\n";
+	if (give != "") output = giveErrMsg + give + "\n";
+	if (take != "") output = takeErrMsg + take + "\n";
 
 	return output;
 }
