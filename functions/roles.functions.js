@@ -172,9 +172,10 @@ function getRolesMessages(roles){
 	        return element + "\n"
 	});
 	
-	giveMsg += roleList + "\n";
-	takeMsg += takeList + "\n";		
+	if (roleList != "") giveMsg += roleList + "\n"; giveMsg = "";
+	if (takeList != "") takeMsg += takeList + "\n"; takeMsg = "";
 	output = user + giveMsg + takeMsg + errMsg;
+	
 	return output;
 }
 
