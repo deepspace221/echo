@@ -146,7 +146,7 @@ function getRolesOutput(roles){
 	}
 
 	if (roles.take.length >= 2){
-                take = "{take}Basic," + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+                take = "{take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
