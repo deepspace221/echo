@@ -291,10 +291,10 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 	}
 }
 
-function getOutputStrings(roles, outputOBJ){
+function getOutputStrings(roles){
 	
-	outputOBJ.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
-	outputOBJ.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
-	outputOBJ.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
-	outputOBJ.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
+	roles.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
+	roles.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
+	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
+	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
 }
