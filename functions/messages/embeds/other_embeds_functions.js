@@ -20,7 +20,7 @@ function getRolesEmbed(roles){
 	
   
       var title = "ROLES TOGGLE INFO";
-      var color = "";
+      var color = "#ffffff";
       var thumb = "";
       var description = "Here is a quick overview of what we have done.";
       var footIcon = "";
