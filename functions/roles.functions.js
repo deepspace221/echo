@@ -294,16 +294,4 @@ function getOutputStrings(roles, outputOBJ){
 	outputOBJ.takeMsgStr = createOutput(roles.takeMsg);
 	outputOBJ.notesMsgStr = createOutput(roles.notesMsg);
 	outputOBJ.errMsgStr = createOutput(roles.errMsg);
-	
-	function createOutput(arr){
-		var output = "";
-		for (var i = 0; i < arr.length; i++){
-			if (i == (arr.length - 1)){
-				output += arr[i];
-				break;
-			}		
-		       output += arr[i] + ", ";
-		}
-		return output;
-	}
 }
