@@ -281,4 +281,9 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 		roles.notesMsg.push("\nPolyglot role has been assigned, since you're native or fluent in at least 4 languages.");
 		
 	}
+	else {
+		roles.polyglot = false;
+		roles.take.push("Polyglot");
+		roles.notesMsg.push("\nPolyglot role has been taken. User is not native or fluent in at least 4 languages.");
+	}
 }
