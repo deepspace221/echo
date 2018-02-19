@@ -290,8 +290,8 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 
 function getOutputStrings(roles, outputOBJ){
 	
-	outputOBJ.giveMsgStr = createOutput(roles.giveMsg);
-	outputOBJ.takeMsgStr = createOutput(roles.takeMsg);
-	outputOBJ.notesMsgStr = createOutput(roles.notesMsg);
-	outputOBJ.errMsgStr = createOutput(roles.errMsg);
+	outputOBJ.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
+	outputOBJ.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
+	outputOBJ.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
+	outputOBJ.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
 }
