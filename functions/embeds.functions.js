@@ -8,7 +8,11 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    // }
    
    var authorName = Username;
-   var authorIcon = getUserImage();
+       
+   if (Trigger != "E-levent"){
+       var authorIcon = getUserImage();
+   }
+   
    
    if (author == "trailblazer"){
       obj = getUserOBJ("trailblazer");
@@ -18,12 +22,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    
    var Username = "{/user\}";
    var userIcon = "{usericon}";
-   if (Trigger == "E-levent"){
-//          var userOBJ = findUserImageAndUsernameByUserID(UserID);
-            Username = username;
-//          var userIcon = userOBJ.avatar;   
-   }
-   
+  
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
     var footer2 = "{footer|icon:" + footerIcon + "} {footer|text:" + footer + "}";
