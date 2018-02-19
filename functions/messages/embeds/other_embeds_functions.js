@@ -1,35 +1,15 @@
-function getRolesEmbed(roles){
-      var roleList = "";
-      var takeList = ""; 
-      var polyglot = "false";
-      var errMsg = "";
-        
-	for (var i = 0; i < roles.giveMsg.length; i++){
-		if (i == (roles.giveMsg.length - 1)){
-			roleList += roles.giveMsg[i];
-			break;
-		}		
-	       roleList += roles.giveMsg[i] + ", ";
-	}
-	for (var i = 0; i < roles.takeMsg.length; i++){
-		if (i == (roles.takeMsg.length - 1)){
-			takeList += roles.takeMsg[i];
-			break;
-		}
-	       takeList += roles.takeMsg[i] + ", ";
-	}
-	for (var i = 0; i < roles.errMsg.length; i++){
-		if (i == (roles.errMsg.length - 1)){
-			errMsg += roles.errMsg[i];
-			break;
-		}
-		errMsg += roles.errMsg[i];
-	}
+function getRolesEmbed(roles, outputOBJ){
 	
-      if (roleList == "") roleList = "NaN";
-      if (takeList == "") takeList = "NaN";
-      if (errMsg == "") errMsg = "Completed Successfully";
-	
+      var roleList, takeList, notesList, errList;
+      var polyglot = roles.polyglot;
+      if (outputOBJ.giveMsgStr == "") roleList = "NaN"; else roleList = outputOBJ.giveMsgStr;
+      if (outputOBJ.takeMsgStr == "") takeList = "NaN"; else takeList = outputOBJ.takeMsgStr;
+      if (outputOBJ.notesMsgStr == "") notesList = "Completed Successfully"; else notesList = outputOBJ.notesMsgStr;
+      if (outputOBJ.errMsgStr == "") errList = ""; else errList = "\
+          {field[4]|name:Errors} \
+          {field[4]|value:" + outputOBJ.errMsgStr + "} \
+          {field[4]|inline:false} \
+      ";
   
       var title = "ROLES TOGGLE INFO";
       var color = "#ffffff";
@@ -49,9 +29,10 @@ function getRolesEmbed(roles){
           {field[2]|name:Polyglot} \
           {field[2]|value:" + polyglot + "} \
           {field[2]|inline:true} \
-          {field[3]|name:Errors} \
-          {field[3]|value:" + errMsg + "} \
+          {field[3]|name:Notes} \
+          {field[3]|value:" + notesList + "} \
           {field[3]|inline:false} \
+ 	  " + errList + " \
           ";
 
       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");     
