@@ -142,11 +142,11 @@ function getRolesOutput(roles){
                 give = "{role}" + roles.give.shift() + ", " + roles.give.shift() + ", Basic{/role}";
 	}
 	else if (roles.give.length == 1){
-	        give = "{m?roles_db:rolesquiet}{role:" + roles.give.shift() +"}";
+	        give = "{m?roles_db:rolesquiet}:={role:" + roles.give.shift() +"}";
 	}
 
 	if (roles.take.length >= 2){
-                take = "{m?roles_db:rolesquiet}{take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
+                take = "{m?roles_db:rolesquiet}:={take}Basic, " + roles.take.shift() + ", " + roles.take.shift() + "{/take}";
 	}
 	else if (roles.take.length == 1){
 	        take = "{take:" + roles.take.shift() + "}";
