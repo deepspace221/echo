@@ -229,3 +229,34 @@ function getRolesLeftovers(roles){
 
 	return output;
 }
+
+
+function countNativeRoles(arr){
+	var ctr =0;
+	for (var i = 0; i < arr.length; i++){
+		if (/n\.\s/.test(arr[i]))
+			ctr++;
+	}
+	return ctr;
+}
+
+function verifyUserHasNative(){
+	var ctr = 0;
+	var arrSortedUserRoles = getArrSortedRolesByPosition();
+
+	ctr += countNativeRoles(arrSortedUserRoles);
+	ctr += countNativeRoles(roles.give);
+	ctr -= countNativeRoles(roles.take);
+
+	if (ctr < 1) {
+		var limit = Math.abs(ctr) + 1;
+		for (var i = 0; i < roles.take.length && limit > 0; i++){
+			if (/n\.\s/.test(roles.take[i])) {
+				limit--;
+				roles.errMsg.push("Unable to preform role removel **" + roles.take[i] + "** - user only native language ERR.");
+				roles.takeMsg = "";
+				roles.take[i] = "Deleted";
+			}
+		}
+	}
+}
