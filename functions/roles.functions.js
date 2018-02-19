@@ -262,7 +262,7 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 	countNativeFlunetRoles(roles.take, nativeFluentCtr, "substract");
 
 	if (nativeFluentCtr.native < 1) {
-		var limit = Math.abs(ctr) + 1;
+		var limit = Math.abs(nativeFluentCtr.native) + 1;
 		for (var i = 0; i < roles.take.length && limit > 0; i++){
 			if (/n\.\s/.test(roles.take[i])) {
 				limit--;
