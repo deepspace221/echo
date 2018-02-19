@@ -282,7 +282,7 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 		
 	}
 	else {
-		roles.polyglot = false;
+		roles.polyglot = "false (" + polyglot + "/4)";
 		if (MemberHasRole(Server.ID, UserID, "Polyglot"){
 			roles.take.push("Polyglot");
 			roles.notesMsg.push("\nPolyglot role has been taken. User is not native or fluent in at least 4 languages.");
