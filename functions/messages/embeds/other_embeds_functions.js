@@ -5,13 +5,22 @@ function getRolesEmbed(roles){
       var errMsg = "";
         
 	for (var i = 0; i < roles.giveMsg.length; i++){
+		if (i = roles.giveMsg.length - 1){
+			roleList += roles.giveMsg[i];
+		}		
 	       roleList += roles.giveMsg[i] + ", ";
 	}
 	for (var i = 0; i < roles.takeMsg.length; i++){
+		if (i = roles.takeMsg.length - 1){
+			takeList += roles.takeMsg[i];
+		}
 	       takeList += roles.takeMsg[i] + ", ";
 	}
 	for (var i = 0; i < roles.errMsg.length; i++){
-	       errMsg += roles.errMsg[i];
+		if (i = roles.errMsg.length - 1){
+			errMsg += roles.errMsg[i];
+		}
+		errMsg += roles.errMsg[i];
 	}
 	
       if (roleList == "") roleList = "NaN";
