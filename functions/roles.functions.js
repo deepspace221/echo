@@ -278,6 +278,6 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 		dbg("native: " nativeFluentCtr.native + " flunet: " + nativeFluentCtr.fluent);
 		roles.polyglot = true;
 		roles.give.push("Polyglot");
-		roles.notesMsg.push("Polyglot role has been assigned, since you're native or fluent in at least 4 languages.");
+		roles.notesMsg.push("\nPolyglot role has been assigned, since you're native or fluent in at least 4 languages.");
 	}
 }
