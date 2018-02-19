@@ -231,24 +231,37 @@ function getRolesLeftovers(roles){
 }
 
 
-function countNativeRoles(arr){
-	var ctr =0;
+function countNativeFlunetRoles(arr, nativeFluentCtr, operation){
+	var native = 0;
+	var fluent = 0
 	for (var i = 0; i < arr.length; i++){
 		if (/n\.\s/.test(arr[i]))
-			ctr++;
+			native++;
+		else if (/f\.\s/.test(arr[i]))
+			fluent++;
 	}
-	return ctr;
+	if (operation == "substract"){
+		nativeFluentCtr.native -= native;
+		nativeFluentCtr.fluent -= fluent;
+	}
+	else{
+		nativeFluentCtr.native += native;
+		nativeFluentCtr.fluent += fluent;
+	}
 }
 
-function verifyUserHasNative(){
-	var ctr = 0;
+function verifyUserHasNativeAndChkPolyglot(roles){
+	var nativeFluentCtr = {
+		native: 0,
+		fluent: 0
+	}
 	var arrSortedUserRoles = getArrSortedRolesByPosition();
 
-	ctr += countNativeRoles(arrSortedUserRoles);
-	ctr += countNativeRoles(roles.give);
-	ctr -= countNativeRoles(roles.take);
+	countNativeFlunetRoles(arrSortedUserRoles, nativeFluentCtr);
+	countNativeFlunetRoles(roles.give, nativeFluentCtr);
+	countNativeFlunetRoles(roles.take, nativeFluentCtr, "substract");
 
-	if (ctr < 1) {
+	if (nativeFluentCtr.native < 1) {
 		var limit = Math.abs(ctr) + 1;
 		for (var i = 0; i < roles.take.length && limit > 0; i++){
 			if (/n\.\s/.test(roles.take[i])) {
@@ -258,5 +271,9 @@ function verifyUserHasNative(){
 				roles.take[i] = "Deleted";
 			}
 		}
+	}
+	if (nativeFluentCtr.native + nativeFluentCtr.fluent >= 4){
+		roles.polyglot = true;
+		roles.notesMsg.push("Polyglot role has been assigned since you're native or fluent in at least 4 languages."
 	}
 }
