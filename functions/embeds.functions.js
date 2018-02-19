@@ -20,7 +20,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
       authorIcon = obj.User.userImage;
    }
    
-   var Username = "{/user\}";
+   var Username = "{/user}";
    var userIcon = "{usericon}";
   
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
