@@ -274,6 +274,7 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 	}
 	if ((nativeFluentCtr.native + nativeFluentCtr.fluent) >= 4){
 		roles.polyglot = true;
-		roles.notesMsg.push("Polyglot role has been assigned since you're native or fluent in at least 4 languages.");
+		roles.give.push("Polyglot");
+		roles.notesMsg.push("Polyglot role has been assigned, since you're native or fluent in at least 4 languages.");
 	}
 }
