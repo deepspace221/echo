@@ -1,13 +1,13 @@
-function getRolesEmbed(roles, outputOBJ){
+function getRolesEmbed(roles){
 	
       var roleList, takeList, notesList, errList;
       var polyglot = roles.polyglot;
-      if (outputOBJ.giveMsgStr == "") roleList = "NaN"; else roleList = outputOBJ.giveMsgStr;
-      if (outputOBJ.takeMsgStr == "") takeList = "NaN"; else takeList = outputOBJ.takeMsgStr;
-      if (outputOBJ.notesMsgStr == "") notesList = "Completed Successfully"; else notesList = outputOBJ.notesMsgStr;
-      if (outputOBJ.errMsgStr == "") errList = ""; else errList = "\
+      if (roles.giveMsgStr == "") roleList = "NaN"; else roleList = roles.giveMsgStr;
+      if (roles.takeMsgStr == "") takeList = "NaN"; else takeList = roles.takeMsgStr;
+      if (roles.notesMsgStr == "") notesList = "Completed Successfully"; else notesList = roles.notesMsgStr;
+      if (roles.errMsgStr == "") errList = ""; else errList = "\
           {field[4]|name:Errors} \
-          {field[4]|value:" + outputOBJ.errMsgStr + "} \
+          {field[4]|value:" + roles.errMsgStr + "} \
           {field[4]|inline:false} \
       ";
   
