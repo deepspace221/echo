@@ -311,7 +311,7 @@ function getOutputStrings(roles){
 
 function getRolesFieldOutputSplitted(arr){
 	
-	var output = "";
+	var output = "```md\n";
 	
 	var learningPos = {
 		top: getRolePosition('Afrikaans'),
@@ -339,11 +339,12 @@ function getRolesFieldOutputSplitted(arr){
 			obj.roleOther.push(arr[i]);
 	}	
 		
-	if (obj.roleNative.length != 0) output += "Native: " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
-	if (obj.roleFluent.length != 0) output += "Fluent: " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
-	if (obj.roleLearning.length != 0) output += "Learning: " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
-	if (obj.roleOther.length != 0) output += "Other: " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
+	if (obj.roleNative.length != 0) output += "<Native:> " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
+	if (obj.roleFluent.length != 0) output += "<Fluent:> " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
+	if (obj.roleLearning.length != 0) output += "<Learning:> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
+	if (obj.roleOther.length != 0) output += "<Other:> " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
 	
+	output += "```";
 	return output;		
 }
 
