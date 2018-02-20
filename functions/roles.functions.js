@@ -293,8 +293,55 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 
 function getOutputStrings(roles){
 	
-	roles.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
-	roles.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
+	roles.giveMsgStr =  getRolesFieldOutputSplitted(roles.giveMsg);
+	roles.takeMsgStr =  getRolesFieldOutputSplitted(roles.takeMsg);
 	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
 	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
+	
+	
+// 	roles.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
+// 	roles.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
+// 	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
+// 	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
 }
+
+
+function getRolesFieldOutputSplitted(arr){
+	
+	var rolePos = role.getRolePosition(role)
+	var output = "";
+	
+	var learningPos = {
+		top: getRolePosition(Afrikaans),
+		bottom: getRolePosition(Yiddish)
+	};
+	
+	var obj = {
+		roleNative: [],
+		roleFluent: [],
+		roleLearning: [],	
+		roleOther: []
+	};
+		
+	for (var i = 0; i < arr.length; i++){
+		if (/n\./.test(arr[i]))
+			obj.roleNative.push(arr[i]);
+		else if (/f\./.test(arr[i]))
+			obj.roleFluent.push(arr[i]);
+		else if (/\s/.test(arr[i]))
+			obj.roleOther.push(arr[i]);	 
+		else if (rolePos >= learningPos.bottom && rolePos >= learningPos.top){
+			obj.roleLearning.Push(arr[i]);	
+		else
+			obj.roleOther.push(arr[i]);
+	}	
+		
+	if (obj.roleNative) output += "**Native roles:** " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
+	if (obj.roleFluent) output += "**fluent roles:** " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
+	if (obj.roleLearning) output += "**Learning roles:** " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
+	if (obj.roleOther) output += "**Other roles:** " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
+	
+	return output;		
+}
+
+
