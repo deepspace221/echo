@@ -99,10 +99,11 @@ function getUniqueRole(role, roles){
 	if (arr.length > 4){
 		var temp = "\\b" + role + "\\b"; var rMatch;
 		var r = new RegExp(temp, 'i');
-		for (var i = 0; i < arr.length; i++){
-		        rMatch = arr[i].match(r)[0];
-			break;
-		}
+		rMatch = arr.match(r)[0];
+// 		for (var i = 0; i < arr.length; i++){
+// 		        rMatch = arr[i].match(r)[0];
+// 			break;
+// 		}
 		
 		if (rMatch){
 			return rMatch;	
@@ -352,11 +353,12 @@ function getRolesFieldOutputSplitted(arr){
 			obj.roleOther.push(arr[i]);
 	}	
 		
-	if (obj.roleNative.length != 0) output += "<Native roles:>   " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
-	if (obj.roleFluent.length != 0) output += "<Fluent roles:>   " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
-	if (obj.roleLearning.length != 0) output += "<Learning roles:> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
-	if (obj.roleOther.length != 0) output += "<Other roles:>   " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
-	
+	if (obj.roleNative.length != 0) output += "<Native roles>   " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
+	if (obj.roleFluent.length != 0) output += "<Fluent roles>   " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
+	if (obj.roleLearning.length != 0) output += "<Learning roles> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
+	if (obj.roleOther.length != 0) output += "<Other roles>   " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
+	if (output.length == 6) output += "<NaN>";
+
 	output += "```";
 	return output;		
 }
