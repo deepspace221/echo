@@ -95,9 +95,24 @@ function getUniqueRole(role, roles){
 	}
 
 // 	dbg("array regex: " + arr);
+	
+
+	
+	if (roleRGX.match){
+		
+	}
 	if (arr.length > 4){
-		roles.errMsg.push("\nRole `" + role + "` isn't unique enough. Too many results. Quitting.");
-		return false;
+		var temp = "\b" + role + "\b";
+		var r = new RegExp(role, 'i');
+		var rMatch = r.match(arr)[0];
+		
+		if (rMatch){
+			return rMatch;	
+		}
+		else{
+			roles.errMsg.push("\nRole `" + role + "` isn't unique enough. Too many results. Quitting.");
+			return false;
+		}
 	}
 	else if (arr.length == 4 || arr.length == 3 || arr.length == 2){
 		return findShortestStringInArr(arr);
@@ -339,10 +354,10 @@ function getRolesFieldOutputSplitted(arr){
 			obj.roleOther.push(arr[i]);
 	}	
 		
-	if (obj.roleNative.length != 0) output += "<Native:> " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
-	if (obj.roleFluent.length != 0) output += "<Fluent:> " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
-	if (obj.roleLearning.length != 0) output += "<Learning:> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
-	if (obj.roleOther.length != 0) output += "<Other:> " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
+	if (obj.roleNative.length != 0) output += "<Native roles:>   " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
+	if (obj.roleFluent.length != 0) output += "<Fluent roles:>   " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
+	if (obj.roleLearning.length != 0) output += "<Learning roles:> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
+	if (obj.roleOther.length != 0) output += "<Other roles:>   " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
 	
 	output += "```";
 	return output;		
