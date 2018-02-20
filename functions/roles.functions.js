@@ -99,7 +99,7 @@ function getUniqueRole(role, roles){
 	if (arr.length > 4){
 		var temp = "\b" + role + "\b";
 		var r = new RegExp(role, 'i');
-		var rMatch = r.match(arr)[0];
+		var rMatch = arr.match(r)[0];
 		
 		if (rMatch){
 			return rMatch;	
