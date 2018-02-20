@@ -336,10 +336,10 @@ function getRolesFieldOutputSplitted(arr){
 			obj.roleOther.push(arr[i]);
 	}	
 		
-	if (obj.roleNative) output += "**Native roles:** " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
-	if (obj.roleFluent) output += "**fluent roles:** " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
-	if (obj.roleLearning) output += "**Learning roles:** " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
-	if (obj.roleOther) output += "**Other roles:** " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
+	if (obj.roleNative.length != 0) output += "Native: " + createArrOutputCommaSeprated(obj.roleNative) + "\n";
+	if (obj.roleFluent.length != 0) output += "Fluent:** " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
+	if (obj.roleLearning.length != 0) output += "Learning roles: " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
+	if (obj.roleOther.length != 0) output += "Other roles: " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
 	
 	return output;		
 }
