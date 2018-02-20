@@ -293,12 +293,15 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 
 function getOutputStrings(roles){
 	
+	dbg("roles.takeMsg: " + roles.takeMsg);
+	
 	roles.giveMsgStr =  getRolesFieldOutputSplitted(roles.giveMsg);
 	roles.takeMsgStr =  getRolesFieldOutputSplitted(roles.takeMsg);
 	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
 	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
 	
-	
+	dbg("roles.takeMsgStr: " + roles.takeMsgStr);
+
 // 	roles.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
 // 	roles.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
 // 	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
