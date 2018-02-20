@@ -311,8 +311,8 @@ function getRolesFieldOutputSplitted(arr){
 	var output = "";
 	
 	var learningPos = {
-		top: getRolePosition(Afrikaans),
-		bottom: getRolePosition(Yiddish)
+		top: getRolePosition('Afrikaans'),
+		bottom: getRolePosition('Yiddish')
 	};
 	
 	var obj = {
