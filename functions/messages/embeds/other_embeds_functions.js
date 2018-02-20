@@ -22,13 +22,13 @@ function getRolesEmbed(roles){
     var fields = " \
           {field[0]|name:Give} \
           {field[0]|value:"+ roleList + "}  \
-          {field[0]|inline:true} \
+          {field[0]|inline:false} \
           {field[1]|name:Take} \
-          {field[1]|value:" + takeList + "} \
-          {field[1]|inline:true} \
+          {field[1]|value:" + false + "} \
+          {field[1]|inline:fase} \
           {field[2]|name:Polyglot} \
           {field[2]|value:" + polyglot + "} \
-          {field[2]|inline:true} \
+          {field[2]|inline:fase} \
           {field[3]|name:Notes} \
           {field[3]|value:" + notesList + "} \
           {field[3]|inline:false} \
