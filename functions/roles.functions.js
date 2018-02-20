@@ -308,7 +308,6 @@ function getOutputStrings(roles){
 
 function getRolesFieldOutputSplitted(arr){
 	
-	var rolePos = role.getRolePosition(role)
 	var output = "";
 	
 	var learningPos = {
@@ -324,6 +323,7 @@ function getRolesFieldOutputSplitted(arr){
 	};
 		
 	for (var i = 0; i < arr.length; i++){
+		var rolePos = getRolePosition(arr[i])
 		if (/n\./.test(arr[i]))
 			obj.roleNative.push(arr[i]);
 		else if (/f\./.test(arr[i]))
