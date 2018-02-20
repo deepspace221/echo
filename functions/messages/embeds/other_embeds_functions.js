@@ -4,7 +4,14 @@ function getRolesEmbed(roles){
       var polyglot = roles.polyglot;
       if (roles.giveMsgStr == "") roleList = "NaN"; else roleList = roles.giveMsgStr;
       if (roles.takeMsgStr == "") takeList = "NaN"; else takeList = roles.takeMsgStr;
-      if (roles.notesMsgStr == "") notesList = "Completed Successfully"; else notesList = roles.notesMsgStr;
+      
+      if (roles.notesMsgStr == "") {
+	      if (roles.errMsgStr == "")
+		      notesList = "Completed Successfully";
+	      else
+		      notesList = "Some errors.";      
+      } else notesList = roles.notesMsgStr;
+	
       if (roles.errMsgStr == "") errList = ""; else errList = "\
           {field[4]|name:Errors} \
           {field[4]|value:" + roles.errMsgStr + "} \
@@ -20,10 +27,10 @@ function getRolesEmbed(roles){
       var fields = "";
       
     var fields = " \
-          {field[0]|name:Give} \
+          {field[0]|name:Given} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:false} \
-          {field[1]|name:Take} \
+          {field[1]|name:Taken} \
           {field[1]|value:" + takeList + "} \
           {field[1]|inline:fase} \
           {field[2]|name:Polyglot} \
