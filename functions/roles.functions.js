@@ -331,7 +331,7 @@ function getRolesFieldOutputSplitted(arr){
 		else if (/\s/.test(arr[i]))
 			obj.roleOther.push(arr[i]);	 
 		else if (rolePos >= learningPos.bottom && rolePos <= learningPos.top)
-			obj.roleLearning.Push(arr[i]);	
+			obj.roleLearning.push(arr[i]);	
 		else
 			obj.roleOther.push(arr[i]);
 	}	
