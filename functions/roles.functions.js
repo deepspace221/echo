@@ -95,12 +95,7 @@ function getUniqueRole(role, roles){
 	}
 
 // 	dbg("array regex: " + arr);
-	
 
-	
-	if (roleRGX.match){
-		
-	}
 	if (arr.length > 4){
 		var temp = "\b" + role + "\b";
 		var r = new RegExp(role, 'i');
