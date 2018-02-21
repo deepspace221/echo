@@ -364,6 +364,7 @@ function getRolesFieldOutputSplitted(arr){
 
 function isMemberHasRole(guildID, userID, role){
 	var user = getUserOBJ(userID);
+	dbg(user);
 	for (var i = 0; i < user.Roles.length; i++){
 		if (user.Roles[i] == role){
 			return true;	
