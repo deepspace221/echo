@@ -393,14 +393,13 @@ function removeConflictingRoles(roles){
 			   dbg("adding roles");
                            arr.push(roles.give[i]);
                            for (var k = 0; k < UserRoles.length; k++){
-			          dbg("baserole: " + baseRole);
                                   if (GetRoleName(UserRoles[k]).indexOf(baseRole) != -1){
 					    dbg("found match to remove");
 					    var takeRole = GetRoleName(UserRoles[k]);
 					    if (!isValueInArr(roles.take, takeRole)){
 						  dbg("removing roles");
 						  roles.take.push(takeRole);
-						  roles.notesMsg.push("Role " + takeRole + " has been removed. Conflicting language roles.");
+						  roles.notesMsg.push("Role **" + takeRole + "** has been removed. Conflicting language roles.");
 						  break;
                                            }
                                  }
