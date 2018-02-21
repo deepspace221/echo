@@ -34,6 +34,19 @@ function createArrOutputCommaSeprated(arr){
 	}
 	return output;
 }
+function createArrOutputNewLinesSeprated(arr){
+	var output = "";
+	for (var i = 0; i < arr.length; i++){
+		if (i == (arr.length - 1)){
+			output += arr[i];
+			break;
+		}		
+	       output += arr[i] + "\n";
+	}
+	return output;
+}
+
+
 function isValueInArr(arr, role){
 	for (var j = 0; j < arr.length; j++){
 		if (arr[j].indexOf(role) == -1)
