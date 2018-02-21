@@ -1,4 +1,5 @@
 function getBasicRolesEmbed(roles){
+	
 	var description = "";
 	var color = "#00ee0b";
 	if (roles.lastElement.type == "give") description = "<@" + UserID + "> I have give you the role **" + roles.lastElement.role + "**.";
