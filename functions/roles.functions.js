@@ -396,6 +396,7 @@ function removeConflictingRoles(roles){
 							if (roles.take[q].indexOf(role) == -1){
 								roles.take.push(role);
 								roles.notesMsg.push("Role " + role + " has been removed. Conflicting language roles.");
+								break;
 							}
 						}
 					}
