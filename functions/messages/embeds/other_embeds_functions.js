@@ -17,7 +17,7 @@ function getRolesEmbed(roles){
       
       if (roles.notesMsgStr == "") {
 	      if (roles.errMsgStr == "")
-		      notesList = "Completed Successfully.";
+		      notesList = "Success!!";
 	      else
 		      notesList = "Some errors.";      
       } else notesList = roles.notesMsgStr;
