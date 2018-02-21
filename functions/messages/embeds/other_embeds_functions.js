@@ -1,4 +1,4 @@
-function getBasicRolesEmbed(roles){
+function getBasicRoleEmbed(roles){
 	
 	var description = "";
 	var color = "#00ee0b";
