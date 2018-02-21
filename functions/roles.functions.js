@@ -393,7 +393,7 @@ function removeConflictingRoles(roles){
 					for (var q = 0; q < roles.take.length; q++){
 						if (roles.take[q].indexOf(UserRoles[k]) == -1){
 							roles.take.push(UserRoles[k]);
-							roles.notesMsg.push("Role " + role + " has been removed. Conflicting language roles.");
+							roles.notesMsg.push("Role " + UserRoles[k] + " has been removed. Conflicting language roles.");
 							break;
 						}
 					}
