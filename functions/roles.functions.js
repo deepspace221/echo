@@ -378,8 +378,8 @@ function removeConflictingRoles(roles){
   for (var i = 0; i < roles.give.length; i++){
         var role = roles.give[i];
         var baseRole = role;
-        if (isLanguageRole(role){
-                    if (/(n\.|f\.)\s/.test(role){
+        if (isLanguageRole(role)){
+                    if (/(n\.|f\.)\s/.test(role)){
                       baseRole = role.slice(3);
                     }
                     var index;
