@@ -407,4 +407,5 @@ function removeConflictingRoles(roles){
 			arr.push(role);
 		}
 	}
+	roles.give = arr;					
 }
