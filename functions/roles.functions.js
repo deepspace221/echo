@@ -310,8 +310,8 @@ function getOutputStrings(roles){
 	
 	roles.giveMsgStr =  getRolesFieldOutputSplitted(roles.giveMsg);
 	roles.takeMsgStr =  getRolesFieldOutputSplitted(roles.takeMsg);
-	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
-	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
+	roles.notesMsgStr =  createArrOutputNewLinesSeprated(roles.notesMsg);
+	roles.errMsgStr = createArrOutputNewLinesSeprated(roles.errMsg);
 	
 // 	dbg("roles.takeMsgStr: " + roles.takeMsgStr);
 
@@ -400,7 +400,7 @@ function removeConflictingRoles(roles){
 						  dbg("removing roles");
 						  roles.take.push(takeRole);
 					          roles.takeMsg.push(takeRole);
-						  roles.notesMsg.push("\nRole **" + takeRole + "** has been removed. Conflicting language roles.");
+						  roles.notesMsg.push("Role **" + takeRole + "** has been removed. Conflicting language roles.");
                                            }
                                  }
                         }         
