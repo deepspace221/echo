@@ -400,7 +400,6 @@ function removeConflictingRoles(roles){
 						  dbg("removing roles");
 						  roles.take.push(takeRole);
 						  roles.notesMsg.push("Role **" + takeRole + "** has been removed. Conflicting language roles.");
-						  break;
                                            }
                                  }
                         }         
