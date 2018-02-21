@@ -386,19 +386,20 @@ function removeConflictingRoles(roles){
 				if (roles.give[j].indexOf(baseRole) != -1)
 					index = i;
 			}
-			if (!isValueInArr(arr, baseRole) arr.push(roles.give[i]);
-				
-			for (var k = 0; k < UserRoles.length; k++){
-				if (UserRoles[k].indexOf(role) != -1){
+			if (!isValueInArr(arr, baseRole) {
+			   arr.push(roles.give[i]);
+			   for (var k = 0; k < UserRoles.length; k++){
+				if (UserRoles[k].indexOf(baseRole) != -1){
 					for (var q = 0; q < roles.take.length; q++){
-						if (roles.take[q].indexOf(role) == -1){
-							roles.take.push(role);
+						if (roles.take[q].indexOf(baseRole) == -1){
+							roles.take.push(UserRoles[k]);
 							roles.notesMsg.push("Role " + role + " has been removed. Conflicting language roles.");
 							break;
 						}
 					}
 				}
-			}
+			  }
+	             }
 		}
 		else {
 			arr.push(role);
