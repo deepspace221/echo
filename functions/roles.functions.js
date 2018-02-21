@@ -393,12 +393,12 @@ function removeConflictingRoles(roles){
                     if (!isValueInArr(arr, baseRole)) {
 // 			   dbg("adding roles");
                            arr.push(role);
-			   dbg("base role " + baseRole);
+// 			   dbg("base role " + baseRole);
                            for (var k = 0; k < UserRoles.length; k++){
                                   if (GetRoleName(UserRoles[k]).indexOf(baseRole) != -1){
 					    var takeRole = GetRoleName(UserRoles[k]);
-					    dbg("found match: " + takeRole);
-				            dbg("index k: " + index);
+// 					    dbg("found match: " + takeRole);
+// 				            dbg("index k: " + index);
 					    if (!isValueInArr(roles.take, takeRole)){
 						  dbg("removing roles");
 						  roles.take.push(takeRole);
