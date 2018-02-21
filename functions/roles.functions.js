@@ -279,9 +279,8 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 		for (var i = 0; i < roles.take.length && limit > 0; i++){
 			if (/n\.\s/.test(roles.take[i])) {
 				limit--;
-				dbg(roles.take[i]);
 				roles.errMsg.push("Unable to preform role removel **" + roles.take[i] + "** - user only native language ERR.");
-				roles.takeMsg = "";
+				roles.takeMsg[i] = "";
 				roles.take[i] = "Deleted";
 			}
 		}
