@@ -37,12 +37,12 @@ function getRolesEmbed(roles){
       var fields = "";
       
     var fields = " \
-          {field[0]|name:Given} \
+          {field[0]|name:<:check:314349398811475968> Given} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:false} \
-          {field[1]|name:Taken} \
+          {field[1]|name:<:xmark:314349398824058880> Taken} \
           {field[1]|value:" + takeList + "} \
-          {field[1]|inline:fase} \
+          {field[1]|inline:false} \
           {field[2]|name:Polyglot} \
           {field[2]|value:" + polyglot + "} \
           {field[2]|inline:fase} \
