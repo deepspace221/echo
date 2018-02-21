@@ -2,8 +2,8 @@ function getBasicRoleEmbed(roles){
 	
 	var description = "", color = "";
 	
-	if (roles.lastElement.type == "give") {description = "<@" + UserID + "> I have give you the role **" + roles.lastElement.role + "**."; color = "#00ee0b";}
-	if (roles.lastElement.type == "take") {description = "<@" + UserID + "> I have take from you the role **" + roles.lastElement.role + "**."; color = "#f0e102";}
+	if (roles.lastElement.type == "give") {description = "<@" + UserID + "> I have given you the role **" + roles.lastElement.role + "**."; color = "#00ee0b";}
+	if (roles.lastElement.type == "take") {description = "<@" + UserID + "> I have taken from you the role **" + roles.lastElement.role + "**."; color = "#f0e102";}
 	if (roles.errMsgStr != "") {description = "<@" + UserID + "> " + roles.errMsgStr; color = "#f70508"};
 	
 	return getBasicEmbed(color, description);
