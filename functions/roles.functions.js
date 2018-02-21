@@ -372,4 +372,37 @@ function isMemberHasRole(guildID, userID, role){
 	return false;
 }
 
-
+function removeConflictingRoles(roles){
+	var arr = [];
+	for (var i = 0; i < roles.give.length; i++){
+		var role = roles.give[i];
+		var slicedRole = "";
+                if (isLanguageRole(role){
+			if (/(n\.|f\.)\s/.test(role){
+				slicedRole = role.slice(3);
+			}
+			var index;
+			for (var j = 0; j < roles.give.length, j++){
+				if (roles.give[j].indexOf(slicedRole) != -1)
+					index = i;
+			}
+			for (var j = 0; j < roles.give.length, j++){
+				if (arr[j].indexOf(role) == -1){
+					arr.push(role);
+				}
+				for (var k = 0; k < UserRoles.length; k++){
+					if (UserRoles[k].indexOf(role) != -1){
+						for (var q = 0; q < roles.take.length; q++){
+							if (roles.take[k].indexOf(role) == -1)	
+								roles.take.push(role);
+						}
+					}
+				}
+				     
+			}
+		}
+		else {
+			arr.push(role);
+		}
+	}
+}
