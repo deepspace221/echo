@@ -373,37 +373,36 @@ function isMemberHasRole(guildID, userID, role){
 }
 
 function removeConflictingRoles(roles){
-	var arr = [];
-	for (var i = 0; i < roles.give.length; i++){
-		var role = roles.give[i];
-		var baseRole = "";
-                if (isLanguageRole(role){
-			if (/(n\.|f\.)\s/.test(role){
-				baseRole = role.slice(3);
-			}
-			var index;
-			for (var j = 0; j < roles.give.length, j++){
-				if (roles.give[j].indexOf(baseRole) != -1)
-					index = i;
-			}
-			if (!isValueInArr(arr, baseRole) {
-			   arr.push(roles.give[i]);
-			   for (var k = 0; k < UserRoles.length; k++){
-				if (UserRoles[k].indexOf(baseRole) != -1){
-					for (var q = 0; q < roles.take.length; q++){
-						if (roles.take[q].indexOf(UserRoles[k]) == -1){
-							roles.take.push(UserRoles[k]);
-							roles.notesMsg.push("Role " + UserRoles[k] + " has been removed. Conflicting language roles.");
-							break;
-						}
-					}
-				}
-			  }
-	             }
-		}
-		else {
-			arr.push(role);
-		}
-	}
-	roles.give = arr;					
+  var arr = [];
+  for (var i = 0; i < roles.give.length; i++){
+        var role = roles.give[i];
+        var baseRole = "";
+        if (isLanguageRole(role){
+                    if (/(n\.|f\.)\s/.test(role){
+                      baseRole = role.slice(3);
+                    }
+                    var index;
+                    for (var j = 0; j < roles.give.length, j++){
+                      if (roles.give[j].indexOf(baseRole) != -1)
+                        index = i;
+                    }
+                    if (!isValueInArr(arr, baseRole) {
+                           arr.push(roles.give[i]);
+                           for (var k = 0; k < UserRoles.length; k++){
+                                  if (UserRoles[k].indexOf(baseRole) != -1){
+                                            for (var q = 0; q < roles.take.length; q++){
+                                                        if (roles.take[q].indexOf(UserRoles[k]) == -1){
+                                                          roles.take.push(UserRoles[k]);
+                                                          roles.notesMsg.push("Role " + UserRoles[k] + " has been removed. Conflicting language roles.");
+                                                          break;
+                                                        }
+                                           }
+                                 }
+                        }         
+                  }
+            } else {
+              arr.push(role);
+            }
+   }
+  roles.give = arr;         
 }
