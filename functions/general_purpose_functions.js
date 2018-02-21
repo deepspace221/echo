@@ -54,3 +54,13 @@ function getNumSupported(){
 function getRendom(num){
           return Math.floor((Math.random() * num) + 0);
 }
+function isLanguageRole(roleName){
+            if (/(n|f)\./.test(roleName)){
+                return true;
+            }
+            else if (getRolePosition('n. ' + roleName)){ //check for the case that it is not native or fluent
+                return true;
+            }
+            return false;
+}
+
