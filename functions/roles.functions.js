@@ -391,7 +391,7 @@ function removeConflictingRoles(roles){
 			   for (var k = 0; k < UserRoles.length; k++){
 				if (UserRoles[k].indexOf(baseRole) != -1){
 					for (var q = 0; q < roles.take.length; q++){
-						if (roles.take[q].indexOf(baseRole) == -1){
+						if (roles.take[q].indexOf(UserRoles[k]) == -1){
 							roles.take.push(UserRoles[k]);
 							roles.notesMsg.push("Role " + role + " has been removed. Conflicting language roles.");
 							break;
