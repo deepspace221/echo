@@ -356,7 +356,7 @@ function getRolesFieldOutputSplitted(arr){
 	if (obj.roleFluent.length != 0) output += "  <Fluent> " + createArrOutputCommaSeprated(obj.roleFluent) + "\n";
 	if (obj.roleLearning.length != 0) output += "<Learning> " + createArrOutputCommaSeprated(obj.roleLearning) + "\n";
 	if (obj.roleOther.length != 0) output += "   <Other> " + createArrOutputCommaSeprated(obj.roleOther) + "\n";
-	if (output.length == 6) output += "<NaN>";
+	if (output.length == 6) output += "     <NaN>";
 
 	output += "```";
 	return output;		
