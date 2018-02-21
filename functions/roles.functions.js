@@ -386,9 +386,10 @@ function removeConflictingRoles(roles){
                     var index;
                     for (var j = 0; j < roles.give.length; j++){
                       if (roles.give[j].indexOf(baseRole) != -1)
-                        role = roles.give[j];
-                    }    
-		    dbg("index is " + index);
+                        index = j;
+                    }   
+		    role = roles.give[index];
+// 		    dbg("index is " + index);
                     if (!isValueInArr(arr, baseRole)) {
 // 			   dbg("adding roles");
                            arr.push(role);
