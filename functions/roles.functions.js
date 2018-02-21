@@ -99,7 +99,6 @@ function getUniqueRole(role, roles){
 	if (arr.length > 4){
 		var temp = "\\b" + role + "\\b"; var rMatch;
 		var r = new RegExp(temp, 'i');
-// 		rMatch = arr.match(r)[0];
 		for (var i = 0; i < arr.length; i++){
 		        rMatch = arr[i].match(r)[0];
 			break;
@@ -131,7 +130,7 @@ function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestri
 		for (key in staffRestrictedRoles) {
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
 				roles.errMsg.push("{user} This role `" + role +"` is handled automatically.");
-				dbg("restricted for staff");
+// 				dbg("restricted for staff");
 				return true;
 			}
 		}
@@ -289,7 +288,7 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 	
 	var polyglot = nativeFluentCtr.native + nativeFluentCtr.fluent;
 	if (polyglot >= 4){
-		dbg("native: " + nativeFluentCtr.native + " flunet: " + nativeFluentCtr.fluent);
+// 		dbg("native: " + nativeFluentCtr.native + " flunet: " + nativeFluentCtr.fluent);
 		roles.polyglot = "true (" + polyglot + "/4)";
 		if (!MemberHasRole(Server.ID, UserID, "Polyglot")){
 			roles.give.push("Polyglot");
@@ -307,14 +306,14 @@ function verifyUserHasNativeAndChkPolyglot(roles){
 
 function getOutputStrings(roles){
 	
-	dbg("roles.takeMsg: " + roles.takeMsg);
+// 	dbg("roles.takeMsg: " + roles.takeMsg);
 	
 	roles.giveMsgStr =  getRolesFieldOutputSplitted(roles.giveMsg);
 	roles.takeMsgStr =  getRolesFieldOutputSplitted(roles.takeMsg);
 	roles.notesMsgStr =  createArrOutputCommaSeprated(roles.notesMsg);
 	roles.errMsgStr = createArrOutputCommaSeprated(roles.errMsg);
 	
-	dbg("roles.takeMsgStr: " + roles.takeMsgStr);
+// 	dbg("roles.takeMsgStr: " + roles.takeMsgStr);
 
 // 	roles.giveMsgStr =  createArrOutputCommaSeprated(roles.giveMsg);
 // 	roles.takeMsgStr =  createArrOutputCommaSeprated(roles.takeMsg);
