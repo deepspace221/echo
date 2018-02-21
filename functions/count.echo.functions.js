@@ -96,17 +96,6 @@ function getLangCounterOBJ(roleName){
             return langOBJ;
 }
 
-function isLanguageRole(value){
-            if (/(n|f)\./.test(roleName)){
-                roleName = value.slice(3)
-                return true;
-            }
-            else if (getRolePosition('n. ' + roleName)){ //check for the case that it is not native or fluent
-                return true;
-            }
-            return false;
-}
-
 function getValueOfShotestArrElement(arr){
           var min = Math.min.apply(Math, arr.map(function(str) { return str.length; }));
             for (i = 0; i < arr.length; i++){
