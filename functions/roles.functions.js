@@ -388,7 +388,7 @@ function removeConflictingRoles(roles){
 			}
 			for (var j = 0; j < roles.give.length, j++){
 				if (arr[j].indexOf(role) == -1){
-					arr.push(role);
+					arr.push(roles.give[i]);
 				}
 				for (var k = 0; k < UserRoles.length; k++){
 					if (UserRoles[k].indexOf(role) != -1){
