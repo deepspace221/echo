@@ -64,3 +64,6 @@ function isLanguageRole(roleName){
             return false;
 }
 
+function getUserAvatar(userID, hash){
+	return "https://discordapp.com/api/v6/users/" + userID + "/avatars/" + hash + ".jpg";
+}
