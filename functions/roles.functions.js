@@ -372,6 +372,7 @@ function isMemberHasRole(guildID, userID, role){
 	return false;
 }
 
+
 function removeConflictingRoles(roles){
   var arr = [];
   for (var i = 0; i < roles.give.length; i++){
@@ -400,9 +401,9 @@ function removeConflictingRoles(roles){
                                  }
                         }         
                   }
-            } else {
-              arr.push(role);
-            }
-   }
+      } else {
+        arr.push(role);
+      }
+  }
   roles.give = arr;         
 }
