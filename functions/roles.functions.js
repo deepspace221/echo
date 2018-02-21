@@ -208,10 +208,10 @@ function getRolesMessages(roles){
 	var user = "<@" + UserID + "> \n";
 	
 	for (var i = 0; i < roles.giveMsg.length; i++){
-	       roleList += "`" + roles.giveMsg.shift() + "` ";
+	       roleList += "`" + roles.giveMsg[i] + "` ";
 	}
 	for (var i = 0; i < roles.takeMsg.length; i++){
-	       takeList += "`" +roles.takeMsg.shift() + "` ";
+	       takeList += "`" +roles.takeMsg[i] + "` ";
 	}
 // 	errMsg += roles.errMsg.forEach(function (element){
 // 	        return element + "\n"
