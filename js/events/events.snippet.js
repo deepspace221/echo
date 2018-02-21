@@ -3,9 +3,7 @@ mupdb={init}
 {Event:MemberUpdate}
 {redirect:403828387430268948}
 #js >>
-
 Use ROLES;
-
 for (i = 0; i < ServerMembers.length; i++) {
                  if (ServerMembers[i].User.ID == UserID) {
                  	  ROLES[UserID] = ServerMembers[i].Roles;	
@@ -18,8 +16,6 @@ if (MemberHasRole(335021599059345408, UserID, "Muted")) {
                     resp = "{readonly:337513163853529088}{ars:jail} :mute: <@{/rawid}> has been muted and sent to #jail. :lock: \n{take:All}";
         else
                     resp = "";
-
-
 }
 >>
 [#CONTINUE#]
