@@ -141,7 +141,7 @@ function getServerMemberData(userID){
 
 function getCleanedRestoreRolesArr(arrRoles){
         var arr = []
-        for (var i = 0; i < arrRoles; i++){
+        for (var i = 0; i < arrRoles.length; i++){
                 if (getRolePosition(arrRoles[i])  //can add here and not a staff role.
                        arr.push(arrRoles[i]);
         }
