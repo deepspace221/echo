@@ -10,10 +10,12 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //    if (Trigger != "E-levent"){
 //        var authorIcon = getUserImage();
 //    }
-  var authorIcon = thumb;
-  var authorName = JSON.parse(server_members_db["membersInfo"])[UserID].userName;
-  var obj = {};
-   
+
+  var userObj = JSON.parse(server_members_db["membersInfo"]);
+  var authorIcon = userObj[UserID].avatar;
+  var authorName = userObj[UserID].userName;
+       
+//   var obj = {};
 //    if (author == "trailblazer"){
 //       obj = getUserOBJ("trailblazer");
 //       authorName = obj.User.Username;
