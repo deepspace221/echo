@@ -32,11 +32,11 @@ function findUserImageAndUsernameByUserID(userID){
 
 function getUserOBJ(user){
 	var regexp = new RegExp(user, 'i');
-	for (key in ServerMembers){
-	     if (ServerMembers[key].User.ID == user || regexp.test(ServerMembers[key].User.Username)){
+	for (var i = 0; ServerMembers.length; i++){
+	     if (ServerMembers[i].User.ID == user || regexp.test(ServerMembers[i].User.Username)){
 		     var obj = {};   
-          	     obj = JSON.parse(JSON.stringify(ServerMembers[key]));
-                     obj.userImage = "https://discordapp.com/api/v6/users/" + ServerMembers[key].User.ID + "/avatars/" + ServerMembers[key].User.Avatar + ".jpg";
+          	     obj = JSON.parse(JSON.stringify(ServerMembers[i]));
+                     obj.userImage = "https://discordapp.com/api/v6/users/" + ServerMembers[i].User.ID + "/avatars/" + ServerMembers[i].User.Avatar + ".jpg";
 		     return obj;
 	     }	
 	}
