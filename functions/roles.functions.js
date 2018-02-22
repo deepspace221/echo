@@ -123,13 +123,13 @@ function getUniqueRole(role, roles){
 
 function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles){
 	if (isRoleHigherThanUserTopRole(role)){
-		roles.errMsg.push("Err: <@" + UserID + "> the role `" + role + "` is above your clearance level!");
+		roles.errMsg.push("Err: the role `" + role + "` is above your clearance level!");
 		return true;
 	}
 	else {
 		for (key in staffRestrictedRoles) {
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
-				roles.errMsg.push("Err: <@" + UserID + "> This role `" + role +"` is handled automatically.");
+				roles.errMsg.push("Err: This role `" + role +"` is handled automatically.");
 // 				dbg("restricted for staff");
 				return true;
 			}
@@ -150,7 +150,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		var position = getRolePosition(role);
 
 		if (position >= staffRolePosition){
-			roles.errMsg.push("Err: <@" + UserID + "> stop monkeying around! The role `" + role +"` is above your pay grade!");
+			roles.errMsg.push("Err: stop monkeying around! The role `" + role +"` is above your pay grade!");
 			return true;
 		}
 
