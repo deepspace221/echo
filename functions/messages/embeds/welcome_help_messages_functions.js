@@ -317,7 +317,7 @@ function getReturningMemberMsg(arr){
       var thumb = "server";
       var description = "Welcome back <@" + UserID + ">! \nPlease wait a sec while we restore your old profile back.";
       var fields = "\
-            {field[0]|name:Restored profile roles}\
+            {field[0]|name:Restored profile roles (" + arr.length +")}\
             {field[0]|value:" + createArrOutputCommaSeprated(getArrRoleIDtoRoleName(arr)) +"}\
             {field[0]|inline:true}\
 ";
