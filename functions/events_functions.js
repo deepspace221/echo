@@ -150,13 +150,13 @@ function getCleanedRestoreRolesArr(arrRoles){
 
 function getRestoreChain2Roles(arr){
         use temp_db;
-        var output = "{role}" + GetRoleName(arr.shift()) + ", " + GetRoleName(arr.shift()) + ", " + "Basic{/role}";
+        var output = "{m?temp_db:rolequiet}:={role}" + GetRoleName(arr.shift()) + ", " + GetRoleName(arr.shift()) + ", " + "Basic{/role}";
         dbg("length " + arr.length);
         if (arr.length == 0){
                 delete temp_db[UserID];      
         }
         else {temp_db[UserID] = JSON.stringify(arr);}
-        dbg(output);
+//         dbg(output);
         return output;
 }
 
@@ -167,7 +167,7 @@ function getRestoreRolesChain(num){
         var arr = [];
         if (temp_db[UserID] != undefined){
             arr = JSON.parse(temp_db[UserID]);
-            dbg("value of arr:" + JSON.parse(temp_db[UserID]));
+//             dbg("value of arr:" + JSON.parse(temp_db[UserID]));
             return link + getRestoreChain2Roles(arr);
         }
         else return "done";
