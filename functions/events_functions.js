@@ -138,3 +138,21 @@ function getServerMemberData(userID){
     memberObj.roles = userObj.Roles.slice(0);
     return memberObj;
 }
+
+function getCleanedRestoreRolesArr(arrRoles){
+        var arr = []
+        for (var i = 0; i < arrRoles; i++){
+                if (getRolePosition(arrRoles[i])  //can add here and not a staff role.
+                       arr.push(arrRoles[i]);
+        }
+        return arr;
+}
+
+function getRestoreRolesChain(arr){
+        use temp_db;
+        var output = "{role}" + arr.pop + ", " + arr.pop + ", " + "Basic {/role}"
+        if (arr.length == 0)
+                delete temp_db[UserID];      
+        else temp_db[UserID] = JSON.stringify(output);
+        return output;
+}
