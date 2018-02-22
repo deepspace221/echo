@@ -7,7 +7,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
          
-    
+   use server_members_db;
    var Username = "{/user}";
    var userIcon = "{usericon}";      
    var authorIcon;
