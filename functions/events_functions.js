@@ -126,3 +126,15 @@ function initServerMembersDB(){
     }    
     server_members_db["membersInfo"] = JSON.stringify(membersObj);
 }
+
+function getServerMemberData(userID){
+    use server_members_db;  
+    var memberObj = getMemberObj();
+    var userObj = getUserObj(userID);
+    memberObj.joinedAt = userObj.JoinedAt;
+    memberObj.avatar = getUserAvatar(userObj.User.ID, userObj.User.Avatar);
+    memberObj.userName = userObj.User.Username;
+    memberObj.discriminator = userObj.User.Discriminator;
+    memberObj.roles = userObj.Roles.slice(0);
+    return memberObj;
+}
