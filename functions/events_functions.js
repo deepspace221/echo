@@ -110,7 +110,7 @@ function getMemberObj(){
         return memberObj;
 }
 
-function initNewMember(index){
+function initMemberInfo(index){
             var memberObj = getMemberObj();
             var userID = ServerMembers[i].User.ID;
             memberObj.joinedAt = ServerMembers[i].JoinedAt;
