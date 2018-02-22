@@ -123,13 +123,13 @@ function getUniqueRole(role, roles){
 
 function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles){
 	if (isRoleHigherThanUserTopRole(role)){
-		roles.errMsg.push("{user} Staff, the role `" + role + "` is above your clearance level!");
+		roles.errMsg.push("Err: <@" + UserID + "> the role `" + role + "` is above your clearance level!");
 		return true;
 	}
 	else {
 		for (key in staffRestrictedRoles) {
 			if (GetRoleID(role) == staffRestrictedRoles[key]) {
-				roles.errMsg.push("{user} This role `" + role +"` is handled automatically.");
+				roles.errMsg.push("Err: <@" + UserID + "> This role `" + role +"` is handled automatically.");
 // 				dbg("restricted for staff");
 				return true;
 			}
@@ -150,14 +150,14 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		var position = getRolePosition(role);
 
 		if (position >= staffRolePosition){
-			roles.errMsg.push("{user} Stop Monkeying around! The role `" + role +"` is above your pay grade!");
+			roles.errMsg.push("Err: <@" + UserID + "> Stop Monkeying around! The role `" + role +"` is above your pay grade!");
 			return true;
 		}
 
 		//final check. check against an array of restricted roles.
 		for (var i = 0; i < regexRestrictedRoles.length; i++){
 			if (role == regexRestrictedRoles[i]){
-				roles.errMsg.push("\nThe role `" + role +"` is restricted. You don't have sufficent permissions!");
+				roles.errMsg.push("\nErr: the role `" + role +"` is restricted. You don't have sufficent permissions!");
 				return true;
 			}
 		}	
@@ -227,8 +227,8 @@ function getRolesMessages(roles){
 function getRolesLeftovers(roles){
 	var give = "";
 	var take = "";
-	var giveErrMsg = "'Too many roles at once ERROR. I couldn't assign the following roles: ";
-	var takeErrMsg = "'Too many roles at once ERROR. I couldn't take the following roles: ";
+	var giveErrMsg = "'Err: too many roles at once. I couldn't assign the following roles: ";
+	var takeErrMsg = "'Err: Too many roles at once. I couldn't take the following roles: ";
 	var output = "";
 	
 	for (var i = 0; i < roles.give.length; i++)
