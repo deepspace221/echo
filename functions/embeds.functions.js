@@ -2,17 +2,17 @@ function getUserImage(){
        return "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";
 }
 
-function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer, username){
+function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
-   
-   var authorName = Username;
-       
-   if (Trigger != "E-levent"){
-       var authorIcon = getUserImage();
-   }
-   
+          
+//    if (Trigger != "E-levent"){
+//        var authorIcon = getUserImage();
+//    }
+  var authorIcon = thumb;
+  var authorName = JSON.parse(server_members_db["membersInfo"])[UserID].userName;
+  var obj = {};
    
    if (author == "trailblazer"){
       obj = getUserOBJ("trailblazer");
