@@ -23,7 +23,7 @@ function getRolesEmbed(roles){
       } else notesList = roles.notesMsgStr;
 	
       if (roles.errMsgStr == "") errList = ""; else errList = "\
-          {field[4]|name:<:empty:314349398723264512> Errors} \
+          {field[4]|name:<a:typing:393848431413559296> Errors} \
           {field[4]|value:" + roles.errMsgStr + "} \
           {field[4]|inline:false} \
       ";
