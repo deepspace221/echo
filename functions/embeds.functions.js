@@ -6,14 +6,20 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
    //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
    // }
-          
-//    if (Trigger != "E-levent"){
-//        var authorIcon = getUserImage();
-//    }
+         
+    
+   var Username = "{/user}";
+   var userIcon = "{usericon}";      
+   var authorIcon;
+   var authorName;
+       
+   if (Trigger != "E-levent"){   
+       var userObj = JSON.parse(server_members_db["membersInfo"]);
+       userIcon = userObj[UserID].avatar;
+       authorIcon = userIcon;
+       authorName = userObj[UserID].userName;
+   }
 
-  var userObj = JSON.parse(server_members_db["membersInfo"]);
-  var authorIcon = userObj[UserID].avatar;
-  var authorName = userObj[UserID].userName;
        
 //   var obj = {};
 //    if (author == "trailblazer"){
@@ -21,9 +27,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //       authorName = obj.User.Username;
 //       authorIcon = obj.User.userImage;
 //    }
-   
-   var Username = "{/user}";
-   var userIcon = "{usericon}";
+
   
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
