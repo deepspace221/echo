@@ -112,7 +112,6 @@ function getMemberObj(){
 
 function initMemberInfo(index){
             var memberObj = getMemberObj();
-            var userID = ServerMembers[i].User.ID;
             memberObj.joinedAt = ServerMembers[i].JoinedAt;
             memberObj.avatar = getUserAvatar(ServerMembers[i].User.ID, ServerMembers[i].User.Avatar);
 //             memberObj.user.ID = ServerMembers[i].User.ID;
