@@ -150,7 +150,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 		var position = getRolePosition(role);
 
 		if (position >= staffRolePosition){
-			roles.errMsg.push("Err: <@" + UserID + "> Stop Monkeying around! The role `" + role +"` is above your pay grade!");
+			roles.errMsg.push("Err: <@" + UserID + "> stop monkeying around! The role `" + role +"` is above your pay grade!");
 			return true;
 		}
 
