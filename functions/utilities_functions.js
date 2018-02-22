@@ -23,6 +23,13 @@ function escapeRegExp(str) {
 	return str;
 }
 
+function getArrRoleIDtoRoleName(arr){
+	var output = [];
+	for (var i = 0; i < arr.length; i++)
+		output.push(GetRoleName(arr[i]));
+	return output;				
+}
+
 function createArrOutputCommaSeprated(arr){
 	var output = "";
 	for (var i = 0; i < arr.length; i++){
