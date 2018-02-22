@@ -151,7 +151,7 @@ function getCleanedRestoreRolesArr(arrRoles){
 function getRestoreChain2Roles(arr){
         use temp_db;
         var output = "{m?temp_db:rolequiet}:={role}" + GetRoleName(arr.shift()) + ", " + GetRoleName(arr.shift()) + ", " + "Basic{/role}";
-        dbg("length " + arr.length);
+//         dbg("length " + arr.length);
         if (arr.length == 0){
                 delete temp_db[UserID];      
         }
