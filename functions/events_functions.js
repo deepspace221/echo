@@ -130,7 +130,7 @@ function initServerMembersDB(){
 function getServerMemberData(userID){
     use server_members_db;  
     var memberObj = getMemberObj();
-    var userObj = getUserObj(userID);
+    var userObj = getUserOBJ(userID);
     memberObj.joinedAt = userObj.JoinedAt;
     memberObj.avatar = getUserAvatar(userObj.User.ID, userObj.User.Avatar);
     memberObj.userName = userObj.User.Username;
