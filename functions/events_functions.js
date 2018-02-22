@@ -165,7 +165,7 @@ function getRestoreRolesChain(num){
         var arr = [];
         if (temp_db[UserID] != undefined){
             arr = JSON.stringify(temp_db[UserID]);
-            resp = link + getRestoreRolesChain(arr);
+            resp = link + getRestoreChain2Roles(arr);
         }
 }
 
