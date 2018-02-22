@@ -63,3 +63,8 @@ function isValueInArr(arr, role){
 	}
 	return false;
 }
+
+function firstCharToUpperCase(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
