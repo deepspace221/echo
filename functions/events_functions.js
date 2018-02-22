@@ -51,7 +51,7 @@ function getWelcomeMsg(){
     var welcome = " \
     \n**Welcome to {guild|name}, {/user}!**  \
     \n \
-    \n{user} Please type **\help** to view quick information on how to set up your roles for your **NATIVE** and **LEARNING LANGUAGES**. \
+    \n{user} Please type **\\help** to view quick information on how to set up your roles for your **NATIVE** and **LEARNING LANGUAGES**. \
     \nPlease note that **access** to the language categories **is dependent upon this.** \
     \n \
     \nYou may visit <#338382759145766932> for the rules and a rough idea of the server's layout. \
