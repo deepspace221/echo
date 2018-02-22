@@ -110,13 +110,19 @@ function getMemberObj(){
         return memberObj;
 }
 
-function initMemberInfo(index){
+function initServerMembersDB(){
+    use server_members_db;  
+    var membersObj = {};
+    for (i = 0; i < ServerMembers.length; i++) {
             var memberObj = getMemberObj();
+            var userID = ServerMembers[i].User.ID;
             memberObj.joinedAt = ServerMembers[i].JoinedAt;
             memberObj.avatar = getUserAvatar(ServerMembers[i].User.ID, ServerMembers[i].User.Avatar);
 //             memberObj.user.ID = ServerMembers[i].User.ID;
             memberObj.userName = ServerMembers[i].User.Username;
             memberObj.discriminator = ServerMembers[i].User.Discriminator;
             memberObj.roles = ServerMembers[i].Roles.slice(0);
-            return memberObj;
+            membersObj[userID] = memberObj;
+    }    
+    server_members_db["membersInfo"] = JSON.stringify(membersObj);
 }
