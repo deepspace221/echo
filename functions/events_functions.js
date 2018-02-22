@@ -154,7 +154,7 @@ function getRestoreChain2Roles(arr){
         if (arr.length == 0)
                 delete temp_db[UserID];      
         else temp_db[UserID] = JSON.stringify(arr);
-        dbg(ouput);
+        dbg(output);
         return output;
 }
 
