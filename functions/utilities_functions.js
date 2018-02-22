@@ -25,8 +25,10 @@ function escapeRegExp(str) {
 
 function getArrRoleIDtoRoleName(arr){
 	var output = [];
-	for (var i = 0; i < arr.length; i++)
+	for (var i = 0; i < arr.length; i++){
 		output.push(GetRoleName(arr[i]));
+	}
+	dbg(output);
 	return output;				
 }
 
