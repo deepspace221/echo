@@ -14,11 +14,11 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
   var authorName = JSON.parse(server_members_db["membersInfo"])[UserID].userName;
   var obj = {};
    
-   if (author == "trailblazer"){
-      obj = getUserOBJ("trailblazer");
-      authorName = obj.User.Username;
-      authorIcon = obj.User.userImage;
-   }
+//    if (author == "trailblazer"){
+//       obj = getUserOBJ("trailblazer");
+//       authorName = obj.User.Username;
+//       authorIcon = obj.User.userImage;
+//    }
    
    var Username = "{/user}";
    var userIcon = "{usericon}";
