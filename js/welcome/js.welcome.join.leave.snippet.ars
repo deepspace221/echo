@@ -2,23 +2,83 @@
 E-jnevnt1Welcome={init}
 {Event:Join}
 {m?server_db:currentuser} := {invcode} {invowner}
-{role:All}
-{ars:E-jnevnt2Unassigned}
+#js >>
+use server_db;
+
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/date_and_time_function.js";
+
+var author = "";
+var color = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/css-color-names.json");
+var redirect = "{redirect:351919983690776586}";
+// var link = "{sleep}{time:1s}{ars:E-jnevnt10Ping}{/sleep}";
+var link = "{ars:E-jnevnt2Unassigned}";
+// var role = "{role:New}";
+var role = "";
+var title = "";
+// var description = "<@" + UserID + "> has left the server!";
+var description = "User has joined the server";
+var color = color.green; 
+var fields = " \
+{field[0]|name:Joined} \
+{field[0]|value:<@" + UserID + ">} \
+{field[0]|inline:true} \
+{field[1]|name:Members Count} \
+{field[1]|value:"+ getMembersCount("users") + "} \
+{field[1]|inline:true}";
+// var footer = "Current members count: " + getMembersCount("users");
+if (UserID != "337048323972399105")
+    resp = redirect + link + role + getExpandableEmbed(title, author, color, "user", description, fields, '', '');
+>>
 
 [#CONTINUE#]
 E-jnevnt2Unassigned={init}
 {arslock}
-{role:✗ Unassigned}
-{ars:E-jnevnt3WelcomeUpdates}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/messages/embeds/welcome_help_messages_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/db4fc6c9d83954c489c47892028ed0820be711c0/functions/roles.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/db4fc6c9d83954c489c47892028ed0820be711c0/functions/embeds.functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/utilities_functions.js";
+use server_members_db;
+use temp_db;
+var redirect = "{redirect:337513163853529088}";
+var role = "{role:All}";
+var link = "{ars:E-jnevnt3WelcomeUpdates}";
+var membersObj = {};
+var output = "";
+var arrRoles = [];
+if (server_members_db["membersInfo"] != undefined){
+       membersObj = JSON.parse(server_members_db["membersInfo"])
+        if (membersObj.hasOwnProperty(UserID)){
+            arrRoles = membersObj[UserID].roles.slice(0);
+            // arrRoles = getCleanedRestoreRolesArr(arrRoles);
+            // dbg(arrRoles);
+            link = "{ars:C-restoreRoles1}"; role = "";
+            output = redirect + link + getReturningMemberMsg(arrRoles) + getRestoreChain2Roles(arrRoles);
+        } else {
+               membersObj[UserID] = getServerMemberData(UserID);
+               server_members_db["membersInfo"] = JSON.stringify(membersObj);
+               output = redirect + link + role;
+        }
+} else {
+       initServerMembersDB();
+       output = redirect + link + role;
+}
+resp = output;
+>>
 
 [#CONTINUE#]
 E-jnevnt3WelcomeUpdates={init}
 {sleep:1s}
 #js >>
 use server_db;
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/join_event_welcome_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
 var redirect = "{redirect:337513163853529088}";
-var role="{role:Updates}";
+var role="{role:✗ Unassigned}";
 var link = "{ars:E-jnevnt4Chatty}";
 var error = "";
 var inviteCodes = "";
@@ -56,7 +116,7 @@ try {
             delete server_db.currentuser;
 
             if (userID != ""){
-                toggle = chkPingToggleState(userID);
+                toggle = invitesPingToggle(userID);
 
                 if (toggle = "on")
                     lastLine = "Posted by: <@" + userID + ">";
@@ -77,7 +137,7 @@ resp = link + redirect + getWelcomeMsg() + error + role;
 E-jnevnt4Chatty={init}
 {arslock}
 #js >>
-var role = "{role:Chatty}";
+var role = "{role:Updates}";
 var link = "{ars:E-jnevnt5Hooks}"; 
 resp = link + role 
 >>
@@ -86,7 +146,7 @@ resp = link + role
 E-jnevnt5Hooks={init}
 {arslock}
 #js >>
-var role = "{role:v. Hooks}";
+var role = "{role:Chattyv. Hooks}";
 var link = "{ars:E-jnevnt6Mobile}"; 
 resp = link + role ;
 >>
@@ -104,7 +164,7 @@ resp = link + role ;
 E-jnevnt7Partners={init}
 {arslock}
 #js >>
-var role = "{role:v. Partners}";
+var role = "{role:v. Hooks}";
 var link = "{ars:E-jnevnt8Private}"; 
 resp = link + role ;
 >>
@@ -113,7 +173,8 @@ resp = link + role ;
 E-jnevnt8Private={init}
 {arslock}
 #js >>
-var role = "{role:v. Private}";
+import "https://raw.githubusercontent.com/deepspace221/echo/836b7b32f5d36d06cf375517c0940af4ad1c2cee/functions/date_and_time_function.js";
+var role = "{role:v. Partners}";
 var link = "{ars:E-jnevnt9LogNew}"; 
 var statsLink = "{ars:P-displayDailyStats}"; 
 if (updateMonthStats("join") == "new month"){
@@ -128,35 +189,16 @@ resp = link + role + sleep;
 E-jnevnt9LogNew={init}
 {arslock}
 #js >>
-use server_db;
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/embeds.functions.js";
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
-import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/date_and_time_function.js";
-
-var color = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/css-color-names.json");
-var redirect = "{redirect:351919983690776586}";
-var link = "{sleep}{time:1s}{ars:E-jnevnt10Ping}{/sleep}";
-var role = "{role:New}";
-var title = "";
-// var description = "<@" + UserID + "> has left the server!";
-var description = "User has joined the server";
-var color = color.green; 
-var fields = " \
-{field[0]|name:Joined} \
-{field[0]|value:<@" + UserID + ">} \
-{field[0]|inline:true} \
-{field[1]|name:Members Count} \
-{field[1]|value:"+ getMembersCount("users") + "} \
-{field[1]|inline:true}";
-// var footer = "Current members count: " + getMembersCount("users");
-
-resp = redirect + link + role + getExpandableEmbed(title, true, color, "user", description, fields, '', '');
+var role = "{role:v. Private}";
+var link = "{ars:E-jnevnt10Ping}"; 
+resp = link + role;
 >>
 
 [#CONTINUE#]
 E-jnevnt10Ping={init}
 #js >>
 import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/general_purpose_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/a7f7c525761fa657ec13bb629a25f8e6e28759e9/functions/roles.functions.js";
 var redirect = "{redirect:337513163853529088}";
 var take = "{take:" + getRegexRoleName("new") +"}"
 resp = redirect + getHelpMessage() + take
@@ -173,17 +215,17 @@ import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/dat
 var color = GetJSON("https://raw.githubusercontent.com/deepspace221/echo/master/json/css-color-names.json");
 
 if (updateMonthStats("left") == "new month"){
-        var link = {ars:P-displayMonthStats};
+        var link = "{ars:P-displayMonthStats}";
 };
 
 var redirect = "{redirect:383789043248267264}";
-var title = "Member Left";
+// var title = "Member Left";
 // var description = "<@" + UserID + "> has left the server!";
-var userOBJ = findUserImageAndUsernameByUserID(UserID);
-var description = "User has left the server\n" + JSON.stringify(userOBJ);
+var title = "";
+var description = "User has left the server";
 var color = color.red; 
-var thumb = userOBJ.avatar;
-var username = userOBJ.username;
+var thumb = "user"
+var author = "";
 var fields = " \
 {field[0]|name:Left} \
 {field[0]|value:<@" + UserID + ">} \
@@ -193,7 +235,8 @@ var fields = " \
 {field[1]|inline:true}";
 // var footer = "Current members count: " + getMembersCount("users");
 // resp = redirect + getSimpleEmbed(title, true, description);
-resp = redirect + link + getExpandableEmbed(title, true, color, thumb, description, fields, '', '', username);
+if (UserID != "337048323972399105")
+    resp = redirect + link + getExpandableEmbed(title, author, color, thumb, description, fields, '', '');
 >>
 
 [#CONTINUE#]
@@ -278,4 +321,136 @@ resp = value;
 \nIf you're unsure what to do please just write the information in plain English and a staff member will assist you.\
 ";
 resp = msg;
+>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[#CONTINUE#]
+C-restoreRoles1={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(2);
+// dbg("restoreRoles1");
+>>
+[#CONTINUE#]
+C-restoreRoles2={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(3);
+// dbg("restoreRoles2");
+>>
+[#CONTINUE#]
+C-restoreRoles3={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(4);
+// dbg("restoreRoles3");
+>>
+[#CONTINUE#]
+C-restoreRoles4={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(5);
+// dbg("restoreRoles4");
+>>
+[#CONTINUE#]
+C-restoreRoles5={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(6);
+dbg("restoreRoles5");
+>>
+[#CONTINUE#]
+C-restoreRoles6={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(7);
+dbg("restoreRoles6");
+>>
+[#CONTINUE#]
+C-restoreRoles7={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(8);
+dbg("restoreRoles7");
+>>
+[#CONTINUE#]
+C-restoreRoles8={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(9);
+dbg("restoreRoles8");
+>>
+[#CONTINUE#]
+C-restoreRoles9={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(10);
+dbg("restoreRoles9");
+>>
+[#CONTINUE#]
+C-restoreRoles10={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(11);
+dbg("restoreRoles10");
+>>
+[#CONTINUE#]
+C-restoreRoles11={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = getRestoreRolesChain(12);
+dbg("restoreRoles11");
+>>
+[#CONTINUE#]
+C-restoreRoles12={init}
+{arslock}
+#js >>
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/events_functions.js";
+import "https://raw.githubusercontent.com/deepspace221/echo/master/functions/debug.functions.js";
+resp = "hello";
+dbg("restoreRoles12");
 >>
