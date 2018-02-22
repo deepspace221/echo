@@ -8,10 +8,14 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    // }
          
 //    use server_members_db;
+       
    var Username = "{/user}";
    var userIcon = "{usericon}";      
    var authorIcon;
    var authorName;
+       
+       
+       
        
    if (Trigger == "E-levent"){   
        var userObj = JSON.parse(server_members_db["membersInfo"]);
