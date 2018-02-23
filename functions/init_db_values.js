@@ -41,9 +41,10 @@ function getRegexRoleNameOrID(role, type){
 
 function storeServerRolesSlices(initValues){
         use server_db;
-        if (server_db["ServerRolesSorted"] == undefined || initValues){
+        if (server_db["ServerRolesSorted"] == undefined || true){
                 var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
                 server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
+                dbg("storing `ServerRolesSorted`")`;
         }
         dbg(arrSortedServerRolesObj);
         var bottomRolesPos = {
