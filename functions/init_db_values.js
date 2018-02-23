@@ -60,6 +60,7 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
+        dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var arrLength = arrInput.length;
@@ -149,11 +150,11 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
-           dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
-           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
+//            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
+//            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
-           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
-           dbg(JSON.stringify(rolesSlicesObj.lang.native));
+//            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+//            dbg(JSON.stringify(rolesSlicesObj.lang.native));
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
