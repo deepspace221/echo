@@ -102,6 +102,7 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                          
         }
+        dbg(JSON.stringify(arrOutput));
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
