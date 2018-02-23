@@ -43,7 +43,7 @@ function getRolesEmbed(roles){
           {field[1]|name:<:xmark:314349398824058880> Taken} \
           {field[1]|value:" + takeList + "} \
           {field[1]|inline:false} \
-          {field[2]|name:Polyglot} \
+          {field[2]|name:<:empty:314349398723264512> Polyglot} \
           {field[2]|value:" + polyglot + "} \
           {field[2]|inline:true} \
           {field[3]|name:<:empty:314349398723264512> Notes} \
