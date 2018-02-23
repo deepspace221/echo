@@ -30,7 +30,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 function getRegexRoleNameOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i'));
         for (i=0; i < ServerRoles.length; i++){
-                if (r.test(ServerRoles[i].Name){
+                if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
                                 return ServerRoles[i].ID;
                         else return ServerRoles[i].Name;
