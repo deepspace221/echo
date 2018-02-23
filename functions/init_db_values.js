@@ -27,7 +27,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 
 
-function getRegexRoleNameOrID(role, type){
+function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
         for (i=0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
@@ -93,8 +93,12 @@ function storeServerRolesSlices(initValues){
         use server_db;
         
         var startPosObj = {
-                 patronTopRoleIndex: parseInt(getRegexRoleNameOrID("Patrons", "pos")) - 1,
-                 nativeTopRoleIndex: parseInt(getRegexRoleNameOrID("Yiddish", "pos")),
+                 patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")) - 1,
+                 nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")),
+                 hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")),
+                 platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")),
+                 dulingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")),
+                 memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos"))
         }
         
          var rolesSlicesObj = {
