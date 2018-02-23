@@ -63,12 +63,11 @@ function getRolesSlices(arrInput, startIndex, type){
         dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
-        var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
-        var startColor = arrInput[arrLength-startIndex].color;
+        var startColor = arrInput[startIndex].color;
 //         dbg(langType);
         
-        for (var i = startIndex; i < arrLength; i++){
+        for (var i = startIndex; i < arrInput.lengt; i++){
 //                  dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
