@@ -103,6 +103,21 @@ function getRolesSlices(arrInput, startIndex, type){
                         }
                         else break;
                  }
+                 else if (type == "duolingo"){
+                      if (arrInput[i].name.indexOf("Tree") != -1){
+                                 arrOutput.push(arrInput[i].name); 
+                      else break;
+                 }
+                 else if (type == "memrise"){
+                      if (arrInput[i].name.indexOf("Memrise") != -1){
+                                 arrOutput.push(arrInput[i].name); 
+                      else break;  
+                 }
+                 else if (type == "views"){
+                      if (arrInput[i].name.indexOf("v.") != -1){
+                                 arrOutput.push(arrInput[i].name); 
+                      else break;  
+                 }                       
                          
         }
 //         dbg(JSON.stringify(arrOutput));
@@ -134,7 +149,8 @@ function storeServerRolesSlices(initValues){
                  hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")) + 1,
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")) + 1,
                  duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")) + 1,
-                 memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1
+                 memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1,
+                 viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile")) + 1
         }
         
          var rolesSlicesObj = {
@@ -148,7 +164,8 @@ function storeServerRolesSlices(initValues){
                 platforms: [],
                 duolingo: [],
                 memrise: [],
-                activity: []
+                activity: [],
+                views: []
         }    
         
         if (server_db["ServerRolesSorted"] == undefined || initValues){
@@ -170,15 +187,22 @@ function storeServerRolesSlices(initValues){
 //               newPos += rolesSlicesObj.lang.fluent.length;
 //            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
 //            dbg(rolesSlicesObj.lang.learning);    
-              newPos = arrSortedServerRolesObj.length - startPosObj.hobbiesTopRoleIndex;
-           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-            dbg(rolesSlicesObj.hobbies);             
-              newPos = arrSortedServerRolesObj.length - startPosObj.platformsTopRoleIndex;
-             rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-            dbg(JSON.stringify(rolesSlicesObj.platforms));                       
-//            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
-//            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, startPosObj.memriseTopRoleIndex, "memrise")
-
+           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex, "substract"), "color");
+//             dbg(rolesSlicesObj.hobbies);             
+             rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex, "substract"), "color");
+//             dbg(JSON.stringify(rolesSlicesObj.platforms)); 
+           rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex, "substract"), "duolingo");
+           dbg(rolesSlicesObj.duolingo);    
+           rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex, "substract"), "memrise");
+           dbg(rolesSlicesObj.memrise); 
+           rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex, "substract"), "views");
+           dbg(rolesSlicesObj.views); 
+        
+        
+        function getNewPos(pos, type){
+                if (type == "substract") return arrSortedServerRolesObj.length - pos;
+                if (type == "add") return arrSortedServerRolesObj.length + pos;
+        }    
 }
 
 
