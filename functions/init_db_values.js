@@ -90,7 +90,7 @@ function getRolesSlices(arrInput, startIndex, type){
                           else
                                  break;
                  }
-                 else if (type == "learning" || type == "color" {
+                 else if (type == "learning" || type == "color") {
 //                         dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
