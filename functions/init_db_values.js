@@ -60,15 +60,12 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
-//         dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[startIndex].color;
-//         dbg(startColor);
         
         for (var i = startIndex; i < arrInput.length; i++){
-//                  dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
@@ -91,40 +88,51 @@ function getRolesSlices(arrInput, startIndex, type){
                                  break;
                  }
                  else if (type == "learning" || type == "color") {
-//                         dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
                         }
                         else if (bol && type == "learning"){
                                 bol = false;
                                 startColor = arrInput[i].color; 
-//                                 dbg(startColor); 
                                 arrOutput.push(arrInput[i].name); 
                         }
                         else break;
                  }
-//                  else if (type == "duolingo"){
-//                       if (arrInput[i].name.indexOf("Tree") != -1)
-//                                  arrOutput.push(arrInput[i].name); 
-//                       else break;
+                 else if (type == "duolingo"){
+                      if (arrInput[i].name.indexOf("Tree") != -1)
+                                 arrOutput.push(arrInput[i].name); 
+                      else break;
+                 }
+                 else if (type == "permissions"){
+                      if (arrInput[i].permissions != "0"){
+                              var obj = {}
+                              obj.role = arrInput[i].name;
+                              obj.permissions = arrInput[i].permissions;
+                              arrOutput.push(obj);
+                      }
+                 }
+//                  else if (type == "staff"){
+//                       var staff: {
+//                             owners: {role: "Owners", users: ["<@303300761398411265>", "<@307663491832086548>"]},
+//                             admins: {role: getRegexRoleNamePosOrID("335021703140737034", "name"), users: []},
+//                             botDev: {role: getRegexRoleNamePosOrID("403799057472028672", "name"), users: []},
+//                             seniorMods: {role: getRegexRoleNamePosOrID("371606096189587458", "name"), users: []},
+//                             mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: []},
+//                             techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: []},                      
+//                             patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users: []},
+//                             formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: []}
+//                       }
+//                       staff.admins.users = getArrUsersInRole(staff.admins.role);
+//                       staff.botDev.users = getArrUsersInRole(staff.botDev.role);
+//                       staff.seniorMods.users = getArrUsersInRole(staff.seniorMods.role);
+//                       staff.mods.users = getArrUsersInRole(staff.mods.role);
+//                       staff.techSupport.users = getArrUsersInRole(staff.techSupport.role);
+//                       staff.formerStaff.users = getArrUsersInRole(staff.formerStaff.role);
 //                  }
-//                  else if (type == "memrise"){
-//                       if (arrInput[i].name.indexOf("Memrise") != -1)
-//                                  arrOutput.push(arrInput[i].name); 
-//                       else break;  
-//                  }
-//                  else if (type == "views"){
-//                       if (arrInput[i].name.indexOf("v.") != -1)
-//                                  arrOutput.push(arrInput[i].name); 
-//                       else break;  
-//                  }                       
-                         
         }
-//         dbg(JSON.stringify(arrOutput));
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
-//                 dbg("finding index");
                 for (var i = 0; i < arrInput.length; i++){
                          if (type == "fluent"){
                             if (arrInput[i].name.indexOf("f.") != -1)
@@ -150,10 +158,28 @@ function storeServerRolesSlices(initValues){
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")) + 1,
                  duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")) + 1,
                  memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1,
-                 viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1
+                 viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1,
+                 activityTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Activity +50", "pos")) + 1
         }
         
          var rolesSlicesObj = {
+                staff: {
+                    owners: {role: "Owners", users: ["<@303300761398411265>", "<@307663491832086548>"]},
+                    admins: {role: getRegexRoleNamePosOrID("335021703140737034", "name"), users: getArrUsersInRole(staff.admins.role)},
+                    botDev: {role: getRegexRoleNamePosOrID("403799057472028672", "name"), users: getArrUsersInRole(staff.botDev.role)},
+                    seniorMods: {role: getRegexRoleNamePosOrID("371606096189587458", "name"), users: getArrUsersInRole(staff.seniorMods.role)},
+                    mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: getArrUsersInRole(staff.mods.role)},
+                    techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: getArrUsersInRole(staff.techSupport.role)},                      
+                    patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users:  getArrUsersInRole(staff.patrons.role)},
+                    formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(staff.formerStaff.role)}                       
+                },
+                supporters: {
+                    contributers: {role: getRegexRoleNamePosOrID("357941625755926528", "name"), users: []},
+                    courseCreator: {role: getRegexRoleNamePosOrID("335566263516397568", "name"), users: []},  
+                    partnershipAssistants: {role: getRegexRoleNamePosOrID("403803531955404801", "name"), users: []},
+                    supporters: {role: getRegexRoleNamePosOrID("347168010584457216", "name"), users: []},
+                    ambassadors: {role: getRegexRoleNamePosOrID("361811261505273856", "name"), users: []}
+                },
                 lang: {
                      native: [],
                      fluent: [],
@@ -165,7 +191,8 @@ function storeServerRolesSlices(initValues){
                 duolingo: [],
                 memrise: [],
                 activity: [],
-                views: []
+                views: [],
+                permissions: []
         }    
         
         if (server_db["ServerRolesSorted"] == undefined || initValues){
@@ -176,15 +203,17 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
   
-           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
-           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
-           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
-           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
-           rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
-           rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "color");
-           rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
-           rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
+        
+//            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
+//            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
+//            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
+//            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
+//            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
+//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
+//            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
+//            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
+//            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
+              rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 0, "permissions");
         
         dbg(rolesSlicesObj);
         
