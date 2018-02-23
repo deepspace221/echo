@@ -416,3 +416,13 @@ function removeConflictingRoles(roles){
   dbg(arr);
   roles.give = arr;         
 }
+
+
+function isValidRole(str){
+	for (var i = 0; i < ServerRoles.length; i++){
+		if (ServerRoles[i].Name == str)
+			return true;
+	}
+	return false;
+}
+
