@@ -118,7 +118,7 @@ function getRolesSlices(arrInput, startIndex, type){
 
 function storeServerRolesSlices(initValues){
         use server_db;
-        var arrSortedServerRolesObj = [];
+        var arrSortedServerRolesObj = [], newPos;
     
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
@@ -151,14 +151,16 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
-//            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
-//            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
-//            dbg(rolesSlicesObj.patrons); 
-//            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
-//            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
+           dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
+           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
+           dbg(rolesSlicesObj.patrons); 
+           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+           dbg(JSON.stringify(rolesSlicesObj.lang.native));
+              newPos = startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
+           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
+              newPos += rolesSlicesObj.lang.fluent.length;
+           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
            dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
 //            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
 //            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
