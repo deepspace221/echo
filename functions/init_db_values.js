@@ -29,6 +29,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
+        
         for (i=0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
@@ -62,7 +63,7 @@ function getRolesSlices(arrInput, startIndex, type){
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
-                 if (type == "patron"){
+                 if (type == "patrons"){
                       if (/patron/.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
                            patron.role = roleName;
@@ -78,6 +79,9 @@ function getRolesSlices(arrInput, startIndex, type){
                           else
                                  return arrOutput;
                  }
+                 else if (type == "hobbies"){
+                         
+                 }
                          
         }
         return arr;
@@ -91,13 +95,14 @@ function getRolesSlices(arrInput, startIndex, type){
 
 function storeServerRolesSlices(initValues){
         use server_db;
-        
+        var arrSortedServerRolesObj = [];
+    
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")) - 1,
                  nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")),
                  hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")),
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")),
-                 dulingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")),
+                 duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")),
                  memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos"))
         }
         
@@ -116,21 +121,22 @@ function storeServerRolesSlices(initValues){
         }    
         
         if (server_db["ServerRolesSorted"] == undefined || initValues){
-                var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
+                arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
                 server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
                 dbg("storing `ServerRolesSorted`");
         }
 //         dbg(arrSortedServerRolesObj);
         
-           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron");
+           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
            dbg(rolesSlicesObj.patrons); 
 //         rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
 //         rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
 //         rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
                         
-//         rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron")
-//         rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron")
-
+//            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
+//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
+//            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
+//            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, startPosObj.memriseTopRoleIndex, "memrise")
 
 }
 
