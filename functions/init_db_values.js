@@ -64,6 +64,7 @@ function getRolesSlices(arrInput, startIndex, type){
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
+                 dbg(i);
                  if (type == "patrons"){
                       if (/patron/.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
@@ -72,22 +73,25 @@ function getRolesSlices(arrInput, startIndex, type){
                            arrOutput.push(patron);                                  
                       }
                       else
-                        return arrOutput;        
+                        break;        
                  }
                  else if (type == "native" || type == "fluent" || type == "learning"){
                           if (arrInput[i].indexOf(langType) != -1)
                                  arrOutput.push(arrInput[i].name); 
                           else
-                                 return arrOutput;
+                                 break;
                  }
                  else if (type == "hobbies"){
                         if (arrInput[i].color == startColor) 
                                  arrOutput.push(arrInput[i].name); 
                         else
-                                 return arrOutput;
+                                 break;
                  }
                          
         }
+        
+        dbg(arrOutput);
+        return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
                 for (var i = 0; i < arrInput.length; i++)
