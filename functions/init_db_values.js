@@ -29,6 +29,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
+        dbg("finding index");
         for (var i = 0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
@@ -59,7 +60,7 @@ function getArrUsersInRole(roleName){
 
 
 function getRolesSlices(arrInput, startIndex, type){
-        if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
+        if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
         dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
