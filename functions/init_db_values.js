@@ -105,7 +105,7 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                          
         }
-        dbg(JSON.stringify(arrOutput));
+//         dbg(JSON.stringify(arrOutput));
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
@@ -164,11 +164,11 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.patrons); 
               newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, newPos, "native");
-           dbg(JSON.stringify(rolesSlicesObj.lang.native));
+           dbg(rolesSlicesObj.lang.native);
               newPos += rolesSlicesObj.lang.native.length;
 //            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
-           dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
+           dbg(rolesSlicesObj.lang.fluent);
               newPos += rolesSlicesObj.lang.fluent.length;
            dbg(newPos);
            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
