@@ -64,7 +64,6 @@ function getRolesSlices(arrInput, startIndex, type){
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
-                 dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
