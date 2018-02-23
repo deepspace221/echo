@@ -33,26 +33,71 @@ function getRegexRoleNameOrID(role, type){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
                                 return ServerRoles[i].ID;
-                        else return ServerRoles[i].Name;
+                        else if (type == "pos")
+                                return ServerRoles[i].Position;
+                        else if (type == "name")
+                                return ServerRoles[i].Name;
                 }      
         }
 }
 
+function getArrUsersInRole(roleName){
+        var roleID = GetRoleName(roleName);
+        var arr = [];
+        for (var i = 0; i < ServerMembers.length; i++){
+                if (ServerMembers[i].Roles == roleID){
+                     var userName = "<@" + ServerMembers[i].User.ID + ">"
+                     arr.push(userName);          
+                }
+        }
+        return arr;
+}
+
+function getRolesSlices(arrInput, startIndex, type){
+        var arrOutput = [];
+        var patron = {role: "", users: []};
+        var arrLength = arrInput.length;
+        var langType = type.charAt(0) + ".";
+        
+        if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
+        
+        for (var i = arrLength - startIndex; i < arrLength; i++){
+                 if (type == "patron"){
+                      if (/patron/.test(arrInput[i].name)){
+                           var roleName = arrInput[i].name
+                           patron.role = roleName;
+                           patron.users = getArrUsersInRole(roleName);   
+                           arrOutput.push(patron);                                  
+                      }
+                      else
+                        return arrOutput;        
+                 }
+                 else if (type == "native" || type == "fluent" || type == "learning"){
+                          if (arrInput[i].indexOf(langType) != -1)
+                                 arrOutput.push(arrInput[i].name); 
+                          else
+                                 return arrOutput;
+                 }
+                         
+        }
+        return arr;
+
+        function findFirstIndexOfFluentOrLearning(){
+                for (var i = 0; i < arrInput.length; i++)
+                        if (arrInput[i].name.indexOf(langType);
+                            return arrInput[i].position;  
+        }
+}
 
 function storeServerRolesSlices(initValues){
         use server_db;
-        if (server_db["ServerRolesSorted"] == undefined || true){
-                var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
-                server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
-                dbg("storing `ServerRolesSorted`");
-        }
-        dbg(arrSortedServerRolesObj);
-        var bottomRolesPos = {
-                learningBottomRole: "Yiddish",
-                 patronBottomRole: getRegexRoleNameOrID("Conlangs Patron"),
+        
+        var startPosObj = {
+                 patronTopRoleIndex: parseInt(getRegexRoleNameOrID("Patrons", "pos")) - 1,
+                 nativeTopRoleIndex: parseInt(getRegexRoleNameOrID("Yiddish", "pos")),
         }
         
-        var serverRolesSlices = {
+         var rolesSlicesObj = {
                 lang: {
                      native: [],
                      fluent: [],
@@ -65,17 +110,24 @@ function storeServerRolesSlices(initValues){
                 memrise: [],
                 activity: []
         }    
+        
+        if (server_db["ServerRolesSorted"] == undefined || initValues){
+                var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
+                server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
+                dbg("storing `ServerRolesSorted`");
+        }
+//         dbg(arrSortedServerRolesObj);
+        
+           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron");
+           dbg(rolesSlicesObj.patrons); 
+//         rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+//         rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
+//         rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
+                        
+//         rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron")
+//         rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patron")
+
+
 }
 
 
-//         var langRolePosObj = {
-//                nativeTopRole: getRolePosition("n. Afrikaans"),
-//                fluentTopRole: getRolePosition("f. Arabic"),
-//                learningTopRole: getRolePosition("Afrikaans"),
-//                learningBottomRole: getRolePosition("Yiddish")
-//         }; 
-        
-//         var patronRolePosObj ={
-//                 patronTopRole: "♞ German Patron",
-//                 patronBottomRole: "♞ Conlangs Patron"
-//         }
