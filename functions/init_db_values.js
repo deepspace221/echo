@@ -60,7 +60,7 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
-
+        var bol = true;
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[arrLength-startIndex].color;
@@ -74,7 +74,10 @@ function getRolesSlices(arrInput, startIndex, type){
                            var roleName = arrInput[i].name
                            var patron = {role: "", users: []};
                            patron.role = roleName;
-                           patron.users = getArrUsersInRole(roleName);   
+                           if (bol != false){
+                                   bol = (getArrUsersInRole(roleName).users.length == 0) ? false : true;           
+                                   patron.users = getArrUsersInRole(roleName); 
+                           } else patron.users = [];
                            arrOutput.push(patron);                                  
                       }
                       else
