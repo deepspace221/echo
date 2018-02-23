@@ -141,7 +141,7 @@ function getRolesSlices(arrInput, startIndex, type){
 
 function storeServerRolesSlices(initValues){
         use server_db;
-        var arrSortedServerRolesObj = [], newPos;
+        var arrSortedServerRolesObj = [], newPos = 0;
     
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
@@ -180,18 +180,18 @@ function storeServerRolesSlices(initValues){
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
-           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
-           rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
-           rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "color");
-           rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
-           rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
+//            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
+//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
+//            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "color");
+//            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
+//            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
         
         dbg(rolesSlicesObj);
         
         function getNewPos(pos, type){
-                if (type == "newpos") {newPos = newPos + pos; return newPos;}
+                if (type == "newpos") {newPos += pos; return newPos;}
                 newPos = arrSortedServerRolesObj.length - pos;
-                return arrSortedServerRolesObj.length - pos;    
+                return newPos;    
         }    
 }
 
