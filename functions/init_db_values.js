@@ -65,7 +65,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[arrLength-startIndex].color;
-        
+        dbg(langType);
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
 //                  dbg(i);
@@ -84,6 +84,7 @@ function getRolesSlices(arrInput, startIndex, type){
                         break;        
                  }
                  else if (type == "native" || type == "fluent" || type == "learning"){
+                          dbg(i);
                           if (arrInput[i].name.indexOf(langType) != -1)
                                  arrOutput.push(arrInput[i].name); 
                           else
@@ -145,10 +146,10 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
-           dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
-           dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
+//            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
+//            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
+//            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
+//            dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
 //            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
 //            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
