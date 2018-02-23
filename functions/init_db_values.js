@@ -29,7 +29,6 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
-        dbg("finding index");
         for (var i = 0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
@@ -102,9 +101,10 @@ function getRolesSlices(arrInput, startIndex, type){
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
+                dbg("finding index");
                 for (var i = 0; i < arrInput.length; i++){
                          if (type == "fluent"){
-                            if (arrInput[i].name.indexOf(langType) != -1)
+                            if (arrInput[i].name.indexOf("f.") != -1)
                                 return arrInput[i].position;         
                          }
                          else if (type == "learning"){
