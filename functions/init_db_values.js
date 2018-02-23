@@ -60,7 +60,7 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
-        dbg("startInedx " + startIndex);
+//         dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var arrLength = arrInput.length;
@@ -101,7 +101,7 @@ function getRolesSlices(arrInput, startIndex, type){
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
-                dbg("finding index");
+//                 dbg("finding index");
                 for (var i = 0; i < arrInput.length; i++){
                          if (type == "fluent"){
                             if (arrInput[i].name.indexOf("f.") != -1)
