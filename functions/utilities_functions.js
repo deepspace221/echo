@@ -13,21 +13,6 @@ function findShortestStringInArr(arr){
 // }
 
 
-function escapeRegExp(str) { 
-  str.replace(/\+/g, "\\+");
-  str.replace(/\-/g, "\\-");
-  str.replace(/\*/g, "\\*");	
-  str.replace(/\?/g, "\\?");
-  str.replace(/\./g, "\\.");
-  str.replace(/\\/g, "\\\\");
-  str.replace(/\$/g, "\\$");
-  str.replace(/\[/g, "\\[");
-  str.replace(/\]/g, "\\]");
-  str.replace(/\(/g, "\\(");
-  str.replace(/\)/g, "\\)");
-  return str;
-}
-
 // function escapeRegExp(str) {
 // 	var arr = ["\\-","\\[","\\]","\\/","\\{","\\}","\\(","\\)","\\*","\\+","\\?","\\.","\\\\","\\^","\\$","\\|"];
 // // 	var arr = ["\-","\[","\]","\/","\{","\}","\(","\)","\*","\+","\?","\.","\\","\^","\$","\|"];
@@ -45,6 +30,21 @@ function escapeRegExp(str) {
 // 	dbg(str);
 // 	return str;
 // }
+
+function escapeRegExp(str) { 
+  str.replace(/\+/g, "\\+");
+  str.replace(/\-/g, "\\-");
+  str.replace(/\*/g, "\\*");	
+  str.replace(/\?/g, "\\?");
+  str.replace(/\./g, "\\.");
+  str.replace(/\\/g, "\\\\");
+  str.replace(/\$/g, "\\$");
+  str.replace(/\[/g, "\\[");
+  str.replace(/\]/g, "\\]");
+  str.replace(/\(/g, "\\(");
+  str.replace(/\)/g, "\\)");
+  return str;
+}
 
 function getArrRoleIDtoRoleName(arr){
 	var output = [];
