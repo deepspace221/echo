@@ -12,9 +12,9 @@ function getRolesEmbed(roles){
 	
       var roleList, takeList, notesList, errList;
 	
-      var polyglot = (roles.polyglot.indexOf("true") != -1) ? roles.polyglot + " " + <a:pikachudance:416433830694486028> : roles.polyglot;
-     
-	
+      var polyglot = roles.polyglot;
+      var polyglot = (polyglot.indexOf("true") != -1) ? polyglot + " <a:pikachudance:416433830694486028>" : polyglot;
+  
       if (roles.giveMsgStr == "") roleList = "NaN"; else roleList = roles.giveMsgStr;
       if (roles.takeMsgStr == "") takeList = "NaN"; else takeList = roles.takeMsgStr;
       
