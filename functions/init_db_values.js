@@ -39,11 +39,13 @@ function getRegexRoleNameOrID(role, type){
 }
 
 
-function storeServerRolesSlices(){
+function storeServerRolesSlices(initValues){
         use server_db;
-        var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
-        server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
-        
+        if (server_db["ServerRolesSorted"] == undefined || initValues){
+                var arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
+                server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
+        }
+        dbg(arrSortedServerRolesObj);
         var bottomRolesPos = {
                 learningBottomRole: "Yiddish",
                  patronBottomRole: getRegexRoleNameOrID("Conlangs Patron"),
