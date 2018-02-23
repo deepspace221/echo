@@ -50,6 +50,7 @@ function getArrUsersInRole(roleName){
                      var userName = "<@" + ServerMembers[i].User.ID + ">"
                      arr.push(userName);          
                 }
+             }
         }
         return arr;
 }
