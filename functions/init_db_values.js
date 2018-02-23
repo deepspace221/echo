@@ -60,12 +60,12 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
-//         dbg("startInedx " + startIndex);
+        dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[startIndex].color;
-//         dbg(startColor);
+        dbg(startColor);
         
         for (var i = startIndex; i < arrInput.length; i++){
 //                  dbg(i);
@@ -187,21 +187,21 @@ function storeServerRolesSlices(initValues){
 //               newPos += rolesSlicesObj.lang.fluent.length;
 //            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
 //            dbg(rolesSlicesObj.lang.learning);    
-           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex, "substract"), "color");
+           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
 //             dbg(rolesSlicesObj.hobbies);             
-             rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex, "substract"), "color");
+             rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
 //             dbg(JSON.stringify(rolesSlicesObj.platforms)); 
-           rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex, "substract"), "duolingo");
+           rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
            dbg(rolesSlicesObj.duolingo);    
-           rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex, "substract"), "memrise");
+           rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "memrise");
            dbg(rolesSlicesObj.memrise); 
-           rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex, "substract"), "views");
+           rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "views");
            dbg(rolesSlicesObj.views); 
         
         
         function getNewPos(pos, type){
-                if (type == "substract") return arrSortedServerRolesObj.length - pos;
                 if (type == "add") return arrSortedServerRolesObj.length + pos;
+                return arrSortedServerRolesObj.length - pos;    
         }    
 }
 
