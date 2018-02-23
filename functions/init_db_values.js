@@ -60,12 +60,12 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
-        dbg("startInedx " + startIndex);
+//         dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[startIndex].color;
-        dbg(startColor);
+//         dbg(startColor);
         
         for (var i = startIndex; i < arrInput.length; i++){
 //                  dbg(i);
@@ -150,7 +150,7 @@ function storeServerRolesSlices(initValues){
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")) + 1,
                  duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")) + 1,
                  memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1,
-                 viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile")) + 1
+                 viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1
         }
         
          var rolesSlicesObj = {
