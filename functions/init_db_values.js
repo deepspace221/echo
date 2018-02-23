@@ -60,7 +60,7 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         if (startIndex == "") startIndex = findFirstIndexOfFluentOrLearning();
-//         dbg("startInedx " + startIndex);
+        dbg("startInedx " + startIndex);
         var arrOutput = [];
         var bol = true;
         var arrLength = arrInput.length;
@@ -85,8 +85,9 @@ function getRolesSlices(arrInput, startIndex, type){
                         break;        
                  }
                  else if (type == "native" || type == "fluent"){
-                          if (arrInput[i].name.indexOf(langType) != -1)
-                                 arrOutput.push(arrInput[i].name); 
+                          if (arrInput[i].name.indexOf(langType) != -1){
+                                 arrOutput.push(arrInput[i].name); dbg(i); 
+                          }
                           else
                                  break;
                  }
