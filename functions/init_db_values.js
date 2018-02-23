@@ -85,11 +85,11 @@ function getRolesSlices(arrInput, startIndex, type){
                         break;        
                  }
                  else if (type == "native" || type == "fluent"){
-                          dbg(arrInput[i].name);
-                          dbg(langType);
+//                           dbg(arrInput[i].name);
+//                           dbg(langType);
                           if (arrInput[i].name.indexOf(langType) != -1){
                                  var roleName = arrInput[i].name;
-                                 dbg(roleName);
+//                                  dbg(roleName);
                                  arrOutput.push(roleName); 
                           }
                           else
@@ -162,10 +162,10 @@ function storeServerRolesSlices(initValues){
 //            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
-//            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
-//            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-//               newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
-             newPos = 113;
+           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+           dbg(JSON.stringify(rolesSlicesObj.lang.native));
+              newPos = startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
+
 //            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
