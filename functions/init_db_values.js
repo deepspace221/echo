@@ -178,23 +178,18 @@ function storeServerRolesSlices(initValues){
         
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
-           newPos += rolesSlicesObj.lang.native.length;
-           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
-           newPos += rolesSlicesObj.lang.fluent.length;
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
+           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
+           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
-           dbg(JSON.stringify(rolesSlicesObj.platforms)); 
            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "color");
-           dbg(rolesSlicesObj.duolingo);    
            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
-           dbg(rolesSlicesObj.memrise); 
            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
-           dbg(rolesSlicesObj.views); 
         
+        dbg(rolesSlicesObj);
         
         function getNewPos(pos, type){
-                if (type == "add") return arrSortedServerRolesObj.length + pos;
+                if (type == "newpos") {newPos = newPos + pos; return newPos;}
                 newPos = arrSortedServerRolesObj.length - pos;
                 return arrSortedServerRolesObj.length - pos;    
         }    
