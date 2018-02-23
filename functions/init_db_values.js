@@ -75,7 +75,7 @@ function getRolesSlices(arrInput, startIndex, type){
                            var patron = {role: "", users: []};
                            patron.role = roleName;
                            if (bol != false){
-                                   bol = (getArrUsersInRole(roleName).users.length == 0) ? false : true;           
+                                   bol = (getArrUsersInRole(roleName).length == 0) ? false : true;           
                                    patron.users = getArrUsersInRole(roleName); 
                            } else patron.users = [];
                            arrOutput.push(patron);                                  
