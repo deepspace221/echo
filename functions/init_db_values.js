@@ -151,15 +151,17 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
-           dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
-           rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
-           dbg(rolesSlicesObj.patrons); 
+//            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
+//            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
+//            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
            dbg(JSON.stringify(rolesSlicesObj.lang.native));
               newPos = startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
+           dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
               newPos += rolesSlicesObj.lang.fluent.length;
+           dbg(newPos);
            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
            dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
 //            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
