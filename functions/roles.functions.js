@@ -122,6 +122,15 @@ function getUniqueRole(role, roles){
 	return false;
 }
 
+function isRoleHigherThanUserTopRole(roleName){
+	var userTopMostRolePosition = getObjSortedRolesByPosition()[0].position;
+	var position = getRolePosition(roleName);
+	if (position < userTopMostRolePosition)
+		return false;
+	else
+		return true;
+}
+
 function isRoleRestrictedForStaff(role, roles, regexRestrictedRoles, staffRestrictedRoles){
 	if (isRoleHigherThanUserTopRole(role)){
 		roles.errMsg.push("Err: the role `" + role + "` is above your clearance level!");
@@ -166,14 +175,7 @@ function isRoleRestricted(role, roles,  regexRestrictedRoles, staffRestrictedRol
 	}			
 }
 
-function isRoleHigherThanUserTopRole(roleName){
-	var userTopMostRolePosition = getObjSortedRolesByPosition()[0].position;
-	var position = getRolePosition(roleName);
-	if (position <= userTopMostRolePosition)
-		return false;
-	else
-		return true;
-}
+
 
 function getRolesOutput(roles){
 	var give = "";
