@@ -65,7 +65,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var bol = true;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[startIndex].color;
-//         dbg(langType);
+//         dbg(startColor);
         
         for (var i = startIndex; i < arrInput.length; i++){
 //                  dbg(i);
@@ -96,8 +96,9 @@ function getRolesSlices(arrInput, startIndex, type){
                                  arrOutput.push(arrInput[i].name); 
                         }
                         else if (bol && type == "learning"){
-                                bol == false;
-                                startColor == arrInput[i].color;  
+                                bol = false;
+                                startColor = arrInput[i].color; 
+//                                 dbg(startColor); 
                                 arrOutput.push(arrInput[i].name); 
                         }
                         else break;
