@@ -89,12 +89,12 @@ function getRolesSlices(arrInput, startIndex, type){
                           else
                                  break;
                  }
-                 else if (type == "hobbies"){
-                        if (arrInput[i].color == startColor) 
-                                 arrOutput.push(arrInput[i].name); 
-                        else
-                                 break;
-                 }
+//                  else if (type == "hobbies"){
+//                         if (arrInput[i].color == startColor) 
+//                                  arrOutput.push(arrInput[i].name); 
+//                         else
+//                                  break;
+//                  }
                          
         }
         return arrOutput;
