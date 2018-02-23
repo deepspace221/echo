@@ -91,7 +91,7 @@ function getRolesSlices(arrInput, startIndex, type){
                                  break;
                  }
                  else if (type == "learning" || type == "color") {
-                        dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
+//                         dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
                         }
@@ -172,10 +172,10 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.lang.learning);    
               newPos = arrSortedServerRolesObj.length - startPosObj.hobbiesTopRoleIndex;
            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-            dbg(JSON.stringify(rolesSlicesObj.lang.hobbies));             
+            dbg(rolesSlicesObj.lang.hobbies);             
               newPos = arrSortedServerRolesObj.length - startPosObj.platformsTopRoleIndex;
-           rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-          dbg(JSON.stringify(rolesSlicesObj.lang.platforms));                       
+//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
+//           dbg(JSON.stringify(rolesSlicesObj.lang.platforms));                       
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, startPosObj.memriseTopRoleIndex, "memrise")
 
