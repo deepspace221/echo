@@ -44,12 +44,12 @@ function getRegexRoleNamePosOrID(role, type){
 function getArrUsersInRole(roleName){
         var roleID = GetRoleID(roleName);
         var arr = [];
-        dbg(roleID);
+//         dbg(roleID);
         for (var i = 0; i < ServerMembers.length; i++){
              for (var j = 0; j < ServerMembers[i].Roles.length; j++){
                 if (ServerMembers[i].Roles[j] == roleID){
                      var userName = "<@" + ServerMembers[i].User.ID + ">"
-                     dbg(userName);
+//                      dbg(userName);
                      arr.push(userName);          
                 }
              }
