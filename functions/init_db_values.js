@@ -59,6 +59,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var patron = {role: "", users: []};
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
+        var startColor = arrInput[arrLength-startIndex].color;
         
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
@@ -80,11 +81,13 @@ function getRolesSlices(arrInput, startIndex, type){
                                  return arrOutput;
                  }
                  else if (type == "hobbies"){
-                         
+                        if (arrInput[i].color == startColor) 
+                                 arrOutput.push(arrInput[i].name); 
+                        else
+                                 return arrOutput;
                  }
                          
         }
-        return arr;
 
         function findFirstIndexOfFluentOrLearning(){
                 for (var i = 0; i < arrInput.length; i++)
