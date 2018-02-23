@@ -11,13 +11,13 @@ function getBasicRoleEmbed(roles){
 function getRolesEmbed(roles){
 	
       var roleList, takeList, notesList, errList;
-      var polyglot = roles.polyglot;
+      var polyglot = (roles.polyglot.indexOf("true") ? roles.polyglot + " " + <a:pikachudance:416433830694486028> : roles.polyglot;
       if (roles.giveMsgStr == "") roleList = "NaN"; else roleList = roles.giveMsgStr;
       if (roles.takeMsgStr == "") takeList = "NaN"; else takeList = roles.takeMsgStr;
       
       if (roles.notesMsgStr == "") {
 	      if (roles.errMsgStr == "")
-		      notesList = "Success!! <a:blob8:416371480742330378>";
+		      notesList = "Success!! <a:partyblob9:416433384429191174>";
 	      else
 		      notesList = "Some errors.";      
       } else notesList = roles.notesMsgStr;
