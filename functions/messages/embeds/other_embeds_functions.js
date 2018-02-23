@@ -31,13 +31,13 @@ function getRolesEmbed(roles){
       var title = "ROLES TOGGLE INFO";
       var color = "#ffffff";
       var thumb = "";
-      var description = "Here is a quick overview of what we have done. ";
+      var description = "Here is a quick overview of what we have done.<a:blob8:416371480742330378> ";
       var footIcon = "";
       var footer = "";
       var fields = "";
       
     var fields = " \
-          {field[0]|name:<:check:314349398811475968> Given} \
+          {field[0]|name:<a:blob8:416371480742330378><:check:314349398811475968> Given} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:false} \
           {field[1]|name:<:xmark:314349398824058880> Taken} \
