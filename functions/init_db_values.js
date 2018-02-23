@@ -172,10 +172,10 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.lang.learning);    
               newPos = arrSortedServerRolesObj.length - startPosObj.hobbiesTopRoleIndex;
            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-            dbg(rolesSlicesObj.lang.hobbies);             
+            dbg(rolesSlicesObj.hobbies);             
               newPos = arrSortedServerRolesObj.length - startPosObj.platformsTopRoleIndex;
-//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
-//           dbg(JSON.stringify(rolesSlicesObj.lang.platforms));                       
+             rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
+            dbg(JSON.stringify(rolesSlicesObj.platforms));                       
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, startPosObj.memriseTopRoleIndex, "memrise")
 
