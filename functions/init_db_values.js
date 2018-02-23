@@ -12,7 +12,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
                 }
         }
         arr.sort(function(a, b) {
-                return a.position - b.position;
+                return b.position - a.position;
         });
 
         if (type == "obj") return arr;
