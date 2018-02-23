@@ -45,7 +45,8 @@ function getArrUsersInRole(roleName){
         var roleID = GetRoleID(roleName);
         var arr = [];
         for (var i = 0; i < ServerMembers.length; i++){
-                if (ServerMembers[i].Roles == roleID){
+             for (var j = 0; j < ServerMembers.length; j++){
+                if (ServerMembers[i].Roles[j] == roleID){
                      var userName = "<@" + ServerMembers[i].User.ID + ">"
                      arr.push(userName);          
                 }
