@@ -178,8 +178,8 @@ function storeServerRolesSlices(initValues){
   
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
-//            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
-//            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
+           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.native.length, "newPos"), "fluent");
+           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, getNewPos(rolesSlicesObj.lang.fluent.length, "newPos"), "learning");
            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.hobbiesTopRoleIndex), "color");
            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "color");
@@ -189,7 +189,7 @@ function storeServerRolesSlices(initValues){
         dbg(rolesSlicesObj);
         
         function getNewPos(pos, type){
-                if (type == "newpos") {newPos += pos; return newPos;}
+                if (type == "newPos") {newPos += pos; return newPos;}
                 newPos = arrSortedServerRolesObj.length - pos;
                 return newPos;    
         }    
