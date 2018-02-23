@@ -65,7 +65,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[arrLength-startIndex].color;
-        dbg(langType);
+//         dbg(langType);
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
 //                  dbg(i);
@@ -84,8 +84,8 @@ function getRolesSlices(arrInput, startIndex, type){
                         break;        
                  }
                  else if (type == "native" || type == "fluent" || type == "learning"){
-                          dbg(i);
-                          dbg(arrInput[i].name);
+//                           dbg(i);
+                          dbg("name " + arrInput[i].name);
                           if (arrInput[i].name.indexOf(langType) != -1)
                                  arrOutput.push(arrInput[i].name); 
                           else
@@ -143,6 +143,7 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
+           dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
