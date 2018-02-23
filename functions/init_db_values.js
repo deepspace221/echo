@@ -84,7 +84,7 @@ function getRolesSlices(arrInput, startIndex, type){
 
         function findFirstIndexOfFluentOrLearning(){
                 for (var i = 0; i < arrInput.length; i++)
-                        if (arrInput[i].name.indexOf(langType);
+                        if (arrInput[i].name.indexOf(langType)
                             return arrInput[i].position;  
         }
 }
