@@ -125,6 +125,7 @@ function storeServerRolesSlices(initValues){
                 server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
                 dbg("storing `ServerRolesSorted`");
         }
+        else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
