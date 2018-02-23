@@ -68,7 +68,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var startColor = arrInput[arrLength-startIndex].color;
 //         dbg(langType);
         
-        for (var i = arrLength - startIndex; i < arrLength; i++){
+        for (var i = startIndex; i < arrLength; i++){
 //                  dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
@@ -162,10 +162,10 @@ function storeServerRolesSlices(initValues){
 //            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
-           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+              newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex
+           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, newPos, "native");
            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-              newPos = startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
-
+              newPos += rolesSlicesObj.lang.native.length;
 //            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
