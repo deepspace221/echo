@@ -95,8 +95,12 @@ function getRolesSlices(arrInput, startIndex, type){
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
                         }
-                        else
-                                 break;
+                        else if (bol && type == "learning"){
+                                bol == false;
+                                startColor == arrInput[i].color;  
+                                arrOutput.push(arrInput[i].name); 
+                        }
+                        else break;
                  }
                          
         }
