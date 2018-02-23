@@ -12,7 +12,13 @@ function findShortestStringInArr(arr){
 //   return str;
 // }
 
-function escapeRegExp(str) {
+
+function escapeRegExp(str) { 
+  str.replace(/\+/g, "\\+");
+  return str;
+}
+
+// function escapeRegExp(str) {
 // 	var arr = ["\\-","\\[","\\]","\\/","\\{","\\}","\\(","\\)","\\*","\\+","\\?","\\.","\\\\","\\^","\\$","\\|"];
 // // 	var arr = ["\-","\[","\]","\/","\{","\}","\(","\)","\*","\+","\?","\.","\\","\^","\$","\|"];
 // 	for (var i = 0; i < arr.length; i++){
@@ -20,8 +26,15 @@ function escapeRegExp(str) {
 // 		str.replace(regExp, arr[i]);
 // 	}
 // 	dbg(str);
-	return str;
-}
+	
+// 	var r = /([\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|])/g;
+// 	var rMatch;
+// 	while (rMatch = r.exec(str)){
+// 		str.replace(rMatch[1], "\\" + rMatch[1])
+// 	}
+// 	dbg(str);
+// 	return str;
+// }
 
 function getArrRoleIDtoRoleName(arr){
 	var output = [];
