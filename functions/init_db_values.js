@@ -156,7 +156,7 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-              newPos = startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
+              newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
