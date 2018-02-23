@@ -59,13 +59,13 @@ function getArrUsersInRole(roleName){
 
 
 function getRolesSlices(arrInput, startIndex, type){
+        if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         var arrOutput = [];
         var bol = true;
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
-//         var startColor = arrInput[arrLength-startIndex].color;
+        var startColor = arrInput[arrLength-startIndex].color;
         
-        if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
 //                  dbg(i);
@@ -89,12 +89,12 @@ function getRolesSlices(arrInput, startIndex, type){
                           else
                                  break;
                  }
-//                  else if (type == "hobbies"){
-//                         if (arrInput[i].color == startColor) 
-//                                  arrOutput.push(arrInput[i].name); 
-//                         else
-//                                  break;
-//                  }
+                 else if (type == "hobbies"){
+                        if (arrInput[i].color == startColor) 
+                                 arrOutput.push(arrInput[i].name); 
+                        else
+                                 break;
+                 }
                          
         }
         return arrOutput;
@@ -142,12 +142,12 @@ function storeServerRolesSlices(initValues){
 //         dbg(arrSortedServerRolesObj);
         
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
-           dbg(rolesSlicesObj.patrons); 
+//            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
-           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
            dbg(rolesSlicesObj.lang.native);
+           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");.
            dbg(rolesSlicesObj.lang.fluent);
+           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
            dbg(rolesSlicesObj.lang.learning);                       
 //            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
 //            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
