@@ -37,18 +37,18 @@ function getRolesEmbed(roles){
       var fields = "";
       
     var fields = " \
-          {field[0]|name: <:blobl8:416371480742330378> Given} \
+          {field[0]|name:<:check:314349398811475968> Given} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:false} \
           {field[1]|name:<:xmark:314349398824058880> Taken} \
           {field[1]|value:" + takeList + "} \
           {field[1]|inline:false} \
-          {field[2]|name:<:hypesquad:314068430854684672> Polyglot} \
+          {field[2]|name:Polyglot} \
           {field[2]|value:" + polyglot + "} \
           {field[2]|inline:false} \
           {field[3]|name:<:empty:314349398723264512> Notes} \
           {field[3]|value:" + notesList + "} \
-          {field[3]|inline:false} \
+          {field[3]|inline:true} \
  	  " + errList + " \
           ";
 
