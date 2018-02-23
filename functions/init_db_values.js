@@ -160,11 +160,11 @@ function storeServerRolesSlices(initValues){
 //            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
-           rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
-           dbg(JSON.stringify(rolesSlicesObj.lang.native));
-              newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
-           dbg(newPos);
-           dbg(arrSortedServerRolesObj[113].name);
+//            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
+//            dbg(JSON.stringify(rolesSlicesObj.lang.native));
+//               newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex + rolesSlicesObj.lang.native.length;
+             newPos = 113;
+//            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
               newPos += rolesSlicesObj.lang.fluent.length;
