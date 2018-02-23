@@ -114,7 +114,7 @@ function storeServerRolesSlices(initValues){
     
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
-                 nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")) + 1,
+                 nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("n. Afrikaans", "pos")) + 1,
                  hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")) + 1,
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")) + 1,
                  duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")) + 1,
@@ -148,10 +148,10 @@ function storeServerRolesSlices(initValues){
 //            dbg(rolesSlicesObj.patrons); 
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, startPosObj.nativeTopRoleIndex, "native");
            dbg(JSON.stringify(rolesSlicesObj.lang.native));
-//            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
-//            dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
-//            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
-//            dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
+           rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, "", "fluent");
+           dbg(JSON.stringify(rolesSlicesObj.lang.fluent));
+           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, "", "learning");
+           dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
 //            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
 //            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
