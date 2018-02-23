@@ -50,7 +50,7 @@ function storeServerRolesSlices(){
         }
         
         var serverRolesSlices = {
-                languages: {
+                lang: {
                      native: [],
                      fluent: [],
                      learning: []
