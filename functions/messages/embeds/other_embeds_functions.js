@@ -17,7 +17,7 @@ function getRolesEmbed(roles){
       
       if (roles.notesMsgStr == "") {
 	      if (roles.errMsgStr == "")
-		      notesList = "Success!!";
+		      notesList = "Success!! <a:blob8:416371480742330378>";
 	      else
 		      notesList = "Some errors.";      
       } else notesList = roles.notesMsgStr;
@@ -31,13 +31,13 @@ function getRolesEmbed(roles){
       var title = "ROLES TOGGLE INFO";
       var color = "#ffffff";
       var thumb = "";
-      var description = "Here is a quick overview of what we have done.<a:blob8:416371480742330378> ";
+      var description = "Here is a quick overview of what we have done.";
       var footIcon = "";
       var footer = "";
       var fields = "";
       
     var fields = " \
-          {field[0]|name:<a:blob8:416371480742330378><:check:314349398811475968> Given} \
+          {field[0]|name:<:check:314349398811475968> Given} \
           {field[0]|value:"+ roleList + "}  \
           {field[0]|inline:false} \
           {field[1]|name:<:xmark:314349398824058880> Taken} \
@@ -45,7 +45,7 @@ function getRolesEmbed(roles){
           {field[1]|inline:false} \
           {field[2]|name:Polyglot} \
           {field[2]|value:" + polyglot + "} \
-          {field[2]|inline:false} \
+          {field[2]|inline:true} \
           {field[3]|name:<:empty:314349398723264512> Notes} \
           {field[3]|value:" + notesList + "} \
           {field[3]|inline:true} \
