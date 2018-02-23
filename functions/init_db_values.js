@@ -46,7 +46,7 @@ function getArrUsersInRole(roleName){
         var arr = [];
         dbg(roleID);
         for (var i = 0; i < ServerMembers.length; i++){
-             for (var j = 0; j < ServerMembers.Roles.length; j++){
+             for (var j = 0; j < ServerMembers[i].Roles.length; j++){
                 if (ServerMembers[i].Roles[j] == roleID){
                      var userName = "<@" + ServerMembers[i].User.ID + ">"
                      dbg(userName);
@@ -56,6 +56,7 @@ function getArrUsersInRole(roleName){
         }
         return arr;
 }
+
 
 function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
