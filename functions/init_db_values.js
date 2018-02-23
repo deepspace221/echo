@@ -29,8 +29,7 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
-        
-        for (i=0; i < ServerRoles.length; i++){
+        for (var i = 0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
                                 return ServerRoles[i].ID;
@@ -43,7 +42,7 @@ function getRegexRoleNamePosOrID(role, type){
 }
 
 function getArrUsersInRole(roleName){
-        var roleID = GetRoleName(roleName);
+        var roleID = GetRoleID(roleName);
         var arr = [];
         for (var i = 0; i < ServerMembers.length; i++){
                 if (ServerMembers[i].Roles == roleID){
@@ -104,12 +103,12 @@ function storeServerRolesSlices(initValues){
         var arrSortedServerRolesObj = [];
     
         var startPosObj = {
-                 patronTopRoleIndex: (parseInt(getRegexRoleNamePosOrID("Patrons", "pos")) - 1),
-                 nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")),
-                 hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")),
-                 platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")),
-                 duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")),
-                 memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos"))
+                 patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
+                 nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")) + 1,
+                 hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")) + 1,
+                 platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")) + 1,
+                 duolingoTopRoleIndex: parseInt(getRegexRoleNamePosOrID("3 Trees LVL 25", "pos")) + 1,
+                 memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1
         }
         
          var rolesSlicesObj = {
