@@ -85,6 +85,7 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                  else if (type == "native" || type == "fluent" || type == "learning"){
                           dbg(i);
+                          dbg(arrInput[i].name);
                           if (arrInput[i].name.indexOf(langType) != -1)
                                  arrOutput.push(arrInput[i].name); 
                           else
