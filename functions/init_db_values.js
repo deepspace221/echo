@@ -91,7 +91,7 @@ function getRolesSlices(arrInput, startIndex, type){
                                  break;
                  }
                  else if (type == "learning" || type == "color") {
-//                         dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
+                        dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
                         }
@@ -167,9 +167,9 @@ function storeServerRolesSlices(initValues){
               newPos += rolesSlicesObj.lang.native.length;
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
 //            dbg(rolesSlicesObj.lang.fluent);
-              newPos += rolesSlicesObj.lang.fluent.length;
-           rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
-           dbg(rolesSlicesObj.lang.learning);    
+//               newPos += rolesSlicesObj.lang.fluent.length;
+//            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
+//            dbg(rolesSlicesObj.lang.learning);    
               newPos = arrSortedServerRolesObj.length - startPosObj.hobbiesTopRoleIndex;
            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
             dbg(JSON.stringify(rolesSlicesObj.lang.hobbies));             
