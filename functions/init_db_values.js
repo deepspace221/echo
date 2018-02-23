@@ -56,7 +56,7 @@ function getArrUsersInRole(roleName){
 
 function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
-        var patron = {role: "", users: []};
+
         var arrLength = arrInput.length;
         var langType = type.charAt(0) + ".";
         var startColor = arrInput[arrLength-startIndex].color;
@@ -64,9 +64,11 @@ function getRolesSlices(arrInput, startIndex, type){
         if (!startIndex) startIndex = findFirstIndexOfFluentOrLearning();
         
         for (var i = arrLength - startIndex; i < arrLength; i++){
+//                  dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
+                           var patron = {role: "", users: []};
                            patron.role = roleName;
                            patron.users = getArrUsersInRole(roleName);   
                            arrOutput.push(patron);                                  
@@ -88,8 +90,6 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                          
         }
-        
-        dbg(arrOutput);
         return arrOutput;
 
         function findFirstIndexOfFluentOrLearning(){
@@ -104,7 +104,7 @@ function storeServerRolesSlices(initValues){
         var arrSortedServerRolesObj = [];
     
         var startPosObj = {
-                 patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")) - 1,
+                 patronTopRoleIndex: (parseInt(getRegexRoleNamePosOrID("Patrons", "pos")) - 1),
                  nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Yiddish", "pos")),
                  hobbiesTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Satellites", "pos")),
                  platformsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Clozemaster", "pos")),
