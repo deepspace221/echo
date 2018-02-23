@@ -66,7 +66,7 @@ function getRolesSlices(arrInput, startIndex, type){
         for (var i = arrLength - startIndex; i < arrLength; i++){
                  dbg(i);
                  if (type == "patrons"){
-                      if (/patron/.test(arrInput[i].name)){
+                      if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
                            patron.role = roleName;
                            patron.users = getArrUsersInRole(roleName);   
