@@ -90,7 +90,7 @@ function getRolesSlices(arrInput, startIndex, type){
                           else
                                  break;
                  }
-                 else if (type == "hobbies" || type == "learning"){
+                 else if (type == "learning" || type == "color" {
 //                         dbg("role color" + arrInput[i].color + " start color" + startColor + " role name" + arrInput[i].name);
                         if (arrInput[i].color == startColor){
                                  arrOutput.push(arrInput[i].name); 
@@ -159,22 +159,23 @@ function storeServerRolesSlices(initValues){
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
 //         dbg(arrSortedServerRolesObj);
         
-//            dbg("nativeIndex: " + startPosObj.nativeTopRoleIndex);
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, startPosObj.patronTopRoleIndex, "patrons");
 //            dbg(rolesSlicesObj.patrons); 
               newPos = arrSortedServerRolesObj.length - startPosObj.nativeTopRoleIndex
            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, newPos, "native");
 //            dbg(rolesSlicesObj.lang.native);
               newPos += rolesSlicesObj.lang.native.length;
-//            dbg(newPos);
            rolesSlicesObj.lang.fluent = getRolesSlices(arrSortedServerRolesObj, newPos, "fluent");
 //            dbg(rolesSlicesObj.lang.fluent);
               newPos += rolesSlicesObj.lang.fluent.length;
-           dbg(newPos);
            rolesSlicesObj.lang.learning = getRolesSlices(arrSortedServerRolesObj, newPos, "learning");
-           dbg(JSON.stringify(rolesSlicesObj.lang.learning));                       
-//            rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, startPosObj.hobbiesTopRoleIndex, "hobbies")
-//            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, startPosObj.platformsTopRoleIndex, "platforms")
+           dbg(rolesSlicesObj.lang.learning);    
+              newPos = arrSortedServerRolesObj.length - startPosObj.hobbiesTopRoleIndex;
+           rolesSlicesObj.hobbies = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
+            dbg(JSON.stringify(rolesSlicesObj.lang.hobbies));             
+              newPos = arrSortedServerRolesObj.length - startPosObj.platformsTopRoleIndex;
+           rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, newPos, "color")
+          dbg(JSON.stringify(rolesSlicesObj.lang.platforms));                       
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, startPosObj.duolingoTopRoleIndex, "duolingo")
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, startPosObj.memriseTopRoleIndex, "memrise")
 
