@@ -104,17 +104,17 @@ function getRolesSlices(arrInput, startIndex, type){
                         else break;
                  }
                  else if (type == "duolingo"){
-                      if (arrInput[i].name.indexOf("Tree") != -1){
+                      if (arrInput[i].name.indexOf("Tree") != -1)
                                  arrOutput.push(arrInput[i].name); 
                       else break;
                  }
                  else if (type == "memrise"){
-                      if (arrInput[i].name.indexOf("Memrise") != -1){
+                      if (arrInput[i].name.indexOf("Memrise") != -1)
                                  arrOutput.push(arrInput[i].name); 
                       else break;  
                  }
                  else if (type == "views"){
-                      if (arrInput[i].name.indexOf("v.") != -1){
+                      if (arrInput[i].name.indexOf("v.") != -1)
                                  arrOutput.push(arrInput[i].name); 
                       else break;  
                  }                       
