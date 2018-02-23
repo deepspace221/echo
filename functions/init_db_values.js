@@ -87,14 +87,16 @@ function getRolesSlices(arrInput, startIndex, type){
                  else if (type == "native" || type == "fluent"){
                           if (arrInput[i].name.indexOf(langType) != -1){
                                  var roleName = arrInput[i].name;
-                                 arrOutput.push(roleName); dbg(i); 
+                                 arrOutput.push(roleName); 
                           }
                           else
                                  break;
                  }
                  else if (type == "hobbies" || type == "learning"){
-                        if (arrInput[i].color == startColor) 
-                                 arrOutput.push(arrInput[i].name); 
+                        if (arrInput[i].color == startColor){
+                                 var roleName = arrInput[i].name;
+                                 arrOutput.push(roleName); 
+                        }
                         else
                                  break;
                  }
