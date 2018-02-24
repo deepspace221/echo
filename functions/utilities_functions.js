@@ -32,18 +32,17 @@ function findShortestStringInArr(arr){
 // }
 
 function escapeRegExp(str) { 
-  dbg("escape regex");
-  str.replace(/ity/g, "aaa");
-  str.replace(/\-/g, "\\-");
-  str.replace(/\*/g, "\\*");	
-  str.replace(/\?/g, "\\?");
-  str.replace(/\./g, "\\.");
-  str.replace(/\\/g, "\\\\");
-  str.replace(/\$/g, "\\$");
-  str.replace(/\[/g, "\\[");
-  str.replace(/\]/g, "\\]");
-  str.replace(/\(/g, "\\(");
-  str.replace(/\)/g, "\\)");
+  str = str.replace(/\+/g, "\\+");
+  str = str.replace(/\-/g, "\\-");
+  str = str.replace(/\*/g, "\\*");	
+  str = str.replace(/\?/g, "\\?");
+  str = str.replace(/\./g, "\\.");
+  str = str.replace(/\\/g, "\\\\");
+  str = str.replace(/\$/g, "\\$");
+  str = str.replace(/\[/g, "\\[");
+  str = str.replace(/\]/g, "\\]");
+  str = str.replace(/\(/g, "\\(");
+  str = str.replace(/\)/g, "\\)");
   return str;
 }
 
