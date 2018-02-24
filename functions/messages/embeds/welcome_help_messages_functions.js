@@ -306,7 +306,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (isValueInArr(arrLearning, arrNative[i]));
-            else arrOutput = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [native]"
+            else arrOutput = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [native]";
       }
       
       for (var i = 0; i < arrLearning.length; i++){
