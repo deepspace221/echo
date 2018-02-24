@@ -135,7 +135,7 @@ function storeServerRolesSlices(initValues){
         use server_db;
         var arrSortedServerRolesObj = [], newPos = 0;
   
-        if (true || server_db["ServerRolesSorted"] == undefined){
+        if (initValues || server_db["ServerRolesSorted"] == undefined){
                 arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
                 server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
                 dbg("storing `ServerRolesSorted`");
