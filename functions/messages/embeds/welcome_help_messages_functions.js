@@ -354,9 +354,9 @@ function getLanguagesEmbed(){
       roleSlices = JSON.parse(server_db["roleSlices"]);
       
       langObj.arrNative = removeFirst3charsFromArr(roleSlices.lang.native);
-      langObj.arrNative.splice(-1);
+      langObj.arrNative.pop();
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
-      langObj.arrFluent.splice(-1);
+      langObj.arrFluent.pop();
       langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning -4);
       langObj.arrLearning.push("welsh");
       dbg(langObj.arrLearning);
