@@ -304,20 +304,21 @@ function createEmptyStr(len){
 
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
+      for (var i = 0; i < arrNative.length; i++){
+            if (isValueInArr(arrLearning, arrNative[i]));
+            else arrOutput = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [native]"
+      }
+      
       for (var i = 0; i < arrLearning.length; i++){
-            if (isValueInArr(arrNative));
+            if (isValueInArr(arrOutput, arrLearning[i]));
             else {
                   arrOutput.push(arrLearning[i] + " [learning only]");
                   dbg(arrLearning[i]);
             }
       }
-      for (var i = 0; i < arrFluent.length; i++){
-           for (var j = 0; j < arrOutput.length; j++){
-                 if (arrOutput[j].indexOf(arrFluent[i]) != -1){
-                        arrOutput[j] = arrOutput[j] + createEmptyStr(100 - arrOutput[j].length) + "[fluent]";
-                        break;
-                 }
-           }
+      for (var i = 0; i < arrOutput.length; i++){
+          if (isValueInArr(arrFluent, arrOutput[i]));
+                arrOutput[i] = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [fluent]";
       }  
 
 //       arrOutput = arrOutput.sort(function(a,b){
