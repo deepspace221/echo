@@ -305,7 +305,7 @@ function getLanguagesEmbed(){
       roleSlices = JSON.parse(server_db["roleSlices"]);
       
       arr = removeFirst3charsFromArr(roleSlices.lang.native);
-      arr.slice(-1);
+      arr.splice(-1);
       arr = arr.concat(roleSlices.lang.learning.slice(-4));
 
       output.arr1 = arr.splice(0, arr.length/2);
@@ -322,20 +322,21 @@ function getLanguagesEmbed(){
       var color = "";
       var thumb = "server";
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
-      var fields = "\
-{field[0]|name:Languages<:blank:352901517004636163>}\
-{field[0]|value:\
-```md\
-" + output.strOut1 + "\
-```}\
-            {field[0]|inline:true}\
-            {field[1]|name:<:blank:352901517004636163>}\
-            {field[1]|value:\
-```md\
-" + output.strOut2 + "\
-```}\
-            {field[1]|inline:true}\
-";       
+      var fields = "";
+//       var fields = "\
+// {field[0]|name:Languages<:blank:352901517004636163>}\
+// {field[0]|value:\
+// ```md\
+// " + output.strOut1 + "\
+// ```}\
+//             {field[0]|inline:true}\
+//             {field[1]|name:<:blank:352901517004636163>}\
+//             {field[1]|value:\
+// ```md\
+// " + output.strOut2 + "\
+// ```}\
+//             {field[1]|inline:true}\
+// ";       
        return getExpandableEmbed(title, author, color, thumb, description, fields, "", "");      
 }
 
