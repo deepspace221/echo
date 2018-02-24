@@ -339,8 +339,7 @@ function getLanguagesEmbed(){
       langObj.arrNative.splice(-1);
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
       langObj.arrFluent.splice(-1);
-      langObj.arrLearning = removeFirst3charsFromArr(roleSlices.lang.learning);
-      langObj.arrLearning.splice(0, langObj.arrLearning.length-4);
+      langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning-4);
       
       var arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
 
