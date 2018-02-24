@@ -63,8 +63,8 @@ function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
-//         var startColor = arrInput[startIndex].color;.
-        var startColor = 0;
+        var startColor = arrInput[startIndex].color;.
+//         var startColor = 0;
         
         for (var i = startIndex; i < arrInput.length; i++){
                  if (type == "patrons"){
@@ -196,10 +196,10 @@ function storeServerRolesSlices(initValues){
 //            rolesSlicesObj.platforms = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.platformsTopRoleIndex), "color");
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
-//            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
+// //            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
            rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
-        dbg(rolesSlicesObj.permissions);
+        dbg(rolesSlicesObj);
         
         function getNewPos(pos, type){
                 if (type == "newPos") {newPos += pos; return newPos;}
