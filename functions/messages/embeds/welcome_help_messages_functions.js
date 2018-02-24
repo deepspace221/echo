@@ -293,6 +293,14 @@ function removeFirst3charsFromArr(arr){
 }
 
 
+function createEmptyStr(length){
+      var str = "";
+      for (var i = 0; i < arr.length; i++){
+            str += " ";
+      }
+      return str;
+}
+
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrLearning.length; i++){
@@ -305,7 +313,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       for (var i = 0; i < arrFluent.length; i++){
            for (var j = 0; j < arrOutput.length; j++){
                  if (arrOutput[j].indexOf(arrFluent[i]) != -1){
-                        arrOutput[j] = arrOutput[j] + " [fluent]";
+                        arrOutput[j] = arrOutput[j] + createEmptyStr(40-arrOutput[j].length) + "[fluent]";
                         break;
                  }
            }
@@ -343,6 +351,7 @@ function getLanguagesEmbed(){
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
       langObj.arrFluent.splice(-1);
       langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning -4);
+      langObj.arrLearning.push("welsh");
       dbg(langObj.arrLearning);
       
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
