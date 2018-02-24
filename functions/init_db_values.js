@@ -165,13 +165,13 @@ function storeServerRolesSlices(initValues){
          var rolesSlicesObj = {
                 staff: {
                     owners: {role: "Owners", users: ["<@303300761398411265>", "<@307663491832086548>"]},
-                    admins: {role: getRegexRoleNamePosOrID("335021703140737034", "name"), users: getArrUsersInRole(staff.admins.role)},
-                    botDev: {role: getRegexRoleNamePosOrID("403799057472028672", "name"), users: getArrUsersInRole(staff.botDev.role)},
-                    seniorMods: {role: getRegexRoleNamePosOrID("371606096189587458", "name"), users: getArrUsersInRole(staff.seniorMods.role)},
-                    mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: getArrUsersInRole(staff.mods.role)},
-                    techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: getArrUsersInRole(staff.techSupport.role)},                      
-                    patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users:  getArrUsersInRole(staff.patrons.role)},
-                    formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(staff.formerStaff.role)}                       
+                    admins: {role: getRegexRoleNamePosOrID("335021703140737034", "name"), users: getArrUsersInRole(335021703140737034)},
+                    botDev: {role: getRegexRoleNamePosOrID("403799057472028672", "name"), users: getArrUsersInRole(403799057472028672)},
+                    seniorMods: {role: getRegexRoleNamePosOrID("371606096189587458", "name"), users: getArrUsersInRole(371606096189587458)},
+                    mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: getArrUsersInRole(337640237931036682)},
+                    techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: getArrUsersInRole(361816826617004036)},                      
+                    patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users:  getArrUsersInRole(361120827665547264)},
+                    formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(403793828223516673)}                       
                 },
                 supporters: {
                     contributers: {role: getRegexRoleNamePosOrID("357941625755926528", "name"), users: []},
