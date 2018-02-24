@@ -7,7 +7,7 @@ function findShortestStringInArr(arr){
 }
 
 function escapeRegExp(str) { 
-  str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  str = str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
   dbg(str);
   return str;
 }
