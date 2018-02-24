@@ -384,7 +384,26 @@ function getLanguagesEmbed(){
 ```md\n\
 " + output.strOut3 + "\
 ```}\
-            {field[2]|inline:false}\
+            {field[2]|inline:true}\
+            {field[3]|name:Description}\
+            {field[3]|value:\
+```md\n\
+\nIf your native language isn't listed\
+\nIf your fluent language isn't listed\
+\nIf your learning language isn't listed\
+```}\
+            {field[3]|inline:true}\
+            {field[4]|name:Legend}\
+            {field[4]|value:\
+```css\n\
+\nAll = Full support. All 3 language roles exist (native, fluent, learning).\
+\nN = Partial support. Only a native language role exist.\
+\nF =  Partial support. Only a fluent language role exist.\
+\nL =  Partial support. Only a learning language role exist.\
+\[role] = No language role exists. Used the role name in brackets to access that language channel.\
+```}\
+            {field[4]|inline:true}\
+
 ";       
        return getExpandableEmbed(title, author, color, thumb, description, fields, "", "");      
 }
