@@ -25,14 +25,12 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
    }
      
     if (author) author = "{author|icon:" + authorIcon + "}{author|name:"+ authorName +"}"; else author = "";
-    if (!color) color = randomColors;
-   
+    if (!color) color = randomColors;   
     
     if (thumb == "user") thumb = "{thumb|url:"+ userIcon +"}";
     else if (thumb == "server") thumb = "{thumb|url:{guild|icon}}";
     else if (thumb) thumb = "{thumb|url:"+ thumb +"}";
     else if (!thumb) thumb = "";
-       
        
     var defaultFooterIcon = "http://www.mahditajik.ir/wp-content/uploads/2016/07/com.memrise.android.memrisecompanion-1.png";
     var footer1 = "{footer|icon:" + defaultFooterIcon + "} {footer|text:" + footer +"}";
