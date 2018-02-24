@@ -318,13 +318,13 @@ function getLanguagesEmbed(){
 {field[0]|name:Languages: <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\
-+ "output.strOur1" + \
+" + output.strOur1 + " \
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
 ```md\
-+ "output.strOur2" + \
+" + output.strOur2 + " \
 ```}\
             {field[1]|inline:true}\
 ";
