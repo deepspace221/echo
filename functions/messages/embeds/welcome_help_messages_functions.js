@@ -294,15 +294,15 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (isValueInArr(arrLearning, arrNative[i]));
-            else arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<native>";
+            else arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "<native>";
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (isValueInArr(arrOutput, arrLearning[i]));
-            else arrOutput.push(arrLearning[i] + createEmptyStr(10 - arrLearning[i].length) + "<learning only>");
+            else arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "<learning only>");
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<fluent>";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "<fluent>";
           }
       }  
             
@@ -340,7 +340,7 @@ function getLanguagesEmbed(){
       langObj.arrNative.pop();
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
       langObj.arrFluent.pop();
-      langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning -4);
+      langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning.length -4);
 //       langObj.arrLearning.push("welsh");
       dbg(langObj.arrLearning);
       dbg(langObj.arrFluent);
