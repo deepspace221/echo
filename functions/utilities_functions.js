@@ -64,9 +64,9 @@ function removeFirst3charsFromArr(arr){
       return arr;
 }
 
-function insertArrStart(arr, value){
+function insertArrValueStartValueEnd(arr, valueStart, valueEnd){
       for (var i = 0; i < arr.length; i++){
-            arr[i] = value + arr[i];     
+            arr[i] = valueStart + arr[i] + valueEnd;     
       }
       return arr;
 }
