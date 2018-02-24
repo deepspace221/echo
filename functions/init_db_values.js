@@ -113,6 +113,7 @@ function getRolesSlices(arrInput, startIndex, type){
                       }
                  }
                  else if (type == "activity"){
+                        dbg(arrInput[i].name);
                       if (arrInput[i].name.indexOf("Activity") != -1){
                               arrOutput.push(arrInput[i].name);
                       }
