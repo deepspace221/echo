@@ -287,7 +287,7 @@ function getServerMsg(){
 
 function removeFirst3charsFromArr(arr){
       for (var i = 0; i < arr.length; i++){
-            arr[i] = arr[3].slice(3);     
+            arr[i] = arr[i].slice(3);     
       }
       return arr;
 }
