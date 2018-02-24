@@ -318,7 +318,7 @@ function getLanguagesEmbed(){
 
 
       var title = "Currently available languages";
-      var author = false;
+      var author = "";
       var color = "";
       var thumb = "server";
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
