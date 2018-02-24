@@ -300,14 +300,15 @@ function getLanguagesEmbed(){
       var arr = arr.concat(roleSlices.lang.learning.slice(-4));
       var output = {
             arr1: [],
-            arr2: []
+            arr2: [],
+            strOut1: "",
+            strOut2: ""
       }
       
       output.arr1 = arr.splice(0, arr.length/2);
       output.arr2 = arr; 
-      
-      dbg(output);
-      
+      output.strOur1 = createArrOutputNewLinesSeprated(output.arr1);
+      output.strOur2 = createArrOutputNewLinesSeprated(output.arr2);
       
       var title = "Currently available languages";
       var color = "";
@@ -317,20 +318,18 @@ function getLanguagesEmbed(){
 {field[0]|name:Languages: <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\
-\n# Afrikaans\
-\n# Albanian\
++ "output.strOur1" + \
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
 ```md\
-\n# Kannada\
-\n# Kurdish\
++ "output.strOur2" + \
 ```}\
             {field[1]|inline:true}\
 ";
          
-//        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
+       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
 }
 
 
