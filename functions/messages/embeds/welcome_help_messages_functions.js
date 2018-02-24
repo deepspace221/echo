@@ -315,6 +315,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
 }
 
 
+
 function getLanguagesEmbed(){
       use server_db; 
       var output = {
