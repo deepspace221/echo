@@ -202,7 +202,7 @@ function storeServerRolesSlices(initValues){
            rolesSlicesObj.activity = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.activityTopRoleIndex), "activity");
            rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
-           server_db["roleSlices"] = JSON.parse(rolesSlicesObj);
+           server_db["roleSlices"] = JSON.stringify(rolesSlicesObj);
         
         function getNewPos(pos, type){
                 if (type == "newPos") {newPos += pos; return newPos;}
