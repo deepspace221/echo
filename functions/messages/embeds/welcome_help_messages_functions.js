@@ -310,7 +310,6 @@ function createEmptyStr(len){
       for (var i = 0; i < len.length; i++){
             str += " ";
       }
-      dbg(str + "d");
       return str;
 }
 
