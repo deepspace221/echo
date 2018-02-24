@@ -306,10 +306,10 @@ function createEmptyStr(len){
 
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative.slice(0);
-//       for (var i = 0; i < arrNative.length; i++){
-//             if (!isValueInArr(arrLearning, arrNative[i]))
-//                    arrOutput = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [native]";
-//       } 
+      for (var i = 0; i < arrNative.length; i++){
+            if (!isValueInArr(arrLearning, arrNative[i]))
+                   arrOutput[i] = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " [native]";
+      } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i]))
                arrOutput.push(arrLearning[i] + createEmptyStr(100 - arrLearning[i].length) + " [learning only]");
