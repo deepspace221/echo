@@ -32,7 +32,7 @@ function findShortestStringInArr(arr){
 // }
 
 function escapeRegExp(str) { 
-  str = str.replace(/\+/g, "\\+");
+  str = str.replace(/\+/g, "\+");
   str = str.replace(/\-/g, "\\-");
   str = str.replace(/\*/g, "\\*");	
   str = str.replace(/\?/g, "\\?");
