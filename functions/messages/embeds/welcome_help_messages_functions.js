@@ -296,9 +296,17 @@ function getLanguagesEmbed(){
       use server_db;
       var roleSlices = JSON.parse(server_db["roleSlices"]);
       
-      var outputArr = removeFirst3charsFromArr(roleSlices.lang.native);
-      var outputArr = outputArr.concat(roleSlices.lang.learning.slice(-4));
-      dbg(outputArr);
+      var arr = removeFirst3charsFromArr(roleSlices.lang.native);
+      var arr = arr.concat(roleSlices.lang.learning.slice(-4));
+      var output = {
+            arr1: [],
+            arr2: []
+      }
+      
+      output.arr1 = arr.splice(0, arr.length/2);
+      output.arr2 = arr; 
+      
+      dbg(output);
       
       
       var title = "Currently available languages";
@@ -322,7 +330,7 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
 ";
          
-       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
+//        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
 }
 
 
