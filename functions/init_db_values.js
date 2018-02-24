@@ -199,7 +199,7 @@ function storeServerRolesSlices(initValues){
 //            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
 //            rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
-        dbg(rolesSlicesObj.permissions);
+//         dbg(rolesSlicesObj.permissions);
         
         function getNewPos(pos, type){
                 if (type == "newPos") {newPos += pos; return newPos;}
