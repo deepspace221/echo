@@ -298,7 +298,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i]))
-               arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "<learning only>");
+               arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "<learning>");
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
