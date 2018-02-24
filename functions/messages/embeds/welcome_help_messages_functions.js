@@ -298,6 +298,7 @@ function createEmptyStr(len){
       for (var i = 0; i < len.length; i++){
             str += " ";
       }
+      dbg(str + "d");
       return str;
 }
 
@@ -319,9 +320,9 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
            }
       }  
 
-      arrOutput = arrOutput.sort(function(a,b){
-            return a-b;
-      });
+//       arrOutput = arrOutput.sort(function(a,b){
+//             return a-b;
+//       });
       return arrOutput;
 }
 
