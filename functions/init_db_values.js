@@ -197,7 +197,7 @@ function storeServerRolesSlices(initValues){
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
 //            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
-           rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 0, "permissions");
+           rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
         dbg(rolesSlicesObj.permissions);
         
