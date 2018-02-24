@@ -155,7 +155,9 @@ function getPlatformEmbed(){
                 arrPlatforms[i] = arrPlatforms[i] + createEmptyStr(100 - arrPlatforms[i].length) + " [access]";
       }
       arrPlatforms = arrPlatforms.sort(function(a, b){
-            return a - b;
+            if (a > b) return 1;
+            if (a < b) return -1;
+            if (a == b) return 0;  
       });
 
       arrPlatforms = insertArrStart(arrPlatforms, "# ");
