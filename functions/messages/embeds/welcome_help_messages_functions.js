@@ -324,7 +324,7 @@ function getLanguagesEmbed(){
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "";
       var fields = "\
-{field[0]|name:Languages (" + numOfLang + "<:blank:352901517004636163>}\
+{field[0]|name:Languages (" + numOfLang + ") <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\n\
 " + output.strOut1 + "\
