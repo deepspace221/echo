@@ -297,6 +297,7 @@ function getLanguagesEmbed(){
       var output = {
             arr1: [],
             arr2: [],
+            arr3: [],
             strOut1: "",
             strOut2: ""
       }
@@ -306,16 +307,14 @@ function getLanguagesEmbed(){
       
       arr = removeFirst3charsFromArr(roleSlices.lang.native);
       arr.splice(-1);
-      arr = arr.concat(roleSlices.lang.learning.slice(-4));
+//       arr = arr.concat(roleSlices.lang.learning.slice(-4));
 
       output.arr1 = arr.splice(0, arr.length/2);
       output.arr2 = arr; 
+      output.arr3 = roleSlices.lang.learning.slice(-4);
       output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
       output.strOut2 = createArrOutputNewLinesSeprated(output.arr2);
-      
-      dbg(output.strOut1);
-      dbg(output.strOut2);      
-
+      output.strOut3 = createArrOutputNewLinesSeprated(output.arr3);
 
       var title = "Currently available languages";
       var author = "";
@@ -336,6 +335,12 @@ function getLanguagesEmbed(){
 " + output.strOut2 + "\
 ```}\
             {field[1]|inline:true}\
+            {field[2]|name:Other options}\
+            {field[2]|value:\
+```md\n\
+" + output.strOut3 + "\
+```}\
+            {field[2]|inline:false}\
 ";       
        return getExpandableEmbed(title, author, color, thumb, description, fields, "", "");      
 }
