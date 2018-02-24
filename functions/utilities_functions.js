@@ -61,7 +61,7 @@ function createArrOutputNewLinesSeprated(arr){
 
 function isValueInArr(arr, role){
 	for (var j = 0; j < arr.length; j++){
-		if (arr[j].indexOf(role) == -1)
+		if (arr[j].indexOf(role) != -1)
 			return true;
 	}
 	return false;
