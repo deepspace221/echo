@@ -292,6 +292,28 @@ function removeFirst3charsFromArr(arr){
       return arr;
 }
 
+
+function crossReferenceLangs(arrNative, arrFluent, arrLearning){
+      var arrOutput = arrNative;
+      for (var i = 0; i < arrLearning.length; i++){
+            if (isValueInArr(arrNative);
+            else arrOutput.push(arrLearning[i] + "[learning only]")
+      }
+      for (var i = 0; i < arrFluent.length; i++){
+           for (var j = 0; j < arrOutput.length; j++){
+                 if (arrOutput[j].indexOf(arrFluent[i]) != -1){
+                        arrOutput[j] = arrOutput[j] + "[fluent]";
+                        break;
+                 }
+      }  
+
+      arrOutput = arrOutput.sort(function(a,b){
+            return a-b;
+      });
+      return arrOutput;
+}
+
+
 function getLanguagesEmbed(){
       use server_db; 
       var output = {
@@ -301,21 +323,36 @@ function getLanguagesEmbed(){
             strOut1: "",
             strOut2: ""
       }
-      var arr = [], roleSlices, numOfLangs;
-      
+      var arrNative = [], arrFluent = [], roleSlices;
+            
+      var langObj = {
+            arrNative: [],
+            arrFluent: [],
+            arrLearning: []
+      }l
+
       roleSlices = JSON.parse(server_db["roleSlices"]);
       
-      arr = removeFirst3charsFromArr(roleSlices.lang.native);
-      arr.splice(-1);
-//       arr = arr.concat(roleSlices.lang.learning.slice(-4));
+      langObj.arrNative = removeFirst3charsFromArr(roleSlices.lang.native);
+      langObj.arrNative.splice(-1);
+      langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.native);
+      langObj.arrFluent.splice(-1);
+      langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.native);
+      langObj.arrLearning.splice(0, langObj.arrLearning.length-4);
+      
+      var arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
 
-      output.arr1 = arr.splice(0, arr.length/2);
-      output.arr2 = arr; 
+
+      
+//       arr = arr.concat(roleSlices.lang.learning.slice(-4));
+      
+      var spliceLimit = (arrOutput.length % 2 == 0) ? arrOutput.length/2 : arrOutput.length/2+1;
+      output.arr1 = arrOutput.splice(0, spliceLimit);
+      output.arr2 = arrOutput; 
       output.arr3 = roleSlices.lang.learning.slice(-4);
       output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
       output.strOut2 = createArrOutputNewLinesSeprated(output.arr2);
       output.strOut3 = createArrOutputNewLinesSeprated(output.arr3);
-      numOfLangs = output.arr1.length + output.arr2.length;
 
       var title = "Currently available languages";
       var author = "";
@@ -324,7 +361,7 @@ function getLanguagesEmbed(){
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "";
       var fields = "\
-{field[0]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
+{field[0]|name:Languages (" + arrOutput.length + ") <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\n\
 " + output.strOut1 + "\
