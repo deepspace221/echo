@@ -29,7 +29,6 @@ function getSeverRolesArrSortedByPosition(bottomRole, topRole, type, bol){
 
 function getRegexRoleNamePosOrID(role, type){
         var r = RegExp(escapeRegExp(role), 'i');
-        dbg("regex" + r);
         for (var i = 0; i < ServerRoles.length; i++){
                 if (r.test(ServerRoles[i].Name)){
                         if (type == "ID")   
@@ -45,12 +44,10 @@ function getRegexRoleNamePosOrID(role, type){
 function getArrUsersInRole(roleName){
         var roleID = (parseInt(roleName)) ? roleName : GetRoleID(roleName);
         var arr = [];
-//         dbg(roleID);
         for (var i = 0; i < ServerMembers.length; i++){
              for (var j = 0; j < ServerMembers[i].Roles.length; j++){
                 if (ServerMembers[i].Roles[j] == roleID){
                      var userName = "<@" + ServerMembers[i].User.ID + ">"
-//                      dbg(userName);
                      arr.push(userName);          
                 }
              }
@@ -114,7 +111,6 @@ function getRolesSlices(arrInput, startIndex, type){
                       }
                  }
                  else if (type == "activity"){
-                        dbg(arrInput[i].name);
                       if (arrInput[i].name.indexOf("Activity") != -1){
                               arrOutput.push(arrInput[i].name);
                       }
@@ -148,7 +144,6 @@ function storeServerRolesSlices(initValues){
                 dbg("storing `ServerRolesSorted`");
         }
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
-        dbg(arrSortedServerRolesObj);      
         
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
@@ -160,8 +155,6 @@ function storeServerRolesSlices(initValues){
                  viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1,
                  activityTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Activity +50", "pos")) + 1
         };
-
-dbg(startPosObj.activityTopRoleIndex);
         
          var rolesSlicesObj = {
                 staff: {
