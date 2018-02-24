@@ -2,8 +2,7 @@ function getUserImage(){
        return "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";
 }
 
-function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
-        
+function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){       
 //   var obj = {};
 //    if (author == "trailblazer"){
 //       obj = getUserOBJ("trailblazer");
@@ -11,14 +10,12 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //       authorIcon = obj.User.userImage;
 //    }
   
-//    use server_members_db;
+   use server_members_db;
        
    var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
-       
-   var Username = "{/user}";
-   var userIcon = "{usericon}";      
-   var authorIcon = "https://image.flaticon.com/teams/slug/freepik.jpg";
-   var authorName = "dummy";
+   var userIcon = getUserImage();      
+   var authorIcon = getUserImage();
+   var authorName = Username;
  
    if (Trigger == "E-levent"){   
        var userObj = JSON.parse(server_members_db["membersInfo"]);
@@ -27,10 +24,10 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
        authorName = (userObj[UserID].userName) ? userObj[UserID].userName : undefined;
    }
        
-     if (!color) color = randomColors;
    
     if (author) author = "{author|icon:" + authorIcon + "}{author|name:"+ authorName +"}"; else author = "";
-    var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
+    if (!color) color = randomColors;
+   
     
     if (thumb == "user") thumb = "{thumb|url:"+ userIcon +"}";
     else if (thumb == "server") thumb = "{thumb|url:{guild|icon}}";
