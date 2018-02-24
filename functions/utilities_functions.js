@@ -65,6 +65,8 @@ function removeFirst3charsFromArr(arr){
 }
 
 function insertArrValueStartValueEnd(arr, valueStart, valueEnd){
+      if (!valueStart) valueStart = "";
+      if (!valueEnd) valueEnd = ""; 
       for (var i = 0; i < arr.length; i++){
             arr[i] = valueStart + arr[i] + valueEnd;     
       }
