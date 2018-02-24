@@ -105,6 +105,7 @@ function getRolesSlices(arrInput, startIndex, type){
                       else break;
                  }
                  else if (type == "permissions"){
+                          dbg("permissions");
                       if (arrInput[i].permissions != "0"){
                               dbg("found");
                               var obj = {}
