@@ -294,17 +294,17 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i])){
-                   arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "<native>";
+                   arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<native>";
             }
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i])){
-               arrOutput.push(arrLearning[i] + createEmptyStr(20 - arrLearning[i].length) + "<learning only>");
+               arrOutput.push(arrLearning[i] + createEmptyStr(10 - arrLearning[i].length) + "<learning only>");
             }
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "<fluent>";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<fluent>";
           }
       }  
             
