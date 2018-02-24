@@ -294,15 +294,15 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i]))
-                 arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "<native>";
+                 arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "[native]";
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i]))
-               arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "<learning>");
+               arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "[learning]");
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "<fluent>";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "[fluent]";
           }
       }  
             
@@ -347,7 +347,7 @@ function getLanguagesEmbed(){
 //       dbg(langObj.arrNative);
      
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
-      arrOutput = insertArrStart(arrOutput, "# ");
+      arrOutput = insertArrValueStartValueEnd(arrOutput, "[", "]");
       numOfLangs = arrOutput.length;
 
       
