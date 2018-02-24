@@ -204,6 +204,8 @@ function storeServerRolesSlices(initValues){
         
            server_db["roleSlices"] = JSON.stringify(rolesSlicesObj);
         
+           resp = "Done updating slices."
+        
         function getNewPos(pos, type){
                 if (type == "newPos") {newPos += pos; return newPos;}
                 newPos = arrSortedServerRolesObj.length - pos;
