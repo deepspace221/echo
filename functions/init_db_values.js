@@ -134,7 +134,15 @@ function getRolesSlices(arrInput, startIndex, type){
 function storeServerRolesSlices(initValues){
         use server_db;
         var arrSortedServerRolesObj = [], newPos = 0;
-    
+  
+        if (true || server_db["ServerRolesSorted"] == undefined){
+                arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
+                server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
+                dbg("storing `ServerRolesSorted`");
+        }
+        else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
+        dbg(arrSortedServerRolesObj);      
+        
         var startPosObj = {
                  patronTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Patrons", "pos")),
                  nativeTopRoleIndex: parseInt(getRegexRoleNamePosOrID("n. Afrikaans", "pos")) + 1,
@@ -179,14 +187,6 @@ function storeServerRolesSlices(initValues){
                 permissions: []
         };
         
-        if (true || server_db["ServerRolesSorted"] == undefined){
-                arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
-                server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
-                dbg("storing `ServerRolesSorted`");
-        }
-        else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
-        dbg(arrSortedServerRolesObj);
-  
         
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
 //            rolesSlicesObj.lang.native = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.nativeTopRoleIndex), "native");
