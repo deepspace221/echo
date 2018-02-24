@@ -152,7 +152,7 @@ function getPlatformEmbed(){
       
       for (var i = 0; i < arrPlatforms.length; i++){
             if (/(Memrise|Duolingo|Anki|Tinycards)/i.test(arrPlatforms[i]))
-                arrPlatforms[i] = "#" + arrPlatforms[i] + createEmptyStr(100 - arrLearning[i].length) + " [access]";
+                arrPlatforms[i] = "#" + arrPlatforms[i] + createEmptyStr(100 - arrPlatforms[i].length) + " [access]";
             else arrPlatforms[i] = "#" + arrPlatforms[i];
       }
       arrPlatforms = arrPlatforms.sort(function(a, b){
