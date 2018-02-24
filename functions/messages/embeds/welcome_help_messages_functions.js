@@ -345,9 +345,8 @@ function getLanguagesEmbed(){
 //       dbg(langObj.arrLearning);
 //       dbg(langObj.arrFluent);
 //       dbg(langObj.arrNative);
-     
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
-      arrOutput = insertArrValueStartValueEnd(arrOutput, "[", "]");
+      arrOutput = insertArrValueStartValueEnd(arrOutput, "- ");
       numOfLangs = arrOutput.length;
 
       
@@ -370,13 +369,13 @@ function getLanguagesEmbed(){
       var fields = "\
 {field[0]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
 {field[0]|value:\
-```md\n\
+```css\n\
 " + output.strOut1 + "\
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
-```md\n\
+```css\n\
 " + output.strOut2 + "\
 ```}\
             {field[1]|inline:true}\
