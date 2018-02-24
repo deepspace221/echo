@@ -67,7 +67,6 @@ function getRolesSlices(arrInput, startIndex, type){
         var startColor = 0;
         
         for (var i = startIndex; i < arrInput.length; i++){
-                 dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
@@ -106,9 +105,8 @@ function getRolesSlices(arrInput, startIndex, type){
                       else break;
                  }
                  else if (type == "permissions"){
-                          dbg("permissions");
                       if (arrInput[i].permissions != "0"){
-                              dbg("found");
+//                               dbg("found");
                               var obj = {}
                               obj.role = arrInput[i].name;
                               obj.permissions = arrInput[i].permissions;
@@ -199,7 +197,7 @@ function storeServerRolesSlices(initValues){
 //            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
 //            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
 //            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
-           rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
+           rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 0, "permissions");
         
         dbg(rolesSlicesObj.permissions);
         
