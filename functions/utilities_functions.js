@@ -31,20 +31,20 @@ function escapeRegExp(str) {
 // 	return str;
 // }
 
-// function escapeRegExp(str) { 
-//   str = str.replace(/\+/g, "\+");
-//   str = str.replace(/\-/g, "\\-");
-//   str = str.replace(/\*/g, "\\*");	
-//   str = str.replace(/\?/g, "\\?");
-//   str = str.replace(/\./g, "\\.");
-//   str = str.replace(/\\/g, "\\\\");
-//   str = str.replace(/\$/g, "\\$");
-//   str = str.replace(/\[/g, "\\[");
-//   str = str.replace(/\]/g, "\\]");
-//   str = str.replace(/\(/g, "\\(");
-//   str = str.replace(/\)/g, "\\)");
-//   return str;
-// }
+function escapeRegExp(str) { 
+  str = str.replace(/\\/g, "\\\\");
+  str = str.replace(/\+/g, "\\+");
+  str = str.replace(/\-/g, "\\-");
+  str = str.replace(/\*/g, "\\*");	
+  str = str.replace(/\?/g, "\\?");
+  str = str.replace(/\./g, "\\.");
+  str = str.replace(/\$/g, "\\$");
+  str = str.replace(/\[/g, "\\[");
+  str = str.replace(/\]/g, "\\]");
+  str = str.replace(/\(/g, "\\(");
+  str = str.replace(/\)/g, "\\)");
+  return str;
+}
 
 function getArrRoleIDtoRoleName(arr){
 	var output = [];
