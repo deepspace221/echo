@@ -73,7 +73,7 @@ function insertArrStart(arr, value){
 
 function createEmptyStr(len){
       var str = "";
-      for (var i = 0; i < len.length; i++){
+      for (var i = 0; i < len; i++){
             str = str + " ";
       }
       return str;
