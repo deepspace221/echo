@@ -11,21 +11,6 @@ function escapeRegExp(str) {
   return str;
 }
 
-// function escapeRegExp(str) { 
-//   str = str.replace(/\\/g, "\\\\");
-//   str = str.replace(/\+/g, "\\+");
-//   str = str.replace(/\-/g, "\\-");
-//   str = str.replace(/\*/g, "\\*");	
-//   str = str.replace(/\?/g, "\\?");
-//   str = str.replace(/\./g, "\\.");
-//   str = str.replace(/\$/g, "\\$");
-//   str = str.replace(/\[/g, "\\[");
-//   str = str.replace(/\]/g, "\\]");
-//   str = str.replace(/\(/g, "\\(");
-//   str = str.replace(/\)/g, "\\)");
-//   return str;
-// }
-
 function getArrRoleIDtoRoleName(arr){
 	var output = [];
 	for (var i = 0; i < arr.length; i++){
@@ -70,4 +55,26 @@ function isValueInArr(arr, role){
 function firstCharToUpperCase(string) 
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function removeFirst3charsFromArr(arr){
+      for (var i = 0; i < arr.length; i++){
+            arr[i] = arr[i].slice(3);     
+      }
+      return arr;
+}
+
+function insertArrStart(arr, value){
+      for (var i = 0; i < arr.length; i++){
+            arr[i] = value + arr[i];     
+      }
+      return arr;
+}
+
+function createEmptyStr(len){
+      var str = "";
+      for (var i = 0; i < len.length; i++){
+            str += " ";
+      }
+      return str;
 }
