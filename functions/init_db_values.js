@@ -106,6 +106,7 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                  else if (type == "permissions"){
                       if (arrInput[i].permissions != "0"){
+                              dbg("found");
                               var obj = {}
                               obj.role = arrInput[i].name;
                               obj.permissions = arrInput[i].permissions;
@@ -172,14 +173,14 @@ function storeServerRolesSlices(initValues){
                     mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: getArrUsersInRole(337640237931036682)},
                     techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: getArrUsersInRole(361816826617004036)},                      
                     patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users:  getArrUsersInRole(361120827665547264)},
-                    formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(403793828223516673)}                       
                 },
                 supporters: {
-                    contributers: {role: getRegexRoleNamePosOrID("357941625755926528", "name"), users: []},
-                    courseCreator: {role: getRegexRoleNamePosOrID("335566263516397568", "name"), users: []},  
-                    partnershipAssistants: {role: getRegexRoleNamePosOrID("403803531955404801", "name"), users: []},
-                    supporters: {role: getRegexRoleNamePosOrID("347168010584457216", "name"), users: []},
-                    ambassadors: {role: getRegexRoleNamePosOrID("361811261505273856", "name"), users: []}
+                    formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(403793828223516673)},                          
+                    contributers: {role: getRegexRoleNamePosOrID("357941625755926528", "name"), users: getArrUsersInRole(357941625755926528)},
+                    courseCreator: {role: getRegexRoleNamePosOrID("335566263516397568", "name"), users: getArrUsersInRole(335566263516397568)},  
+                    partnershipAssistants: {role: getRegexRoleNamePosOrID("403803531955404801", "name"), users: getArrUsersInRole(403803531955404801)},
+                    supporters: {role: getRegexRoleNamePosOrID("347168010584457216", "name"), users: getArrUsersInRole(347168010584457216)},
+                    ambassadors: {role: getRegexRoleNamePosOrID("361811261505273856", "name"), users: getArrUsersInRole(361811261505273856)}
                 },
                 lang: {
                      native: [],
