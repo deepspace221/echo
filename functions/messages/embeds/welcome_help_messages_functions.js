@@ -290,34 +290,11 @@ function getServerMsg(){
        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");   
 }
 
-function removeFirst3charsFromArr(arr){
-      for (var i = 0; i < arr.length; i++){
-            arr[i] = arr[i].slice(3);     
-      }
-      return arr;
-}
-
-function insertArrStart(arr, value){
-      for (var i = 0; i < arr.length; i++){
-            arr[i] = value + arr[i];     
-      }
-      return arr;
-}
-
-
-function createEmptyStr(len){
-      var str = "";
-      for (var i = 0; i < len.length; i++){
-            str += " ";
-      }
-      return str;
-}
-
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i])){
-                   arrOutput[i] = arrOutput[i] + createEmptyStr(70) + " <native>";
+                   arrOutput[i] = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " <native>";
             }
       } 
       for (var i = 0; i < arrLearning.length; i++){
@@ -327,7 +304,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(70) + " <fluent>";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(100 - arrOutput[i].length) + " <fluent>";
           }
       }  
             
