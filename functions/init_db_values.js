@@ -63,7 +63,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
-        var startColor = arrInput[startIndex].color;.
+        var startColor = arrInput[startIndex].color;
 //         var startColor = 0;
         
         for (var i = startIndex; i < arrInput.length; i++){
