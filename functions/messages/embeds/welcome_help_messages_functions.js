@@ -146,6 +146,20 @@ var description = "\
 }
 
 function getPlatformEmbed(){
+      use server_db;
+      var roleSlices = JSON.parse(server_db["roleSlices"]);
+      var arrPlatforms = roleSlices.platforms;
+      
+      for (var i = 0; i < arrPlatforms.length; i++){
+            if (/(Memrise|Duolingo|Anki|Tinycards)/i.test(arrPlatforms[i])
+                arrPlatforms[i] = "#" + arrPlatforms[i] + createEmptyStr(100 - arrLearning[i].length) + " [access]";
+            else arrPlatforms[i] = "#" + arrPlatforms[i];
+      }
+      arrPlatforms = arrPlatforms.sort(function(a, b){
+            return a - b;
+      });
+      var outputStr = createArrOutputNewLinesSeprated(arrPlatforms);
+      
       var title = "LANGUAGE PLATFORM ROLES";
       var color = "";
       var thumb = "server";
@@ -155,23 +169,10 @@ function getPlatformEmbed(){
 \nRoles marked with **[access]** will grant you access to additional rooms which are related to these roles.\
 ";
       var fields = "\
-            {field[0]|name:Platform roles: <:blank:352901517004636163>}\
+            {field[0]|name:Platform roles: (" + outputStr.length + ")<:blank:352901517004636163>}\
             {field[0]|value:\
 ```css\
-\n# Memrise [access]\
-\n# Duolingo [access]\
-\n# Anki [access]\
-\n# Tinycards [access]\
-\n# Lang-8\
-\n# Readlang\
-\n# LingQ\
-\n# Clozemaster\
-\n# Glossika\
-\n# Lingvist\
-\n# Yabla\
-\n# FluentU\
-\n# HelloTalk\
-\n# iTalki\
+" + outputStr + "\
 ```}\
             {field[0]|inline:true}\
 ";
@@ -218,6 +219,7 @@ function getWelcomeHelpEmbed(){
 }
 
 function getMiscEmbed(){
+
       var title = "MISCELLANEOUS ROLES";
       var color = "";
       var thumb = "server"
