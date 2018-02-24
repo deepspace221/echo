@@ -313,7 +313,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       for (var i = 0; i < arrFluent.length; i++){
            for (var j = 0; j < arrOutput.length; j++){
                  if (arrOutput[j].indexOf(arrFluent[i]) != -1){
-                        arrOutput[j] = arrOutput[j] + createEmptyStr(40 - arrOutput[j].length) + "[fluent]";
+                        arrOutput[j] = arrOutput[j] + createEmptyStr(100 - arrOutput[j].length) + "[fluent]";
                         break;
                  }
            }
