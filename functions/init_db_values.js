@@ -106,12 +106,17 @@ function getRolesSlices(arrInput, startIndex, type){
                  }
                  else if (type == "permissions"){
                       if (arrInput[i].permissions != "0"){
-//                               dbg("found");
                               var obj = {}
                               obj.role = arrInput[i].name;
                               obj.permissions = arrInput[i].permissions;
                               arrOutput.push(obj);
                       }
+                 }
+                 else if (type == "activity"){
+                      if (arrInput[i].name.indexOf("Activity") != -1){
+                              arrOutput.push(arrInput[i].name);
+                      }
+                      else break;
                  }
         }
         return arrOutput;
@@ -197,6 +202,7 @@ function storeServerRolesSlices(initValues){
            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
+           rolesSlicesObj.activity = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.activityTopRoleIndex), "activity");
            rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
         dbg(rolesSlicesObj);
