@@ -293,18 +293,21 @@ function removeFirst3charsFromArr(arr){
 }
 
 function getLanguagesEmbed(){
-      use server_db;
-      var roleSlices = JSON.parse(server_db["roleSlices"]);
-      
-      var arr = removeFirst3charsFromArr(roleSlices.lang.native);
-      var arr = arr.concat(roleSlices.lang.learning.slice(-4));
+      use server_db; 
       var output = {
             arr1: [],
             arr2: [],
             strOut1: "",
             strOut2: ""
       }
+      var arr = [], roleSlices;
       
+      roleSlices = JSON.parse(server_db["roleSlices"]);
+      
+      arr = removeFirst3charsFromArr(roleSlices.lang.native);
+      arr.slice(-1);
+      arr = arr.concat(roleSlices.lang.learning.slice(-4));
+
       output.arr1 = arr.splice(0, arr.length/2);
       output.arr2 = arr; 
       output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
