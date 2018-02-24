@@ -297,7 +297,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrLearning.length; i++){
             if (isValueInArr(arrNative);
-            else arrOutput.push(arrLearning[i] + "[learning only]")
+            else arrOutput.push(arrLearning[i] + "[learning only]");
       }
       for (var i = 0; i < arrFluent.length; i++){
            for (var j = 0; j < arrOutput.length; j++){
@@ -305,6 +305,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
                         arrOutput[j] = arrOutput[j] + "[fluent]";
                         break;
                  }
+           }
       }  
 
       arrOutput = arrOutput.sort(function(a,b){
@@ -322,14 +323,14 @@ function getLanguagesEmbed(){
             arr3: [],
             strOut1: "",
             strOut2: ""
-      }
+      };
       var arrNative = [], arrFluent = [], roleSlices;
             
       var langObj = {
             arrNative: [],
             arrFluent: [],
             arrLearning: []
-      }l
+      };
 
       roleSlices = JSON.parse(server_db["roleSlices"]);
       
