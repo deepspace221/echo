@@ -44,7 +44,7 @@ function getRegexRoleNamePosOrID(role, type){
 function getArrUsersInRole(roleName){
         var roleID = (parseInt(roleName)) ? roleName : GetRoleID(roleName);
         var arr = [];
-        dbg(roleID);
+//         dbg(roleID);
         for (var i = 0; i < ServerMembers.length; i++){
              for (var j = 0; j < ServerMembers[i].Roles.length; j++){
                 if (ServerMembers[i].Roles[j] == roleID){
@@ -63,7 +63,8 @@ function getRolesSlices(arrInput, startIndex, type){
         var arrOutput = [];
         var bol = true;
         var langType = type.charAt(0) + ".";
-        var startColor = arrInput[startIndex].color;
+//         var startColor = arrInput[startIndex].color;.
+        var startColor = 0;
         
         for (var i = startIndex; i < arrInput.length; i++){
                  if (type == "patrons"){
@@ -160,7 +161,7 @@ function storeServerRolesSlices(initValues){
                  memriseTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Memrise LVL 15", "pos")) + 1,
                  viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1,
                  activityTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Activity +50", "pos")) + 1
-        }
+        };
         
          var rolesSlicesObj = {
                 staff: {
@@ -193,7 +194,7 @@ function storeServerRolesSlices(initValues){
                 activity: [],
                 views: [],
                 permissions: []
-        }    
+        };
         
         if (server_db["ServerRolesSorted"] == undefined || initValues){
                 arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
