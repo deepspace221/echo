@@ -342,9 +342,9 @@ function getLanguagesEmbed(){
       langObj.arrFluent.pop();
       langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning.length -4);
 //       langObj.arrLearning.push("welsh");
-      dbg(langObj.arrLearning);
-      dbg(langObj.arrFluent);
-      dbg(langObj.arrNative);
+//       dbg(langObj.arrLearning);
+//       dbg(langObj.arrFluent);
+//       dbg(langObj.arrNative);
      
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
       arrOutput = insertArrStart(arrOutput, "# ");
