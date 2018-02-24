@@ -287,7 +287,7 @@ function getServerMsg(){
 
 function removeFirst3charsFromArr(arr){
       for (var i = 0; i < arr.length; i++){
-            arr[i] = arr[i].slice(3);     
+            arr[i] = "# " + arr[i].slice(3);     
       }
       return arr;
 }
@@ -318,11 +318,12 @@ function getLanguagesEmbed(){
 
 
       var title = "Currently available languages";
+      var author = false;
       var color = "";
       var thumb = "server";
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "\
-{field[0]|name:Languages: <:blank:352901517004636163>}\
+{field[0]|name:Languages<:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\
 " + output.strOut1 + "\
@@ -334,9 +335,8 @@ function getLanguagesEmbed(){
 " + output.strOut2 + "\
 ```}\
             {field[1]|inline:true}\
-";
-         
-       return getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
+";       
+       return getExpandableEmbed(title, author, color, thumb, description, fields, "", "");      
 }
 
 
