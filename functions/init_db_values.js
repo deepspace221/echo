@@ -159,6 +159,8 @@ function storeServerRolesSlices(initValues){
                  viewsTopRoleIndex: parseInt(getRegexRoleNamePosOrID("v. Mobile", "pos")) + 1,
                  activityTopRoleIndex: parseInt(getRegexRoleNamePosOrID("Activity +50", "pos")) + 1
         };
+
+dbg(startPosObj.activityTopRoleIndex);
         
          var rolesSlicesObj = {
                 staff: {
@@ -203,7 +205,7 @@ function storeServerRolesSlices(initValues){
            rolesSlicesObj.duolingo = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.duolingoTopRoleIndex), "duolingo");
            rolesSlicesObj.memrise = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.memriseTopRoleIndex), "color");
            rolesSlicesObj.views = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.viewsTopRoleIndex), "color");
-           rolesSlicesObj.activity = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.activityTopRoleIndex), "activity");
+//            rolesSlicesObj.activity = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.activityTopRoleIndex), "activity");
            rolesSlicesObj.permissions = getRolesSlices(arrSortedServerRolesObj, 1, "permissions");
         
         dbg(rolesSlicesObj);
