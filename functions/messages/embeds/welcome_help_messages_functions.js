@@ -293,14 +293,12 @@ function getServerMsg(){
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
-            if (!isValueInArr(arrLearning, arrNative[i])){
-                   arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<native>";
-            }
+            if (isValueInArr(arrLearning, arrNative[i]));
+            else arrOutput[i] = arrOutput[i] + createEmptyStr(10 - arrOutput[i].length) + "<native>";
       } 
       for (var i = 0; i < arrLearning.length; i++){
-            if (!isValueInArr(arrOutput, arrLearning[i])){
-               arrOutput.push(arrLearning[i] + createEmptyStr(10 - arrLearning[i].length) + "<learning only>");
-            }
+            if (isValueInArr(arrOutput, arrLearning[i]));
+            else arrOutput.push(arrLearning[i] + createEmptyStr(10 - arrLearning[i].length) + "<learning only>");
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (isValueInArr(arrFluent, arrOutput[i])){
