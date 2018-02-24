@@ -285,7 +285,22 @@ function getServerMsg(){
        return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");   
 }
 
+function removeFirst3charsFromArr(arr){
+      for (var i = 0; i < arr.length; i++){
+            arr[i] = arr[3].slice(3);     
+      }
+      return arr;
+}
+
 function getLanguagesEmbed(){
+      use server_db;
+      var roleSlices = JSON.parse(server_db["roleSlices"]);
+      
+      var outputArr = removeFirst3charsFromArr(roleSlices.lang.native);
+      var outputArr = outputArr.concat(roleSlices.lang.learning.slice(-4));
+      dbg(outputArr);
+      
+      
       var title = "Currently available languages";
       var color = "";
       var thumb = "server";
