@@ -297,12 +297,15 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrLearning.length; i++){
             if (isValueInArr(arrNative));
-            else arrOutput.push(arrLearning[i] + "[learning only]");
+            else {
+                  arrOutput.push(arrLearning[i] + " [learning only]");
+                  dbg(arrLearning[i]);
+            }
       }
       for (var i = 0; i < arrFluent.length; i++){
            for (var j = 0; j < arrOutput.length; j++){
                  if (arrOutput[j].indexOf(arrFluent[i]) != -1){
-                        arrOutput[j] = arrOutput[j] + "[fluent]";
+                        arrOutput[j] = arrOutput[j] + " [fluent]";
                         break;
                  }
            }
@@ -325,7 +328,7 @@ function getLanguagesEmbed(){
             strOut1: "",
             strOut2: ""
       };
-      var arrNative = [], arrFluent = [], roleSlices;
+      var arrNative = [], arrFluent = [], roleSlices, numOfLangs, arrOutput;
             
       var langObj = {
             arrNative: [],
@@ -339,10 +342,11 @@ function getLanguagesEmbed(){
       langObj.arrNative.splice(-1);
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
       langObj.arrFluent.splice(-1);
-      langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning-4);
+      langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning -4);
+      dbg(langObj.arrLearning);
       
-      var arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
-
+      arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
+      numOfLangs = arrOutput.length;
 
       
 //       arr = arr.concat(roleSlices.lang.learning.slice(-4));
@@ -362,7 +366,7 @@ function getLanguagesEmbed(){
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "";
       var fields = "\
-{field[0]|name:Languages (" + arrOutput.length + ") <:blank:352901517004636163>}\
+{field[0]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\n\
 " + output.strOut1 + "\
