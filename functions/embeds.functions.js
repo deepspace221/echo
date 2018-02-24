@@ -3,9 +3,6 @@ function getUserImage(){
 }
 
 function getExpandableEmbed(title, author, color, thumb, description, fields, footerIcon, footer){
-   // if (UserID != "" && UserID != undefined && UserImage != "" && UserImage != undefined){
-   //     var avatar = "https://discordapp.com/api/v6/users/" + UserID + "/avatars/" + UserImage + ".jpg";  
-   // }
         
 //   var obj = {};
 //    if (author == "trailblazer"){
@@ -14,7 +11,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //       authorIcon = obj.User.userImage;
 //    }
   
-//    use server_members_db;
+   use server_members_db;
        
    var Username = "{/user}";
    var userIcon = "{usericon}";      
