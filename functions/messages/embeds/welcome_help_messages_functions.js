@@ -296,7 +296,7 @@ function removeFirst3charsFromArr(arr){
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrLearning.length; i++){
-            if (isValueInArr(arrNative);
+            if (isValueInArr(arrNative));
             else arrOutput.push(arrLearning[i] + "[learning only]");
       }
       for (var i = 0; i < arrFluent.length; i++){
