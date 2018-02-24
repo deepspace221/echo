@@ -310,6 +310,10 @@ function getLanguagesEmbed(){
       output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
       output.strOut2 = createArrOutputNewLinesSeprated(output.arr2);
       
+      dbg(output.strOut1);
+      dbg(output.strOut2);      
+
+
       var title = "Currently available languages";
       var color = "";
       var thumb = "server";
@@ -329,7 +333,7 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
 ";
          
-       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
+       return getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
 }
 
 
