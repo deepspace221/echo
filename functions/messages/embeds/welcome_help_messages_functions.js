@@ -301,7 +301,7 @@ function getLanguagesEmbed(){
             strOut1: "",
             strOut2: ""
       }
-      var arr = [], roleSlices;
+      var arr = [], roleSlices, numOfLangs;
       
       roleSlices = JSON.parse(server_db["roleSlices"]);
       
@@ -315,6 +315,7 @@ function getLanguagesEmbed(){
       output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
       output.strOut2 = createArrOutputNewLinesSeprated(output.arr2);
       output.strOut3 = createArrOutputNewLinesSeprated(output.arr3);
+      numOfLangs = output.arr1.length + output.arr2.length;
 
       var title = "Currently available languages";
       var author = "";
@@ -323,7 +324,7 @@ function getLanguagesEmbed(){
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "";
       var fields = "\
-{field[0]|name:Languages<:blank:352901517004636163>}\
+{field[0]|name:Languages (" + numOfLang + "<:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\n\
 " + output.strOut1 + "\
