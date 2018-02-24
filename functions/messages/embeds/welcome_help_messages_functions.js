@@ -214,7 +214,7 @@ function getWelcomeHelpEmbed(){
 ";
       
       
-      return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
+//       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");  
 }
 
 function getMiscEmbed(){
