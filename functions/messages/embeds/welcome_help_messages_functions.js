@@ -307,8 +307,8 @@ function getLanguagesEmbed(){
       
       output.arr1 = arr.splice(0, arr.length/2);
       output.arr2 = arr; 
-      output.strOur1 = createArrOutputNewLinesSeprated(output.arr1);
-      output.strOur2 = createArrOutputNewLinesSeprated(output.arr2);
+      output.strOut1 = createArrOutputNewLinesSeprated(output.arr1);
+      output.strOut2 = createArrOutputNewLinesSeprated(output.arr2);
       
       var title = "Currently available languages";
       var color = "";
@@ -318,13 +318,13 @@ function getLanguagesEmbed(){
 {field[0]|name:Languages: <:blank:352901517004636163>}\
 {field[0]|value:\
 ```md\
-" + output.strOur1 + " \
+" + output.strOut1 + "\
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
 ```md\
-" + output.strOur2 + " \
+" + output.strOut2 + "\
 ```}\
             {field[1]|inline:true}\
 ";
