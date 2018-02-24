@@ -11,25 +11,6 @@ function escapeRegExp(str) {
   return str;
 }
 
-
-// function escapeRegExp(str) {
-// 	var arr = ["\\-","\\[","\\]","\\/","\\{","\\}","\\(","\\)","\\*","\\+","\\?","\\.","\\\\","\\^","\\$","\\|"];
-// // 	var arr = ["\-","\[","\]","\/","\{","\}","\(","\)","\*","\+","\?","\.","\\","\^","\$","\|"];
-// 	for (var i = 0; i < arr.length; i++){
-// 		var regExp = new RegExp(arr[i], "g")
-// 		str.replace(regExp, arr[i]);
-// 	}
-// 	dbg(str);
-	
-// 	var r = /([\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|])/g;
-// 	var rMatch;
-// 	while (rMatch = r.exec(str)){
-// 		str.replace(rMatch[1], "\\" + rMatch[1])
-// 	}
-// 	dbg(str);
-// 	return str;
-// }
-
 // function escapeRegExp(str) { 
 //   str = str.replace(/\\/g, "\\\\");
 //   str = str.replace(/\+/g, "\\+");
