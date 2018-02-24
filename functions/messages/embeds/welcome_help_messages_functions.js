@@ -293,9 +293,9 @@ function removeFirst3charsFromArr(arr){
 }
 
 
-function createEmptyStr(length){
+function createEmptyStr(len){
       var str = "";
-      for (var i = 0; i < arr.length; i++){
+      for (var i = 0; i < len.length; i++){
             str += " ";
       }
       return str;
@@ -313,7 +313,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       for (var i = 0; i < arrFluent.length; i++){
            for (var j = 0; j < arrOutput.length; j++){
                  if (arrOutput[j].indexOf(arrFluent[i]) != -1){
-                        arrOutput[j] = arrOutput[j] + createEmptyStr(40-arrOutput[j].length) + "[fluent]";
+                        arrOutput[j] = arrOutput[j] + createEmptyStr(40 - arrOutput[j].length) + "[fluent]";
                         break;
                  }
            }
@@ -336,7 +336,7 @@ function getLanguagesEmbed(){
             strOut1: "",
             strOut2: ""
       };
-      var arrNative = [], arrFluent = [], roleSlices, numOfLangs, arrOutput;
+      var roleSlices, numOfLangs, arrOutput;
             
       var langObj = {
             arrNative: [],
