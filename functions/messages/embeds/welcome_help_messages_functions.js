@@ -152,12 +152,13 @@ function getPlatformEmbed(){
       
       for (var i = 0; i < arrPlatforms.length; i++){
             if (/(Memrise|Duolingo|Anki|Tinycards)/i.test(arrPlatforms[i]))
-                arrPlatforms[i] = "#" + arrPlatforms[i] + createEmptyStr(100 - arrPlatforms[i].length) + " [access]";
-            else arrPlatforms[i] = "#" + arrPlatforms[i];
+                arrPlatforms[i] = arrPlatforms[i] + createEmptyStr(100 - arrPlatforms[i].length) + " [access]";
       }
       arrPlatforms = arrPlatforms.sort(function(a, b){
             return a - b;
       });
+
+      arrPlatforms = insertArrStart(arrPlatforms, "# ");
       var outputStr = createArrOutputNewLinesSeprated(arrPlatforms);
       
       var title = "LANGUAGE PLATFORM ROLES";
@@ -171,7 +172,7 @@ function getPlatformEmbed(){
       var fields = "\
             {field[0]|name:Platform roles: (" + outputStr.length + ")<:blank:352901517004636163>}\
             {field[0]|value:\
-```css\
+```css\n\
 " + outputStr + "\
 ```}\
             {field[0]|inline:true}\
@@ -294,7 +295,7 @@ function removeFirst3charsFromArr(arr){
       return arr;
 }
 
-function insertArrBegining(arr, value){
+function insertArrStart(arr, value){
       for (var i = 0; i < arr.length; i++){
             arr[i] = value + arr[i];     
       }
@@ -362,7 +363,7 @@ function getLanguagesEmbed(){
       dbg(langObj.arrLearning);
       
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
-      arrOutput = insertArrBegining("# ");
+      arrOutput = insertArrStart(arrOutput, "# ");
       numOfLangs = arrOutput.length;
 
       
