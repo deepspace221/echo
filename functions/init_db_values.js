@@ -67,6 +67,7 @@ function getRolesSlices(arrInput, startIndex, type){
         var startColor = 0;
         
         for (var i = startIndex; i < arrInput.length; i++){
+                 dbg(i);
                  if (type == "patrons"){
                       if (/patron/i.test(arrInput[i].name)){
                            var roleName = arrInput[i].name
@@ -114,24 +115,6 @@ function getRolesSlices(arrInput, startIndex, type){
                               arrOutput.push(obj);
                       }
                  }
-//                  else if (type == "staff"){
-//                       var staff: {
-//                             owners: {role: "Owners", users: ["<@303300761398411265>", "<@307663491832086548>"]},
-//                             admins: {role: getRegexRoleNamePosOrID("335021703140737034", "name"), users: []},
-//                             botDev: {role: getRegexRoleNamePosOrID("403799057472028672", "name"), users: []},
-//                             seniorMods: {role: getRegexRoleNamePosOrID("371606096189587458", "name"), users: []},
-//                             mods: {role: getRegexRoleNamePosOrID("337640237931036682", "name"), users: []},
-//                             techSupport: {role: getRegexRoleNamePosOrID("361816826617004036", "name"), users: []},                      
-//                             patrons: {role: getRegexRoleNamePosOrID("361120827665547264", "name"), users: []},
-//                             formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: []}
-//                       }
-//                       staff.admins.users = getArrUsersInRole(staff.admins.role);
-//                       staff.botDev.users = getArrUsersInRole(staff.botDev.role);
-//                       staff.seniorMods.users = getArrUsersInRole(staff.seniorMods.role);
-//                       staff.mods.users = getArrUsersInRole(staff.mods.role);
-//                       staff.techSupport.users = getArrUsersInRole(staff.techSupport.role);
-//                       staff.formerStaff.users = getArrUsersInRole(staff.formerStaff.role);
-//                  }
         }
         return arrOutput;
 
