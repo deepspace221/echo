@@ -179,13 +179,13 @@ function storeServerRolesSlices(initValues){
                 permissions: []
         };
         
-        if (server_db["ServerRolesSorted"] == undefined || initValues){
+        if (server_db["ServerRolesSorted"] == undefined || true){
                 arrSortedServerRolesObj = JSON.stringify(getSeverRolesArrSortedByPosition(0, 250, "obj", true));
                 server_db["ServerRolesSorted"] = arrSortedServerRolesObj;
                 dbg("storing `ServerRolesSorted`");
         }
         else arrSortedServerRolesObj = JSON.parse(server_db["ServerRolesSorted"]);
-        dbg(arrSortedServerRolesObj);
+//         dbg(arrSortedServerRolesObj);
   
         
 //            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
