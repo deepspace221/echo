@@ -10,20 +10,22 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //       authorIcon = obj.User.userImage;
 //    }
   
-   use server_members_db;
+   use server_members_db;  
        
-    if (Trigger == "E-levent"){   
+   var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
+
+   var Username = "{/user}";
+   var userIcon = "{usericon}";      
+   var authorIcon;
+   var authorName;
+ 
+   if (Trigger == "E-levent"){   
        var userObj = JSON.parse(server_members_db["membersInfo"]);
        userIcon = (userObj[UserID].avatar) ? userObj[UserID].avatar : undefined;
        authorIcon = (userIcon) ? userIcon : undefined;
        authorName = (userObj[UserID].userName) ? userObj[UserID].userName : undefined;
-   }      
-       
-   var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
-   var userIcon = (userIcon) ? userIcon : getUserImage();      
-   var authorIcon = (userIcon) ? userIcon : getUserImage();
-   var authorName = (Trigger != "E-levent") ? Username : authorName;
- 
+   }
+     
     if (author) author = "{author|icon:" + authorIcon + "}{author|name:"+ authorName +"}"; else author = "";
     if (!color) color = randomColors;
    
