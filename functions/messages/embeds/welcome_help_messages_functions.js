@@ -326,13 +326,13 @@ function getLanguagesEmbed(){
       var fields = "\
 {field[0]|name:Languages<:blank:352901517004636163>}\
 {field[0]|value:\
-```md\
+```md\n\
 " + output.strOut1 + "\
 ```}\
             {field[0]|inline:true}\
             {field[1]|name:<:blank:352901517004636163>}\
             {field[1]|value:\
-```md\
+```md\n\
 " + output.strOut2 + "\
 ```}\
             {field[1]|inline:true}\
