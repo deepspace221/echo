@@ -14,8 +14,8 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 
    var Username = "{/user}";
    var userIcon = "{usericon}";      
-   var authorIcon;
-   var authorName;
+   var authorIcon = "{usericon}";
+   var authorName = (Trigger == "E-levent") ? "" : Username;
  
    if (Trigger == "E-levent"){   
        var userObj = JSON.parse(server_members_db["membersInfo"]);
