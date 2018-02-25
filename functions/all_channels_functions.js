@@ -50,7 +50,7 @@ function getRoleMobileRelatedChannel(name){
         return undefined;
 }
 
-function getMainCannels(arrChannels){
+function getMainChannels(arrChannels){
     var arr = [];
 
     for (var i = 0; i < arrChannels.length; i++){ 
