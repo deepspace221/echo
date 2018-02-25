@@ -196,7 +196,7 @@ function getArrFieldObj(num, bol){
         var bol = (bol == false) ? bol : true
         var arr = [];
         for (var i = 0; i < num; i++){
-             var field = getFieldObj("", bol);
+             var field = getFieldsObj("", bol);
              arr.push(field);                     
        } 
        return arr;       
