@@ -137,7 +137,7 @@ function getRolesSlices(arrInput, startIndex, type){
 function getMobileChannels(){
      var arr = [];
      for (var i = 0; i < ServerChannels.length; i++){
-            if (ServerChannels[i].ParentID != "399768076112887808"){
+            if (ServerChannels[i].ParentID == "399768076112887808"){
                   var obj = {
                      name: "",
                      ID: ""
