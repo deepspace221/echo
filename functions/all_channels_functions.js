@@ -7,7 +7,7 @@ function getBaseLanguageStr(str){
 function getCatResourcesChannel(category, name){
        for (var i = 0; i < ServerChannels.length; i++){
             if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name)
-                return ServerChannels[i].Name;
+                return ServerChannels[i].ID;
        }
        return "Not found.";
 }
