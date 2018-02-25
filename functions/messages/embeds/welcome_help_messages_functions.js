@@ -389,7 +389,7 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
             {field[2]|name:Other options}\
             {field[2]|value:\
-```md\n\
+```css\n\
 \nn. Other\
 \nf. Other\
 \n\
