@@ -398,7 +398,7 @@ function getLanguagesEmbed(){
             {field[2]|inline:true}\
             {field[3]|name:Description}\
             {field[3]|value:\
-```css\n\
+```fix\n\
 \n If your native language isn't listed\
 \n If your fluent language isn't listed\
 \n If your learning language isn't listed\
@@ -410,11 +410,11 @@ function getLanguagesEmbed(){
             {field[4]|name:Legend}\
             {field[4]|value:\
 ```css\n\
-\n[All] = Full support. All 3 language roles exist.\
+\n[All] = Full support. All 3 language roles exist\
 \nN = Designate .native language role\
 \nF =  Designate .fluent language role\
 \nL =  Designate .learning language role\
-\n<role> = Used the role name in brackets to access that language channel.\
+\n<role> = Used the role name in brackets to access that language channel\
 ```}\
             {field[4]|inline:true}\
 ";       
