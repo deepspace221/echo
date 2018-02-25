@@ -377,7 +377,7 @@ function getLanguagesEmbed(){
       var author = "";
       var color = "";
       var thumb = "";
-      var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
+      var description = "If your language is not listed, please assign one of the general language roles below.";
       var fields = "";
       var fields = "\
 {field[1]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
@@ -392,7 +392,7 @@ function getLanguagesEmbed(){
 " + output.strOut2 + "\
 ```}\
             {field[2]|inline:true}\
-            {field[0]|name:Other options}\
+            {field[0]|name:General language roles}\
             {field[0]|value:\
 ```md\n\
 \n[n. Other][If your native language isn't listed]\
@@ -404,8 +404,8 @@ function getLanguagesEmbed(){
             {field[4]|value:\
 ```md\n\
 \n[All][Full support. All 3 language roles exist]\
-\n[N/F/L][Designate that a .native/.fluent/.learning language role exist]\
-\n[<role>][Used the role name in brackets to access that language channel]\
+\n[N/F/L][Native/fluent/learning language role exist]\
+\n[<role>][Use the role name in brackets instead]\
 ```}\
             {field[4]|inline:true}\
 ";       
