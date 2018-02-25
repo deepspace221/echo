@@ -173,21 +173,24 @@ function getEmbedObj(){
        return obj;
 }
 
-function getArrFieldObj(num){
+function getArrFieldObj(num, bol){
+        var bol = (bol == false) ? bol : true
         var arr = [];
         for (var i = 0; i < num; i++){
-             var field = getFieldObj();
+             var field = getFieldObj("", bol);
              arr.push(field);                     
        } 
        return arr;       
 }
 
-function getFieldObj(num){
+function getFieldObj(num, bol){
        var field = {
               name: "",
               value: "",
-              inline: true
+              inline: true;
        }
+       field.inline = (bol == false) ? bol : true;
+       if (num && bol) return getArrFieldObj(num, bol);
        if (num) return getArrFieldObj(num);
        else return field;    
 }
