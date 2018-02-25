@@ -202,14 +202,14 @@ function getArrFieldObj(num, bol){
        return arr;       
 }
 
-function getFieldObj(num, bol){
+function getFieldsObj(num, bol){
        var field = {
               name: "",
               value: "",
               inline: true
        };
        field.inline = (bol == false) ? bol : true;
-       if (num && bol) return getArrFieldObj(num, bol);
+       if (num && bol) return getArrFieldsObj(num, bol);
        if (num) return getArrFieldObj(num);
        else return field;    
 }
