@@ -15,17 +15,24 @@ function getCatResourcesChannel(category, name){
 function getRoleRelatedChannel(role, type){
       role = role.toLowerCase();
       for (var i = 0; i < ServerChannels.length; i++){
-            if (type == "lang" && ServerChannels[i].Name == role){
+            if (type == "lang" && ServerChannels[i].Name == role && ServerChannels[i].ParentID != "399768076112887808"){
                 var obj = {
                     category: "",
                     channels: []
                 };
                 obj.category = ServerChannels[i].ParentID;
                 obj.channels.push(ServerChannels[i].ID);
-                if (obj.category != "399768076112887808"){
-                    obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
-                    obj.channels.push(getCatResourcesChannel(obj.category, "music"));
-                }
+                obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
+                obj.channels.push(getCatResourcesChannel(obj.category, "music"));
+                return obj;
+            }
+            else (type == "mobile" && ServerChannels[i].Name == role && ServerChannels[i].ParentID == "399768076112887808"){
+                var obj = {
+                    category: "",
+                    channels: []
+                };
+                obj.category = ServerChannels[i].ParentID; 
+                obj.channels.push(ServerChannels[i].ID);
                 return obj;
             }
             else if (type == "other" && ServerChannels[i].Name == role){
@@ -51,7 +58,8 @@ function serverMap(){
     for (var i = 0; i < arrUserRoles.length; i++){
         if (isValueInArr(arrLangs, arrUserRoles[i])){
               role = getBaseLanguageStr(arrUserRoles[i]);
-              channels.lang.push(getRoleRelatedChannel(role, "lang"));   
+              channels.lang.push(getRoleRelatedChannel(role, "lang")); 
+              channels.lang.push(getRoleRelatedChannel(role, "mobile"));
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
               channels.platforms.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
