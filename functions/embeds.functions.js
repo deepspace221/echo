@@ -182,7 +182,7 @@ function getEmbedObj(){
               type: "rich",
 //               url: "",
 //               color: "",
-              author: "",
+              author: getEmbedFooterObj(),
               thumb: {url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"},
               description: "",
               fields: [],
