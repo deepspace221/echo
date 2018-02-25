@@ -36,11 +36,8 @@ function getRoleMobileRelatedChannel(name){
         use server_db;
         name = name.toLowerCase();
         roleSlices = JSON.parse(server_db["roleSlices"]); 
-//         dbg(name);
-//         dbg(roleSlices.mobile.channels);
         for (var i = 0; i < roleSlices.mobile.channels.length; i++){
             if (roleSlices.mobile.channels[i].name == name){
-                dbg(roleSlices.mobile.channels[i].ID);
                 return roleSlices.mobile.channels[i].ID;
             }
         }
@@ -74,7 +71,7 @@ function serverMap(){
         hooks: ["hooks-polyglots","hooks-travel-culture"]
     }
 
-    var channels = {
+    var channelsObj = {
         lang: [],
         mobile: [],
         platforms: [],
@@ -93,18 +90,19 @@ function serverMap(){
         if (isValueInArr(arrLangs, arrUserRoles[i])){
               role = getBaseLanguageStr(arrUserRoles[i]);
               var channel = getRoleRelatedChannel(role, "lang");
-              if (channel) channels.lang.push(channel); 
+              if (channel) channelsObj.lang.push(channel); 
               var channel = getRoleMobileRelatedChannel(role);
-              if (channel) channels.mobile.push(getRoleMobileRelatedChannel(channel));
+              dbg(channel);
+              if (channel) channelsObj.mobile.push(getRoleMobileRelatedChannel(channel));
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
               var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
-              if (channel) channels.platforms.push(channel);   
+              if (channel) channelsObj.platforms.push(channel);   
         }  
         else if (isValueInArr(roleSlices.hobbies, arrUserRoles[i])){
               var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
-              if (channel) channels.hobbies.push(channel);   
+              if (channel) channelsObj.hobbies.push(channel);   
         }   
     }
-    dbg(channels);
+    dbg(channelsObj);
 }
