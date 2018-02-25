@@ -301,7 +301,9 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
                arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "L");
       }
       for (var i = 0; i < arrOutput.length; i++){
-          if (isValueInArr(arrFluent, arrOutput[i])){
+          if (arrOutput[i] == "Esperanto")
+                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "F/L";
+          else if (isValueInArr(arrFluent, arrOutput[i])){
                 arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "All";
           }
       }  
