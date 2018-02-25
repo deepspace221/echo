@@ -403,11 +403,9 @@ function getLanguagesEmbed(){
             {field[4]|name:Legend}\
             {field[4]|value:\
 ```css\n\
-\n[All] = Full support. All 3 language roles exist\
-\n\
-\nN/F/L = Designate that a .native/.fluent/.learning language role exist\
-\n\
-\n<role> = Used the role name in brackets to access that language channel\
+\n[All][Full support. All 3 language roles exist]\
+\n[N/F/L][Designate that a .native/.fluent/.learning language role exist]\
+\n[<role>][Used the role name in brackets to access that language channel]\
 ```}\
             {field[4]|inline:true}\
 ";       
