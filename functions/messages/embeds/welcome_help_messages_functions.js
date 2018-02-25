@@ -438,19 +438,19 @@ function getStaffEmbed(){
      emb.description = "Our staff members";
      emb.fields = getFieldsObj(7, false);
      emb.fields[0].name = "Owners";
-     emb.fields[0].value = staff.owners;
+     emb.fields[0].value = createArrOutputCommaSeprated(staff.owners);
      emb.fields[1].name = "Admins";
-     emb.fields[1].value = staff.admins;     
+     emb.fields[1].value = createArrOutputCommaSeprated(staff.admins);     
      emb.fields[2].name = "BotDev";
-     emb.fields[2].value = staff.botDev;
+     emb.fields[2].value = createArrOutputCommaSeprated(staff.botDev);
      emb.fields[3].name = "Senior Mods";
-     emb.fields[3].value = staff.seniorMods;
+     emb.fields[3].value = createArrOutputCommaSeprated(staff.seniorMods);
      emb.fields[4].name = "Mods";
-     emb.fields[4].value = staff.mods;
+     emb.fields[4].value = createArrOutputCommaSeprated(staff.mods);
      emb.fields[5].name = "Tech Support";
-     emb.fields[5].value = staff.techSupport;     
+     emb.fields[5].value = createArrOutputCommaSeprated(staff.techSupport);     
      emb.fields[6].name = "Patrons";
-     emb.fields[6].value = staff.patrons;
+     emb.fields[6].value = createArrOutputCommaSeprated(staff.patrons);
  
       return emb;       
 }
