@@ -46,7 +46,7 @@ function getRoleMobileRelatedChannel(name){
                 return obj;
             }
         }
-        else return "not mobile";
+        return "not mobile";
 }
 
 function serverMap(){
