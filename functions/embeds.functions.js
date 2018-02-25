@@ -9,7 +9,7 @@ function getExpandableEmbed(title, author, color, thumb, description, fields, fo
 //       authorName = obj.User.Username;
 //       authorIcon = obj.User.userImage;
 //    }
-        
+   use server_members_db;
    var randomColors = "{randlist:#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2}";
 
    var Username = "{/user}";
