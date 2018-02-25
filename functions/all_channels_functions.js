@@ -27,7 +27,7 @@ function getRoleRelatedChannel(role, type){
                 return obj;
             }
             else if (type == "other" && ServerChannels[i].Name == role){
-                return  ServerChannels[i].Name;
+                return  ServerChannels[i].ID;
             }
       }
 }
