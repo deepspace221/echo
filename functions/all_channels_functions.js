@@ -1,5 +1,5 @@
 function getBaseLanguageStr(str){
-    if (/\s/.test)
+    if (/\s/.test(str))
         str = str.slice(3);
     return str;
 }
