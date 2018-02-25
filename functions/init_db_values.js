@@ -134,6 +134,22 @@ function getRolesSlices(arrInput, startIndex, type){
         }
 }
 
+function getMobileChannels(){
+     var arr = [];
+     for (var i = 0; i < ServerChannels.length; i++){
+            if (ServerChannels[i].ParentID != "399768076112887808"){
+                  var obj = {
+                     name: "",
+                     ID: ""
+                  };
+                  obj.name = ServerChannels[i].Name;
+                  obj.ID = ServerChannels[i].ID;
+                  arr.push(obj);
+            }
+     }
+     return arr;
+}
+
 function storeServerRolesSlices(initValues){
         use server_db;
         var arrSortedServerRolesObj = [], newPos = 0;
@@ -186,7 +202,8 @@ function storeServerRolesSlices(initValues){
                 memrise: [],
                 activity: [],
                 views: [],
-                permissions: []
+                permissions: [],
+                mobile: getMobileChannels()
         };
 
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
