@@ -69,7 +69,7 @@ function serverMap(){
               var channel = getRoleRelatedChannel(role, "lang");
               if (channel) channels.lang.push(channel); 
               var channel = getRoleMobileRelatedChannel(role);
-              if (channel) channels.lang.push(getRoleMobileRelatedChannel(channel);
+              if (channel) channels.lang.push(getRoleMobileRelatedChannel(channel));
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
               var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
