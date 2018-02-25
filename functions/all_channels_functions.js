@@ -71,7 +71,7 @@ function serverMap(){
     var arrLangs = roleSlices.lang.native.concat(roleSlices.lang.fluent).concat(roleSlices.lang.learning);
     
     var arrMainChannels = {
-        general: ["welcome", "bots-playground","feedback-inquiries","info-and-rules"],
+        general: ["welcome","lounge","bots-playground","feedback-inquiries","info-and-rules"],
         community: ["achievement-showcase","partner-search","music-swap-world"],
         lang: ["language-resources","write-a-sentence"],
         hooks: ["hooks-polyglots","hooks-travel-culture"]
