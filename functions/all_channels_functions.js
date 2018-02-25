@@ -27,7 +27,7 @@ function serverMap(){
     for (var i = 0; i < arrUserRoles.length; i++){
         if (isValueInArr(arrLangs, arrUserRoles[i])){
               role = getBaseLanguageStr(arrUserRoles[i]);
-              channels.push(getRoleRelatedChannel(role));   
+              channels.lang.push(getRoleRelatedChannel(role));   
         }    
     }
     dbg(channels);
