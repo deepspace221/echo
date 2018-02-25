@@ -29,7 +29,13 @@ function serverMap(){
         if (isValueInArr(arrLangs, arrUserRoles[i])){
               role = getBaseLanguageStr(arrUserRoles[i]);
               channels.lang.push(getRoleRelatedChannel(role));   
-        }    
+        }  
+        else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
+              channels.platforms.push(getRoleRelatedChannel(arrUserRoles[i]));   
+        }  
+        else if (isValueInArr(roleSlices.hobbies, arrUserRoles[i])){
+              channels.hobbies.push(getRoleRelatedChannel(arrUserRoles[i]));   
+        }   
     }
     dbg(channels);
 }
