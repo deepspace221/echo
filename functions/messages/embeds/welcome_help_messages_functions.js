@@ -6,7 +6,7 @@ function getHelpEmbed(){
 //       var username = "\{user\}";
       var username = "<@" + UserID + ">";
       var author = false;
-      var thumb = "";
+      var thumb = "server";
       var color = "";
       var footerIcon = "";
       var footer = "";
@@ -424,4 +424,9 @@ function getReturningMemberMsg(arr){
             {field[0]|inline:true}\
 ";
       return  getExpandableEmbed(title, "", color, thumb, description, fields, "", "");      
+}
+
+function getStaffEmbed(){
+     use server_db; 
+     
 }
