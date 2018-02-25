@@ -5,8 +5,8 @@ function getBaseLanguageStr(str){
 }
 function getRoleRelatedChannel(role){
       for (var i = 0; i < ServerChannels.length; i++){
-            if (ServerChannels.Name == role)
-                return "<#" ServerChannels.ID + ">";
+            if (ServerChannels[i].Name == role)
+                return "<#" ServerChannels[i].ID + ">";
       }
 }
 
