@@ -291,7 +291,7 @@ function getServerMsg(){
 }
 
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
-      var arrExceptions == ["Welsh", "Gaelic"];
+      var arrExceptions = ["Welsh", "Gaelic"];
       
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
