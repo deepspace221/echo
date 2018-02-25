@@ -32,7 +32,8 @@ function getObjSortedRolesByPosition() {
                 if (UserRoles[i] === ServerRoles[j]["ID"]) {
                     var role = {
                         position: ServerRoles[j]["Position"],
-                        name: GetRoleName(UserRoles[i])
+                        name: GetRoleName(UserRoles[i]),
+			color: ServerRoles[j]["Color"]
                     };
                     arr.push(role);
                 }
