@@ -203,7 +203,10 @@ function storeServerRolesSlices(initValues){
                 activity: [],
                 views: [],
                 permissions: [],
-                mobile: getMobileChannels()
+                mobile: {
+                    parentID: "399768076112887808",
+                    channels: getMobileChannels()       
+                }
         };
 
            rolesSlicesObj.patrons = getRolesSlices(arrSortedServerRolesObj, getNewPos(startPosObj.patronTopRoleIndex), "patrons");
