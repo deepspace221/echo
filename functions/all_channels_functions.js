@@ -32,7 +32,6 @@ function getRoleRelatedChannel(role, type){
 }
 
 function serverMap(){
-    use server_db;
     var arrUserRoles = getArrSortedRolesByPosition();
     roleSlices = JSON.parse(server_db["roleSlices"]); 
     var arrLangs = roleSlices.lang.native.concat(roleSlices.lang.fluent).concat(roleSlices.lang.learning);
