@@ -9,7 +9,7 @@ function getCatResourcesChannel(category, name){
             if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name)
                 return ServerChannels[i].ID;
        }
-       return "Not found.";
+       return undefined;
 }
 
 function getRoleRelatedChannel(name, type){
@@ -56,7 +56,7 @@ function serverMap(){
     var arrLangs = roleSlices.lang.native.concat(roleSlices.lang.fluent).concat(roleSlices.lang.learning);
 
     var channels = {
-        lang: [{}],
+        lang: [],
         platforms: [],
         hobbies: []
     };
