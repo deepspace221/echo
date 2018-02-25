@@ -168,7 +168,7 @@ function getEmbedObj(){
               fields: [],
               footerIcon: "",
               footer: "",
-              timestamp: "",
+              timestamp: ""
        }      
        return obj;
 }
@@ -188,7 +188,7 @@ function getFieldObj(num, bol){
               name: "",
               value: "",
               inline: true;
-       }
+       };
        field.inline = (bol == false) ? bol : true;
        if (num && bol) return getArrFieldObj(num, bol);
        if (num) return getArrFieldObj(num);
