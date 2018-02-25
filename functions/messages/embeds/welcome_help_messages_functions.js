@@ -356,6 +356,11 @@ function getLanguagesEmbed(){
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
       arrOutput = insertArrValueStartValueEnd(arrOutput, "#");
       numOfLangs = arrOutput.length;
+      
+      arrOutput.push("\n");
+      arrOutput.push("\nDead Langs");
+      arrOutput.push("\nConlangs");
+      arrOutput.push("\nCeltic");
 
       
 //       arr = arr.concat(roleSlices.lang.learning.slice(-4));
@@ -389,29 +394,19 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
             {field[2]|name:Other options}\
             {field[2]|value:\
-```fix\n\
-\nn. Other\
-\nf. Other\
-\n\
-" + output.strOut3 + "\
+```md\n\
+\n[n. Other][If your native language isn't listed]\
+\n[f. Other][If your fluent language isn't listed]\
+\n[l. Other][If your learning language isn't listed]\
 ```}\
             {field[2]|inline:true}\
-            {field[3]|name:Description}\
-            {field[3]|value:\
-```fix\n\
-\n If your native language isn't listed\
-\n If your fluent language isn't listed\
-\n If your learning language isn't listed\
-\n\
-\n\
-\n Use it to access Welsh and Gaelic\
-```}\
-            {field[3]|inline:true}\
             {field[4]|name:Legend}\
             {field[4]|value:\
 ```css\n\
 \n[All] = Full support. All 3 language roles exist\
+\n\
 \nN/F/L = Designate that a .native/.fluent/.learning language role exist\
+\n\
 \n<role> = Used the role name in brackets to access that language channel\
 ```}\
             {field[4]|inline:true}\
