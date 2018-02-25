@@ -22,8 +22,10 @@ function getRoleRelatedChannel(role, type){
                 };
                 obj.category = ServerChannels[i].ParentID;
                 obj.channels.push(ServerChannels[i].ID);
-                obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
-                obj.channels.push(getCatResourcesChannel(obj.category, "music"));
+                if (obj.category != "399768076112887808"){
+                    obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
+                    obj.channels.push(getCatResourcesChannel(obj.category, "music"));
+                }
                 return obj;
             }
             else if (type == "other" && ServerChannels[i].Name == role){
