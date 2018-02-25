@@ -187,7 +187,7 @@ function getFieldObj(num, bol){
        var field = {
               name: "",
               value: "",
-              inline: true;
+              inline: true
        };
        field.inline = (bol == false) ? bol : true;
        if (num && bol) return getArrFieldObj(num, bol);
