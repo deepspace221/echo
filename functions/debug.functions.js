@@ -4,7 +4,7 @@ function dbg(content){
      content = "Nothing passed into content" 
    } 
    else if (typeof content == "object"){
-      content = "{ value: " + JSON.stringify(content) + "}";  
+      content = "{ value: \"" + JSON.stringify(content) + "\"}";  
    }
    
    if(content.length > 1950){
