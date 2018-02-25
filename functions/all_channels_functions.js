@@ -41,21 +41,21 @@ function serverMap(){
         lang: [{}],
         platforms: [],
         hobbies: []
-    }
+    };
     
     var role;
     
-    for (var i = 0; i < arrUserRoles.length; i++){
-        if (isValueInArr(arrLangs, arrUserRoles[i])){
-              role = getBaseLanguageStr(arrUserRoles[i]);
-              channels.lang.push(getRoleRelatedChannel(role, "lang"));   
-        }  
-        else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
-              channels.platforms.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
-        }  
-        else if (isValueInArr(roleSlices.hobbies, arrUserRoles[i])){
-              channels.hobbies.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
-        }   
-    }
-    dbg(channels);
+//     for (var i = 0; i < arrUserRoles.length; i++){
+//         if (isValueInArr(arrLangs, arrUserRoles[i])){
+//               role = getBaseLanguageStr(arrUserRoles[i]);
+//               channels.lang.push(getRoleRelatedChannel(role, "lang"));   
+//         }  
+//         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
+//               channels.platforms.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
+//         }  
+//         else if (isValueInArr(roleSlices.hobbies, arrUserRoles[i])){
+//               channels.hobbies.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
+//         }   
+//     }
+//     dbg(channels);
 }
