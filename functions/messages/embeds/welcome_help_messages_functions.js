@@ -384,6 +384,8 @@ function getLanguagesEmbed(){
             {field[2]|name:Other options}\
             {field[2]|value:\
 ```md\n\
+\nn. Other\
+\nf. Other\
 " + output.strOut3 + "\
 ```}\
             {field[2]|inline:true}\
@@ -393,6 +395,9 @@ function getLanguagesEmbed(){
 \nIf your native language isn't listed\
 \nIf your fluent language isn't listed\
 \nIf your learning language isn't listed\
+\n\
+\n\
+\n\Use it to access Welsh and Gaelic.\
 ```}\
             {field[3]|inline:true}\
             {field[4]|name:Legend}\
