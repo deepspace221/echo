@@ -203,12 +203,14 @@ function getArrFieldObj(num, bol){
 }
 
 function getFieldsObj(){
+       var arr = [];
        var field = {
               name: "",
               value: "",
               inline: true
        };
-       return field;    
+       arr.push(field);
+       return arr;    
 }
 
 function getFieldsObj(num, bol){
