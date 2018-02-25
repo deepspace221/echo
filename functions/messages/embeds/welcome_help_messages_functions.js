@@ -294,17 +294,17 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i]))
-                 arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "N";
+                 arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "N";
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i]))
-               arrOutput.push(arrLearning[i] + createEmptyStr(15 - arrLearning[i].length) + "L");
+               arrOutput.push(arrLearning[i] + createEmptyStr(20 - arrLearning[i].length) + "L");
       }
       for (var i = 0; i < arrOutput.length; i++){
           if (arrOutput[i] == "Esperanto")
-                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "F/L";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "F/L";
           else if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(15 - arrOutput[i].length) + "All";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "All";
           }
       }  
             
