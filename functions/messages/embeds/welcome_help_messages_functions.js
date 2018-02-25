@@ -357,7 +357,7 @@ function getLanguagesEmbed(){
       arrOutput = insertArrValueStartValueEnd(arrOutput, "#");
       numOfLangs = arrOutput.length;
       
-      arrOutput.push("\n");
+      arrOutput.push("\nSpecial roles:");
       arrOutput.push("Dead Langs");
       arrOutput.push("Conlangs");
       arrOutput.push("Celtic");
@@ -402,7 +402,7 @@ function getLanguagesEmbed(){
             {field[0]|inline:true}\
             {field[4]|name:Legend}\
             {field[4]|value:\
-```css\n\
+```md\n\
 \n[All][Full support. All 3 language roles exist]\
 \n[N/F/L][Designate that a .native/.fluent/.learning language role exist]\
 \n[<role>][Used the role name in brackets to access that language channel]\
