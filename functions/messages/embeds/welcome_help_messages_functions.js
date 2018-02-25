@@ -5,8 +5,8 @@ function getHelpEmbed(){
       var title = "Command examples for {guild|name}";
 //       var username = "\{user\}";
       var username = "<@" + UserID + ">";
-      var author = "false";
-      var thumb = "server";
+      var author = false;
+      var thumb = "";
       var color = "";
       var footerIcon = "";
       var footer = "";
