@@ -158,16 +158,35 @@ function getEmbed(type){
     };
 }
 
+function getEmbedFooterObj(){
+       var footerObj = {
+              text: "",
+              icon_url: "",
+       };
+       return footerObj;
+}
+
+function getEmbedAuthorObj(){
+       var authorObj = {
+              name: "test",
+              url: "",
+              icon_url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"
+       };
+       return authorObj;
+}
+
+
 function getEmbedObj(){
        var obj = {
               title: "",
+              type: "rich",
+              url: "",
               color: "",
               author: "",
-              thumb: "",
+              thumb: {url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"},
               description: "",
               fields: [],
-              footerIcon: "",
-              footer: "",
+              footer: getEmbedFooterObj(),
               timestamp: ""
        }      
        return obj;
