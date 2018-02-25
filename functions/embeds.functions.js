@@ -165,10 +165,29 @@ function getEmbedObj(){
               author: "",
               thumb: "",
               description: "",
-              fields: "",
+              fields: [],
               footerIcon: "",
               footer: "",
               timestamp: "",
        }      
        return obj;
+}
+
+function getArrFieldObj(num){
+        var arr = [];
+        for (var i = 0; i < num; i++){
+             var field = getFieldObj();
+             arr.push(field);                     
+       } 
+       return arr;       
+}
+
+function getFieldObj(num){
+       var field = {
+              name: "",
+              value: "",
+              inline: true
+       }
+       if (num) return getArrFieldObj(num);
+       else return field;    
 }
