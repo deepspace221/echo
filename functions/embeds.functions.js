@@ -202,6 +202,15 @@ function getArrFieldObj(num, bol){
        return arr;       
 }
 
+function getFieldsObj(){
+       var field = {
+              name: "",
+              value: "",
+              inline: true
+       };
+       return field;    
+}
+
 function getFieldsObj(num, bol){
        var field = {
               name: "",
