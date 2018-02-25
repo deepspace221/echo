@@ -380,26 +380,26 @@ function getLanguagesEmbed(){
       var description = "If your language is not listed, please contact a member of our staff and it will be dealt with promptly.";
       var fields = "";
       var fields = "\
-{field[0]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
-{field[0]|value:\
+{field[1]|name:Languages (" + numOfLangs + ") <:blank:352901517004636163>}\
+{field[1]|value:\
 ```css\n\
 " + output.strOut1 + "\
 ```}\
-            {field[0]|inline:true}\
-            {field[1]|name:<:blank:352901517004636163>}\
-            {field[1]|value:\
+            {field[1]|inline:true}\
+            {field[2]|name:<:blank:352901517004636163>}\
+            {field[2]|value:\
 ```css\n\
 " + output.strOut2 + "\
 ```}\
-            {field[1]|inline:true}\
-            {field[2]|name:Other options}\
-            {field[2]|value:\
+            {field[2]|inline:true}\
+            {field[0]|name:Other options}\
+            {field[0]|value:\
 ```md\n\
 \n[n. Other][If your native language isn't listed]\
 \n[f. Other][If your fluent language isn't listed]\
 \n[l. Other][If your learning language isn't listed]\
 ```}\
-            {field[2]|inline:true}\
+            {field[0]|inline:true}\
             {field[4]|name:Legend}\
             {field[4]|value:\
 ```css\n\
