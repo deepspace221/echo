@@ -6,30 +6,31 @@ function getBaseLanguageStr(str){
 
 function getCatResourcesChannel(category, name){
        for (var i = 0; i < ServerChannels.length; i++){
-            if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name){
+            if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name)
                 return ServerChannels[i].Name;
+       }
        return "Not found.";
 }
 
-// function getRoleRelatedChannel(role, type){
-//       role = role.toLowerCase();
-//       for (var i = 0; i < ServerChannels.length; i++){
-//             if (type == "lang" && ServerChannels[i].Name == role){
-//                 var obj = {
-//                     category: "",
-//                     channels: []
-//                 };
-//                 obj.category = ServerChannels[i].ParentID;
-//                 obj.channels.push(ServerChannels[i].Name);
-//                 obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
-//                 obj.channels.push(getCatResourcesChannel(obj.category, "music"));
-//                 return obj;
-//             }
-//             else if (type == "other" && ServerChannels[i].Name == role){
-//                 return  ServerChannels[i].Name;
-//             }
-//       }
-// }
+function getRoleRelatedChannel(role, type){
+      role = role.toLowerCase();
+      for (var i = 0; i < ServerChannels.length; i++){
+            if (type == "lang" && ServerChannels[i].Name == role){
+                var obj = {
+                    category: "",
+                    channels: []
+                };
+                obj.category = ServerChannels[i].ParentID;
+                obj.channels.push(ServerChannels[i].Name);
+                obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
+                obj.channels.push(getCatResourcesChannel(obj.category, "music"));
+                return obj;
+            }
+            else if (type == "other" && ServerChannels[i].Name == role){
+                return  ServerChannels[i].Name;
+            }
+      }
+}
 
 function serverMap(){
 //     var arrUserRoles = getArrSortedRolesByPosition();
