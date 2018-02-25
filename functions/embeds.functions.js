@@ -157,3 +157,18 @@ function getEmbed(type){
           break;           
     };
 }
+
+function getEmbedObj(){
+       var obj = {
+              title: "",
+              color: "",
+              author: "",
+              thumb: "",
+              description: "",
+              fields: "",
+              footerIcon: "",
+              footer: "",
+              timestamp: "",
+       }      
+       return obj;
+}
