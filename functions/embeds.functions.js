@@ -182,11 +182,11 @@ function getEmbedObj(){
               type: "rich",
 //               url: "",
 //               color: "",
-              author: getEmbedFooterObj(),
-              thumb: {url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"},
+//               author: getEmbedFooterObj(),
+//               thumb: {url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"},
               description: "",
-              fields: [],
-              footer: getEmbedFooterObj(),
+//               fields: [],
+//               footer: getEmbedFooterObj(),
 //               timestamp: ""
        }      
        return obj;
