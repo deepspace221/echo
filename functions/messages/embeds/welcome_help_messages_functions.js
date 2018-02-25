@@ -411,9 +411,7 @@ function getLanguagesEmbed(){
             {field[4]|value:\
 ```css\n\
 \n[All] = Full support. All 3 language roles exist\
-\nN = Designate a .native language role\
-\nF =  Designate a .fluent language role\
-\nL =  Designate a .learning language role\
+\nN/F/L = Designate that a .native/.fluent/.learning language role exist\
 \n<role> = Used the role name in brackets to access that language channel\
 ```}\
             {field[4]|inline:true}\
