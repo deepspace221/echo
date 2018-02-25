@@ -295,6 +295,8 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i]))
                  arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "N";
+            else if (!isValueInArr(arrFluent, arrNative[i])
+                     arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "N/L";
       } 
       for (var i = 0; i < arrLearning.length; i++){
             if (!isValueInArr(arrOutput, arrLearning[i]))
@@ -304,7 +306,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
           if (arrOutput[i] == "Esperanto")
                 arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "F/L";
           else if (isValueInArr(arrFluent, arrOutput[i])){
-                arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "All";
+                arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "[All]";
           }
       }  
             
