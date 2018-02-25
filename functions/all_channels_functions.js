@@ -55,7 +55,7 @@ function getMainChannels(arrChannels){
 
     for (var i = 0; i < arrChannels.length; i++){ 
         for (var j = 0; j < ServerChannels.length; j++){
-                if (ServerChannels[j].Name == arr[i]){
+                if (ServerChannels[j].Name == arrChannels[i]){
                     arr.push(ServerChannels[j].ID);
                     break;
                 }
