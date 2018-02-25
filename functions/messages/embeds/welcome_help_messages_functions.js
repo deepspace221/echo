@@ -291,6 +291,8 @@ function getServerMsg(){
 }
 
 function crossReferenceLangs(arrNative, arrFluent, arrLearning){
+      var arrExceptions == ["Welsh", "Gaelic"];
+      
       var arrOutput = arrNative;
       for (var i = 0; i < arrNative.length; i++){
             if (!isValueInArr(arrLearning, arrNative[i]))
@@ -299,7 +301,11 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
                      arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "N/L";
       } 
       for (var i = 0; i < arrLearning.length; i++){
-            if (!isValueInArr(arrOutput, arrLearning[i]))
+            if (isValueInArr(arrExceptions, arrLearning[i])){
+                  if (arrLearning[i] == "Welsh" || arrLearning[i] == "Gaelic")
+                         arrOutput.push(arrLearning[i] + createEmptyStr(20 - arrLearning[i].length) + "<Celtic>");         
+            }     
+            else if (!isValueInArr(arrOutput, arrLearning[i]))
                arrOutput.push(arrLearning[i] + createEmptyStr(20 - arrLearning[i].length) + "L");
       }
       for (var i = 0; i < arrOutput.length; i++){
@@ -308,8 +314,7 @@ function crossReferenceLangs(arrNative, arrFluent, arrLearning){
           else if (isValueInArr(arrFluent, arrOutput[i])){
                 arrOutput[i] = arrOutput[i] + createEmptyStr(20 - arrOutput[i].length) + "[All]";
           }
-      }  
-            
+      }              
 
       arrOutput = arrOutput.sort(function(a,b){
             if (a > b) return 1;
@@ -345,10 +350,9 @@ function getLanguagesEmbed(){
       langObj.arrFluent = removeFirst3charsFromArr(roleSlices.lang.fluent);
       langObj.arrFluent.pop();
       langObj.arrLearning = roleSlices.lang.learning.splice(0, roleSlices.lang.learning.length -4);
-//       langObj.arrLearning.push("welsh");
-//       dbg(langObj.arrLearning);
-//       dbg(langObj.arrFluent);
-//       dbg(langObj.arrNative);
+      langObj.arrLearning.push("Welsh");
+      langObj.arrLearning.push("Gaelic");
+
       arrOutput = crossReferenceLangs(langObj.arrNative, langObj.arrFluent, langObj.arrLearning);
       arrOutput = insertArrValueStartValueEnd(arrOutput, "#");
       numOfLangs = arrOutput.length;
@@ -400,17 +404,17 @@ function getLanguagesEmbed(){
 \nIf your learning language isn't listed\
 \n\
 \n\
-\n\Use it to access Welsh and Gaelic.\
+\n\Use it to access Welsh and Gaelic\
 ```}\
             {field[3]|inline:true}\
             {field[4]|name:Legend}\
             {field[4]|value:\
 ```css\n\
 \nAll = Full support. All 3 language roles exist.\
-\nN = Partial support. Only a native language role exist.\
-\nF =  Partial support. Only a fluent language role exist.\
-\nL =  Partial support. Only a learning language role exist.\
-\n[role] = Used the role name in brackets to access that language channel.\
+\nN = Designate .native language role\
+\nF =  Designate .fluent language role\
+\nL =  Designate .learning language role\
+\n<role> = Used the role name in brackets to access that language channel.\
 ```}\
             {field[4]|inline:true}\
 ";       
