@@ -401,7 +401,8 @@ function getStaffEmbed(){
       
      emb.title = "Command structure";
      emb.description = "Our staff members";
-     emb.fields = getFieldsObj();
+//      emb.fields = getFieldsObj();
+     emb.fields = [{name: "", value: "", inline: false}];
      emb.fields[0].name = "Owners";
      emb.fields[0].value = createArrOutputCommaSeprated(staff.owners);
 //      emb.fields[1].name = "Admins";
