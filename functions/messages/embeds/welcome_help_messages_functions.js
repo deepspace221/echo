@@ -358,9 +358,9 @@ function getLanguagesEmbed(){
       numOfLangs = arrOutput.length;
       
       arrOutput.push("\n");
-      arrOutput.push("\nDead Langs");
-      arrOutput.push("\nConlangs");
-      arrOutput.push("\nCeltic");
+      arrOutput.push("Dead Langs");
+      arrOutput.push("Conlangs");
+      arrOutput.push("Celtic");
 
       
 //       arr = arr.concat(roleSlices.lang.learning.slice(-4));
