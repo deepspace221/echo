@@ -12,10 +12,10 @@ function getCatResourcesChannel(category, name){
        return "Not found.";
 }
 
-function getRoleRelatedChannel(role, type){
+function getRoleRelatedChannel(name, type){
       role = role.toLowerCase();
       for (var i = 0; i < ServerChannels.length; i++){
-            if (type == "lang" && ServerChannels[i].Name == role && ServerChannels[i].ParentID != "399768076112887808"){
+            if (type == "lang" && ServerChannels[i].Name == name && ServerChannels[i].ParentID != "399768076112887808"){
                 var obj = {
                     category: "",
                     channels: []
@@ -26,19 +26,27 @@ function getRoleRelatedChannel(role, type){
                 obj.channels.push(getCatResourcesChannel(obj.category, "music"));
                 return obj;
             }
-            else (type == "mobile" && ServerChannels[i].Name == role && ServerChannels[i].ParentID == "399768076112887808"){
-                var obj = {
-                    category: "",
-                    channels: []
-                };
-                obj.category = ServerChannels[i].ParentID; 
-                obj.channels.push(ServerChannels[i].ID);
-                return obj;
-            }
             else if (type == "other" && ServerChannels[i].Name == role){
                 return  ServerChannels[i].ID;
             }
       }
+}
+
+function getRoleMobileRelatedChannel(name){
+        use server_db;
+        roleSlices = JSON.parse(server_db["roleSlices"]); 
+        for (var i = 0; i < roleSlices.mobile.channels.length; i++){
+            if (roleSlices.mobile.channels.name == name){
+                var obj = {
+                    category: "",
+                    channels: []
+                };
+                obj.category = roleSlices.mobile.parentID; 
+                obj.channels.push(roleSlices.mobile.channels[i].ID);
+                return obj;
+            }
+        }
+        else return "not mobile";
 }
 
 function serverMap(){
@@ -46,7 +54,7 @@ function serverMap(){
     var arrUserRoles = getArrSortedRolesByPosition();
     roleSlices = JSON.parse(server_db["roleSlices"]); 
     var arrLangs = roleSlices.lang.native.concat(roleSlices.lang.fluent).concat(roleSlices.lang.learning);
-    
+
     var channels = {
         lang: [{}],
         platforms: [],
@@ -58,14 +66,18 @@ function serverMap(){
     for (var i = 0; i < arrUserRoles.length; i++){
         if (isValueInArr(arrLangs, arrUserRoles[i])){
               role = getBaseLanguageStr(arrUserRoles[i]);
-              channels.lang.push(getRoleRelatedChannel(role, "lang")); 
-              channels.lang.push(getRoleRelatedChannel(role, "mobile"));
+              var channel = getRoleRelatedChannel(role, "lang");
+              if (channel) channels.lang.push(channel); 
+              var channel = getRoleMobileRelatedChannel(role);
+              if (channel) channels.lang.push(getRoleMobileRelatedChannel(channel);
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
-              channels.platforms.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
+              var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
+              if (channel) channels.platforms.push(channel);   
         }  
         else if (isValueInArr(roleSlices.hobbies, arrUserRoles[i])){
-              channels.hobbies.push(getRoleRelatedChannel(arrUserRoles[i], "other"));   
+              var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
+              if (channel) channels.hobbies.push(channel);   
         }   
     }
     dbg(channels);
