@@ -37,14 +37,8 @@ function getRoleMobileRelatedChannel(name){
         name = name.toLowerCase();
         roleSlices = JSON.parse(server_db["roleSlices"]); 
         for (var i = 0; i < roleSlices.mobile.channels.length; i++){
-            if (roleSlices.mobile.channels.name == name){
-                var obj = {
-                    category: "",
-                    channels: []
-                };
-                obj.category = roleSlices.mobile.parentID; 
-                obj.channels.push(roleSlices.mobile.channels[i].ID);
-                return obj;
+            if (roleSlices.mobile.channels[i].name == name){
+                return roleSlices.mobile.channels[i].ID;
             }
         }
         return undefined;
@@ -79,6 +73,7 @@ function serverMap(){
 
     var channels = {
         lang: [],
+        mobile: [],
         platforms: [],
         hobbies: [],
         main: {
@@ -97,7 +92,7 @@ function serverMap(){
               var channel = getRoleRelatedChannel(role, "lang");
               if (channel) channels.lang.push(channel); 
               var channel = getRoleMobileRelatedChannel(role);
-              if (channel) channels.lang.push(getRoleMobileRelatedChannel(channel));
+              if (channel) channels.mobile.push(getRoleMobileRelatedChannel(channel));
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
               var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
