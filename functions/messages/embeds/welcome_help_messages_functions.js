@@ -388,6 +388,7 @@ function getLanguagesEmbed(){
 ```md\n\
 \nn. Other\
 \nf. Other\
+\n\
 " + output.strOut3 + "\
 ```}\
             {field[2]|inline:true}\
