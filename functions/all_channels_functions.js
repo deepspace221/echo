@@ -36,10 +36,11 @@ function getRoleMobileRelatedChannel(name){
         use server_db;
         name = name.toLowerCase();
         roleSlices = JSON.parse(server_db["roleSlices"]); 
-        dbg(name);
-        dbg(roleSlices.mobile.channels);
+//         dbg(name);
+//         dbg(roleSlices.mobile.channels);
         for (var i = 0; i < roleSlices.mobile.channels.length; i++){
             if (roleSlices.mobile.channels[i].name == name){
+                dbg(roleSlices.mobile.channels[i].ID);
                 return roleSlices.mobile.channels[i].ID;
             }
         }
