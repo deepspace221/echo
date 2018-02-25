@@ -357,7 +357,7 @@ function getLanguagesEmbed(){
       arrOutput = insertArrValueStartValueEnd(arrOutput, "#");
       numOfLangs = arrOutput.length;
       
-      arrOutput.push("\nSpecial roles:");
+      arrOutput.push("\n[Special roles]");
       arrOutput.push("Dead Langs");
       arrOutput.push("Conlangs");
       arrOutput.push("Celtic");
