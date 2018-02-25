@@ -50,16 +50,43 @@ function getRoleMobileRelatedChannel(name){
         return undefined;
 }
 
+function getMainCannels(arrChannels){
+    var arr = [];
+
+    for (var i = 0; i < arrChannels.length; i++){ 
+        for (var j = 0; j < ServerChannels.length; j++){
+                if (ServerChannels[j].Name == arr[i]){
+                    arr.push(ServerChannels[j].ID);
+                    break;
+                }
+        }
+    }
+    return arr;
+}
+
 function serverMap(){
     use server_db;
     var arrUserRoles = getArrSortedRolesByPosition();
     roleSlices = JSON.parse(server_db["roleSlices"]); 
     var arrLangs = roleSlices.lang.native.concat(roleSlices.lang.fluent).concat(roleSlices.lang.learning);
+    
+    var arrMainChannels = {
+        general: ["welcome", "bots-playground","feedback-inquiries","info-and-rules"],
+        community: ["achievement-showcase","partner-search","music-swap-world"],
+        lang: ["language-resources","write-a-sentence"],
+        hooks: ["hooks-polyglots","hooks-travel-culture"]
+    }
 
     var channels = {
         lang: [],
         platforms: [],
-        hobbies: []
+        hobbies: [],
+        main: {
+            general: getMainChannels(arrMainChannels.general),
+            community: getMainChannels(arrMainChannels.community),
+            lang: getMainChannels(arrMainChannels.lang),
+            hooks: getMainChannels(arrMainChannels.hooks)
+        }
     };
     
     var role;
