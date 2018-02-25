@@ -13,7 +13,7 @@ function getCatResourcesChannel(category, name){
 }
 
 function getRoleRelatedChannel(name, type){
-      role = role.toLowerCase();
+      name = name.toLowerCase();
       for (var i = 0; i < ServerChannels.length; i++){
             if (type == "lang" && ServerChannels[i].Name == name && ServerChannels[i].ParentID != "399768076112887808"){
                 var obj = {
@@ -26,7 +26,7 @@ function getRoleRelatedChannel(name, type){
                 obj.channels.push(getCatResourcesChannel(obj.category, "music"));
                 return obj;
             }
-            else if (type == "other" && ServerChannels[i].Name == role){
+            else if (type == "other" && ServerChannels[i].Name == name){
                 return  ServerChannels[i].ID;
             }
       }
