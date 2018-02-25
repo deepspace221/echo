@@ -1,15 +1,15 @@
-// function getBaseLanguageStr(str){
-//     if (/\s/.test(str))
-//         str = str.slice(3);
-//     return str;
-// }
+function getBaseLanguageStr(str){
+    if (/\s/.test(str))
+        str = str.slice(3);
+    return str;
+}
 
-// function getCatResourcesChannel(category, name){
-//        for (var i = 0; i < ServerChannels.length; i++){
-//             if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name){
-//                 return ServerChannels[i].Name;
-//        return "Not found.";
-// }
+function getCatResourcesChannel(category, name){
+       for (var i = 0; i < ServerChannels.length; i++){
+            if (ServerChannels[i].ParentID == category && ServerChannels[i].Name == name){
+                return ServerChannels[i].Name;
+       return "Not found.";
+}
 
 // function getRoleRelatedChannel(role, type){
 //       role = role.toLowerCase();
