@@ -389,7 +389,7 @@ function getLanguagesEmbed(){
             {field[1]|inline:true}\
             {field[2]|name:Other options}\
             {field[2]|value:\
-```css\n\
+```fix\n\
 \nn. Other\
 \nf. Other\
 \n\
@@ -398,13 +398,13 @@ function getLanguagesEmbed(){
             {field[2]|inline:true}\
             {field[3]|name:Description}\
             {field[3]|value:\
-```diff\n\
-\n--- If your native language isn't listed\
-\n--- If your fluent language isn't listed\
-\n--- If your learning language isn't listed\
+```css\n\
+\n If your native language isn't listed\
+\n If your fluent language isn't listed\
+\n If your learning language isn't listed\
 \n\
 \n\
-\n--- Use it to access Welsh and Gaelic\
+\n Use it to access Welsh and Gaelic\
 ```}\
             {field[3]|inline:true}\
             {field[4]|name:Legend}\
