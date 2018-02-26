@@ -405,8 +405,8 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-     emb.thumb.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
-     emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
+     emb.thumb.url = "http://www.nextreflexdc.com/wp-content/uploads/2018/01/tree-clip-art-free-to-use-public-domain-trees-clip-art-templates.png";
+//      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
      emb.fields = getFieldsObj(8, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
@@ -438,7 +438,7 @@ function getStaffEmbed(){
      emb.fields[2].inline = true;
      emb.fields[3].name = "Tech Support";
      emb.fields[3].value = (output.techSupport) ? output.techSupport : "NaN";
-     emb.fields[3].inline = false;   
+     emb.fields[3].inline = true;   
      emb.fields[4].name = "Senior Mods";
      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
      emb.fields[4].inline = true;
