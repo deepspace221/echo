@@ -414,6 +414,12 @@ function getStaffEmbed(){
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
+      staff.patrons.users[0] += " :flag_ir: :flag_es:";
+      staff.patrons.users[1] += " :flag_de:";      
+      staff.patrons.users[2] += " :flag_us:";
+      staff.patrons.users[3] += " :flag_fr:";
+      staff.patrons.users[4] += " :flag_ru::flag_ua:";      
+
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
             admins: createArrOutputNewLinesSeprated(staff.admins.users),
@@ -421,7 +427,7 @@ function getStaffEmbed(){
             seniorMods: createArrOutputCommaSeprated(staff.seniorMods.users),
             mods: createArrOutputCommaSeprated(staff.mods.users),
             techSupport: createArrOutputCommaSeprated(staff.techSupport.users),
-            patrons: createArrOutputCommaSeprated(staff.patrons.users)
+            patrons: createArrOutputNewLinesSeprated(staff.patrons.users)
       }
       
       dbg(emb.fields);
