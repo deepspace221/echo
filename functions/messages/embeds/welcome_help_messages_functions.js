@@ -405,7 +405,7 @@ function getStaffEmbed(){
       
      emb.title = "Command structure";
      emb.description = "Our staff members";
-     emb.fields = getFieldsObj(2, false);
+     emb.fields = getFieldsObj(2, true);
 //      emb.fields = [{name: "", value: "", inline: false}];
 dbg(emb.fields);
      emb.fields[0].name = "ccc";
