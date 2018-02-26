@@ -408,8 +408,10 @@ function getStaffEmbed(){
      emb.fields = getFieldsObj(7, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
-      staff.owners.users[1] += " ☃"
-     
+      staff.owners.users[1] += " ☃";
+      staff.admins.shift();
+      staff.admins.shift();
+      
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
             admins: createArrOutputCommaSeprated(staff.admins.users),
