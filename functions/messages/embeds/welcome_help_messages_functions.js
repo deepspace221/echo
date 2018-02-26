@@ -406,7 +406,7 @@ function getStaffEmbed(){
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
      emb.fields = getFieldsObj(9, false);
-     emb.thumb.url = "http://www.nextreflexdc.com/wp-content/uploads/2018/01/tree-clip-art-free-to-use-public-domain-trees-clip-art-templates.png";
+     emb.thumb.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
 //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
       
      staff.botDev.users[0] += " ☃";
