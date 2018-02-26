@@ -529,5 +529,9 @@ function getPatronsEmbed(){
       
 }
 
-getServerMap
+function getServerMap(){
+      
+      
+      
+}
 
