@@ -437,8 +437,10 @@ function getStaffEmbed(){
      emb.fields[2].inline = true;
      emb.fields[4].name = "Senior Mods";
      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
+     emb.fields[4].inline = true;
      emb.fields[5].name = "Mods";
      emb.fields[5].value = (output.mods) ? output.mods : "NaN";
+     emb.fields[5].inline = true;
      emb.fields[6].name = "Patrons";
      emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
  
