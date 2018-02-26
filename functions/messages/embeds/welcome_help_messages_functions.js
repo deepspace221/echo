@@ -413,11 +413,11 @@ function getStaffEmbed(){
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
-      staff.patrons.users[0] += createEmptyStr(15 - staff.patrons.users[0].length) + ":flag_ir::flag_es:";
-      staff.patrons.users[1] += createEmptyStr(15 - staff.patrons.users[1].length) + ":flag_de:";      
-      staff.patrons.users[2] += createEmptyStr(15 - staff.patrons.users[2].length) + ":flag_us:";
-      staff.patrons.users[3] += createEmptyStr(15 - staff.patrons.users[3].length) + ":flag_fr:";
-      staff.patrons.users[4] += createEmptyStr(15 - staff.patrons.users[4].length) + ":flag_ru::flag_ua:";      
+      staff.patrons.users[0] += createEmptyStr(30 - staff.patrons.users[0].length) + ":flag_ir::flag_es:";
+      staff.patrons.users[1] += createEmptyStr(30 - staff.patrons.users[1].length) + ":flag_de:";      
+      staff.patrons.users[2] += createEmptyStr(30 - staff.patrons.users[2].length) + ":flag_us:";
+      staff.patrons.users[3] += createEmptyStr(30 - staff.patrons.users[3].length) + ":flag_fr:";
+      staff.patrons.users[4] += createEmptyStr(30 - staff.patrons.users[4].length) + ":flag_ru::flag_ua:";      
 
       var output = {
             owners: createArrOutputNewLinesSeprated(staff.owners.users),
@@ -432,39 +432,39 @@ function getStaffEmbed(){
      dbg(output);
       
      emb.fields[0].name = "Creators";
-     emb.fields[0].value = (output.owners) ? output.owners : ":terrified:";
+     emb.fields[0].value = (output.owners) ? output.owners : "<:terrified:402081920063635467>";
      emb.fields[0].inline = true;
       
      emb.fields[1].name = "Admins";
-     emb.fields[1].value = (output.admins) ? output.admins : ":terrified:";
+     emb.fields[1].value = (output.admins) ? output.admins : "<:terrified:402081920063635467>";
      emb.fields[1].inline = true;
       
      emb.fields[2].name = "BotDev";
-     emb.fields[2].value = (output.botDev) ? output.botDev : ":terrified:";
+     emb.fields[2].value = (output.botDev) ? output.botDev : "<:terrified:402081920063635467>";
      emb.fields[2].inline = true;  
    
      emb.fields[3].name = "Senior Mods";
-     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : ":terrified:";
+     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
      emb.fields[3].inline = true;
       
      emb.fields[4].name = "Mods";
-     emb.fields[4].value = (output.mods) ? output.mods : ":terrified:";
+     emb.fields[4].value = (output.mods) ? output.mods : "<:terrified:402081920063635467>";
      emb.fields[4].inline = true;
       
      emb.fields[5].name = "Tech Support";
-     emb.fields[5].value = (output.techSupport) ? output.techSupport : ":terrified:";
+     emb.fields[5].value = (output.techSupport) ? output.techSupport : "<:terrified:402081920063635467>";
      emb.fields[5].inline = true; 
       
      emb.fields[6].name = "Patrons";
-     emb.fields[6].value = (output.patrons) ? output.patrons : ":terrified:";
+     emb.fields[6].value = (output.patrons) ? output.patrons : "<:terrified:402081920063635467>";
      emb.fields[6].inline = true;
       
      emb.fields[7].name = "Interns";
-     emb.fields[7].value = ":terrified:";
+     emb.fields[7].value = "<:terrified:402081920063635467>";
      emb.fields[7].inline = true;
       
      emb.fields[8].name = "Former Staff";
-     emb.fields[8].value = ":terrified:";
+     emb.fields[8].value = "<:terrified:402081920063635467>";
      emb.fields[8].inline = true;
       
      return emb;       
