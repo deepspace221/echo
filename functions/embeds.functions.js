@@ -221,7 +221,7 @@ function getFieldsObj(num, bol){
        };
        field.inline = (bol == false) ? bol : true;
        dbg(field.inline);
-       if (num && bol != undefinded) return getArrFieldsObj(num, bol);
+       if (num && bol == false) return getArrFieldsObj(num, bol);
        if (num) return getArrFieldObj(num);
        else return field;    
 }
