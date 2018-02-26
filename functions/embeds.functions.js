@@ -183,7 +183,16 @@ function getEmbedObj(){
               url: "",
               color: "",
               author: getEmbedFooterObj(),
-              thumb: {url: ""},
+              thumb: {
+                  url: "",
+                  height: "",
+                  width: ""
+              },
+              image: {
+                  url: "",
+                  height: "",
+                  width: ""     
+              },
               description: "",
               fields: [],
               footer: getEmbedFooterObj(),
