@@ -430,15 +430,16 @@ function getStaffEmbed(){
             patrons: createArrOutputNewLinesSeprated(staff.patrons.users)
       }
       
-      dbg(emb.fields);
+     dbg(emb.fields);
       
-// dbg(emb.fields);
-     emb.fields[0].name = "The Creator himself";
+     emb.fields[0].name = "Creators";
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
      emb.fields[0].inline = true;
+      
      emb.fields[1].name = "BotDev";
      emb.fields[1].value = (output.botDev) ? output.botDev : "NaN";
      emb.fields[1].inline = true;
+      
      emb.fields[2].name = "Admins";
      emb.fields[2].value = (output.admins) ? output.admins : "NaN";
      emb.fields[2].inline = true;
@@ -446,19 +447,22 @@ function getStaffEmbed(){
      emb.fields[4].name = "Senior Mods";
      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
      emb.fields[4].inline = true;
+      
      emb.fields[5].name = "Mods";
      emb.fields[5].value = (output.mods) ? output.mods : "NaN";
      emb.fields[5].inline = true;
+      
      emb.fields[6].name = "Tech Support";
      emb.fields[6].value = (output.techSupport) ? output.techSupport : "NaN";
      emb.fields[6].inline = true; 
+      
      emb.fields[7].name = "Patrons";
      emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
      emb.fields[7].inline = true;
+      
      emb.fields[8].name = "Interns";
      emb.fields[8].value = "NaN";
      emb.fields[8].inline = true;
- 
- 
-      return emb;       
+      
+     return emb;       
 }
