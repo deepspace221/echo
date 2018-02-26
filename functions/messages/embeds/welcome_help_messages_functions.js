@@ -473,7 +473,7 @@ function getStaffEmbed(){
 function getPatronsEmbed(){
       
      use server_db; 
-     var roleSlices, patrons;
+     var roleSlices, patrons, len = 0;
      var emb = getEmbedObj();
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
@@ -484,7 +484,14 @@ function getPatronsEmbed(){
      emb.title = "Patrons List";
      emb.description = "Open staff positions on the server";
       
-     emb.fields = getFieldsObj(7, true);
+      for (var i = 0; i < patrons.length){
+            if (patrons[i].users == "")   
+                  break;   
+            else
+                  len++
+      }
+      
+     emb.fields = getFieldsObj(len+3, true);
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
@@ -495,10 +502,13 @@ function getPatronsEmbed(){
                   }
                   var arr1 = arr.splice(0, arr.length/2);
                   var arr2 = arr;
-                  emb.fields[i].name = "Open Positions";
-                  emb.fields[i].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
-                  emb.fields[i+1].name = "Open Positions";
-                  emb.fields[i+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
+                  emb.fields[i].name = "<:blank:352901517004636163>";
+                  emb.fields[i].value = "<:blank:352901517004636163>";
+                  emb.fields[i].inline = false;
+                  emb.fields[i+1].name = "Open Positions<:blank:352901517004636163>";
+                  emb.fields[i+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
+                  emb.fields[i+2].name = "<:blank:352901517004636163>";
+                  emb.fields[i+2].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
                   break;     
            }
            emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
