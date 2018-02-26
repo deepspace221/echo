@@ -443,25 +443,25 @@ function getStaffEmbed(){
      emb.fields[2].value = (output.botDev) ? output.botDev : "NaN";
      emb.fields[2].inline = true;  
    
-     emb.fields[4].name = "Senior Mods";
-     emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
+     emb.fields[3].name = "Senior Mods";
+     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "NaN";
+     emb.fields[3].inline = true;
+      
+     emb.fields[4].name = "Mods";
+     emb.fields[4].value = (output.mods) ? output.mods : "NaN";
      emb.fields[4].inline = true;
       
-     emb.fields[5].name = "Mods";
-     emb.fields[5].value = (output.mods) ? output.mods : "NaN";
-     emb.fields[5].inline = true;
+     emb.fields[5].name = "Tech Support";
+     emb.fields[5].value = (output.techSupport) ? output.techSupport : "NaN";
+     emb.fields[5].inline = true; 
       
-//      emb.fields[6].name = "Tech Support";
-//      emb.fields[6].value = (output.techSupport) ? output.techSupport : "NaN";
-//      emb.fields[6].inline = true; 
+     emb.fields[6].name = "Patrons";
+     emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
+     emb.fields[6].inline = true;
       
-//      emb.fields[7].name = "Patrons";
-//      emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
-//      emb.fields[7].inline = true;
-      
-//      emb.fields[8].name = "Interns";
-//      emb.fields[8].value = "NaN";
-//      emb.fields[8].inline = true;
+     emb.fields[7].name = "Interns";
+     emb.fields[7].value = "NaN";
+     emb.fields[7].inline = true;
       
      return emb;       
 }
