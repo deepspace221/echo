@@ -405,7 +405,7 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-     emb.thumb = "{guild|icon}";
+     emb.thumb.url = "{guild|icon}";
      emb.fields = getFieldsObj(8, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
