@@ -195,7 +195,7 @@ function storeServerRolesSlices(initValues){
                      fluent: [],
                      learning: []
                 },
-                patrons: [{role: "", users: ""}],
+                patrons: [],
                 hobbies: [],
                 platforms: [],
                 duolingo: [],
