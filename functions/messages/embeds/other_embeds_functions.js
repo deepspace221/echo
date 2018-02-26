@@ -57,3 +57,7 @@ function getRolesEmbed(roles){
 
       return getExpandableEmbed(title, "", color, thumb, description, fields, "", "");     
 }
+
+function getServerMapEmbed(){ 
+      
+}
