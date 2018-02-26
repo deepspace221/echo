@@ -423,7 +423,7 @@ function getStaffEmbed(){
       dbg(emb.fields);
       
 // dbg(emb.fields);
-     emb.fields[0].name = "Owners";
+     emb.fields[0].name = "The Almighty";
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
      emb.fields[0].inline = true;
      emb.fields[1].name = "BotDev";
