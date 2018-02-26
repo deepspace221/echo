@@ -432,39 +432,39 @@ function getStaffEmbed(){
      dbg(output);
       
      emb.fields[0].name = "Creators";
-     emb.fields[0].value = (output.owners) ? output.owners : "NaN";
+     emb.fields[0].value = (output.owners) ? output.owners : ":terrified:";
      emb.fields[0].inline = true;
       
      emb.fields[1].name = "Admins";
-     emb.fields[1].value = (output.admins) ? output.admins : "NaN";
+     emb.fields[1].value = (output.admins) ? output.admins : ":terrified:";
      emb.fields[1].inline = true;
       
      emb.fields[2].name = "BotDev";
-     emb.fields[2].value = (output.botDev) ? output.botDev : "NaN";
+     emb.fields[2].value = (output.botDev) ? output.botDev : ":terrified:";
      emb.fields[2].inline = true;  
    
      emb.fields[3].name = "Senior Mods";
-     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "NaN";
+     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : ":terrified:";
      emb.fields[3].inline = true;
       
      emb.fields[4].name = "Mods";
-     emb.fields[4].value = (output.mods) ? output.mods : "NaN";
+     emb.fields[4].value = (output.mods) ? output.mods : ":terrified:";
      emb.fields[4].inline = true;
       
      emb.fields[5].name = "Tech Support";
-     emb.fields[5].value = (output.techSupport) ? output.techSupport : "NaN";
+     emb.fields[5].value = (output.techSupport) ? output.techSupport : ":terrified:";
      emb.fields[5].inline = true; 
       
      emb.fields[6].name = "Patrons";
-     emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
+     emb.fields[6].value = (output.patrons) ? output.patrons : ":terrified:";
      emb.fields[6].inline = true;
       
      emb.fields[7].name = "Interns";
-     emb.fields[7].value = "NaN";
+     emb.fields[7].value = ":terrified:";
      emb.fields[7].inline = true;
       
      emb.fields[8].name = "Former Staff";
-     emb.fields[8].value = "NaN";
+     emb.fields[8].value = ":terrified:";
      emb.fields[8].inline = true;
       
      return emb;       
