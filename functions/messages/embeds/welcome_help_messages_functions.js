@@ -405,7 +405,7 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-     emb.fields = getFieldsObj(9, false);
+     emb.fields = getFieldsObj(8, false);
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
 //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
       
@@ -463,9 +463,9 @@ function getStaffEmbed(){
      emb.fields[7].value = "<:terrified:402081920063635467>";
      emb.fields[7].inline = true;
       
-     emb.fields[8].name = "Former Staff";
-     emb.fields[8].value = "<:terrified:402081920063635467>";
-     emb.fields[8].inline = true;
+//      emb.fields[8].name = "Former Staff";
+//      emb.fields[8].value = "<:terrified:402081920063635467>";
+//      emb.fields[8].inline = true;
       
      return emb;       
 }
