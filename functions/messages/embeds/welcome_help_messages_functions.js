@@ -404,13 +404,13 @@ function getStaffEmbed(){
 // dbg(createArrOutputCommaSeprated(staff.admins.users));
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
-     emb.description = "The imperial guards";
+     emb.description = "The imperial guards <:battle_cry:402261899221139466>";
      emb.fields = getFieldsObj(7, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
       staff.owners.users[1] += " ☃";
-      staff.admins.users[1].shift();
-      staff.admins.users[1].shift();
+      staff.admins.users.shift();
+      staff.admins.users.shift();
       
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
@@ -434,9 +434,6 @@ function getStaffEmbed(){
      emb.fields[2].name = "Admins";
      emb.fields[2].value = (output.admins) ? output.admins : "NaN";
      emb.fields[2].inline = true;
-     emb.fields[3].name = "Tech Support";
-     emb.fields[3].value = (output.techSupport) ? output.techSupport : "NaN";
-     emb.fields[3].inline = true;
      emb.fields[4].name = "Senior Mods";
      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
      emb.fields[4].inline = true;
@@ -445,6 +442,9 @@ function getStaffEmbed(){
      emb.fields[5].inline = true;
      emb.fields[6].name = "Patrons";
      emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
+     emb.fields[7].name = "Tech Support";
+     emb.fields[7].value = (output.techSupport) ? output.techSupport : "NaN";
+     emb.fields[7].inline = false;    
  
       return emb;       
 }
