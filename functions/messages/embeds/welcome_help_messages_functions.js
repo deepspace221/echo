@@ -487,15 +487,29 @@ function getPatronsEmbed(){
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
-
+           if (patrons[i].users == ""){
+                  var arr = [];
+                  for (j = i; j < patrons.length; j++){
+                        arr.push(patrons[j].role.replace(/patron/gi, "P."));
+                  }
+                  var arr1 = arr.splice(0, arr.length/2);
+                  var arr2 = arr;
+                  emb.fields[i].name = "Open Positions";
+                  emb.fields[i].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
+                  emb.fields[i+1].name = "Open Positions";
+                  emb.fields[i+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
+                  break;     
+           }
            emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
-           emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "🔓";      
+           emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";      
       }
       
+      
+      
       emb.footer.text = "\
-(\_(\	\
-(=' :') ~♥	\
-(,(')(')	";
+\n(\_(\	\
+\n(=' :') ~♥	\
+\n(,(')(')	";
       
       return emb;
       
