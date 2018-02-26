@@ -392,12 +392,12 @@ function getReturningMemberMsg(arr){
 }
 
 function getStaffEmbed(){
-//      use server_db; 
-//      var roleSlices, staff;
+     use server_db; 
+     var roleSlices, staff;
      var emb = getEmbedObj();
       
-//      roleSlices = JSON.parse(server_db["roleSlices"]);  
-//      staff = roleSlices.staff;
+     roleSlices = JSON.parse(server_db["roleSlices"]);  
+     staff = roleSlices.staff;
       
      emb.title = "Command structure";
      emb.description = "Our staff members";
