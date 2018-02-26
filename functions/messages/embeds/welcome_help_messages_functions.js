@@ -407,6 +407,8 @@ function getStaffEmbed(){
      emb.description = "Our staff members";
      emb.fields = getFieldsObj(7, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
+      
+      staff.owners.users[1] += " ☃"
      
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
