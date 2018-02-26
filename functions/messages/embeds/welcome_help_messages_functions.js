@@ -484,7 +484,7 @@ function getPatronsEmbed(){
      emb.title = "Patrons List";
      emb.description = "Open staff positions on the server";
      emb.fields = getFieldsObj(patrons.length, true);
-     emb.thumbnail.url = "{guild|icon}";
+     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
 
