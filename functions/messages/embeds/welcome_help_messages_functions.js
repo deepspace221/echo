@@ -508,7 +508,7 @@ function getPatronsEmbed(){
                   var arr1 = arr.splice(0, arr.length/2);
                   var arr2 = arr;
                   emb.fields[i].name = "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■";
-                  emb.fields[i].value = "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■";
+                  emb.fields[i].value = "```css\n      [Join a new and exciting thing! We need you!]      ```";
                   emb.fields[i].inline = false;
                   emb.fields[i+1].name = "Open Positions<:blank:352901517004636163>";
                   emb.fields[i+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
@@ -528,4 +528,6 @@ function getPatronsEmbed(){
 //       dbg(emb);
       
 }
+
+getServerMap
 
