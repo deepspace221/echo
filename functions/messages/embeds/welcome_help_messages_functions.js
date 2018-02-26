@@ -420,12 +420,12 @@ function getStaffEmbed(){
       staff.patrons.users[4] = ":flag_ru::flag_ua:" + staff.patrons.users[4];      
 
       var output = {
-            owners: createArrOutputCommaSeprated(staff.owners.users),
+            owners: createArrOutputNewLinesSeprated(staff.owners.users),
             admins: createArrOutputNewLinesSeprated(staff.admins.users),
-            botDev: createArrOutputCommaSeprated(staff.botDev.users),
-            seniorMods: createArrOutputCommaSeprated(staff.seniorMods.users),
-            mods: createArrOutputCommaSeprated(staff.mods.users),
-            techSupport: createArrOutputCommaSeprated(staff.techSupport.users),
+            botDev: createArrOutputNewLinesSeprated(staff.botDev.users),
+            seniorMods: createArrOutputNewLinesSeprated(staff.seniorMods.users),
+            mods: createArrOutputNewLinesSeprated(staff.mods.users),
+            techSupport: createArrOutputNewLinesSeprated(staff.techSupport.users),
             patrons: createArrOutputNewLinesSeprated(staff.patrons.users)
       }
       
