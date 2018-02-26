@@ -492,6 +492,11 @@ function getPatronsEmbed(){
            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "🔓";      
       }
       
+      emb.footer.text = "\
+(\_(\	\
+(=' :') ~♥	\
+(,(')(')	";
+      
       return emb;
       
 //       dbg(emb);
