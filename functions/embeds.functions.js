@@ -182,7 +182,11 @@ function getEmbedObj(){
               type: "rich",
               url: "",
               color: "",
-              author: getEmbedFooterObj(),
+              author: {
+                   name: "",
+                   url: "",
+                   icon_url: ""                    
+              },
               thumb: {
                   url: "",
                   height: "",
@@ -195,7 +199,10 @@ function getEmbedObj(){
               },
               description: "",
               fields: [],
-              footer: getEmbedFooterObj(),
+              footer: {
+                  text: "",
+                  icon_url: ""  
+              },
               timestamp: ""
        }      
        return obj;
