@@ -185,7 +185,7 @@ function storeServerRolesSlices(initValues){
                 supporters: {
                     formerStaff: {role: getRegexRoleNamePosOrID("403793828223516673", "name"), users: getArrUsersInRole(403793828223516673)},                          
                     contributers: {role: getRegexRoleNamePosOrID("357941625755926528", "name"), users: getArrUsersInRole(357941625755926528)},
-                    courseCreator: {role: getRegexRoleNamePosOrID("335566263516397568", "name"), users: getArrUsersInRole(335566263516397568)},  
+                    courseCreators: {role: getRegexRoleNamePosOrID("335566263516397568", "name"), users: getArrUsersInRole(335566263516397568)},  
                     partnershipAssistants: {role: getRegexRoleNamePosOrID("403803531955404801", "name"), users: getArrUsersInRole(403803531955404801)},
                     supporters: {role: getRegexRoleNamePosOrID("347168010584457216", "name"), users: getArrUsersInRole(347168010584457216)},
                     ambassadors: {role: getRegexRoleNamePosOrID("361811261505273856", "name"), users: getArrUsersInRole(361811261505273856)}
