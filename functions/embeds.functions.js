@@ -168,9 +168,9 @@ function getEmbedFooterObj(){
 
 function getEmbedAuthorObj(){
        var authorObj = {
-              name: "test",
-              url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png",
-              icon_url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"
+              name: "",
+              url: "",
+              icon_url: ""
        };
        return authorObj;
 }
@@ -182,11 +182,11 @@ function getEmbedObj(){
               type: "rich",
               url: "",
               color: "",
-//               author: getEmbedFooterObj(),
+              author: getEmbedFooterObj(),
               thumb: {url: ""},
               description: "",
               fields: [],
-//               footer: getEmbedFooterObj(),
+              footer: getEmbedFooterObj(),
               timestamp: ""
        }      
        return obj;
