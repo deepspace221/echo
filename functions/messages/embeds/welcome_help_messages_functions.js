@@ -413,11 +413,11 @@ function getStaffEmbed(){
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
-      staff.patrons.users[0] = ":flag_ir::flag_es:" + staff.patrons.users[0];
-      staff.patrons.users[1] = ":flag_de:" + staff.patrons.users[1];      
-      staff.patrons.users[2] = ":flag_us:" + staff.patrons.users[2];
-      staff.patrons.users[3] = ":flag_fr:" + staff.patrons.users[3];
-      staff.patrons.users[4] = ":flag_ru::flag_ua:" + staff.patrons.users[4];      
+      staff.patrons.users[0] += createEmptyStr(15 - staff.patrons.users[0].length) + ":flag_ir::flag_es:";
+      staff.patrons.users[1] += createEmptyStr(15 - staff.patrons.users[1].length) + ":flag_de:";      
+      staff.patrons.users[2] += createEmptyStr(15 - staff.patrons.users[2].length) + ":flag_us:";
+      staff.patrons.users[3] += createEmptyStr(15 - staff.patrons.users[3].length) + ":flag_fr:";
+      staff.patrons.users[4] += createEmptyStr(15 - staff.patrons.users[4].length) + ":flag_ru::flag_ua:";      
 
       var output = {
             owners: createArrOutputNewLinesSeprated(staff.owners.users),
@@ -462,6 +462,10 @@ function getStaffEmbed(){
      emb.fields[7].name = "Interns";
      emb.fields[7].value = "NaN";
      emb.fields[7].inline = true;
+      
+     emb.fields[8].name = "Former Staff";
+     emb.fields[8].value = "NaN";
+     emb.fields[8].inline = true;
       
      return emb;       
 }
