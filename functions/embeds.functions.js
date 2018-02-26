@@ -180,14 +180,14 @@ function getEmbedObj(){
        var obj = {
               title: "",
               type: "rich",
-//               url: "",
-//               color: "",
+              url: "",
+              color: "",
 //               author: getEmbedFooterObj(),
-//               thumb: {url: "http://i0.kym-cdn.com/photos/images/facebook/001/250/498/dd3.png"},
+              thumb: {url: ""},
               description: "",
-//               fields: [],
+              fields: [],
 //               footer: getEmbedFooterObj(),
-//               timestamp: ""
+              timestamp: ""
        }      
        return obj;
 }
