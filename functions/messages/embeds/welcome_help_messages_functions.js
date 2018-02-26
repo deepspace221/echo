@@ -483,15 +483,17 @@ function getPatronsEmbed(){
       
      emb.title = "Patrons List";
      emb.description = "Open staff positions on the server";
-//      emb.fields = getFieldsObj(5, true);
-// //      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+     emb.fields = getFieldsObj(patrons.length, true);
+//      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
       
-//       for (i = 0; i < emb.fields.length; i++){
-//            emb.fields[i].name = patrons[i].role;
-//            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "<:terrified:402081920063635467>";      
-//       }
+      for (i = 0; i < emb.fields.length; i++){
+           emb.fields[i].name = patrons[i].role;
+           emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "<:terrified:402081920063635467>";      
+      }
       
-      dbg(emb);
+      return emb;
+      
+//       dbg(emb);
       
 }
 
