@@ -397,21 +397,22 @@ function getStaffEmbed(){
      var emb = getEmbedObj();
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
-dbg(roleSlices);
      staff = roleSlices.staff;
+
+// dbg(roleSlices);
+// dbg(createArrOutputCommaSeprated(staff.owners.users));
+// dbg(createArrOutputCommaSeprated(staff.admins.users));
       
      emb.title = "Command structure";
      emb.description = "Our staff members";
-//      emb.fields = getFieldsObj();
-//      emb.fields = [{name: "", value: "", inline: false}];
-dbg(createArrOutputCommaSeprated(staff.owners.users));
-dbg(createArrOutputCommaSeprated(staff.admins.users));
-//      emb.fields[0].name = "Owners";
-//      emb.fields[0].value = "hello";
-//            emb.fields[0].value = createArrOutputCommaSeprated(staff.owners);
+     emb.fields = getFieldsObj(2, false);
+     emb.fields = [{name: "", value: "", inline: false}];
 
-//      emb.fields[1].name = "Admins";
-//      emb.fields[1].value = createArrOutputCommaSeprated(staff.admins);     
+     emb.fields[0].name = "Owners";
+     emb.fields[0].value = "hello";
+     emb.fields[0].value = createArrOutputCommaSeprated(staff.owners.users);
+     emb.fields[1].name = "Admins";
+     emb.fields[1].value = createArrOutputCommaSeprated(staff.admins.users);     
 //      emb.fields[2].name = "BotDev";
 //      emb.fields[2].value = createArrOutputCommaSeprated(staff.botDev);
 //      emb.fields[3].name = "Senior Mods";
