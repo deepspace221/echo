@@ -187,18 +187,18 @@ function getEmbedObj(){
                    url: "",
                    icon_url: ""                    
               },
-              thumb: {
+              thumbnail: {
                   url: "",
                   height: "",
                   width: ""
               },
+              description: "",
+              fields: [],
               image: {
                   url: "",
                   height: "",
                   width: ""     
               },
-              description: "",
-              fields: [],
               footer: {
                   text: "",
                   icon_url: ""  
