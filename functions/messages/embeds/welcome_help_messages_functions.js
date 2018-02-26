@@ -405,26 +405,34 @@ function getStaffEmbed(){
       
      emb.title = "Command structure";
      emb.description = "Our staff members";
-     emb.fields = getFieldsObj(2, true);
+     emb.fields = getFieldsObj(7, true);
 //      emb.fields = [{name: "", value: "", inline: false}];
+     
+      var output = {
+            owners: createArrOutputCommaSeprated(staff.owners.users),
+            admins: createArrOutputCommaSeprated(staff.admins.users),
+            botDev: createArrOutputCommaSeprated(staff.botDev.users),
+            seniorMods: createArrOutputCommaSeprated(staff.seniorMods.user),
+            mods: createArrOutputCommaSeprated(staff.mods.users),
+            techSupport: createArrOutputCommaSeprated(staff.techSupport.users),
+            patrons: createArrOutputCommaSeprated(staff.patrons.users)
+      }
+      
 dbg(emb.fields);
-     emb.fields[0].name = "ccc";
-     emb.fields[0].value = "ddd";
-//      emb.fields[1].name = "aaa";
-//      emb.fields[1].value = "dde";
-//      emb.fields[0].value = createArrOutputCommaSeprated(staff.owners.users);
-//      emb.fields[1].name = "Admins";
-//      emb.fields[1].value = createArrOutputCommaSeprated(staff.admins.users);     
-//      emb.fields[2].name = "BotDev";
-//      emb.fields[2].value = createArrOutputCommaSeprated(staff.botDev);
-//      emb.fields[3].name = "Senior Mods";
-//      emb.fields[3].value = createArrOutputCommaSeprated(staff.seniorMods);
-//      emb.fields[4].name = "Mods";
-//      emb.fields[4].value = createArrOutputCommaSeprated(staff.mods);
-//      emb.fields[5].name = "Tech Support";
-//      emb.fields[5].value = createArrOutputCommaSeprated(staff.techSupport);     
-//      emb.fields[6].name = "Patrons";
-//      emb.fields[6].value = createArrOutputCommaSeprated(staff.patrons);
+     emb.fields[0].name = "Owners";
+     emb.fields[0].value = (output.owners) ? output.owners : "NaN";
+     emb.fields[1].name = "Admins";
+     emb.fields[1].value = (output.admins) ? output.admins : "NaN";
+     emb.fields[2].name = "BotDev";
+     emb.fields[2].value = (output.botDev) ? output.botDev : "NaN";
+     emb.fields[3].name = "Senior Mods";
+     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "NaN";
+     emb.fields[4].name = "Mods";
+     emb.fields[4].value = (output.mods) ? output.mods : "NaN";
+     emb.fields[5].name = "Tech Support";
+     emb.fields[5].value = (output.techSupport) ? output.techSupport : "NaN";
+     emb.fields[6].name = "Patrons";
+     emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
  
       return emb;       
 }
