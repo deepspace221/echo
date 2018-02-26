@@ -482,10 +482,7 @@ function getPatronsEmbed(){
 //      dbg(patrons);
       
      emb.title = "Patrons List";
-     emb.description = "Open staff positions on the server"\
-\n(\_(\	\
-\n(=' :') ~♥	\
-\n(,(')(')	";
+     emb.description = "Open staff positions on the server";
       
      emb.fields = getFieldsObj(7, true);
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
@@ -506,9 +503,9 @@ function getPatronsEmbed(){
            }
            emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";  
-//            if (patrons[i+1].users == "" && (i % 2 == 1)){
-//               emb.fields[i].inline = false;      
-//            }         
+           if (patrons[i+1].users == "" && (i % 2 == 1)){
+              emb.fields[i].inline = false;      
+           }         
       }
 
       return emb;
