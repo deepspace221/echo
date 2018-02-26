@@ -397,6 +397,7 @@ function getStaffEmbed(){
      var emb = getEmbedObj();
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
+dbg(roleSlices);
      staff = roleSlices.staff;
       
      emb.title = "Command structure";
