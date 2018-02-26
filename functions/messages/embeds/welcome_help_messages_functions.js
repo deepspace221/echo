@@ -478,9 +478,7 @@ function getPatronsEmbed(){
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      patrons = roleSlices.patrons;
-      
-//      dbg(patrons);
-      
+            
      emb.title = "Patrons List";
      emb.description = "Open staff positions on the server";
       
@@ -501,8 +499,8 @@ function getPatronsEmbed(){
                         arr.push(patrons[j].role.replace(/patron/gi, "P."));
                   }
                   arr = arr.sort(function(a,b){
-                        if (a < b) return 1;
-                        if (a > b) return -1;
+                        if (a > b) return 1;
+                        if (a < b) return -1;
                         if (a == b) return 0;          
                   }); 
                   var arr1 = arr.splice(0, arr.length/2);
@@ -524,9 +522,7 @@ function getPatronsEmbed(){
       }
 
       return emb;
-      
-//       dbg(emb);
-      
+           
 }
 
 
