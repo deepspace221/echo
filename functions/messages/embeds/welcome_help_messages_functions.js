@@ -488,7 +488,7 @@ function getPatronsEmbed(){
           
       for (i = 0; i < emb.fields.length; i++){
 
-           emb.fields[i].name = patrons[i].role.replace(/\spatrons/i, "");
+           emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";      
       }
       
