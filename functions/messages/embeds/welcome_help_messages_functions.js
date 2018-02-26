@@ -403,8 +403,8 @@ function getStaffEmbed(){
 // dbg(createArrOutputCommaSeprated(staff.owners.users));
 // dbg(createArrOutputCommaSeprated(staff.admins.users));
       
-     emb.title = "Command structure";
-     emb.description = "Our staff members";
+     emb.title = "Kingdom of Valhalla";
+     emb.description = "The imperial guards";
      emb.fields = getFieldsObj(7, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
