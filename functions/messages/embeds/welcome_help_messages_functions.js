@@ -439,7 +439,7 @@ function getStaffEmbed(){
      emb.fields[1].value = (output.admins) ? output.admins : "<:terrified:402081920063635467>";
      emb.fields[1].inline = true;
       
-     emb.fields[2].name = "BotDev";
+     emb.fields[2].name = "Bot Dev";
      emb.fields[2].value = (output.botDev) ? output.botDev : "<:terrified:402081920063635467>";
      emb.fields[2].inline = true;  
    
