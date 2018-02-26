@@ -484,11 +484,11 @@ function getPatronsEmbed(){
      emb.title = "Patrons List";
      emb.description = "Open staff positions on the server";
       
-      for (var i = 0; i < patrons.length){
+      for (var i = 0; i < patrons.length; i++){
             if (patrons[i].users == "")   
                   break;   
             else
-                  len++
+                  len++;
       }
       
      emb.fields = getFieldsObj(len+3, true);
@@ -500,6 +500,11 @@ function getPatronsEmbed(){
                   for (j = i; j < patrons.length; j++){
                         arr.push(patrons[j].role.replace(/patron/gi, "P."));
                   }
+                  arr = arr.sort(function(a,b){
+                        if (a < b) return 1;
+                        if (a > b) return -1;
+                        if (a == b) return 0;          
+                  }); 
                   var arr1 = arr.splice(0, arr.length/2);
                   var arr2 = arr;
                   emb.fields[i].name = "<:blank:352901517004636163>";
