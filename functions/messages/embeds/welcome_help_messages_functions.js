@@ -412,13 +412,15 @@ function getStaffEmbed(){
             owners: createArrOutputCommaSeprated(staff.owners.users),
             admins: createArrOutputCommaSeprated(staff.admins.users),
             botDev: createArrOutputCommaSeprated(staff.botDev.users),
-            seniorMods: createArrOutputCommaSeprated(staff.seniorMods.user),
+            seniorMods: createArrOutputCommaSeprated(staff.seniorMods.users),
             mods: createArrOutputCommaSeprated(staff.mods.users),
             techSupport: createArrOutputCommaSeprated(staff.techSupport.users),
             patrons: createArrOutputCommaSeprated(staff.patrons.users)
       }
       
-dbg(emb.fields);
+      dbg(output);
+      
+// dbg(emb.fields);
      emb.fields[0].name = "Owners";
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
      emb.fields[1].name = "Admins";
