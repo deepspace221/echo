@@ -405,7 +405,7 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-     emb.fields = getFieldsObj(7, false);
+     emb.fields = getFieldsObj(8, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
       staff.owners.users[1] += " ☃";
@@ -425,7 +425,7 @@ function getStaffEmbed(){
       dbg(emb.fields);
       
 // dbg(emb.fields);
-     emb.fields[0].name = "The Almighty";
+     emb.fields[0].name = "The Creator himself";
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
      emb.fields[0].inline = true;
      emb.fields[1].name = "BotDev";
@@ -445,6 +445,8 @@ function getStaffEmbed(){
      emb.fields[5].inline = true;
      emb.fields[6].name = "Patrons";
      emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
+     emb.fields[7].name = "Interns";
+     emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
  
  
       return emb;       
