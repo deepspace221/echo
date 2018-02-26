@@ -503,7 +503,7 @@ function getPatronsEmbed(){
            }
            emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";  
-           if (patrons[i+1].users == "" && (i % 2 == 1)){
+           if (patrons[i+1].users == "" && (i % 2 == 0)){
               emb.fields[i].inline = false;      
            }         
       }
