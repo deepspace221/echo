@@ -413,11 +413,11 @@ function getStaffEmbed(){
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
-      staff.patrons.users[0] += createEmptyStr(30 - staff.patrons.users[0].length) + " :flag_ir::flag_es:";
-      staff.patrons.users[1] += createEmptyStr(30 - staff.patrons.users[1].length) + " :flag_de:";      
-      staff.patrons.users[2] += createEmptyStr(30 - staff.patrons.users[2].length) + " :flag_us:";
-      staff.patrons.users[3] += createEmptyStr(30 - staff.patrons.users[3].length) + " :flag_fr:";
-      staff.patrons.users[4] += createEmptyStr(30 - staff.patrons.users[4].length) + " :flag_ru::flag_ua:";      
+      staff.patrons.users[0] += " :flag_ir::flag_es:";
+      staff.patrons.users[1] += " :flag_de:";      
+      staff.patrons.users[2] += " :flag_us:";
+      staff.patrons.users[3] += " :flag_fr:";
+      staff.patrons.users[4] += " :flag_ru::flag_ua:";      
 
       var output = {
             owners: createArrOutputNewLinesSeprated(staff.owners.users),
