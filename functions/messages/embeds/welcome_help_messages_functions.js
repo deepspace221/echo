@@ -491,5 +491,7 @@ function getPatronsEmbed(){
            emb.fields[0].value = (patrons[i].users) ? patrons[i].users : "<:terrified:402081920063635467>";      
       }
       
+      dbg(emb);
+      
 }
 
