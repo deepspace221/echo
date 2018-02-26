@@ -405,12 +405,13 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
+     emb.thumb = "{guild|icon}";
      emb.fields = getFieldsObj(8, false);
 //      emb.fields = [{name: "", value: "", inline: false}];
       
       staff.owners.users[1] += " ☃";
-      staff.admins.users.shift();
-      staff.admins.users.shift();
+//       staff.admins.users.shift();
+//       staff.admins.users.shift();
       
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
