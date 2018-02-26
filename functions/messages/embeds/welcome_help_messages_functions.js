@@ -409,7 +409,7 @@ function getStaffEmbed(){
      emb.thumb.url = "http://www.nextreflexdc.com/wp-content/uploads/2018/01/tree-clip-art-free-to-use-public-domain-trees-clip-art-templates.png";
 //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
       
-     staff.owners.users[1] += " ☃";
+     staff.botDev.users[0] += " ☃";
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
