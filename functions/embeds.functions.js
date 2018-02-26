@@ -220,7 +220,8 @@ function getFieldsObj(num, bol){
               inline: true
        };
        field.inline = (bol == false) ? bol : true;
-       if (num && bol) return getArrFieldsObj(num, bol);
+       dbg(field.inline);
+       if (num && bol != undefinded) return getArrFieldsObj(num, bol);
        if (num) return getArrFieldObj(num);
        else return field;    
 }
