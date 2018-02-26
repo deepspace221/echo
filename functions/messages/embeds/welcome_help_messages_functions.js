@@ -414,11 +414,11 @@ function getStaffEmbed(){
 //       staff.admins.users.shift();
 //       staff.admins.users.shift();
       
-      staff.patrons.users[0] += " :flag_ir: :flag_es:";
-      staff.patrons.users[1] += " :flag_de:";      
-      staff.patrons.users[2] += " :flag_us:";
-      staff.patrons.users[3] += " :flag_fr:";
-      staff.patrons.users[4] += " :flag_ru::flag_ua:";      
+      staff.patrons.users[0] = ":flag_ir::flag_es:" + staff.patrons.users[0];
+      staff.patrons.users[1] = ":flag_de:" + staff.patrons.users[1];      
+      staff.patrons.users[2] = ":flag_us:" + staff.patrons.users[2];
+      staff.patrons.users[3] = ":flag_fr:" + staff.patrons.users[3];
+      staff.patrons.users[4] = ":flag_ru::flag_ua:" + staff.patrons.users[4];      
 
       var output = {
             owners: createArrOutputCommaSeprated(staff.owners.users),
