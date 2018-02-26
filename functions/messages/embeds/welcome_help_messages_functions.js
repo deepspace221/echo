@@ -469,3 +469,22 @@ function getStaffEmbed(){
       
      return emb;       
 }
+function getPatronsEmbed(){
+      
+     use server_db; 
+     var roleSlices, patrons;
+     var emb = getEmbedObj();
+      
+     roleSlices = JSON.parse(server_db["roleSlices"]);  
+     patrons = roleSlices.patrons;
+      
+     dbg(patrons);
+      
+//      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
+//      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
+//      emb.fields = getFieldsObj(8, false);
+//      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+// //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
+      
+}
+
