@@ -192,7 +192,7 @@ function getEmbedObj(){
        return obj;
 }
 
-function getArrFieldObj(num, bol){
+function getArrFieldsObj(num, bol){
         var bol = (bol == false) ? bol : true
         var arr = [];
         for (var i = 0; i < num; i++){
@@ -222,6 +222,6 @@ function getFieldsObj(num, bol){
        field.inline = (bol == false) ? bol : true;
        dbg(field.inline);
        if (num && bol == false) return getArrFieldsObj(num, bol);
-       if (num) return getArrFieldObj(num);
+       if (num) return getArrFieldsObj(num);
        else return field;    
 }
