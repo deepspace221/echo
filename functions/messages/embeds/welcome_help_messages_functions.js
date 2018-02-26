@@ -491,6 +491,8 @@ function getPatronsEmbed(){
            emb.fields[0].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "<:terrified:402081920063635467>";      
       }
       
+
+      dbg(createArrOutputNewLinesSeprated(patrons[i].users[5]);
       dbg(emb);
       
 }
