@@ -482,7 +482,10 @@ function getPatronsEmbed(){
 //      dbg(patrons);
       
      emb.title = "Patrons List";
-     emb.description = "Open staff positions on the server";
+     emb.description = "Open staff positions on the server"\
+\n(\_(\	\
+\n(=' :') ~♥	\
+\n(,(')(')	";
      emb.fields = getFieldsObj(7, true);
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
@@ -506,13 +509,6 @@ function getPatronsEmbed(){
               emb.fields[i].inline = false;      
            }         
       }
-      
-      
-      
-      emb.footer.text = "\
-\n(\_(\	\
-\n(=' :') ~♥	\
-\n(,(')(')	";
       
       return emb;
       
