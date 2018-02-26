@@ -469,6 +469,7 @@ function getStaffEmbed(){
       
      return emb;       
 }
+
 function getPatronsEmbed(){
       
      use server_db; 
@@ -485,9 +486,9 @@ function getPatronsEmbed(){
      emb.fields = getFieldsObj(patrons.length, false);
 //      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
       
-      for (var i = 0; i < emb.fields.length; i++){
+      for (i = 0; i < emb.fields.length; i++){
            emb.fields[0].name = patrons[i].role;
-           emb.fields[0].value = (patrons[i].role) ? patrons[i].role : "<:terrified:402081920063635467>";      
+           emb.fields[0].value = (patrons[i].users) ? patrons[i].users : "<:terrified:402081920063635467>";      
       }
       
 }
