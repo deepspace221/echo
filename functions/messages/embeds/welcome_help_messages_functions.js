@@ -480,11 +480,22 @@ function getPatronsEmbed(){
       
      dbg(patrons);
       
-//      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
-//      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-//      emb.fields = getFieldsObj(8, false);
+     emb.title = "Patrons List";
+     emb.description = "Open staff positions on the server";
+     emb.fields = getFieldsObj(patrons.length, false);
 //      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
-// //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
+//      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
+
+      
+      for (var i=0; i < patrons.length; i++
+      
+      var output = {
+      }  
+      
+      for (var i = 0; i < emb.fields.length; i++){
+           emb.fields[0].name = patrons[i].role;
+           emb.fields[0].value = (patrons[i].role) ? patrons[i].role : "<:terrified:402081920063635467>";      
+      }
       
 }
 
