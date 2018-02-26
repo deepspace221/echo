@@ -405,7 +405,7 @@ function getStaffEmbed(){
       
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
-     emb.fields = getFieldsObj(8, false);
+     emb.fields = getFieldsObj(1, false);
      emb.thumb.url = "http://www.nextreflexdc.com/wp-content/uploads/2018/01/tree-clip-art-free-to-use-public-domain-trees-clip-art-templates.png";
 //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
       
@@ -435,33 +435,33 @@ function getStaffEmbed(){
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
      emb.fields[0].inline = true;
       
-     emb.fields[1].name = "BotDev";
-     emb.fields[1].value = (output.botDev) ? output.botDev : "NaN";
-     emb.fields[1].inline = true;
+//      emb.fields[1].name = "BotDev";
+//      emb.fields[1].value = (output.botDev) ? output.botDev : "NaN";
+//      emb.fields[1].inline = true;
       
-     emb.fields[2].name = "Admins";
-     emb.fields[2].value = (output.admins) ? output.admins : "NaN";
-     emb.fields[2].inline = true;
+//      emb.fields[2].name = "Admins";
+//      emb.fields[2].value = (output.admins) ? output.admins : "NaN";
+//      emb.fields[2].inline = true;
    
-     emb.fields[4].name = "Senior Mods";
-     emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
-     emb.fields[4].inline = true;
+//      emb.fields[4].name = "Senior Mods";
+//      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
+//      emb.fields[4].inline = true;
       
-     emb.fields[5].name = "Mods";
-     emb.fields[5].value = (output.mods) ? output.mods : "NaN";
-     emb.fields[5].inline = true;
+//      emb.fields[5].name = "Mods";
+//      emb.fields[5].value = (output.mods) ? output.mods : "NaN";
+//      emb.fields[5].inline = true;
       
-     emb.fields[6].name = "Tech Support";
-     emb.fields[6].value = (output.techSupport) ? output.techSupport : "NaN";
-     emb.fields[6].inline = true; 
+//      emb.fields[6].name = "Tech Support";
+//      emb.fields[6].value = (output.techSupport) ? output.techSupport : "NaN";
+//      emb.fields[6].inline = true; 
       
-     emb.fields[7].name = "Patrons";
-     emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
-     emb.fields[7].inline = true;
+//      emb.fields[7].name = "Patrons";
+//      emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
+//      emb.fields[7].inline = true;
       
-     emb.fields[8].name = "Interns";
-     emb.fields[8].value = "NaN";
-     emb.fields[8].inline = true;
+//      emb.fields[8].name = "Interns";
+//      emb.fields[8].value = "NaN";
+//      emb.fields[8].inline = true;
       
      return emb;       
 }
