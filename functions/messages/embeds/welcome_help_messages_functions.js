@@ -425,10 +425,13 @@ function getStaffEmbed(){
 // dbg(emb.fields);
      emb.fields[0].name = "Owners";
      emb.fields[0].value = (output.owners) ? output.owners : "NaN";
-     emb.fields[1].name = "Admins";
-     emb.fields[1].value = (output.admins) ? output.admins : "NaN";
-     emb.fields[2].name = "BotDev";
-     emb.fields[2].value = (output.botDev) ? output.botDev : "NaN";
+     emb.fields[0].inline = true;
+     emb.fields[1].name = "BotDev";
+     emb.fields[1].value = (output.botDev) ? output.botDev : "NaN";
+     emb.fields[1].inline = true;
+     emb.fields[2].name = "Admins";
+     emb.fields[2].value = (output.admins) ? output.admins : "NaN";
+     emb.fields[2].inline = false;
      emb.fields[3].name = "Senior Mods";
      emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "NaN";
      emb.fields[4].name = "Mods";
