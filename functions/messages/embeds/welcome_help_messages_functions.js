@@ -403,6 +403,8 @@ function getStaffEmbed(){
      emb.description = "Our staff members";
 //      emb.fields = getFieldsObj();
 //      emb.fields = [{name: "", value: "", inline: false}];
+dbg(createArrOutputCommaSeprated(staff.owners));
+dbg(createArrOutputCommaSeprated(staff.admins));
 //      emb.fields[0].name = "Owners";
 //      emb.fields[0].value = "hello";
 //            emb.fields[0].value = createArrOutputCommaSeprated(staff.owners);
