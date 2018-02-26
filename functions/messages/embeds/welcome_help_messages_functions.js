@@ -447,7 +447,7 @@ function getStaffEmbed(){
      emb.fields[6].name = "Patrons";
      emb.fields[6].value = (output.patrons) ? output.patrons : "NaN";
      emb.fields[7].name = "Interns";
-     emb.fields[7].value = (output.patrons) ? output.patrons : "NaN";
+     emb.fields[7].value = "NaN";
  
  
       return emb;       
