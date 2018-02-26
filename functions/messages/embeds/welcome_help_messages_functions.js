@@ -418,7 +418,7 @@ function getStaffEmbed(){
             patrons: createArrOutputCommaSeprated(staff.patrons.users)
       }
       
-      dbg(output);
+      dbg(emb.fields);
       
 // dbg(emb.fields);
      emb.fields[0].name = "Owners";
