@@ -213,7 +213,7 @@ function getFieldsObj(){
        return arr;    
 }
 
-function getFieldsObj(num, bol){
+function getFieldObj(num, bol){
        var field = {
               name: "",
               value: "",
