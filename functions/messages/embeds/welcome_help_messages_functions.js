@@ -434,7 +434,7 @@ function getStaffEmbed(){
      emb.fields[2].inline = true;
      emb.fields[3].name = "Tech Support";
      emb.fields[3].value = (output.techSupport) ? output.techSupport : "NaN";
-     emb.fields[2].inline = true;
+     emb.fields[3].inline = true;
      emb.fields[4].name = "Senior Mods";
      emb.fields[4].value = (output.seniorMods) ? output.seniorMods : "NaN";
      emb.fields[4].inline = true;
