@@ -480,7 +480,7 @@ function getPatronsEmbed(){
      patrons = roleSlices.patrons;
             
      emb.title = "Patrons List";
-     emb.description = "Open staff positions on the server";
+     emb.description = "Our most dedicated staffers";
       
       for (var i = 0; i < patrons.length; i++){
             if (patrons[i].users == "")   
@@ -505,7 +505,7 @@ function getPatronsEmbed(){
                   }); 
                   var arr1 = arr.splice(0, arr.length/2);
                   var arr2 = arr;
-                  emb.fields[i].name = "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■";
+                  emb.fields[i].name = "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■";
                   emb.fields[i].value = "```css\n  [Join a new and exciting thing! We need you!]  ```";
                   emb.fields[i].inline = false;
                   emb.fields[i+1].name = "Open Positions<:blank:352901517004636163>";
