@@ -103,6 +103,5 @@ function serverMap(){
               if (channel) channelsObj.hobbies.push(channel);   
         }   
     }
-    return getServerMapEmbed();
-    dbg(channelsObj);
+    return getServerMapEmbed(channelsObj);
 }
