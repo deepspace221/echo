@@ -493,7 +493,9 @@ function getPatronsEmbed(){
       var arrPatrons = patrons.splice(0,len);
       var arrOpenPos = patrons;
       var arrPatrons = arrPatrons.sort(sortABC);
-      var arrOpenPos = arrOpenPos.sort(sortABC);      
+      var arrOpenPos = arrOpenPos.sort(sortABC);   
+      
+      dbg(arrOpenPos);
       
       emb.fields = getFieldsObj(len+3, true);
           
@@ -503,8 +505,7 @@ function getPatronsEmbed(){
            if (i % 2 == 0)emb.fields[i].inline = false;       
       }
       
-      var arr1 = arrOpenPos.splice(0, (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
-      var arr2 = arrOpenPos;
+//       var arr1 = arrOpenPos.splice(0, (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
       emb.fields[len].name = "<:blank:352901517004636163>";
       emb.fields[len].value = "```css\n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
@@ -514,9 +515,9 @@ function getPatronsEmbed(){
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
       emb.fields[len+1].name = "Open Positions<:blank:352901517004636163>";
-      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
+      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, arrOpenPos.length/2))+ "```";
       emb.fields[len+2].name = "<:blank:352901517004636163>";
-      emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
+      emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
       return emb;
            
