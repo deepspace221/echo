@@ -503,10 +503,10 @@ function getPatronsEmbed(){
       for (i = 0; i < arrPatronsObj.length; i++){
            emb.fields[i].name = arrPatronsObj[i].role;
            emb.fields[i].value = createArrOutputNewLinesSeprated(arrPatronsObj[i].users);  
-           if (i % 2 == 0)emb.fields[i].inline = false;       
+           if (i == arrPatronsObj.length -1  && i % 2 == 0)emb.fields[i].inline = false;       
       }
       
-      var splitIndex = (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  (arrOpenPos.length/2 + 1);
+      var splitIndex = (arrOpenPos.length % 2 == 0) ? arrOpenPos.length/2 :  (arrOpenPos.length/2 + 1);
       emb.fields[len].name = "<:blank:352901517004636163>";
       emb.fields[len].value = "```css\n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
