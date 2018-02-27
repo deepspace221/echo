@@ -73,7 +73,7 @@ function getServerMapEmbed(channelsObj){
 
 	
      createFields("mobile", ":iphone: Mobile");
-     createFields("platforms", "Platforms");
+     createFields("platforms", ":duolingo12: Platforms");
      createFields("langCategories");
      createFields("community", "Community");
      createFields("general", "General");
