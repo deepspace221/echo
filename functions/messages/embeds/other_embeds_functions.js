@@ -86,7 +86,6 @@ function getServerMapEmbed(channelsObj){
 
      function createFields(type){     
 	if (type == "community" || type == "general" || type == "hooks" || type == "lang"){
-		var name = (type) ? type : "NaN";
 		var value = (channelsObj.main[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type])) : "NaN";
 		emb.fields[idx].name = type;
 		emb.fields[idx].value = value;
@@ -101,9 +100,8 @@ function getServerMapEmbed(channelsObj){
    		}
 	}
 	else if (type == "hobbies" || type == "mobile" || type == "platforms"){
-		var name = (type) ? type : "NaN";
 		var value = (channelsObj[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-		emb.fields[idx].name = name;
+		emb.fields[idx].name = type;
 		emb.fields[idx].value = value;
 		idx++;		
 	}
