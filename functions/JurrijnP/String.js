@@ -145,6 +145,10 @@ String.prototype.smallCodeblock = function() {
     return ("`" + this + "`")
 }
 
+String.prototype.channelLink = function() {
+    return ("<#" + this + ">")
+}
+
 String.prototype.bigCodeblock = function(Language) {
     if (Object.keys(arguments).length === 1) {
         return ("```" + Language + "\n" + this + "```");
