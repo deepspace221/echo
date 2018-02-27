@@ -490,7 +490,7 @@ function getPatronsEmbed(){
       }
       
      emb.fields = getFieldsObj(len+3, true);
-     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+//      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
            if (patrons[i].users == ""){
