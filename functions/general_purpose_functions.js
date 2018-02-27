@@ -69,5 +69,5 @@ function getUserAvatar(userID, hash){
 }
 
 function getGuildIcon(){	
-	return "https://cdn.discordapp.com/icons/" + Server.ID + "/" + Server.Icon + ".jpg"	
+	return "https://cdn.discordapp.com/icons/" + Server.ID + "/" + Server.Icon + ".jpg";
 }
