@@ -516,7 +516,7 @@ function getPatronsEmbed(){
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
       emb.fields[len+1].name = "Open Positions<:blank:352901517004636163>";
-      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, splitIndex)+ "```";
+      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, splitIndex)) + "```";
       emb.fields[len+2].name = "<:blank:352901517004636163>";
       emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
