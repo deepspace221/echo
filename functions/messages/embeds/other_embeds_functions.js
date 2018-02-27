@@ -77,7 +77,7 @@ function getServerMapEmbed(channelsObj){
      createFields("langCategories");
      createFields("community", "Community");
      createFields("general", "General");
-     createFields("lang", "Languages");
+     createFields("lang", ":earth_asia: Languages");
      createFields("hobbies", "Hobbies");	
      createFields("hooks", "Hooks");
 	
