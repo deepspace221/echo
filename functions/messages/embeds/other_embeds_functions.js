@@ -79,12 +79,12 @@ function getServerMapEmbed(channelsObj){
 	emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
 	idx++;
      }
+     dbg(emb);
      return emb;
-
-     dbg(channelsObj);
 
      function createMainFields(type){
 	for (var i = 0; i < channelsObj.main[type].length; i++){
+		dbg(emb);
 		emb.fields[idx].name = type;
 		var temp = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type]));
 		emb.fields[idx].value = (temp) ? temp : "NaN";
