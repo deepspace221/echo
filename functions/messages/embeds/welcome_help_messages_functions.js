@@ -483,48 +483,40 @@ function getPatronsEmbed(){
      emb.description = "Our most dedicated staffers";
       
       for (var i = 0; i < patrons.length; i++){
-            if (patrons[i].users == "")   
-                  break;   
-            else
-                  len++;
+            patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
+            if (patrons[i].users != "") len++;
       }
       
-     emb.fields = getFieldsObj(len+3, true);
-     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+      var arrPatrons = patrons.splice(0,len);
+      var arrOpenPos = patrons;
+      var arrPatrons = arrPatrons.sort(sortABC);
+      var arrOpenPos = arrOpenPos.sort(sortABC);      
+      
+      emb.fields = getFieldsObj(len+3, true);
+      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
-           if (patrons[i].users == ""){
-                  var arr = [];
-                  for (j = i; j < patrons.length; j++){
-                        arr.push(patrons[j].role.replace(/patron/gi, "P."));
-                  }
-                  arr = arr.sort(function(a,b){
-                        if (a > b) return 1;
-                        if (a < b) return -1;
-                        if (a == b) return 0;          
-                  }); 
-                  var arr1 = arr.splice(0, arr.length/2);
-                  var arr2 = arr;
-                  emb.fields[i].name = "<:blank:352901517004636163>";
-                  emb.fields[i].value = "```css\n\
-\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
-\n\
-\n [Join a new and exciting thing! We need you!] \
-\n\
-\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
-                  emb.fields[i].inline = false;
-                  emb.fields[i+1].name = "Open Positions<:blank:352901517004636163>";
-                  emb.fields[i+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
-                  emb.fields[i+2].name = "<:blank:352901517004636163>";
-                  emb.fields[i+2].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
-                  break;     
-           }
-           emb.fields[i].name = patrons[i].role.replace(/patron/gi, "P.");
+           emb.fields[i].name = patrons[i].role;
            emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";  
            if (patrons[i+1].users == "" && (i % 2 == 0)){
               emb.fields[i].inline = false;      
            }         
       }
+      
+      var arr1 = arrOpenPos.splice(0, (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
+      var arr2 = arrOpenPos;
+      emb.fields[len].name = "<:blank:352901517004636163>";
+      emb.fields[len].value = "```css\n\
+\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
+\n\
+\n [Join a new and exciting thing! We need you!] \
+\n\
+\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
+      emb.fields[len].inline = false;
+      emb.fields[len+1].name = "Open Positions<:blank:352901517004636163>";
+      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arr1)+ "```";
+      emb.fields[len+2].name = "<:blank:352901517004636163>";
+      emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arr2) + "```";
 
       return emb;
            
