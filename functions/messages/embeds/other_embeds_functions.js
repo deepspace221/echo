@@ -67,8 +67,6 @@ function getServerMapEmbed(channelsObj){
      dbg(len);
      emb.fields = getFieldsObj(len, false);
 	
-     channel
-	
      for (var i = 0; i < channelsObj.lang.length; i++){
 	emb.fields[i].name = channelsObj.lang[i].category;
 	emb.fields[i].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
