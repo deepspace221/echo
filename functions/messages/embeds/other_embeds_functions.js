@@ -62,15 +62,15 @@ function getServerMapEmbed(channelsObj){
      var emb = getEmbedObj(), len = 0;
      emb.title = "Choose a location to teleport.";
      emb.description = "Server's map";
-     dbg(channelsObj.lang);
-     len = channelsObj.lang.length;
 
+     len = channelsObj.lang.length;
+     dbg(len);
      emb.fields = getFieldsObj(len, false);
 	
-     for (var i = 0; i < channelsObj.lang.length; i++){
-	emb.fields[i].name = channelsObj.lang[i].category;
-	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].category.channels);
-     }
+//      for (var i = 0; i < channelsObj.lang.length; i++){
+// 	emb.fields[i].name = channelsObj.lang[i].category;
+// 	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].category.channels);
+//      }
      return emb;
       
 //      emb.fields[1].name = "Admins";
@@ -85,6 +85,6 @@ function getServerMapEmbed(channelsObj){
 //      emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
 //      emb.fields[3].inline = true;
 	
-	dbg(emb);
-	dbg(channelsObj);
+// 	dbg(emb);
+// 	dbg(channelsObj);
 }
