@@ -478,8 +478,9 @@ function getPatronsEmbed(){
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      patrons = roleSlices.patrons;
-            
-     emb.title = "Patrons List";
+    
+     emb.url = "http://google.com"
+     emb.title = "Patrons List - Click here to become a language patron";
      emb.description = "Our most dedicated staffers";
       
       for (var i = 0; i < patrons.length; i++){
