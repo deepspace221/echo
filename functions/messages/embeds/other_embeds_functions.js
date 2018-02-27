@@ -67,9 +67,11 @@ function getServerMapEmbed(channelsObj){
      dbg(len);
      emb.fields = getFieldsObj(len, false);
 	
+     channel
+	
      for (var i = 0; i < channelsObj.lang.length; i++){
 	emb.fields[i].name = channelsObj.lang[i].category;
-	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].channels);
+	emb.fields[i].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
      }
      return emb;
       
@@ -87,4 +89,10 @@ function getServerMapEmbed(channelsObj){
 	
 // 	dbg(emb);
 	dbg(channelsObj);
+	
+	function convertArrChannelIDtoChannelName(arr){
+		for (var i = 0; i < arr.length; i++)
+			arr[i] = arr[i].channelIDtoLink();		
+		return arr;
+	}
 }
