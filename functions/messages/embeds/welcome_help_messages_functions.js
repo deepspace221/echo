@@ -505,7 +505,7 @@ function getPatronsEmbed(){
                   }); 
                   var arr1 = arr.splice(0, arr.length/2);
                   var arr2 = arr;
-                  emb.fields[i].name = "";
+                  emb.fields[i].name = "<:blank:352901517004636163>";
                   emb.fields[i].value = "```css\n
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
 \n[Join a new and exciting thing! We need you!]\  
