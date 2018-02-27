@@ -72,22 +72,22 @@ function getServerMapEmbed(channelsObj){
      emb.fields = getFieldsObj(len, true);
 
 	
-     createFields("mobile");
-     createFields("platforms");
+     createFields("mobile", ":iphone: Mobile");
+     createFields("platforms", "Platforms");
      createFields("langCategories");
-     createFields("community");
-     createFields("general");
-     createFields("lang");
-     createFields("hobbies");	
-     createFields("hooks");
+     createFields("community", "Community");
+     createFields("general", "General");
+     createFields("lang", "Languages");
+     createFields("hobbies", "Hobbies");	
+     createFields("hooks", "Hooks");
 	
      dbg(emb);
      return emb;
 
-     function createFields(type){     
+     function createFields(type, name){     
 	if (type == "community" || type == "general" || type == "hooks" || type == "lang"){
 		var value = (channelsObj.main[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type])) : "NaN";
-		emb.fields[idx].name = type;
+		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;		
 	}
@@ -101,7 +101,7 @@ function getServerMapEmbed(channelsObj){
 	}
 	else if (type == "hobbies" || type == "mobile" || type == "platforms"){
 		var value = (channelsObj[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-		emb.fields[idx].name = type;
+		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;		
 	}
