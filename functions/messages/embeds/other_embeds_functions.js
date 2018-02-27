@@ -65,28 +65,41 @@ function getServerMapEmbed(channelsObj){
 
      len = channelsObj.lang.length;
      len += Object.keys(channelsObj.main).length;
+     len += Object.keys(channelsObj).length -2;	
+
      dbg(len);
      emb.fields = getFieldsObj(len, true);
 	
-     createMainFields("community");
-     createMainFields("general");
-     createMainFields("hooks");
-     createMainFields("lang");
+     createFields("community");
+     createFields("general");
+     createFields("hooks");
+     createFields("lang");
+     createFields("mobile");
+     createFields("langCategories");
+     createFields("platforms");
+     createFields("hobbies");	
 	
-
-     for (var i = 0; i < channelsObj.lang.length; i++){
-	emb.fields[idx].name = channelsObj.lang[i].categoryName;
-	emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
-	idx++;
-     }
      dbg(emb);
      return emb;
 
-     function createMainFields(type){
-	emb.fields[idx].name = type;
-	var temp = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type]));
-	emb.fields[idx].value = (temp) ? temp : "NaN";
-	idx++;
+     function createFields(type){     
+	if (type == "community" || type == "general" || type == "hooks" || type == "lang"){
+		emb.fields[idx].name = type;
+		emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type]));
+		idx++;		
+	}
+	else if (type == "langCategories"){
+		for (var i = 0; i < channelsObj.lang.length; i++){
+			emb.fields[idx].name = channelsObj.lang[i].categoryName;
+			emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+			idx++;
+   		}
+	}
+	else if (type == "hobbies" || type == "mobile" || type == "platforms"){
+		emb.fields[idx].name = type;
+		emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type]));
+		idx++;		
+	}
      }
 
      function convertArrChannelIDtoChannelName(arr){
