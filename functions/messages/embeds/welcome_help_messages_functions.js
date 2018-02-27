@@ -490,7 +490,7 @@ function getPatronsEmbed(){
             if (patrons[i].users != "") {
                   len++;
                   arrPatrons.push(patrons[i]);    
-            }else arrOpenPos.puth(patrons[i]);
+            }else arrOpenPos.push(patrons[i]);
             
       }
       arrPatrons = arrPatrons.sort(sortABC);
