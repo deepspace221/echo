@@ -69,7 +69,8 @@ function getServerMapEmbed(channelsObj){
 	
      for (var i = 0; i < channelsObj.lang.length; i++){
 	emb.fields[i].name = channelsObj.lang[i].category;
-	emb.fields[i].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+	var channels = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+	emb.fields[i].value = (channels) ? channels : "NaN";
      }
      return emb;
       
@@ -89,7 +90,7 @@ function getServerMapEmbed(channelsObj){
 	dbg(channelsObj);
 	
 	function convertArrChannelIDtoChannelName(arr){
-		dbg(arr);
+// 		dbg(arr);
 		for (var i = 0; i < arr.length; i++){
 			if (arr[i])
 			     arr[i] = arr[i].channelIDtoLink();	
