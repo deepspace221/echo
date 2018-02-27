@@ -376,6 +376,15 @@ function isMemberHasRole(guildID, userID, role){
 	return false;
 }
 
+function isMemberHasRole2(role){
+	var user = getUserOBJ(UserID);
+	for (var i = 0; i < user.Roles.length; i++){
+		if (user.Roles[i] == GetRoleID(role)){
+			return true;	
+		}
+	}	
+	return false;
+}
 
 function removeConflictingRoles(roles){
   var arr = [];
