@@ -65,6 +65,7 @@ function getServerMapEmbed(channelsObj){
 
      len = channelsObj.lang.length;
      len += Object.keys(channelsObj.main).length;
+     dbg(len);
      emb.fields = getFieldsObj(len, true);
 	
      createMainFields("community");
