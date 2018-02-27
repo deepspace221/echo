@@ -59,12 +59,30 @@ function getRolesEmbed(roles){
 }
 
 function getServerMapEmbed(channelsObj){ 
-//      use server_db; 
-//      var roleSlices, patrons, len = 0;
-//      var emb = getEmbedObj();
-//      var arrPatronsObj = [], arrOpenPos = [];
+     var emb = getEmbedObj(), len = 0;
+     emb.title = "Choose a location to teleport.";
+     emb.description = "Server's map";
+     len = channelsObj.lang.length;
+     emb.fields = getFieldsObj(len, false);
+	
+     for (var i = 0; i < channelsObj.lang.length; i++){
+	emb.fields[i].name = channelsObj.lang[i].category;
+	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].category.channels);
+     }
+     return emb;
       
-//      roleSlices = JSON.parse(server_db["roleSlices"]);  
-//      patrons = roleSlices.patrons;
+//      emb.fields[1].name = "Admins";
+//      emb.fields[1].value = (output.admins) ? output.admins : "<:terrified:402081920063635467>";
+//      emb.fields[1].inline = true;
+      
+//      emb.fields[2].name = "Bot Dev";
+//      emb.fields[2].value = (output.botDev) ? output.botDev : "<:terrified:402081920063635467>";
+//      emb.fields[2].inline = true;  
+   
+//      emb.fields[3].name = "Senior Mods";
+//      emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
+//      emb.fields[3].inline = true;
+	
+
 	dbg(channelsObj);
 }
