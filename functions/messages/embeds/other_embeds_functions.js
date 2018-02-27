@@ -83,6 +83,6 @@ function getServerMapEmbed(channelsObj){
 //      emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
 //      emb.fields[3].inline = true;
 	
-
+	dbg(emb);
 	dbg(channelsObj);
 }
