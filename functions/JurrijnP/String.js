@@ -145,7 +145,7 @@ String.prototype.smallCodeblock = function() {
     return ("`" + this + "`")
 }
 
-String.prototype.channelLink = function() {
+String.prototype.channelIDtoLink = function() {
     return ("<#" + this + ">")
 }
 
