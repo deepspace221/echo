@@ -43,6 +43,11 @@ function createArrOutputNewLinesSeprated(arr){
 	return output;
 }
 
+function sortABC(a, b){
+	if (a > b) return 1;
+	if (a < b) return -1;
+	if (a == b) return 0;   		
+}
 
 function isValueInArr(arr, value){
 	for (var j = 0; j < arr.length; j++){
