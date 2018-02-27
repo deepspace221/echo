@@ -68,6 +68,6 @@ function getUserAvatar(userID, hash){
 	return "https://discordapp.com/api/v6/users/" + userID + "/avatars/" + hash + ".jpg";
 }
 
-function getGuildIcon(){
-	return "https://www.duolingo.com/images/illustrations/owl-happy@2x.png"	
+function getGuildIcon(){	
+	return "https://cdn.discordapp.com/icons/335021599059345408/" + Server.Icon + ".jpg"	
 }
