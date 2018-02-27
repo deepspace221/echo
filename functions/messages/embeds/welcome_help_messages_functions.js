@@ -482,6 +482,8 @@ function getPatronsEmbed(){
      emb.url = "http://google.com"
      emb.title = "Patrons List - Click here to become a language patron";
      emb.description = "Our most dedicated staffers";
+     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+
       
       for (var i = 0; i < patrons.length; i++){
             patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
@@ -494,14 +496,11 @@ function getPatronsEmbed(){
       var arrOpenPos = arrOpenPos.sort(sortABC);      
       
       emb.fields = getFieldsObj(len+3, true);
-      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
-      for (i = 0; i < emb.fields.length; i++){
+      for (i = 0; i < arrPatrons.length; i++){
            emb.fields[i].name = arrPatrons[i].role;
-           emb.fields[i].value = (arrPatrons[i].users) ? createArrOutputNewLinesSeprated(arrPatrons[i].users) : "NaN";  
-           if (arrPatrons[i+1].users == "" && (i % 2 == 0)){
-              emb.fields[i].inline = false;      
-           }         
+           emb.fields[i].value = createArrOutputNewLinesSeprated(arrPatrons[i].users);  
+           if (i % 2 == 0)emb.fields[i].inline = false;       
       }
       
       var arr1 = arrOpenPos.splice(0, (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
