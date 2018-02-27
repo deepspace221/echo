@@ -475,6 +475,7 @@ function getPatronsEmbed(){
      use server_db; 
      var roleSlices, patrons, len = 0;
      var emb = getEmbedObj();
+     var arrPatrons = [], arrOpenPos = [];
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      patrons = roleSlices.patrons;
@@ -483,17 +484,17 @@ function getPatronsEmbed(){
      emb.title = "Patrons List - Click here to become a language patron";
      emb.description = "Our most dedicated staffers";
      emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
-
-      
+     
       for (var i = 0; i < patrons.length; i++){
             patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
-            if (patrons[i].users != "") len++;
+            if (patrons[i].users != "") {
+                  len++;
+                  arrPatrons.push(patrons[i]);    
+            }else arrOpenPos.puth(patrons[i]);
+            
       }
-      
-      var arrPatrons = patrons.splice(0,len);
-      var arrOpenPos = patrons;
-      var arrPatrons = arrPatrons.sort(sortABC);
-      var arrOpenPos = arrOpenPos.sort(sortABC);   
+      arrPatrons = arrPatrons.sort(sortABC);
+      arrOpenPos = arrOpenPos.sort(sortABC);   
       
       dbg(arrOpenPos);
       
