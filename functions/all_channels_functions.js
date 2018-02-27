@@ -104,6 +104,7 @@ function serverMap(){
               if (channel) channelsObj.mobile.push(channel);
         }  
         else if (isValueInArr(roleSlices.platforms, arrUserRoles[i])){
+              if (arrUserRoles[i] == "Readlang") continue;
               var channel = getRoleRelatedChannel(arrUserRoles[i], "other");
               if (channel) channelsObj.platforms.push(channel);   
         }  
