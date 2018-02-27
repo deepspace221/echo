@@ -12,6 +12,14 @@ function getCatResourcesChannel(category, name){
        return undefined;
 }
 
+function getChannelName(ID){
+       for (var i = 0; i < ServerChannels.length; i++){
+            if (ServerChannels[i].ID == ID)
+                return ServerChannels[i].name;
+       }
+       return undefined;
+}
+
 function getRoleRelatedChannel(name, type){
       name = name.toLowerCase();
       for (var i = 0; i < ServerChannels.length; i++){
@@ -20,7 +28,7 @@ function getRoleRelatedChannel(name, type){
                     category: "",
                     channels: []
                 };
-                obj.category = ServerChannels[i].ParentID;
+                obj.category = getChannelName(ServerChannels[i].ParentID);
                 obj.channels.push(ServerChannels[i].ID);
                 obj.channels.push(getCatResourcesChannel(obj.category, "resources"));
                 obj.channels.push(getCatResourcesChannel(obj.category, "music"));
