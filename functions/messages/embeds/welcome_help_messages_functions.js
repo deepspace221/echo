@@ -497,9 +497,9 @@ function getPatronsEmbed(){
       emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
           
       for (i = 0; i < emb.fields.length; i++){
-           emb.fields[i].name = patrons[i].role;
-           emb.fields[i].value = (createArrOutputNewLinesSeprated(patrons[i].users)) ? createArrOutputNewLinesSeprated(patrons[i].users) : "NaN";  
-           if (patrons[i+1].users == "" && (i % 2 == 0)){
+           emb.fields[i].name = arrPatrons[i].role;
+           emb.fields[i].value = (arrPatrons[i].users) ? createArrOutputNewLinesSeprated(arrPatrons[i].users) : "NaN";  
+           if (arrPatrons[i+1].users == "" && (i % 2 == 0)){
               emb.fields[i].inline = false;      
            }         
       }
