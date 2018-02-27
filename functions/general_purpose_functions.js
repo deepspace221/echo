@@ -67,3 +67,7 @@ function isLanguageRole(roleName){
 function getUserAvatar(userID, hash){
 	return "https://discordapp.com/api/v6/users/" + userID + "/avatars/" + hash + ".jpg";
 }
+
+function getGuildIcon(){
+	return "https://www.duolingo.com/images/illustrations/owl-happy@2x.png"	
+}
