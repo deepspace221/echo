@@ -64,7 +64,7 @@ function getServerMapEmbed(channelsObj){
      emb.description = "Choose a location to teleport.";
 
      len = channelsObj.lang.length;
-     emb.fields = getFieldsObj(len, false);
+     emb.fields = getFieldsObj(len, true);
 	
      for (var i = 0; i < channelsObj.lang.length; i++){
 	emb.fields[i].name = channelsObj.lang[i].categoryName;
