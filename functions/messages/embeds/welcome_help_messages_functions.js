@@ -493,7 +493,7 @@ function getPatronsEmbed(){
             }else arrOpenPos.push(patrons[i].role);
             
       }
-      arrPatronsObj = arrPatronsObj.sort(sortABC);
+      arrPatronsObj = arrPatronsObj.sort(sortABC, "role");
       arrOpenPos = arrOpenPos.sort(sortABC);   
       
       dbg(arrOpenPos);
