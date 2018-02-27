@@ -475,7 +475,7 @@ function getPatronsEmbed(){
      use server_db; 
      var roleSlices, patrons, len = 0;
      var emb = getEmbedObj();
-     var arrPatrons = [], arrOpenPos = [];
+     var arrPatronsObj = [], arrOpenPos = [];
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      patrons = roleSlices.patrons;
@@ -489,24 +489,24 @@ function getPatronsEmbed(){
             patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
             if (patrons[i].users != "") {
                   len++;
-                  arrPatrons.push(patrons[i]);    
-            }else arrOpenPos.push(patrons[i]);
+                  arrPatronsObj.push(patrons[i]);    
+            }else arrOpenPos.push(patrons[i].role);
             
       }
-      arrPatrons = arrPatrons.sort(sortABC);
+      arrPatronsObj = arrPatronsObj.sort(sortABC);
       arrOpenPos = arrOpenPos.sort(sortABC);   
       
       dbg(arrOpenPos);
       
       emb.fields = getFieldsObj(len+3, true);
           
-      for (i = 0; i < arrPatrons.length; i++){
-           emb.fields[i].name = arrPatrons[i].role;
-           emb.fields[i].value = createArrOutputNewLinesSeprated(arrPatrons[i].users);  
+      for (i = 0; i < arrPatronsObj.length; i++){
+           emb.fields[i].name = arrPatronsObj[i].role;
+           emb.fields[i].value = createArrOutputNewLinesSeprated(arrPatronsObj[i].users);  
            if (i % 2 == 0)emb.fields[i].inline = false;       
       }
       
-//       var arr1 = arrOpenPos.splice(0, (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
+      var splitIndex = (arrOpenPos.length % 2 == 1) ? arrOpenPos.length/2 :  arrOpenPos.length/2 + 1);
       emb.fields[len].name = "<:blank:352901517004636163>";
       emb.fields[len].value = "```css\n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
@@ -516,7 +516,7 @@ function getPatronsEmbed(){
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
       emb.fields[len+1].name = "Open Positions<:blank:352901517004636163>";
-      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, arrOpenPos.length/2))+ "```";
+      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, splitIndex)+ "```";
       emb.fields[len+2].name = "<:blank:352901517004636163>";
       emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
