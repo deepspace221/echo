@@ -89,6 +89,7 @@ function getServerMapEmbed(channelsObj){
 	dbg(channelsObj);
 	
 	function convertArrChannelIDtoChannelName(arr){
+		dbg(arr);
 		for (var i = 0; i < arr.length; i++)
 			arr[i] = arr[i].channelIDtoLink();		
 		return arr;
