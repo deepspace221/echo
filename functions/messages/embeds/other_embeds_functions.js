@@ -59,40 +59,42 @@ function getRolesEmbed(roles){
 }
 
 function getServerMapEmbed(channelsObj){ 
-     var emb = getEmbedObj(), len = 0;
+     var emb = getEmbedObj(), len = 0, idx = 0;
      emb.title = "Teleporter";
      emb.description = "Choose a location to teleport.";
 
      len = channelsObj.lang.length;
+     len += Object.keys(channelsObj.main).length;
      emb.fields = getFieldsObj(len, true);
 	
+     createMainFields("community");
+     createMainFields("general");
+     createMainFields("hooks");
+     createMainFields("lang");
+	
+
      for (var i = 0; i < channelsObj.lang.length; i++){
-	emb.fields[i].name = channelsObj.lang[i].categoryName;
-	emb.fields[i].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+	emb.fields[idx].name = channelsObj.lang[i].categoryName;
+	emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+	idx++;
      }
      return emb;
-      
-//      emb.fields[1].name = "Admins";
-//      emb.fields[1].value = (output.ademins) ? output.admins : "<:terrified:402081920063635467>";
-//      emb.fields[1].inline = true;
-      
-//      emb.fields[2].name = "Bot Dev";
-//      emb.fields[2].value = (output.botDev) ? output.botDev : "<:terrified:402081920063635467>";
-//      emb.fields[2].inline = true;  
-   
-//      emb.fields[3].name = "Senior Mods";
-//      emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
-//      emb.fields[3].inline = true;
-	
-// 	dbg(emb);
-	dbg(channelsObj);
-	
-	function convertArrChannelIDtoChannelName(arr){
-// 		dbg(arr);
-		for (var i = 0; i < arr.length; i++){
-			if (arr[i])
-			     arr[i] = arr[i].channelIDtoLink();	
-		}
-		return arr;
+
+     dbg(channelsObj);
+
+     function createMainFields(type){
+	for (var i = 0; i < channelsObj.main[type].length; i++){
+		emb.fields[idx].name = type;
+		emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type][i]));
+ 		idx++;
+	}   
+     }
+
+     function convertArrChannelIDtoChannelName(arr){
+	for (var i = 0; i < arr.length; i++){
+		if (arr[i])
+		     arr[i] = arr[i].channelIDtoLink();	
 	}
+	return arr;
+     }
 }
