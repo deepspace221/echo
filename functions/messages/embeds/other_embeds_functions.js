@@ -58,6 +58,13 @@ function getRolesEmbed(roles){
       return getExpandableEmbed(title, "", color, thumb, description, fields, "", "");     
 }
 
-function getServerMapEmbed(){ 
+function getServerMapEmbed(channelsObj){ 
+//      use server_db; 
+//      var roleSlices, patrons, len = 0;
+//      var emb = getEmbedObj();
+//      var arrPatronsObj = [], arrOpenPos = [];
       
+//      roleSlices = JSON.parse(server_db["roleSlices"]);  
+//      patrons = roleSlices.patrons;
+	dbg(channelsObj);
 }
