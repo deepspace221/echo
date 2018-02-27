@@ -483,7 +483,7 @@ function getPatronsEmbed(){
      emb.url = "http://google.com"
      emb.title = "Patrons List - Click here to become a language patron";
      emb.description = "Our most dedicated staffers";
-     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+     emb.thumbnail.url = getGuildIcon();
      
       for (var i = 0; i < patrons.length; i++){
             patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
