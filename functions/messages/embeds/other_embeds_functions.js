@@ -70,15 +70,16 @@ function getServerMapEmbed(channelsObj){
 
      dbg(len);
      emb.fields = getFieldsObj(len, true);
+
 	
+     createFields("mobile");
+     createFields("platforms");
+     createFields("langCategories");
      createFields("community");
      createFields("general");
-     createFields("hooks");
      createFields("lang");
-     createFields("mobile");
-     createFields("langCategories");
-     createFields("platforms");
      createFields("hobbies");	
+     createFields("hooks");
 	
      dbg(emb);
      return emb;
