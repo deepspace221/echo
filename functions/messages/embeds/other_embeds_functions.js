@@ -60,21 +60,21 @@ function getRolesEmbed(roles){
 
 function getServerMapEmbed(channelsObj){ 
      var emb = getEmbedObj(), len = 0;
-     emb.title = "Choose a location to teleport.";
-     emb.description = "Server's map";
+     emb.title = "Teleporter";
+     emb.description = "Choose a location to teleport.";
 
      len = channelsObj.lang.length;
      dbg(len);
      emb.fields = getFieldsObj(len, false);
 	
      for (var i = 0; i < channelsObj.lang.length; i++){
-	emb.fields[i].name = channelsObj.lang[i].category;
-	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].channels);
+	emb.fields[i].name = channelsObj.lang[i].category.channelLink();
+	emb.fields[i].value = createArrOutputNewLinesSeprated(channelsObj.lang[i].channels.channelLink());
      }
      return emb;
       
 //      emb.fields[1].name = "Admins";
-//      emb.fields[1].value = (output.admins) ? output.admins : "<:terrified:402081920063635467>";
+//      emb.fields[1].value = (output.ademins) ? output.admins : "<:terrified:402081920063635467>";
 //      emb.fields[1].inline = true;
       
 //      emb.fields[2].name = "Bot Dev";
