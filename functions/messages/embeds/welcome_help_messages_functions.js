@@ -525,6 +525,7 @@ function getPatronsEmbed(){
             for (var i = 0; i < arr1.length; i++){
                   if (i > arr2.length-1){
                         arr1[i] = "# " + arr1[i];
+                        continue;
                   }     
                   arr1[i] = "# " + arr1[i] + createEmptyStr(21 - arr1[i].length) + arr2[i];
             }
