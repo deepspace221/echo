@@ -492,7 +492,7 @@ function getPatronsEmbed(){
       
 //       dbg(arrOpenPos);
       
-      emb.fields = getFieldsObj(len+3, true);
+      emb.fields = getFieldsObj(len+2, true);
           
       for (i = 0; i < arrPatronsObj.length; i++){
            emb.fields[i].name = arrPatronsObj[i].role;
@@ -500,7 +500,7 @@ function getPatronsEmbed(){
            if (i == arrPatronsObj.length -1  && i % 2 == 0)emb.fields[i].inline = false;       
       }
       
-      var splitIndex = (arrOpenPos.length % 2 == 0) ? arrOpenPos.length/2 :  (arrOpenPos.length/2 + 1);
+      arrOpenPos = createColumns(arrOpenPos);
       emb.fields[len].name = "<:blank:352901517004636163>";
       emb.fields[len].value = "```css\n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
@@ -509,13 +509,21 @@ function getPatronsEmbed(){
 \n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
-      emb.fields[len+1].name = "Open Positions<:blank:352901517004636163>";
-      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos.splice(0, splitIndex)) + "```";
-      emb.fields[len+2].name = "<:blank:352901517004636163>";
-      emb.fields[len+2].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
+      emb.fields[len+1].name = "Open Positions";
+      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
       return emb;
-           
+     
+      function  createColumns(arrOpenPos){
+            var splitIndex = (arrOpenPos.length % 2 == 0) ? arrOpenPos.length/2 :  (arrOpenPos.length/2 + 1);
+            var arr1 = arrOpenPos.splice(0, splitIndex)
+            var arr2 = arrOpenPos;
+      
+            for (var i = 0; i < arr1.length; i++){
+                  var arr1[i] +=  createEmptyStr(30 - arr1[i].length) + arr2[i];
+            }
+            return arr1;
+      } 
 }
 
 
