@@ -480,7 +480,7 @@ function getPatronsEmbed(){
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      patrons = roleSlices.patrons;
     
-     emb.url = "http://google.com"
+     emb.url = "https://docs.google.com/forms/d/e/1FAIpQLSfXSMFWud5kSrq2ivdrMoWdp8HvIedOBKEZaEt0pufaC8jRZg/viewform"
      emb.title = "Patrons List - Click here to become a language patron";
      emb.description = "Our most dedicated staffers";
      emb.thumbnail.url = getGuildIcon();
