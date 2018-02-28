@@ -197,12 +197,12 @@ function getInRoleEmbed(arrUsers, role){
      emb.description = "";
 	
      if (arrUsers.length <= 20){	
-    	 emb.fields = getFieldsObj(getFieldsLength(1), true);
+    	 emb.fields = getFieldsObj(1, true);
 	 emb.fields[0].name = "Users";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers) 
      }
      else {
-	 emb.fields = getFieldsObj(getFieldsLength(2), true);
+	 emb.fields = getFieldsObj(2, true);
 	 emb.fields[0].name = "Users";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers.splice(0,20)) 	     
 	 emb.fields[1].name = "Users";
