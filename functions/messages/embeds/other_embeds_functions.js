@@ -103,8 +103,10 @@ function getServerMapEmbed(channelsObj){
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;	
-		if ((type == "mobile" && channelsObj.platforms == "") || (type == "platforms" && !hasMobileRole)) 
+		if ((type == "mobile" && channelsObj.platforms == "")
                      createEmptyFields(emb, 2, idx);
+		else if (type == "platforms" && !hasMobileRole)) 
+                     createEmptyFields(emb, 2, idx);		
 		else if (hasMobileRole && channelsObj.platforms != "") 
                      createEmptyFields(emb, 1, idx);
 		
@@ -145,24 +147,19 @@ function getServerMapEmbed(channelsObj){
      function getFieldsLength(){
 	     var len = 0;
              if (hasMobileRole || channelsObj.platforms != "") len += 3	
-// 	     dbg("1st :" +len);	
 
 	     len += channelsObj.lang.length;
 	     if (channelsObj.lang.length % 3 == 1) len += 2;
 	     else if (channelsObj.lang.length % 3 == 2) len++;
-// 	     dbg("2nd: " + len);
 
 	     len += Object.keys(channelsObj.main).length - 1; //reducing hooks
 
-	     dbg("3rd :" + len);
 	//      if (hasMobileRole) len++;
 	//      if (channelsObj.platforms != "") len++;
 	//      if (hasMobileRole && channelsObj.platforms != "") len++
 
 	     if (hasHooksRole) len++;
 	     if (channelsObj.hobbies != "") len++;
-
-// 	     dbg("fourth :" + len);
 
 	     if (len % 3 == 1) len += 2;
 	     else if (len % 3 == 2) len++;
