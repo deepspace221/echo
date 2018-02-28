@@ -75,7 +75,7 @@ function getServerMapEmbed(channelsObj){
      if (channelsObj.platforms != "") len++;
      len += Object.keys(channelsObj).length -6;	
 
-     dbg(len);
+//      dbg(len);
      emb.fields = getFieldsObj(len, true);
 
 	
@@ -88,7 +88,7 @@ function getServerMapEmbed(channelsObj){
      if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
      if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	
 	
-     dbg(emb);
+//      dbg(emb);
      return emb;
 
      function createFields(type, name){     
