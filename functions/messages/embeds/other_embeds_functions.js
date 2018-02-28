@@ -192,7 +192,7 @@ function getServerMapEmbed(channelsObj){
 
 
 function getInRoleEmbed(arrUsers, role){
-     var emb = getEmbedObj();
+     var emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
 	
@@ -207,6 +207,9 @@ function getInRoleEmbed(arrUsers, role){
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers.splice(0,20)) 	     
 	 emb.fields[1].name = "<:blank:352901517004636163>";
 	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
+     }
+     if (arrUsers.length != 0){
+	reacts = "{reactbot::arrow_backward::arrow_forward:}"    
      }
      return emb;
 }
