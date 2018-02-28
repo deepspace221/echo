@@ -105,7 +105,7 @@ function getServerMapEmbed(channelsObj){
 		idx++;	
 		if ((type == "mobile" && channelsObj.platforms == "")
                      createEmptyFields(emb, 2, idx);
-		else if (type == "platforms" && !hasMobileRole)) 
+		else if (type == "platforms" && !hasMobileRole)
                      createEmptyFields(emb, 2, idx);		
 		else if (hasMobileRole && channelsObj.platforms != "") 
                      createEmptyFields(emb, 1, idx);
@@ -146,7 +146,7 @@ function getServerMapEmbed(channelsObj){
 	
      function getFieldsLength(){
 	     var len = 0;
-             if (hasMobileRole || channelsObj.platforms != "") len += 3	
+             if (hasMobileRole || channelsObj.platforms != "") len += 3;
 
 	     len += channelsObj.lang.length;
 	     if (channelsObj.lang.length % 3 == 1) len += 2;
