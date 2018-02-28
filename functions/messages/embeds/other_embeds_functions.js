@@ -69,10 +69,14 @@ function getServerMapEmbed(channelsObj){
 
      len = channelsObj.lang.length;
      len += Object.keys(channelsObj.main).length;
-     if (hasMobileRole) len++;
+	
+//      if (hasMobileRole) len++;
+//      if (channelsObj.platforms != "") len++;
+//      if (hasMobileRole && channelsObj.platforms != "") len++
+     if (hasMobileRole || channelsObj.platforms != "") len += 3	
+	
      if (hasHooksRole) len++;
      if (channelsObj.hobbies != "") len++;
-     if (channelsObj.platforms != "") len++;
      len += Object.keys(channelsObj).length -6;	
 
 //      dbg(len);
@@ -110,7 +114,23 @@ function getServerMapEmbed(channelsObj){
 		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
-		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
+// for 2 coulmens		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
+		if (type == "mobile" && channelsObj.platforms == ""){
+			emb.fields[idx+1].name = "<:blank:352901517004636163>";
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";
+			emb.fields[idx+2].name = "<:blank:352901517004636163>";
+			emb.fields[idx+2].value = "<:blank:352901517004636163>";
+		}
+		else if (type == "platforms" && !hasMobileRole){
+			emb.fields[idx+1].name = "<:blank:352901517004636163>";
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";
+			emb.fields[idx+2].name = "<:blank:352901517004636163>";
+			emb.fields[idx+2].value = "<:blank:352901517004636163>";
+		}
+		else if (hasMobileRole && channelsObj.platforms != ""){
+			emb.fields[idx+1].name = "<:blank:352901517004636163>";
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";	
+		}	
 		idx++;		
 	}
      }
