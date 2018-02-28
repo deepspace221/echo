@@ -60,6 +60,17 @@ function getRolesEmbed(roles){
 
 function getServerMapEmbed(channelsObj){ 
      var emb = getEmbedObj(), idx = 0;
+	
+     var fieldName = {
+	     platforms: "<:duolingo12:402265833541206027> Platforms",
+	     community: ":regional_indicator_c:ommunity", //<:gringo:402274676153516033> 
+	     languages: ":regional_indicator_l:anguages", //:earth_asia:
+	     general: ":regional_indicator_g:eneral",
+	     hobbies: "<:cute_bunny:402265976592400394> Hobbies",
+	     hooks: "<:youtube:314349922885566475> Hooks",
+	     mobile: ":signal_strength: Mobile"
+     };
+	
      var hasMobileRole = (isMemberHasRole2("v. Mobile")) ? true : false;
      var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
 	
@@ -130,16 +141,6 @@ function getServerMapEmbed(channelsObj){
      function getFieldsLength(){
 	     var len = 0;
              if (hasMobileRole || channelsObj.platforms != "") len += 3;
-	     
-	     var fieldName = {
-		     platforms: "<:duolingo12:402265833541206027> Platforms",
-		     community: ":regional_indicator_c:ommunity", //<:gringo:402274676153516033> 
-		     languages: ":regional_indicator_l:anguages", //:earth_asia:
-		     general: ":regional_indicator_g:eneral",
-		     hobbies: "<:cute_bunny:402265976592400394> Hobbies",
-		     hooks: "<:youtube:314349922885566475> Hooks",
-		     mobile: ":signal_strength: Mobile"
-	     };
 
 	     len += channelsObj.lang.length;
 	     if (channelsObj.lang.length % 3 == 1) len += 2;
