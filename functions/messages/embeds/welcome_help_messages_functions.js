@@ -477,7 +477,7 @@ function getPatronsEmbed(){
      emb.url = "https://docs.google.com/forms/d/e/1FAIpQLSfXSMFWud5kSrq2ivdrMoWdp8HvIedOBKEZaEt0pufaC8jRZg/viewform"
      emb.title = "Patrons List - Click here to apply for a patron position";
      emb.description = "Our most dedicated staffers.";
-     emb.footer.text = "You can also apply for an occupied patron position.";
+     emb.footer.text = "*You can also apply for an occupied patron position.";
      emb.thumbnail.url = getGuildIcon();
      
       for (var i = 0; i < patrons.length; i++){
@@ -513,7 +513,7 @@ function getPatronsEmbed(){
 \n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
-      emb.fields[len+1].name = "Open patron positions";
+      emb.fields[len+1].name = "*Open patron positions";
       emb.fields[len+1].value = "```md\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
       return emb;
