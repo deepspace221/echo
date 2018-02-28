@@ -12,7 +12,7 @@ function getMobileServerMapEmbed(channelsObj){
 	     mobile: ":signal_strength: Mobile"
      };
 
-     dbg(arrTxt);
+//      dbg(arrTxt);
      var hasMobileRole = (isMemberHasRole2("v. Mobile")) ? true : false;
      var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
 	
@@ -27,29 +27,30 @@ function getMobileServerMapEmbed(channelsObj){
 	arrTxt.push(fieldName.platforms.bold());
 	arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.platforms)));  	     
      }
-     dbg(arrTxt);
+//      dbg(arrTxt);
      arrTxt.push(fieldName.general.bold());
      arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.general))); 
      arrTxt.push(fieldName.community.bold());
-     dbg(arrTxt);	
+//      dbg(arrTxt);	
      arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.community))); 
      arrTxt.push(fieldName.languages.bold());
      arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.languages)));
-     dbg(arrTxt);
+//      dbg(arrTxt);
      if (hasHooksRole) {
 	     arrTxt.push(fieldName.hooks.bold());
 	     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.hooks)));	     
      }
-     dbg(arrTxt);	
+//      dbg(arrTxt);	
      if (channelsObj.hobbies != "") {
 	     arrTxt.push(fieldName.hobbies.bold());
 	     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.hobbies)));			     
      }
 	
-     dbg(arrTxt);
+//      dbg(arrTxt);
      return createArrOutputNewLinesSeprated(arrTxt);
 
   function langCategories(){     
+	dbg ("l1");
         for (var i = 0; i < channelsObj.lang.length; i++){
           arrTxt.push(channelsObj.lang[i].categoryName.bold());
           arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels)));
@@ -57,6 +58,7 @@ function getMobileServerMapEmbed(channelsObj){
    }
 
     function convertArrChannelIDtoChannelName(arr){
+      dbg ("l2");
       for (var i = 0; i < arr.length; i++){
 	if (arr[i])
 	     arr[i] = arr[i].channelIDtoLink();	
