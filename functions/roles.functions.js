@@ -441,7 +441,7 @@ function isValidRole(str){
 function inRole(role){
 	var arrUsers = [];
 	for (var i = 0; i < ServerMembers.length; i++){
-		for (var k = 0; k < ServerMembers.Roles.length; k++){
+		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
 			if (ServerMembers[i].Roles[k] == GetRoleID(role))
 				arrUsers.push("<@" + ServerMembers[i].User.ID + ">");
 		}
