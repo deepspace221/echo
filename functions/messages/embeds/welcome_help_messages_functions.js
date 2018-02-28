@@ -512,7 +512,7 @@ function getPatronsEmbed(){
 \n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
-      emb.fields[len+1].name = "Open Positions";
+      emb.fields[len+1].name = "Open patron positions";
       emb.fields[len+1].value = "```md\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
       return emb;
