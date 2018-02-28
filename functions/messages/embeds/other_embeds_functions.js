@@ -115,15 +115,15 @@ function getServerMapEmbed(channelsObj){
 	   idx = (idx) ? idx : 0;
 	   dbg("index :" + idx + "\nnum :" + num);
 	   if (num == 2){
+		emb.fields[idx].name = "<:blank:352901517004636163>";
+		emb.fields[idx].value = "<:blank:352901517004636163>";
 		emb.fields[idx+1].name = "<:blank:352901517004636163>";
 		emb.fields[idx+1].value = "<:blank:352901517004636163>";
-		emb.fields[idx+2].name = "<:blank:352901517004636163>";
-		emb.fields[idx+2].value = "<:blank:352901517004636163>";
 		idx += 2;	   
 	   }
 	   else if (num == 1){
-		emb.fields[idx+1].name = "<:blank:352901517004636163>";
-		emb.fields[idx+1].value = "<:blank:352901517004636163>";
+		emb.fields[idx].name = "<:blank:352901517004636163>";
+		emb.fields[idx].value = "<:blank:352901517004636163>";
 		idx++;	   
 	   }	     
      }
@@ -156,9 +156,9 @@ function getServerMapEmbed(channelsObj){
 	     if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
 	     if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
 	     if (hasMobileRole && channelsObj.platforms != "")
-		     createEmptyFields(emb, 2, idx);		
+		     createEmptyFields(emb, 1, idx);		
 	     else if (hasMobileRole || channelsObj.platforms != "") 
-		     createEmptyFields(emb, 1, idx);
+		     createEmptyFields(emb, 2, idx);
 
 	     createFields("langCategories");
 	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(emb, 2, idx);
@@ -171,8 +171,8 @@ function getServerMapEmbed(channelsObj){
 	     if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
 	     if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	 
 	     if (hasHooksRole && channelsObj.hobbies != "") 
-		     createEmptyFields(emb, 2, idx);		 
+		     createEmptyFields(emb, 1, idx);		 
 	     else if (hasHooksRole || hannelsObj.hobbies != "")
-		     createEmptyFields(emb, 1, idx);	     
+		     createEmptyFields(emb, 2, idx);	     
      }
 }
