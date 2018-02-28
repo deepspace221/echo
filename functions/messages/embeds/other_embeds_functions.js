@@ -148,6 +148,7 @@ function getServerMapEmbed(channelsObj){
 	return arr;
      }
      function createEmptyFields(emb, num, idx){
+	   idx = (idx) ? idx : 0;
 	   if (num == 2){
 		emb.fields[idx+1].name = "<:blank:352901517004636163>";
 		emb.fields[idx+1].value = "<:blank:352901517004636163>";
