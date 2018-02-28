@@ -68,6 +68,9 @@ function getServerMapEmbed(channelsObj){
 //      emb.thumbnail.url = getGuildIcon();
 
      len = channelsObj.lang.length;
+     if (hannelsObj.lang.length % 3 == 1) len += 2;
+     if (hannelsObj.lang.length % 3 == 2) len++;
+	
      len += Object.keys(channelsObj.main).length;
 	
 //      if (hasMobileRole) len++;
@@ -109,29 +112,43 @@ function getServerMapEmbed(channelsObj){
 			if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
 			idx++;
    		}
+		if (channelsObj.lang.length % 3 == 1){
+			emb.fields[idx+1].name = "<:blank:352901517004636163>";
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";
+			emb.fields[idx+2].name = "<:blank:352901517004636163>";
+			emb.fields[idx+2].value = "<:blank:352901517004636163>";
+			idx += 2;		
+		}
+		else if (channelsObj.lang.length % 3 == 2){
+			emb.fields[idx+1].name = "<:blank:352901517004636163>";
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";
+			idx += 1;		
+		}
 	}
-	else if (type == "hobbies" || type == "mobile" || type == "platforms"){
+	else if (type == "mobile" || type == "platforms"){
 		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
+		idx++;	
 // for 2 coulmens		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
-		if (type == "mobile" && channelsObj.platforms == ""){
+		if ((type == "mobile" && channelsObj.platforms == "") || (type == "platforms" && !hasMobileRole)){
 			emb.fields[idx+1].name = "<:blank:352901517004636163>";
 			emb.fields[idx+1].value = "<:blank:352901517004636163>";
 			emb.fields[idx+2].name = "<:blank:352901517004636163>";
 			emb.fields[idx+2].value = "<:blank:352901517004636163>";
-		}
-		else if (type == "platforms" && !hasMobileRole){
-			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";
-			emb.fields[idx+2].name = "<:blank:352901517004636163>";
-			emb.fields[idx+2].value = "<:blank:352901517004636163>";
+			idx += 2;
 		}
 		else if (hasMobileRole && channelsObj.platforms != ""){
 			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";	
+			emb.fields[idx+1].value = "<:blank:352901517004636163>";
+			idx++
 		}	
-		idx++;		
+	}
+	else if (type == "hobbies"){
+		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
+		emb.fields[idx].name = name;
+		emb.fields[idx].value = value;
+		idx++
 	}
      }
 
