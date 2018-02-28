@@ -60,7 +60,7 @@ function getMobileServerMapEmbed(channelsObj){
     function convertArrChannelIDtoChannelName(arr){
       dbg ("l2");
       for (var i = 0; i < arr.length; i++){
-	if (arr[i])
+	if (arr[i] != "")
 	     arr[i] = arr[i].channelIDtoLink();	
       }
       return arr;
