@@ -86,9 +86,13 @@ function getServerMapEmbed(channelsObj){
      if (channelsObj.hobbies != "") len++;
 
      dbg("fourth :" + len);
+	
+     if (len % 3 == 1) len += 2;
+     else if (len == 2) len++;
+	
+     dbg("final " + len); 	
      emb.fields = getFieldsObj(len, true);
 
-	
      if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
      if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
      createFields("langCategories");
