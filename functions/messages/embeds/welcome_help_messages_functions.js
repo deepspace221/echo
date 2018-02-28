@@ -509,7 +509,7 @@ function getPatronsEmbed(){
       emb.fields[len].value = "```css\n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\
 \n\
-\n [Join a new and exciting thing! We need you!] \
+\n[Join and help us build the best damn discord language server] \
 \n\
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
