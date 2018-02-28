@@ -404,7 +404,7 @@ function getStaffEmbed(){
 // dbg(createArrOutputCommaSeprated(staff.owners.users));
 // dbg(createArrOutputCommaSeprated(staff.admins.users));
       
-     emb.title = "☁☁ Kingdom of Valhalla ☁☁";
+     emb.title = "☁☁ Protectors of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
      emb.fields = getFieldsObj(8, false);
      emb.thumbnail.url = getGuildIcon();
