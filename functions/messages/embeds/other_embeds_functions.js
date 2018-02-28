@@ -71,7 +71,7 @@ function getServerMapEmbed(channelsObj){
 
      runCreateFields();
 	
-     dbg(emb);
+//      dbg(emb);
      return emb;
 
      function createFields(type, name){     
@@ -147,7 +147,7 @@ function getServerMapEmbed(channelsObj){
 	     if (len % 3 == 1) len += 2;
 	     else if (len % 3 == 2) len++;
 
-	     dbg("final " + len); 	
+// 	     dbg("final " + len); 	
 	     return len;
      }
 	
