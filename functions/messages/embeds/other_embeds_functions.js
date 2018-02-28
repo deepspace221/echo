@@ -94,7 +94,7 @@ function getServerMapEmbed(channelsObj){
 	}
 	else if (type == "langCategories"){
 		for (var i = 0; i < channelsObj.lang.length; i++){
-		        if (channelsObj.lang[i].categoryName == ":flag_ie: Irish | :flag_gb: gaelic | :flag_gb: Welsh")
+		        if (/irish/i.test(channelsObj.lang[i].categoryName))
 				emb.fields[idx].name = ":flag_ie: Irish | :flag_gb: gaelic";
 			else emb.fields[idx].name = channelsObj.lang[i].categoryName;
 			emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
