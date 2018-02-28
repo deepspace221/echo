@@ -18,30 +18,30 @@ function getMobileServerMapEmbed(channelsObj){
      arrTxt.push(**"Teleporter"**);
      
      runCreateFields();
-	
-//      dbg(emb);
-     return emb;
+
+     dbg(arrTxt);
+     return createArrOutputNewLinesSeprated(arrTxt);
 
   function createFields(type, name){     
       if (type == "community" || type == "general" || type == "lang"){
         var value = (channelsObj.main[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type])) : "NaN";
-        arrTxt.push(name);
+        arrTxt.push(name.bold());
         arrTxt.push(value);	
       }
       else if (type == "langCategories"){
         for (var i = 0; i < channelsObj.lang.length; i++){
-          arrTxt.push(**channelsObj.lang[i].categoryName**);
+          arrTxt.push(channelsObj.lang[i].categoryName.bold());
           arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels)));
           }
       }
       else if (type == "mobile" || type == "platforms"){
         var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-        arrTxt.push(name);
+        arrTxt.push(name.bold());
         arrTxt.push(value);
       }
       else if (type == "hobbies" || type == "hooks"){
         var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-        arrTxt.push(name);
+        arrTxt.push(name.bold());
         arrTxt.push(value);
       }
  }
