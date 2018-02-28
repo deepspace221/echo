@@ -449,5 +449,5 @@ function inRole(role){
 				arrUsers.push("<@" + ServerMembers[i].User.ID + ">");
 		}
 	}
-	return arrUsers
+	return getInRoleEmbed(arrUsers);
 }
