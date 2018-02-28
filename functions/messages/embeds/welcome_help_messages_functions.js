@@ -454,7 +454,7 @@ function getStaffEmbed(){
      emb.fields[6].value = (output.patrons) ? output.patrons : NaN;
      emb.fields[6].inline = true;    
      emb.fields[7].name = "Interns";
-     emb.fields[7].value = "<:terrified:402081920063635467>";
+     emb.fields[7].value = NaN;
      emb.fields[7].inline = true;
       
 //      emb.fields[8].name = "Former Staff";
