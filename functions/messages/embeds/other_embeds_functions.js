@@ -163,16 +163,17 @@ function getServerMapEmbed(channelsObj){
      }
 	
      function runCreateFields(){
+
+	     createFields("langCategories");
+	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(2);
+	     else if (channelsObj.lang.length % 3 == 2) createEmptyFields(1);
+	     
 	     if (hasMobileRole) createFields("mobile", fieldName.mobile);
 	     if (channelsObj.platforms != "") createFields("platforms", fieldName.platforms);
 	     if (hasMobileRole && channelsObj.platforms != "")
 		     createEmptyFields(1);		
 	     else if (hasMobileRole || channelsObj.platforms != "") 
 		     createEmptyFields(2);
-
-	     createFields("langCategories");
-	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(2);
-	     else if (channelsObj.lang.length % 3 == 2) createEmptyFields(1);
 
 	     createFields("general", fieldName.general);
 	     createFields("community", fieldName.community);
