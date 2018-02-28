@@ -95,7 +95,7 @@ function getServerMapEmbed(channelsObj){
      if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
      if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	
 	
-//      dbg(emb);
+     dbg(emb);
      return emb;
 
      function createFields(type, name){     
