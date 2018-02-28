@@ -31,8 +31,11 @@ function getRoleRelatedChannel(name, type){
                 obj.categoryID = ServerChannels[i].ParentID;
                 obj.categoryName = getChannelName(ServerChannels[i].ParentID);
                 obj.channels.push(ServerChannels[i].ID);
-                obj.channels.push(getCatResourcesChannel(obj.categoryID, "resources"));
                 obj.channels.push(getCatResourcesChannel(obj.categoryID, "music"));
+                var resourceChan = getCatResourcesChannel(obj.categoryID, "resources");
+                resourceChan = (resourceChan) ? resourceChan : getCatResourcesChannel(obj.categoryID, name + "-resources");
+                obj.channels.push(resourceChan);
+ 
                 return obj;
             }
             else if (type == "other" && ServerChannels[i].Name == name){
