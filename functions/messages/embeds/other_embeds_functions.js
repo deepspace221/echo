@@ -112,7 +112,7 @@ function getServerMapEmbed(channelsObj){
 	return arr;
      }
      function createEmptyFields(num){
-	   dbg("index :" + idx + "\nnum :" + num);
+// 	   dbg("index :" + idx + "\nnum :" + num);
 	   if (num == 2){
 		emb.fields[idx].name = "<:blank:352901517004636163>";
 		emb.fields[idx].value = "<:blank:352901517004636163>";
@@ -171,7 +171,7 @@ function getServerMapEmbed(channelsObj){
 	     if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	 
 	     if (hasHooksRole && channelsObj.hobbies != "") 
 		     createEmptyFields(1);		 
-	     else if (hasHooksRole || hannelsObj.hobbies != "")
+	     else if (hasHooksRole || channelsObj.hobbies != "")
 		     createEmptyFields(2);	     
      }
 }
