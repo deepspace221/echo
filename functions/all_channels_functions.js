@@ -84,13 +84,13 @@ function serverMap(){
         lang: [],
         mobile: [],
         platforms: [],
-        hobbies: [],
         main: {
             general: getMainChannels(arrMainChannels.general),
             community: getMainChannels(arrMainChannels.community),
-            lang: getMainChannels(arrMainChannels.lang),
-            hooks: getMainChannels(arrMainChannels.hooks)
-        }
+            lang: getMainChannels(arrMainChannels.lang)
+        },
+        hobbies: [],
+        hooks: getMainChannels(arrMainChannels.hooks)
     };
     
     var role;
