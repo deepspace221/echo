@@ -68,8 +68,8 @@ function getServerMapEmbed(channelsObj){
 //      emb.thumbnail.url = getGuildIcon();
 
      len = channelsObj.lang.length;
-     if (hannelsObj.lang.length % 3 == 1) len += 2;
-     if (hannelsObj.lang.length % 3 == 2) len++;
+     if (channelsObj.lang.length % 3 == 1) len += 2;
+     if (channelsObj.lang.length % 3 == 2) len++;
 	
      len += Object.keys(channelsObj.main).length;
 	
