@@ -71,7 +71,7 @@ function getServerMapEmbed(channelsObj){
      len += Object.keys(channelsObj.main).length;
      if (hasMobileRole) len++;
      if (hasHooksRole) len++;
-     if (channelsObj.hobbies != "") ? len++;
+     if (channelsObj.hobbies != "") len++;
      if (channelsObj.platforms != "") len++;
      len += Object.keys(channelsObj).length -6;	
 
