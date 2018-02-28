@@ -16,7 +16,7 @@ function getMobileServerMapEmbed(channelsObj){
      var hasMobileRole = (isMemberHasRole2("v. Mobile")) ? true : false;
      var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
 	
-     arrTxt.push(**"Teleporter"**);
+     arrTxt.push("Teleporter".bold());
 
      langCategories();
      if (hasMobileRole) {
