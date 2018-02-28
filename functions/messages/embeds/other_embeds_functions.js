@@ -94,7 +94,9 @@ function getServerMapEmbed(channelsObj){
 	}
 	else if (type == "langCategories"){
 		for (var i = 0; i < channelsObj.lang.length; i++){
-			emb.fields[idx].name = channelsObj.lang[i].categoryName;
+		        if (channelsObj.lang[i].categoryName == ":flag_ie: Irish | :flag_gb: gaelic | :flag_gb: Welsh")
+				emb.fields[idx].name = ":flag_ie: Irish | :flag_gb: gaelic";
+			else emb.fields[idx].name = channelsObj.lang[i].categoryName;
 			emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
 			idx++;
 			// 	for 2 columns		if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
