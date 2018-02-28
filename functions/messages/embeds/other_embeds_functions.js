@@ -60,26 +60,33 @@ function getRolesEmbed(roles){
 
 function getServerMapEmbed(channelsObj){ 
      var emb = getEmbedObj(), len = 0, idx = 0;
+     var hasMobileRole = (isMemberHasRole2("v. Mobile")) ? true : false;
+     var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
+	
      emb.title = "Teleporter";
      emb.description = "Choose a location to teleport.";
      emb.thumbnail.url = getGuildIcon();
 
      len = channelsObj.lang.length;
      len += Object.keys(channelsObj.main).length;
-     len += Object.keys(channelsObj).length -2;	
+     if (hasMobileRole) len++;
+     if (hasHooksRole) len++;
+     if (channelsObj.hobbies != "") ? len++;
+     if (channelsObj.platforms != "") len++;
+     len += Object.keys(channelsObj).length -6;	
 
      dbg(len);
      emb.fields = getFieldsObj(len, true);
 
 	
-     createFields("mobile", ":iphone: Mobile");
-     createFields("platforms", ":duolingo12: Platforms");
+     if (hasMobileRole) createFields("mobile", ":iphone: Mobile");
+     if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
      createFields("langCategories");
      createFields("community", "Community");
      createFields("general", "General");
      createFields("lang", ":earth_asia: Languages");
-     createFields("hobbies", "Hobbies");	
-     createFields("hooks", "Hooks");
+     if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
+     if (channelsObj.hobbies != "") createFields("hobbies", "Hobbies");	
 	
      dbg(emb);
      return emb;
