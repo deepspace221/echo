@@ -193,8 +193,8 @@ function getServerMapEmbed(channelsObj){
 
 function getInRoleEmbed(arrUsers, role){
      var emb = getEmbedObj();
-     emb.title = "Users in the role - " + role + " (" + arrUsers.length + ")";
-     emb.description = "";
+     emb.title = "Users in the role - " + role;
+     emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
 	
      if (arrUsers.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
