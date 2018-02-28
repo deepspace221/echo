@@ -150,7 +150,7 @@ function getServerMapEmbed(channelsObj){
 		emb.fields[idx+2].value = "<:blank:352901517004636163>";
 		idx += 2;	   
 	   }
-	   esle if (num == 1){
+	   else if (num == 1){
 		emb.fields[idx+1].name = "<:blank:352901517004636163>";
 		emb.fields[idx+1].value = "<:blank:352901517004636163>";
 		idx++;	   
