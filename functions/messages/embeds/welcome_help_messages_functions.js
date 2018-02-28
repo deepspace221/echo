@@ -520,7 +520,7 @@ function getPatronsEmbed(){
             var arr2 = arrOpenPos;
       
             for (var i = 0; i < arr1.length; i++){
-                  arr1[i] +=  createEmptyStr(30 - arr1[i].length) + arr2[i];
+                  arr1[i] +=  createEmptyStr(20 - arr1[i].length) + arr2[i];
             }
             return arr1;
       } 
