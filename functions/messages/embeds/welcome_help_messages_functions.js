@@ -490,7 +490,7 @@ function getPatronsEmbed(){
       arrPatronsObj = arrPatronsObj.sort(sortABC("role"));
       arrOpenPos = arrOpenPos.sort(sortABC);   
       
-      dbg(arrOpenPos);
+//       dbg(arrOpenPos);
       
       emb.fields = getFieldsObj(len+3, true);
           
