@@ -430,7 +430,7 @@ function getStaffEmbed(){
             patrons: createArrOutputNewLinesSeprated(staff.patrons.users)
       }
       
-     dbg(output);
+//      dbg(output);
       
      emb.fields[0].name = "Creators";
      emb.fields[0].value = (output.owners) ? output.owners : NaN;
