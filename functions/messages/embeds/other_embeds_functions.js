@@ -62,7 +62,7 @@ function getServerMapEmbed(channelsObj){
      var emb = getEmbedObj(), idx = 0;
 	
      var fieldName = {
-	     platforms: "<:duolingo12:402265833541206027> Platforms",
+	     platforms: "<:duolingo:352946192176513026> Platforms",
 	     community: ":regional_indicator_c:ommunity", //<:gringo:402274676153516033> 
 	     languages: ":regional_indicator_l:anguages", //:earth_asia:
 	     general: ":regional_indicator_g:eneral",
