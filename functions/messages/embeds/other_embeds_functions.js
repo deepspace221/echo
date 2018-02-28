@@ -69,7 +69,7 @@ function getServerMapEmbed(channelsObj){
 
      emb.fields = getFieldsObj(getFieldsLength(), true);
 
-     createFields();
+     runCreateFields();
 	
      dbg(emb);
      return emb;
@@ -152,7 +152,7 @@ function getServerMapEmbed(channelsObj){
 	     return len;
      }
 	
-     function createFields(){
+     function runCreateFields(){
 	     if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
 	     if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
 	     if (hasMobileRole && channelsObj.platforms != "")
