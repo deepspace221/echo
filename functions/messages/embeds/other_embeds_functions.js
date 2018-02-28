@@ -65,7 +65,7 @@ function getServerMapEmbed(channelsObj){
 	
      emb.title = "Teleporter";
      emb.description = "Choose a location to teleport.";
-     emb.thumbnail.url = getGuildIcon();
+//      emb.thumbnail.url = getGuildIcon();
 
      len = channelsObj.lang.length;
      len += Object.keys(channelsObj.main).length;
