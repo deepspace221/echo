@@ -442,9 +442,9 @@ function inRole(role){
 	var arrUsers = [];
 	for (var i = 0; i < ServerMembers.length; i++){
 		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
-			dbg(GetRoleID(role));
-			dbg(ServerMembers[i].Roles[k]);
-			dbg(ServerMembers[i].User.ID);
+// 			dbg(GetRoleID(role));
+// 			dbg(ServerMembers[i].Roles[k]);
+// 			dbg(ServerMembers[i].User.ID);
 			if (ServerMembers[i].Roles[k] == GetRoleID(role))
 				arrUsers.push("<@" + ServerMembers[i].User.ID + ">");
 		}
