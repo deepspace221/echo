@@ -70,12 +70,12 @@ function getServerMapEmbed(channelsObj){
      if (hasMobileRole || channelsObj.platforms != "") len += 3	
      dbg("1st :" +len);	
 	
-     len = channelsObj.lang.length;
+     len += channelsObj.lang.length;
      if (channelsObj.lang.length % 3 == 1) len += 2;
      else if (channelsObj.lang.length % 3 == 2) len++;
      dbg("2nd: " + len);
 	
-     len += Object.keys(channelsObj.main).length;
+     len += Object.keys(channelsObj.main).length - 1; //reducing hooks
 
      dbg("3rd :" + len);
 //      if (hasMobileRole) len++;
@@ -84,10 +84,8 @@ function getServerMapEmbed(channelsObj){
 	
      if (hasHooksRole) len++;
      if (channelsObj.hobbies != "") len++;
-     len += 3;	
-	
 
-     dbg(len);
+     dbg("fourth :" + len);
      emb.fields = getFieldsObj(len, true);
 
 	
