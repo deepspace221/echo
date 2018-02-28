@@ -112,37 +112,20 @@ function getServerMapEmbed(channelsObj){
 // 	for 2 columns		if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
 			idx++;
    		}
-		if (channelsObj.lang.length % 3 == 1){
-			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";
-			emb.fields[idx+2].name = "<:blank:352901517004636163>";
-			emb.fields[idx+2].value = "<:blank:352901517004636163>";
-			idx += 2;		
-		}
-		else if (channelsObj.lang.length % 3 == 2){
-			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";
-			idx += 1;		
-		}
+		if (channelsObj.lang.length % 3 == 1) createEmptyFields(emb, 2, idx);
+		else if (channelsObj.lang.length % 3 == 2) createEmptyFields(emb, 1, idx);
 	}
 	else if (type == "mobile" || type == "platforms"){
 		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;	
+		if ((type == "mobile" && channelsObj.platforms == "") || (type == "platforms" && !hasMobileRole)) 
+                     createEmptyFields(emb, 2, idx);
+		else if (hasMobileRole && channelsObj.platforms != "") 
+                     createEmptyFields(emb, 1, idx);
+		
 // for 2 columns		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
-		if ((type == "mobile" && channelsObj.platforms == "") || (type == "platforms" && !hasMobileRole)){
-			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";
-			emb.fields[idx+2].name = "<:blank:352901517004636163>";
-			emb.fields[idx+2].value = "<:blank:352901517004636163>";
-			idx += 2;
-		}
-		else if (hasMobileRole && channelsObj.platforms != ""){
-			emb.fields[idx+1].name = "<:blank:352901517004636163>";
-			emb.fields[idx+1].value = "<:blank:352901517004636163>";
-			idx++
-		}	
 	}
 	else if (type == "hobbies"){
 		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
@@ -158,5 +141,19 @@ function getServerMapEmbed(channelsObj){
 		     arr[i] = arr[i].channelIDtoLink();	
 	}
 	return arr;
+     }
+     function createEmptyFields(emb, num, idx){
+	   if (num == 2){
+		emb.fields[idx+1].name = "<:blank:352901517004636163>";
+		emb.fields[idx+1].value = "<:blank:352901517004636163>";
+		emb.fields[idx+2].name = "<:blank:352901517004636163>";
+		emb.fields[idx+2].value = "<:blank:352901517004636163>";
+		idx += 2;	   
+	   }
+	   esle if (num == 1){
+		emb.fields[idx+1].name = "<:blank:352901517004636163>";
+		emb.fields[idx+1].value = "<:blank:352901517004636163>";
+		idx++;	   
+	   }	     
      }
 }
