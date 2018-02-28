@@ -79,14 +79,14 @@ function getServerMapEmbed(channelsObj){
      emb.fields = getFieldsObj(len, true);
 
 	
-     if (hasMobileRole) createFields("mobile", ":iphone: Mobile");
+     if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
      if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
      createFields("langCategories");
-     createFields("community", "Community");
-     createFields("general", "General");
+     createFields("community", "<:gringo:402274676153516033> Community");
+     createFields("general", ":regional_indicator_g:eneral");
      createFields("lang", ":earth_asia: Languages");
      if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
-     if (channelsObj.hobbies != "") createFields("hobbies", "Hobbies");	
+     if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	
 	
      dbg(emb);
      return emb;
