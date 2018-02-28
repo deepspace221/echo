@@ -66,7 +66,7 @@ function getServerMapEmbed(channelsObj){
 	     community: ":regional_indicator_c:ommunity", //<:gringo:402274676153516033> 
 	     languages: ":regional_indicator_l:anguages", //:earth_asia:
 	     general: ":regional_indicator_g:eneral",
-	     hobbies: "<:cute_bunny:402265976592400394> Hobbies",
+	     Misc: "<:cute_bunny:402265976592400394> Hobbies",
 	     hooks: "<:youtube:314349922885566475> Hooks",
 	     mobile: ":signal_strength: Mobile"
      };
