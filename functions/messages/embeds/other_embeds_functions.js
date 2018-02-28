@@ -82,8 +82,8 @@ function getServerMapEmbed(channelsObj){
      if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
      if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
      createFields("langCategories");
-     createFields("community", "<:gringo:402274676153516033> Community");
      createFields("general", ":regional_indicator_g:eneral");
+     createFields("community", "<:gringo:402274676153516033> Community");
      createFields("lang", ":earth_asia: Languages");
      if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
      if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	
@@ -102,6 +102,7 @@ function getServerMapEmbed(channelsObj){
 		for (var i = 0; i < channelsObj.lang.length; i++){
 			emb.fields[idx].name = channelsObj.lang[i].categoryName;
 			emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
+			if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
 			idx++;
    		}
 	}
@@ -109,6 +110,7 @@ function getServerMapEmbed(channelsObj){
 		var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
+		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
 		idx++;		
 	}
      }
