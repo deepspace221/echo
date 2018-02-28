@@ -117,7 +117,7 @@ function serverMap(){
         }   
     }
     dbg(Trigger);
-    if (Trigger.indexOf(mteleport) != -1)
+    if (Trigger.indexOf("mteleport") != -1)
         return getMobileServerMapEmbed(channelsObj);
     else return getServerMapEmbed(channelsObj);
 }
