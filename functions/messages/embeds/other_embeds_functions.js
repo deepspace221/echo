@@ -109,7 +109,7 @@ function getServerMapEmbed(channelsObj){
 		for (var i = 0; i < channelsObj.lang.length; i++){
 			emb.fields[idx].name = channelsObj.lang[i].categoryName;
 			emb.fields[idx].value = createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels));
-			if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
+// 	for 2 columns		if ((i == channelsObj.lang.length -1) && (i % 2 == 0)) 	emb.fields[idx].inline = false; 
 			idx++;
    		}
 		if (channelsObj.lang.length % 3 == 1){
@@ -130,7 +130,7 @@ function getServerMapEmbed(channelsObj){
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;	
-// for 2 coulmens		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
+// for 2 columns		if ((!hasMobileRole || channelsObj.platforms == "") && (type == "platforms" || type == "mobile")) emb.fields[idx].inline = false;
 		if ((type == "mobile" && channelsObj.platforms == "") || (type == "platforms" && !hasMobileRole)){
 			emb.fields[idx+1].name = "<:blank:352901517004636163>";
 			emb.fields[idx+1].value = "<:blank:352901517004636163>";
