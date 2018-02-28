@@ -88,7 +88,7 @@ function getServerMapEmbed(channelsObj){
      dbg("fourth :" + len);
 	
      if (len % 3 == 1) len += 2;
-     else if (len == 2) len++;
+     else if (len % 3 == 2) len++;
 	
      dbg("final " + len); 	
      emb.fields = getFieldsObj(len, true);
