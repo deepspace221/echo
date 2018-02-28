@@ -111,8 +111,7 @@ function getServerMapEmbed(channelsObj){
 	}
 	return arr;
      }
-     function createEmptyFields(emb, num, idx){
-	   idx = (idx) ? idx : 0;
+     function createEmptyFields(num){
 	   dbg("index :" + idx + "\nnum :" + num);
 	   if (num == 2){
 		emb.fields[idx].name = "<:blank:352901517004636163>";
@@ -156,13 +155,13 @@ function getServerMapEmbed(channelsObj){
 	     if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
 	     if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
 	     if (hasMobileRole && channelsObj.platforms != "")
-		     createEmptyFields(emb, 1, idx);		
+		     createEmptyFields(1);		
 	     else if (hasMobileRole || channelsObj.platforms != "") 
-		     createEmptyFields(emb, 2, idx);
+		     createEmptyFields(2);
 
 	     createFields("langCategories");
-	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(emb, 2, idx);
-	     else if (channelsObj.lang.length % 3 == 2) createEmptyFields(emb, 1, idx);
+	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(2);
+	     else if (channelsObj.lang.length % 3 == 2) createEmptyFields(1);
 
 	     createFields("general", ":regional_indicator_g:eneral");
 	     createFields("community", "<:gringo:402274676153516033> Community");
@@ -171,8 +170,8 @@ function getServerMapEmbed(channelsObj){
 	     if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
 	     if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	 
 	     if (hasHooksRole && channelsObj.hobbies != "") 
-		     createEmptyFields(emb, 1, idx);		 
+		     createEmptyFields(1);		 
 	     else if (hasHooksRole || hannelsObj.hobbies != "")
-		     createEmptyFields(emb, 2, idx);	     
+		     createEmptyFields(2);	     
      }
 }
