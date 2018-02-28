@@ -516,11 +516,11 @@ function getPatronsEmbed(){
      
       function  createColumns(arrOpenPos){
             var splitIndex = (arrOpenPos.length % 2 == 0) ? arrOpenPos.length/2 :  (arrOpenPos.length/2 + 1);
-            var arr1 = arrOpenPos.splice(0, splitIndex)
+            var arr1 = arrOpenPos.splice(0, splitIndex);
             var arr2 = arrOpenPos;
       
             for (var i = 0; i < arr1.length; i++){
-                  var arr1[i] +=  createEmptyStr(30 - arr1[i].length) + arr2[i];
+                  arr1[i] +=  createEmptyStr(30 - arr1[i].length) + arr2[i];
             }
             return arr1;
       } 
