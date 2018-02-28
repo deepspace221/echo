@@ -475,7 +475,7 @@ function getPatronsEmbed(){
      patrons = roleSlices.patrons;
     
      emb.url = "https://docs.google.com/forms/d/e/1FAIpQLSfXSMFWud5kSrq2ivdrMoWdp8HvIedOBKEZaEt0pufaC8jRZg/viewform"
-     emb.title = "Patrons List - Click here to become a language patron";
+     emb.title = "Patrons List - Click here to apply for a patron position";
      emb.description = "Our most dedicated staffers";
      emb.thumbnail.url = getGuildIcon();
      
