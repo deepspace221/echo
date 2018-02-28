@@ -116,5 +116,7 @@ function serverMap(){
               if (channel) channelsObj.hobbies.push(channel);   
         }   
     }
-    return getServerMapEmbed(channelsObj);
+    if (Trigger == "&{:}(?i)^\/mteleport")
+        return getMobileServerMapEmbed(channelsObj);
+    else return getServerMapEmbed(channelsObj);
 }
