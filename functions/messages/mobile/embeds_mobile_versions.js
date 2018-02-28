@@ -16,61 +16,47 @@ function getMobileServerMapEmbed(channelsObj){
      var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
 	
      arrTxt.push(**"Teleporter"**);
-     
-     runCreateFields();
 
+     langCategories();
+     if (hasMobileRole) {
+	arrTxt.push(fieldName.mobile.bold());
+	arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.mobile)));     
+     }
+     if (channelsObj.platforms != "") {
+	arrTxt.push(fieldName.platforms.bold());
+	arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.platforms)));  	     
+     }
+     arrTxt.push(fieldName.general.bold());
+     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.general))); 
+     arrTxt.push(fieldName.community.bold());
+     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.community))); 
+     arrTxt.push(fieldName.languages.bold());
+     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.languages)));
+
+     if (hasHooksRole) {
+	     arrTxt.push(fieldName.hooks.bold());
+	     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.hooks)));	     
+     }
+     if (channelsObj.hobbies != "") {
+	     arrTxt.push(fieldName.hobbies.bold());
+	     arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.hobbies)));			     
+     }
+	
      dbg(arrTxt);
      return createArrOutputNewLinesSeprated(arrTxt);
 
-  function createFields(type, name){     
-      if (type == "community" || type == "general" || type == "lang"){
-        var value = (channelsObj.main[type]) ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.main[type])) : "NaN";
-        arrTxt.push(name.bold());
-        arrTxt.push(value);	
-      }
-      else if (type == "langCategories"){
+  function langCategories(){     
         for (var i = 0; i < channelsObj.lang.length; i++){
           arrTxt.push(channelsObj.lang[i].categoryName.bold());
           arrTxt.push(createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj.lang[i].channels)));
           }
-      }
-      else if (type == "mobile" || type == "platforms"){
-        var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-        arrTxt.push(name.bold());
-        arrTxt.push(value);
-      }
-      else if (type == "hobbies" || type == "hooks"){
-        var value = (channelsObj[type] != "") ? createArrOutputNewLinesSeprated(convertArrChannelIDtoChannelName(channelsObj[type])) : "NaN";
-        arrTxt.push(name.bold());
-        arrTxt.push(value);
-      }
- }
+   }
 
     function convertArrChannelIDtoChannelName(arr){
       for (var i = 0; i < arr.length; i++){
-        if (arr[i])
-             arr[i] = arr[i].channelIDtoLink();	
+	if (arr[i])
+	     arr[i] = arr[i].channelIDtoLink();	
       }
       return arr;
-    }
-   function runCreateFields(){
-	     createFields("langCategories");
-	     if (hasMobileRole) createFields("mobile", fieldName.mobile);
-	     if (channelsObj.platforms != "") createFields("platforms", fieldName.platforms);
-	     if (hasMobileRole && channelsObj.platforms != "")
-		     createEmptyFields(1);		
-	     else if (hasMobileRole || channelsObj.platforms != "") 
-		     createEmptyFields(2);
-
-	     createFields("general", fieldName.general);
-	     createFields("community", fieldName.community);
-	     createFields("lang", fieldName.languages);
-
-	     if (hasHooksRole) createFields("hooks", fieldName.hooks);
-	     if (channelsObj.hobbies != "") createFields("hobbies", fieldName.hobbies);	 
-	     if (hasHooksRole && channelsObj.hobbies != "") 
-		     createEmptyFields(1);		 
-	     else if (hasHooksRole || channelsObj.hobbies != "")
-		     createEmptyFields(2);	     
     }
 }
