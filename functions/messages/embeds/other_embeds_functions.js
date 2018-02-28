@@ -189,3 +189,11 @@ function getServerMapEmbed(channelsObj){
 		     createEmptyFields(2);	     
      }
 }
+
+
+function getInRoleEmbed(arrUsers, role){
+     var emb = getEmbedObj();
+     emb.title = "Users in the role" + role;
+     emb.description = createArrOutputNewLinesSeprated(arrUsers);
+     return emb;
+}
