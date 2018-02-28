@@ -395,6 +395,7 @@ function getStaffEmbed(){
      use server_db; 
      var roleSlices, staff;
      var emb = getEmbedObj();
+     var NaN = "NaN";
       
      roleSlices = JSON.parse(server_db["roleSlices"]);  
      staff = roleSlices.staff;
@@ -406,7 +407,7 @@ function getStaffEmbed(){
      emb.title = "☁☁ Kingdom of Valhalla ☁☁";
      emb.description = "The imperial guards <:battle_cry:402261899221139466>";
      emb.fields = getFieldsObj(8, false);
-     emb.thumbnail.url = "https://www.duolingo.com/images/illustrations/owl-happy@2x.png";
+     emb.thumbnail.url = getGuildIcon();
 //      emb.image.url = "http://valhallayork.com/wp-content/uploads/2017/08/Web.png";
       
      staff.botDev.users[0] += " ☃";
@@ -432,33 +433,26 @@ function getStaffEmbed(){
      dbg(output);
       
      emb.fields[0].name = "Creators";
-     emb.fields[0].value = (output.owners) ? output.owners : "<:terrified:402081920063635467>";
-     emb.fields[0].inline = true;
-      
+     emb.fields[0].value = (output.owners) ? output.owners : NaN;
+     emb.fields[0].inline = true;  
      emb.fields[1].name = "Admins";
-     emb.fields[1].value = (output.admins) ? output.admins : "<:terrified:402081920063635467>";
-     emb.fields[1].inline = true;
-      
+     emb.fields[1].value = (output.admins) ? output.admins : NaN;
+     emb.fields[1].inline = true;     
      emb.fields[2].name = "Bot Dev";
-     emb.fields[2].value = (output.botDev) ? output.botDev : "<:terrified:402081920063635467>";
+     emb.fields[2].value = (output.botDev) ? output.botDev : NaN;
      emb.fields[2].inline = true;  
-   
      emb.fields[3].name = "Senior Mods";
-     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : "<:terrified:402081920063635467>";
-     emb.fields[3].inline = true;
-      
+     emb.fields[3].value = (output.seniorMods) ? output.seniorMods : NaN;
+     emb.fields[3].inline = true;     
      emb.fields[4].name = "Mods";
-     emb.fields[4].value = (output.mods) ? output.mods : "<:terrified:402081920063635467>";
-     emb.fields[4].inline = true;
-      
+     emb.fields[4].value = (output.mods) ? output.mods : NaN;
+     emb.fields[4].inline = true;    
      emb.fields[5].name = "Tech Support";
-     emb.fields[5].value = (output.techSupport) ? output.techSupport : "<:terrified:402081920063635467>";
-     emb.fields[5].inline = true; 
-      
+     emb.fields[5].value = (output.techSupport) ? output.techSupport : NaN;
+     emb.fields[5].inline = true;     
      emb.fields[6].name = "Patrons";
-     emb.fields[6].value = (output.patrons) ? output.patrons : "<:terrified:402081920063635467>";
-     emb.fields[6].inline = true;
-      
+     emb.fields[6].value = (output.patrons) ? output.patrons : NaN;
+     emb.fields[6].inline = true;    
      emb.fields[7].name = "Interns";
      emb.fields[7].value = "<:terrified:402081920063635467>";
      emb.fields[7].inline = true;
