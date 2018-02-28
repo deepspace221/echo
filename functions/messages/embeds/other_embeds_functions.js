@@ -206,7 +206,7 @@ function getInRoleEmbed(arrUsers, role){
 	 emb.fields[0].name = "Users";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers.splice(0,20)) 	     
 	 emb.fields[1].name = "Users";
-	 emb.fields[1].value = createArrOutputNewLinesSeprated(arrUsers.splice(0,20)) 	    	     
+	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
      }
      return emb;
 }
