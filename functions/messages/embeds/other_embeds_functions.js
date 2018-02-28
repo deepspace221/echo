@@ -69,7 +69,7 @@ function getServerMapEmbed(channelsObj){
 
      len = channelsObj.lang.length;
      if (channelsObj.lang.length % 3 == 1) len += 2;
-     if (channelsObj.lang.length % 3 == 2) len++;
+     else if (channelsObj.lang.length % 3 == 2) len++;
 	
      len += Object.keys(channelsObj.main).length;
 	
