@@ -130,6 +130,16 @@ function getServerMapEmbed(channelsObj){
      function getFieldsLength(){
 	     var len = 0;
              if (hasMobileRole || channelsObj.platforms != "") len += 3;
+	     
+	     var fieldName ={
+		     platform: "<:duolingo12:402265833541206027> Platforms",
+		     community: ":regional_indicator_c:ommunity", //<:gringo:402274676153516033> 
+		     languages: ":regional_indicator_l:anguages", //:earth_asia:
+		     general: ":regional_indicator_g:eneral",
+		     hobbies: "<:cute_bunny:402265976592400394> Hobbies",
+		     hooks: "<:youtube:314349922885566475> Hooks",
+		     mobile: ":signal_strength: Mobile",
+	     }
 
 	     len += channelsObj.lang.length;
 	     if (channelsObj.lang.length % 3 == 1) len += 2;
@@ -152,8 +162,8 @@ function getServerMapEmbed(channelsObj){
      }
 	
      function runCreateFields(){
-	     if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
-	     if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
+	     if (hasMobileRole) createFields("mobile", fieldName.mobile);
+	     if (channelsObj.platforms != "") createFields("platforms", fieldName.platform);
 	     if (hasMobileRole && channelsObj.platforms != "")
 		     createEmptyFields(1);		
 	     else if (hasMobileRole || channelsObj.platforms != "") 
@@ -163,12 +173,12 @@ function getServerMapEmbed(channelsObj){
 	     if (channelsObj.lang.length % 3 == 1) createEmptyFields(2);
 	     else if (channelsObj.lang.length % 3 == 2) createEmptyFields(1);
 
-	     createFields("general", ":regional_indicator_g:eneral");
-	     createFields("community", "<:gringo:402274676153516033> Community");
-	     createFields("lang", ":earth_asia: Languages");
+	     createFields("general", fieldName.general);
+	     createFields("community", fieldName.community);
+	     createFields("lang", fieldName.languages);
 
-	     if (hasHooksRole) createFields("hooks", "<:youtube:314349922885566475> Hooks");
-	     if (channelsObj.hobbies != "") createFields("hobbies", "<:cute_bunny:402265976592400394> Hobbies");	 
+	     if (hasHooksRole) createFields("hooks", fieldName.hooks);
+	     if (channelsObj.hobbies != "") createFields("hobbies", fieldName.hobbies);	 
 	     if (hasHooksRole && channelsObj.hobbies != "") 
 		     createEmptyFields(1);		 
 	     else if (hasHooksRole || channelsObj.hobbies != "")
