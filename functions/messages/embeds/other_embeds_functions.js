@@ -103,7 +103,7 @@ function getServerMapEmbed(channelsObj){
 		emb.fields[idx].name = name;
 		emb.fields[idx].value = value;
 		idx++;	
-		if ((type == "mobile" && channelsObj.platforms == "")
+		if (type == "mobile" && channelsObj.platforms == "")
                      createEmptyFields(emb, 2, idx);
 		else if (type == "platforms" && !hasMobileRole)
                      createEmptyFields(emb, 2, idx);		
