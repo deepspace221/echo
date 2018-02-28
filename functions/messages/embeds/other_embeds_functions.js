@@ -59,7 +59,7 @@ function getRolesEmbed(roles){
 }
 
 function getServerMapEmbed(channelsObj){ 
-     var emb = getEmbedObj(), len = 0, idx = 0;
+     var emb = getEmbedObj(), idx = 0;
      var hasMobileRole = (isMemberHasRole2("v. Mobile")) ? true : false;
      var hasHooksRole = (isMemberHasRole2("v. Hooks")) ? true : false;
 	
@@ -67,31 +67,7 @@ function getServerMapEmbed(channelsObj){
      emb.description = "Choose a location to teleport.";
 //      emb.thumbnail.url = getGuildIcon();
 
-     if (hasMobileRole || channelsObj.platforms != "") len += 3	
-     dbg("1st :" +len);	
-	
-     len += channelsObj.lang.length;
-     if (channelsObj.lang.length % 3 == 1) len += 2;
-     else if (channelsObj.lang.length % 3 == 2) len++;
-     dbg("2nd: " + len);
-	
-     len += Object.keys(channelsObj.main).length - 1; //reducing hooks
-
-     dbg("3rd :" + len);
-//      if (hasMobileRole) len++;
-//      if (channelsObj.platforms != "") len++;
-//      if (hasMobileRole && channelsObj.platforms != "") len++
-	
-     if (hasHooksRole) len++;
-     if (channelsObj.hobbies != "") len++;
-
-     dbg("fourth :" + len);
-	
-     if (len % 3 == 1) len += 2;
-     else if (len % 3 == 2) len++;
-	
-     dbg("final " + len); 	
-     emb.fields = getFieldsObj(len, true);
+     emb.fields = getFieldsObj(getFieldsLength(), true);
 
      if (hasMobileRole) createFields("mobile", ":signal_strength: Mobile");
      if (channelsObj.platforms != "") createFields("platforms", "<:duolingo12:402265833541206027> Platforms");
@@ -151,6 +127,7 @@ function getServerMapEmbed(channelsObj){
      }
      function createEmptyFields(emb, num, idx){
 	   idx = (idx) ? idx : 0;
+	   dbg("index :" + idx + "\nnum :" + num);
 	   if (num == 2){
 		emb.fields[idx+1].name = "<:blank:352901517004636163>";
 		emb.fields[idx+1].value = "<:blank:352901517004636163>";
@@ -163,5 +140,34 @@ function getServerMapEmbed(channelsObj){
 		emb.fields[idx+1].value = "<:blank:352901517004636163>";
 		idx++;	   
 	   }	     
+     }
+	
+     function getFieldsLength(){
+	     var len = 0;
+             if (hasMobileRole || channelsObj.platforms != "") len += 3	
+// 	     dbg("1st :" +len);	
+
+	     len += channelsObj.lang.length;
+	     if (channelsObj.lang.length % 3 == 1) len += 2;
+	     else if (channelsObj.lang.length % 3 == 2) len++;
+// 	     dbg("2nd: " + len);
+
+	     len += Object.keys(channelsObj.main).length - 1; //reducing hooks
+
+	     dbg("3rd :" + len);
+	//      if (hasMobileRole) len++;
+	//      if (channelsObj.platforms != "") len++;
+	//      if (hasMobileRole && channelsObj.platforms != "") len++
+
+	     if (hasHooksRole) len++;
+	     if (channelsObj.hobbies != "") len++;
+
+// 	     dbg("fourth :" + len);
+
+	     if (len % 3 == 1) len += 2;
+	     else if (len % 3 == 2) len++;
+
+	     dbg("final " + len); 	
+	     return len;
      }
 }
