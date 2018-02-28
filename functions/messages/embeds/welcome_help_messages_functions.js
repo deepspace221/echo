@@ -1,4 +1,4 @@
-function getHelpEmbed(){
+efunction getHelpEmbed(){
       var icon1 = ":point_right:";
       var icon2 = ":diamond_shape_with_a_dot_inside:";
 
@@ -480,11 +480,14 @@ function getPatronsEmbed(){
      emb.thumbnail.url = getGuildIcon();
      
       for (var i = 0; i < patrons.length; i++){
-            patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
             if (patrons[i].users != "") {
+                  patrons[i].role = patrons[i].role.replace(/patron/gi, "P.");
                   len++;
                   arrPatronsObj.push(patrons[i]);    
-            }else arrOpenPos.push(patrons[i].role);
+            }else{
+                  patrons[i].role = patrons[i].role.replace(/patron/gi, "");
+                  arrOpenPos.push(patrons[i].role);
+            }
             
       }
       arrPatronsObj = arrPatronsObj.sort(sortABC("role"));
@@ -523,7 +526,7 @@ function getPatronsEmbed(){
                   if (i > arr2.length-1){
                         arr1[i] = "# " + arr1[i];
                   }     
-                  arr1[i] = "# " + arr1[i] + createEmptyStr(23 - arr1[i].length) + arr2[i];
+                  arr1[i] = "# " + arr1[i] + createEmptyStr(21 - arr1[i].length) + arr2[i];
             }
             return arr1;
       } 
