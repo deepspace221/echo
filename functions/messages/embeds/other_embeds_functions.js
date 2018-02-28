@@ -67,22 +67,27 @@ function getServerMapEmbed(channelsObj){
      emb.description = "Choose a location to teleport.";
 //      emb.thumbnail.url = getGuildIcon();
 
+     if (hasMobileRole || channelsObj.platforms != "") len += 3	
+     dbg("1st :" +len);	
+	
      len = channelsObj.lang.length;
      if (channelsObj.lang.length % 3 == 1) len += 2;
      else if (channelsObj.lang.length % 3 == 2) len++;
+     dbg("2nd: " + len);
 	
      len += Object.keys(channelsObj.main).length;
-	
+
+     dbg("3rd :" + len);
 //      if (hasMobileRole) len++;
 //      if (channelsObj.platforms != "") len++;
 //      if (hasMobileRole && channelsObj.platforms != "") len++
-     if (hasMobileRole || channelsObj.platforms != "") len += 3	
 	
      if (hasHooksRole) len++;
      if (channelsObj.hobbies != "") len++;
-     len += Object.keys(channelsObj).length -6;	
+     len += 3;	
+	
 
-//      dbg(len);
+     dbg(len);
      emb.fields = getFieldsObj(len, true);
 
 	
