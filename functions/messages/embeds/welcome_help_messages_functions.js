@@ -510,7 +510,7 @@ function getPatronsEmbed(){
 \n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■```";
       emb.fields[len].inline = false;
       emb.fields[len+1].name = "Open Positions";
-      emb.fields[len+1].value = "```css\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
+      emb.fields[len+1].value = "```md\n" + createArrOutputNewLinesSeprated(arrOpenPos) + "```";
 
       return emb;
      
@@ -520,7 +520,7 @@ function getPatronsEmbed(){
             var arr2 = arrOpenPos;
       
             for (var i = 0; i < arr1.length; i++){
-                  arr1[i] +=  createEmptyStr(20 - arr1[i].length) + arr2[i];
+                  arr1[i] = "# " + arr1[i] + createEmptyStr(20 - arr1[i].length) + arr2[i];
             }
             return arr1;
       } 
