@@ -197,6 +197,7 @@ function getInRoleEmbed(arrUsers, role){
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
      emb.thumbnail.url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";
      emb.image.url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";
+     emb.footer.text = "this is a footer";
 	
      if (arrUsers.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
