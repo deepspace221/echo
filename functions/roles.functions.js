@@ -71,16 +71,23 @@ function getStaffRoleName(){ //working
         }
 }
 function getRegexRoleName(roleName){
+	var arr = [];
 	var regex = new RegExp(roleName, 'i');
 	var ctr = 0;
 	for (var i = 0; ServerRoles.length; i++){
-		if (/regex/i.test(ServerRoles["Name"])){
+		if (regex.test(ServerRoles["Name"])){
 			ctr++;
-			roleName = ServerRoles["Name"];	
+			arr.push(ServerRoles["Name"]);	
 		}	
 	}
-	if (ctr > 1)
-		return;
+	if (arr.length > 1){
+		regex = "/\b" + roleName + "\b/i";
+		for (var i = 0; arr.length; i++){
+			if (regex.test(arr[i]))
+				return arr[i];
+		}
+		return "";
+	}	
 	else return roleName;
 }
 
@@ -441,11 +448,9 @@ function isValidRole(str){
 function inRole(role){
 	var arrUsers = [];
 	role = getRegexRoleName(role);
+	dbg(role);
 	for (var i = 0; i < ServerMembers.length; i++){
 		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
-// 			dbg(GetRoleID(role));
-// 			dbg(ServerMembers[i].Roles[k]);
-// 			dbg(ServerMembers[i].User.ID);
 			if (ServerMembers[i].Roles[k] == GetRoleID(role))
 				arrUsers.push("<@" + ServerMembers[i].User.ID + ">");
 		}
