@@ -72,6 +72,7 @@ function getStaffRoleName(){ //working
 }
 function getRegexRoleName(roleName){
 	var arr = [];
+	dbg(roleName);
 	var regex = new RegExp(roleName, 'i');
 	dbg(regex);
 	for (var i = 0; ServerRoles.length; i++){
