@@ -259,5 +259,5 @@ function getJSEmbedToArs(emb){
        };
        str += "}";
 //        dbg(str);
-       return emb;
+       return str;
 }
