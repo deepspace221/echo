@@ -443,9 +443,10 @@ function inRole(role){
 function getRegexRoleName(roleName){
 	var arr = [];
 	var regex = new RegExp(roleName, 'i');
-	dbg(roleName);
-	dbg(regex);
+	dbg("role" + roleName);
+	dbg(regex.toString());
 	for (var i = 0; ServerRoles.length; i++){
+		dbg(ServerRoles[i].Name);
 		if (regex.test(ServerRoles[i].Name)){
 			arr.push(ServerRoles[i].Name);	
 		}	
