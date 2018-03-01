@@ -217,7 +217,7 @@ function getInRoleEmbed(arrUsers, role){
 		reacts: reacts
 	};     
 	server_db["inRole"] = JSON.stringify(inRole); 
-	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}";
+// 	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}";
      }
      return getJSEmbedToArs(emb) + reacts + sleep;
 }
