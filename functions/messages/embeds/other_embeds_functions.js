@@ -245,7 +245,8 @@ function getInRoleNextPreviousPage(type){
 
 			return getJSEmbedToArs(emb) + inRole.reacts;
 		}
-	}else return "";
+	}
+	return "";
 }
 
 function getInRolePage(emb, arrUsers, page){
