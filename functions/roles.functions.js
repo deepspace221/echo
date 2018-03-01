@@ -443,8 +443,8 @@ function inRole(role){
 function getRegexRoleName(roleName){
 	var arr = [];
 	var regex = new RegExp(roleName, 'i');
-	dbg("role" + roleName);
-	dbg(regex.toString());
+// 	dbg("role" + roleName);
+// 	dbg(regex.toString());
 	for (var i = 0; ServerRoles.length; i++){
 		if (regex.test(ServerRoles[i].Name)){
 		        dbg(ServerRoles[i].Name);
@@ -452,15 +452,15 @@ function getRegexRoleName(roleName){
 		}	
 	}
 	dbg(arr);
-	if (arr.length > 1){
-		regex = "/\b" + roleName + "\b/i";
-		for (var i = 0; arr.length; i++){
-			if (regex.test(arr[i])){
-				dbg("yes");
-				return arr[i];
-			}
-		}
-		return "";
+// 	if (arr.length > 1){
+// 		regex = "/\b" + roleName + "\b/i";
+// 		for (var i = 0; arr.length; i++){
+// 			if (regex.test(arr[i])){
+// 				dbg("yes");
+// 				return arr[i];
+// 			}
+// 		}
+// 		return "";
 	}	
-	else return roleName;
+	return arr[0];
 }
