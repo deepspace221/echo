@@ -262,7 +262,7 @@ function getInRolePage(emb, arrUsers, page){
      }
      else {
 	 emb.fields = getFieldsObj(2, true);
-	 emb.fields[0].name = "Users (" + position +  "/" + arrUsers.length + ")";
+	 emb.fields[0].name = "Users (" + position +  "/" + arrUsers.length + ")<:blank:352901517004636163>";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arr.splice(0,20));	    
 	 emb.fields[1].name = "<:blank:352901517004636163>";
 	 emb.fields[1].value = createArrOutputNewLinesSeprated(arr);	    	     
