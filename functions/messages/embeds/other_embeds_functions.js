@@ -214,7 +214,7 @@ function getInRoleEmbed(arrUsers, role){
 		emb: emb,
 		reacts: reacts
 	};     
-	server_db["inRole"] = JSON.parse(inRole); 
+	server_db["inRole"] = JSON.stringify(inRole); 
 	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}"
      }
      return getJSEmbedToArs(emb) + reacts + sleep;
@@ -236,7 +236,7 @@ function getInRoleNextPreviousPage(type){
 			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
 		}
 		
-		server_db["inRole"] = JSON.parse(inRole); 
+		server_db["inRole"] = JSON.stringify(inRole); 
 
 		return getJSEmbedToArs(emb) + inRole.reacts;
 	}
