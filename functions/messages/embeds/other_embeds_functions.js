@@ -200,12 +200,12 @@ function getInRoleEmbed(arrUsers, role){
      if (arrUsers.length % 40  == 0)
 	     pagesNum = (arrUsers.length / 40);
      else pagesNum += Math.floor(arrUsers.length / 40);	
-     dbg("length " + arrUsers.length + "\n division: " + arrUsers.length / 40);
+//      dbg("length " + arrUsers.length + "\n division: " + arrUsers.length / 40);
      emb.footer.text = "Page " + (page + 1) + "/" + pagesNum;	
 	
      emb = getInRolePage(emb, arrUsers, 0);	
 
-     dbg(arrUsers.length);
+//      dbg(arrUsers.length);
 	
      if (arrUsers.length > 40){
 	reacts = "{reactbot:◀ ▶}";      
@@ -217,7 +217,7 @@ function getInRoleEmbed(arrUsers, role){
 		reacts: reacts
 	};     
 	server_db["inRole"] = JSON.stringify(inRole); 
-	dbg("inRole :" + server_db["inRole"]);
+// 	dbg("inRole :" + server_db["inRole"]);
 // 	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}";
      }
      return getJSEmbedToArs(emb) + reacts + sleep;
@@ -226,9 +226,9 @@ function getInRoleEmbed(arrUsers, role){
 function getInRoleNextPreviousPage(type){
 	use server_db;
 	var emb, arrUsers, page, reacts, pagesNum;
-	dbg("out");
+// 	dbg("out");
 	if (server_db.hasOwnProperty("inRole")){
-		dbg("in");
+// 		dbg("in");
 		inRole = JSON.parse(server_db["inRole"]);
 		
 		if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
