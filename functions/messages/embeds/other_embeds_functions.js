@@ -195,23 +195,32 @@ function getInRoleEmbed(arrUsers, role){
      var emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
-     emb.color = 15110413;
 	
-     if (arrUsers.length <= 20){	
-    	 emb.fields = getFieldsObj(1, true);
-	 emb.fields[0].name = "Users";
-	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers) 
+     var arrUsersSplit = [];
+     for (var i = 0; i< arrUsers.length){
+	   if (arrUsers.length > 40){
+		arrUsersSplit.push(arrUsers.splice(0,40));   
+	   } 
+	   else break;
      }
-     else {
-	 emb.fields = getFieldsObj(2, true);
-	 emb.fields[0].name = "Users<:blank:352901517004636163>";
-	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsers.splice(0,20)) 	     
-	 emb.fields[1].name = "<:blank:352901517004636163>";
-	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
-     }
-     if (arrUsers.length != 0){
-	reacts = "{reactbot:◀ ▶}"    
-     }
+     if (arrUsers.length > 0) arrUsersSplit.push(arrUsers.splice(0, arrUsers.length));	  
+
+	dbg(arrUsersSplit);
+//      if (arrUsersSplit.length <){	
+//     	 emb.fields = getFieldsObj(1, true);
+// 	 emb.fields[0].name = "Users";
+// 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsersSplit) 
+//      }
+//      else {
+// 	 emb.fields = getFieldsObj(2, true);
+// 	 emb.fields[0].name = "Users<:blank:352901517004636163>";
+// 	 emb.fields[0].value = createArrOutputNewLinesSeprated((arrUsersSplit.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    
+// 	 emb.fields[1].name = "<:blank:352901517004636163>";
+// 	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
+//      }
+//      if (arrUsers.length != 0){
+// 	reacts = "{reactbot:◀ ▶}"    
+//      }
      return getJSEmbedToArs(emb) + reacts;
 // 	return emb + reacts;
 }
