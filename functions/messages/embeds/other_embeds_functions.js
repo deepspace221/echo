@@ -190,37 +190,71 @@ function getServerMapEmbed(channelsObj){
      }
 }
 
-
 function getInRoleEmbed(arrUsers, role){
-     var emb = getEmbedObj(), reacts = "";
+     use server_db;
+     var emb, pagesNum = 1, reacts, sleep = "";
+     emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
-     emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
+     emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";  
+     emb = getInRolePage(emb, arrUsers, 0);	     
+     
+     if (arrUsers.length % 40  == 0)
+	     pagesNum = (arrUsers.length / 40);
+     else pagesNum += arrUsers.length / 40;
 	
-     var arrUsersSplit = [];
-     for (var i = 0; i< arrUsers.length; i++){
-	   if (arrUsers.length > 40){
-		arrUsersSplit.push(arrUsers.splice(0,40));   
-	   } 
-	   else break;
+     emb.footer.text = "Page " + page + "/" + pagesNum;	
+	
+     if (arrUsers.length > 40){
+	reacts = "{reactbot:◀ ▶}"       
+	var inRole = {
+		page: 0,
+		pagesNum: pagesNum,
+		arrUsers: arrUsers,
+		emb: emb,
+		reacts: reacts
+	};     
+	server_db["inRole"] = JSON.parse(inRole); 
+	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}"
      }
-     if (arrUsers.length > 0) arrUsersSplit.push(arrUsers.splice(0, arrUsers.length));	  
+     return getJSEmbedToArs(emb) + reacts + sleep;
+}
 
-	dbg(arrUsersSplit);
-//      if (arrUsersSplit.length <){	
-//     	 emb.fields = getFieldsObj(1, true);
-// 	 emb.fields[0].name = "Users";
-// 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arrUsersSplit) 
-//      }
-//      else {
-// 	 emb.fields = getFieldsObj(2, true);
-// 	 emb.fields[0].name = "Users<:blank:352901517004636163>";
-// 	 emb.fields[0].value = createArrOutputNewLinesSeprated((arrUsersSplit.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    
-// 	 emb.fields[1].name = "<:blank:352901517004636163>";
-// 	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
-//      }
-//      if (arrUsers.length != 0){
-// 	reacts = "{reactbot:◀ ▶}"    
-//      }
-     return getJSEmbedToArs(emb) + reacts;
-// 	return emb + reacts;
+function GetInRoleNextPreviousPage(type){
+	use server_db;
+	var emb, arrUsers, page, reacts, pagesNum;
+	
+	if (server_db.hasOwnProperty("inRole")){
+		inRole = JSON.parse(server_db["inRole"]);
+		
+		if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
+			inRole.page++;
+			emb = getInrolePage(inRole.emb, inRole.arrUsers, inRole.page);
+		}
+		else if (type == "previous" && (inRole.page -1 >= 0)){
+			inRole.page--;
+			emb = getInrolePage(inRole.emb, inRole.arrUsers, inRole.page);			
+		}
+		
+		server_db["inRole"] = JSON.parse(inRole); 
+
+		return emb + inRole.reacts;
+	}
+}
+
+function getInrolePage(emb, arrUsers, page){
+     var pagesNum = 1;	
+     var arr = arrUsers.splice(page * 20, ((arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length)));
+     if (arr.length <= 20){	
+    	 emb.fields = getFieldsObj(1, true);
+	 emb.fields[0].name = "Users";
+	 emb.fields[0].value = createArrOutputNewLinesSeprated(arr);
+     }
+     else {
+	 emb.fields = getFieldsObj(2, true);
+	 emb.fields[0].name = "Users<:blank:352901517004636163>";
+	 emb.fields[0].value = createArrOutputNewLinesSeprated(arr.splice(0,20));	    
+	 emb.fields[1].name = "<:blank:352901517004636163>";
+	 emb.fields[1].value = createArrOutputNewLinesSeprated(arr);	    	     
+     }	
+     return emb;
 }
