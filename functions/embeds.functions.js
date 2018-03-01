@@ -258,6 +258,6 @@ function getJSEmbedToArs(emb){
               }      
        };
        str += "}";
-       dbg(str);
+//        dbg(str);
        return emb;
 }
