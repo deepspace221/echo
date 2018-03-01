@@ -228,11 +228,11 @@ function getInRoleNextPreviousPage(type){
 		
 		if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
 			inRole.page++;
-			emb = getInrolePage(inRole.emb, inRole.arrUsers, inRole.page);
+			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);
 		}
 		else if (type == "previous" && (inRole.page -1 >= 0)){
 			inRole.page--;
-			emb = getInrolePage(inRole.emb, inRole.arrUsers, inRole.page);			
+			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
 		}
 		
 		server_db["inRole"] = JSON.parse(inRole); 
@@ -241,7 +241,7 @@ function getInRoleNextPreviousPage(type){
 	}
 }
 
-function getInrolePage(emb, arrUsers, page){
+function getInRolePage(emb, arrUsers, page){
      var pagesNum = 1;	
      var arr = arrUsers.splice(page * 20, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
      if (arr.length <= 20){	
