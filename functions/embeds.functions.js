@@ -243,12 +243,13 @@ function getFieldsObj(num, bol){
 }
 
 function getJSEmbedToArs(emb){
-       var str = "{embed:";
-       var str += "{type:rich}";
+       var str = "";
+       str += "{embed:";
+       str += "{type:rich}";
        if (emb.title) str += "{title:" + emb.title + "}";
-       if (emb.description) str += "{description:"+ emb.description +"}";
+       if (emb.description) str += "{description:" + emb.description + "}";
        if (emb.fields.length != 0) {
-              for (var i=0; i < emb.fields.length; i++){
+              for (var i = 0; i < emb.fields.length; i++){
                      str += "\
 {field[" + i + "]|name:" + emb.fields[i].name + "}\
 {field[" + i + "]|value:" + emb.fields[i].value + "}\
