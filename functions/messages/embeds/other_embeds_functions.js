@@ -202,7 +202,7 @@ function getInRoleEmbed(arrUsers, role){
 	     pagesNum = (arrUsers.length / 40);
      else pagesNum += Math.floor(arrUsers.length / 40);
 	
-	dbg(arrUsers.length / 40);
+	dbg("length " + arrUsers.length + "\n division: " + arrUsers.length / 40);
      emb.footer.text = "Page " + (page + 1) + "/" + pagesNum;	
 	
      if (arrUsers.length > 40){
