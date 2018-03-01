@@ -445,22 +445,22 @@ function getRegexRoleName(roleName){
 	var regex = new RegExp(roleName, 'i');
 // 	dbg("role" + roleName);
 // 	dbg(regex.toString());
-	for (var i = 0; ServerRoles.length; i++){
+	for (var i = 0; i < ServerRoles.length; i++){
 		if (regex.test(ServerRoles[i].Name)){
 		        dbg(ServerRoles[i].Name);
 			arr.push(ServerRoles[i].Name);	
 		}	
 	}
 	dbg(arr);
-// 	if (arr.length > 1){
-// 		regex = "/\b" + roleName + "\b/i";
-// 		for (var i = 0; arr.length; i++){
-// 			if (regex.test(arr[i])){
-// 				dbg("yes");
-// 				return arr[i];
-// 			}
-// 		}
-// 		return "";
-// 	}	
+	if (arr.length > 1){
+		regex = "/\b" + roleName + "\b/i";
+		for (var i = 0; arr.length; i++){
+			if (regex.test(arr[i])){
+				dbg("yes");
+				return arr[i];
+			}
+		}
+		return "";
+	}	
 	return arr[0];
 }
