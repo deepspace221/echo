@@ -453,7 +453,8 @@ function getRegexRoleName(roleName){
 	}
 	dbg(arr);
 	if (arr.length > 1){
-		regex = "/\b" + roleName + "\b/i";
+		regex = "/\b" + roleName + "\b/";
+		regex = new RegExp(regex, 'i')
 		for (var i = 0; arr.length; i++){
 			if (regex.test(arr[i])){
 				dbg("yes");
