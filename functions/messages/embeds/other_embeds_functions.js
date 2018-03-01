@@ -230,19 +230,21 @@ function getInRoleNextPreviousPage(type){
 	if (server_db.hasOwnProperty("inRole")){
 // 		dbg("in");
 		inRole = JSON.parse(server_db["inRole"]);
-		
-		if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
-			inRole.page++;
-			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);
-		}
-		else if (type == "previous" && (inRole.page -1 >= 0)){
-			inRole.page--;
-			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
-		}
-	        emb.footer.text = "Page " + inRole.page + "/" + inRole.pagesNum;	
-		server_db["inRole"] = JSON.stringify(inRole); 
+		if (inRole.page > 0 && inRole.Page < inRole.pagesNum){
+			
+			if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
+				inRole.page++;
+				emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);
+			}
+			else if (type == "previous" && (inRole.page -1 >= 0)){
+				inRole.page--;
+				emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
+			}
+			emb.footer.text = "Page " + inRole.page + "/" + inRole.pagesNum;	
+			server_db["inRole"] = JSON.stringify(inRole); 
 
-		return getJSEmbedToArs(emb) + inRole.reacts;
+			return getJSEmbedToArs(emb) + inRole.reacts;
+		}
 	}
 }
 
