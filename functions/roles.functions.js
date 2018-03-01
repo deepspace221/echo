@@ -446,8 +446,8 @@ function getRegexRoleName(roleName){
 	dbg("role" + roleName);
 	dbg(regex.toString());
 	for (var i = 0; ServerRoles.length; i++){
-		dbg(ServerRoles[i].Name);
 		if (regex.test(ServerRoles[i].Name)){
+		        dbg(ServerRoles[i].Name);
 			arr.push(ServerRoles[i].Name);	
 		}	
 	}
