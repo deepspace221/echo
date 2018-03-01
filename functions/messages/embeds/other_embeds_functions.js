@@ -239,7 +239,7 @@ function getInRoleNextPreviousPage(type){
 			inRole.page--;
 			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
 		}
-	        emb.footer.text = "Page " + (inRole.page + 1) + "/" + pagesNum;	
+	        emb.footer.text = "Page " + (inRole.page + 1) + "/" + inRole.pagesNum;	
 		server_db["inRole"] = JSON.stringify(inRole); 
 
 		return getJSEmbedToArs(emb) + inRole.reacts;
@@ -249,16 +249,17 @@ function getInRoleNextPreviousPage(type){
 function getInRolePage(emb, arrUsers, page){
 //      dbg(arrUsers.length);
      var arr = arrUsers.slice(page * 40, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
+     var position = ((page+1)*40 > arrUsers.length) arrUsers.length : (page+1)*40
 //      dbg(arr);
 //      dbg(arrUsers.length);
      if (arr.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
-	 emb.fields[0].name = "Users (" + (page+1)*40 +  "/" + arrUsers.length + ")";
+	 emb.fields[0].name = "Users (" + position +  "/" + arrUsers.length + ")";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arr);
      }
      else {
 	 emb.fields = getFieldsObj(2, true);
-	 emb.fields[0].name = "Users (" + (page+1)*40 +  "/" + arrUsers.length + ")";
+	 emb.fields[0].name = "Users (" + position +  "/" + arrUsers.length + ")";
 	 emb.fields[0].value = createArrOutputNewLinesSeprated(arr.splice(0,20));	    
 	 emb.fields[1].name = "<:blank:352901517004636163>";
 	 emb.fields[1].value = createArrOutputNewLinesSeprated(arr);	    	     
