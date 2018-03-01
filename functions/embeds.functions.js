@@ -249,7 +249,7 @@ function getJSEmbedToArs(emb){
        if (emb.description) str += "{description:"+ emb.description +"}";
        if (emb.fields != 0) {
               for (var i=0; i < emb.fields.length; i++){
-                     str =+ "\
+                     str += "\
 {field[" + i + "]|name:" + emb.fields[i].name + "}\
 {field[" + i + "]|value:" + emb.fields[i].value + "}\
 {field[" + i + "]|inline:" + emb.fields[i].inline +"}\
