@@ -237,7 +237,7 @@ function getInRoleNextPreviousPage(type){
 		
 		server_db["inRole"] = JSON.parse(inRole); 
 
-		return emb + inRole.reacts;
+		return getJSEmbedToArs(emb) + inRole.reacts;
 	}
 }
 
