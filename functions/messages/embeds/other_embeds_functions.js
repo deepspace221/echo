@@ -212,6 +212,6 @@ function getInRoleEmbed(arrUsers, role){
      if (arrUsers.length != 0){
 	reacts = "{reactbot:◀ ▶}"    
      }
-//      return getJSEmbedToArs(emb);
-	return emb + reacts;
+     return getJSEmbedToArs(emb) + reacts;
+// 	return emb + reacts;
 }
