@@ -194,7 +194,7 @@ function getInRoleEmbed(arrUsers, role){
      use server_db;
      var emb, pagesNum = 1, reacts, sleep = "", page = 0;
      emb = getEmbedObj(), reacts = "";
-     emb.title = "Members in role";
+     emb.title = "Members In Role";
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";  
          
      if (arrUsers.length % 40  == 0)
