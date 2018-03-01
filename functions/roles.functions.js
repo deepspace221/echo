@@ -70,29 +70,7 @@ function getStaffRoleName(){ //working
                 return ServerRoles[i].Name;
         }
 }
-function getRegexRoleName(roleName){
-	var arr = [];
-	dbg(roleName);
-	var regex = new RegExp(roleName, 'i');
-	dbg(regex);
-	for (var i = 0; ServerRoles.length; i++){
-		if (regex.test(ServerRoles["Name"])){
-			arr.push(ServerRoles["Name"]);	
-		}	
-	}
-	dbg(arr);
-	if (arr.length > 1){
-		regex = "/\b" + roleName + "\b/i";
-		for (var i = 0; arr.length; i++){
-			if (regex.test(arr[i])){
-				dbg("yes");
-				return arr[i];
-			}
-		}
-		return "";
-	}	
-	else return roleName;
-}
+
 
 function getUniqueRole(role, roles){
 	var roleRGX = new RegExp(escapeRegExp(role), "i");
@@ -450,7 +428,7 @@ function isValidRole(str){
 
 function inRole(role){
 	var arrUsers = [];
-// 	role = getRegexRoleName(role);
+	role = getRegexRoleName(role);
 	dbg("dd" + role);
 	for (var i = 0; i < ServerMembers.length; i++){
 		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
@@ -459,4 +437,29 @@ function inRole(role){
 		}
 	}
 	return getInRoleEmbed(arrUsers, role);
+}
+
+
+function getRegexRoleName(roleName){
+	var arr = [];
+	var regex = new RegExp(roleName, 'i');
+	dbg(roleName);
+	dbg(regex);
+	for (var i = 0; ServerRoles.length; i++){
+		if (regex.test(ServerRoles[i].Name)){
+			arr.push(ServerRoles[i].Name);	
+		}	
+	}
+	dbg(arr);
+	if (arr.length > 1){
+		regex = "/\b" + roleName + "\b/i";
+		for (var i = 0; arr.length; i++){
+			if (regex.test(arr[i])){
+				dbg("yes");
+				return arr[i];
+			}
+		}
+		return "";
+	}	
+	else return roleName;
 }
