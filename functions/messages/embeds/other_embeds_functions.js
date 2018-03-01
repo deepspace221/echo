@@ -192,7 +192,7 @@ function getServerMapEmbed(channelsObj){
 
 function getInRoleEmbed(arrUsers, role){
      use server_db;
-     var emb, pagesNum = 1, reacts, sleep = "";
+     var emb, pagesNum = 1, reacts, sleep = "", page = 0;
      emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";  
@@ -202,7 +202,7 @@ function getInRoleEmbed(arrUsers, role){
 	     pagesNum = (arrUsers.length / 40);
      else pagesNum += arrUsers.length / 40;
 	
-     emb.footer.text = "Page " + page + "/" + pagesNum;	
+     emb.footer.text = "Page " + (page + 1) + "/" + pagesNum;	
 	
      if (arrUsers.length > 40){
 	reacts = "{reactbot:◀ ▶}"       
