@@ -461,6 +461,6 @@ function getRegexRoleName(roleName){
 // 			}
 // 		}
 // 		return "";
-	}	
+// 	}	
 	return arr[0];
 }
