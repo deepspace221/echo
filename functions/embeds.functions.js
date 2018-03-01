@@ -247,16 +247,23 @@ function getJSEmbedToArs(emb){
        str += "\n{embed:";
        str += "\n{type:rich}";
        if (emb.title) str += "\n{title:" + emb.title + "}";
+       if (emb.color) str += "\n{color:#" + parseInt(emb.color, 16) + "}";
+       if (emb.author.name) str += "\n{author|name:"+ emb.author.name +"}";
+       if (emb.author.icon_url) str += "\n{author|icon:" + emb.author.icon_url + "}";
+       if (emb.thumbnail.url) str += "\n{thumb|url:" + emb.thumbnail.url + "}";
        if (emb.description) str += "\n{description:" + emb.description + "}";
        if (emb.fields.length != 0) {
               for (var i = 0; i < emb.fields.length; i++){
                      str += "\
 \n{field[" + i + "]|name:" + emb.fields[i].name + "}\
-\n{field[" + i + "]|value:" + emb.fields[i].value + "}\
+\n{field[" + i + "]|value:\n" + emb.fields[i].value + "}\
 \n{field[" + i + "]|inline:" + emb.fields[i].inline +"}\
 ";
               }      
        };
+       if (emb.image.url) str += "\n{image|url:" + emb.image.url + "}";
+       if (emb.footer.text) str += "\n{footer|text:" + emb.footer.text + "}";  
+       if (emb.footer.icon_url) str += "\n{footer|icon:" + emb.footer.icon_url + "}";        
        str += "}";
 //        dbg(str);
        return str;
