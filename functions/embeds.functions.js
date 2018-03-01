@@ -251,7 +251,7 @@ function getJSEmbedToArs(emb){
        if (emb.author.name != "") str += "\n{author|name:"+ emb.author.name +"}";
        if (emb.author.icon_url != "") str += "\n{author|icon:" + emb.author.icon_url + "}";
        if (emb.thumbnail.url != "") str += "\n{thumb|url:" + emb.thumbnail.url + "}";
-       if (emb.description != "") str += "\n{description:" + emb.description + "}";
+       if (emb.description != "") str += "\n{desc:" + emb.description + "}";
        if (emb.fields.length != 0) {
               for (var i = 0; i < emb.fields.length; i++){
                      str += "\
