@@ -210,7 +210,8 @@ function getInRoleEmbed(arrUsers, role){
 	 emb.fields[1].value = createArrOutputNewLinesSeprated((arrUsers.length <= 20) ? arrUsers : arrUsers.splice(0,20)) 	    	     
      }
      if (arrUsers.length != 0){
-	reacts = "{reactbot::arrow_backward: :arrow_forward:}"    
+	reacts = "{reactbot:◀ ▶}"    
      }
-     return getJSEmbedToArs(emb);
+//      return getJSEmbedToArs(emb);
+	return emb + reacts;
 }
