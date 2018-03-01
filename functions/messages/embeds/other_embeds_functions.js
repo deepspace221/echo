@@ -211,5 +211,5 @@ function getInRoleEmbed(arrUsers, role){
      if (arrUsers.length != 0){
 	reacts = "{reactbot::arrow_backward: :arrow_forward:}"    
      }
-     return getJSEmbedToArs(emb) + reacts;
+     return getJSEmbedToArs(emb);
 }
