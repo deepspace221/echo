@@ -219,7 +219,7 @@ function getInRoleEmbed(arrUsers, role){
      return getJSEmbedToArs(emb) + reacts + sleep;
 }
 
-function GetInRoleNextPreviousPage(type){
+function getInRoleNextPreviousPage(type){
 	use server_db;
 	var emb, arrUsers, page, reacts, pagesNum;
 	
