@@ -255,7 +255,7 @@ function getJSEmbedToArs(emb){
 {field[" + i + "]|inline:" + emb.fields[i].inline +"}\
 ";
               }      
-       }  
+       };
        str += "}";
        dbg(str);
        return emb;
