@@ -199,7 +199,7 @@ function getInRoleEmbed(arrUsers, role){
      emb.image.url = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png";
      emb.author.name = "aaaa"; 
      emb.author.icon_url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";	
-//      emb.color = "";
+     emb.color = "16777216";
      emb.footer.text = "this is a footer";
      emb.footer.icon_url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";	
 	
