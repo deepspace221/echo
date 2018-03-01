@@ -239,7 +239,7 @@ function getInRoleNextPreviousPage(type){
 			inRole.page--;
 			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
 		}
-	        emb.footer.text = "Page " + (inRole.page + 1) + "/" + inRole.pagesNum;	
+	        emb.footer.text = "Page " + inRole.page + "/" + inRole.pagesNum;	
 		server_db["inRole"] = JSON.stringify(inRole); 
 
 		return getJSEmbedToArs(emb) + inRole.reacts;
