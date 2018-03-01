@@ -247,7 +247,10 @@ function getInRoleNextPreviousPage(type){
 }
 
 function getInRolePage(emb, arrUsers, page){
-     var arr = arrUsers.slice(page * 20, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
+     dbg(arrUsers.length);
+     var arr = arrUsers.slice(page * 40, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
+     dbg(arr);
+     dbg(arrUsers.length);
      if (arr.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
 	 emb.fields[0].name = "Users";
