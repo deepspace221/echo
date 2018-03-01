@@ -218,7 +218,7 @@ function getInRoleEmbed(arrUsers, role){
 	};     
 	server_db["inRole"] = JSON.stringify(inRole); 
 // 	dbg("inRole :" + server_db["inRole"]);
-// 	sleep = "{sleep}{time:30s}{ars:P-delInRole}{/sleep}";
+	sleep = "{sleep}{time:1m}{ars:P-delInRole}{/sleep}";
      }
      return getJSEmbedToArs(emb) + reacts + sleep;
 }
