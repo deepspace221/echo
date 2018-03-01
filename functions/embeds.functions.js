@@ -249,7 +249,7 @@ function getJSEmbedToArs(emb){
        if (emb.author.name) str += "\n{author|name:"+ emb.author.name +"}";
        if (emb.author.icon_url) str += "\n{author|icon:" + emb.author.icon_url + "}";
        if (emb.title) str += "\n{title:" + emb.title + "}";
-       if (emb.color) str += "\n{color:#" + parseInt(emb.color, 16) + "}";
+       if (emb.color) str += "\n{color:#" + emb.color.toString(16) + "}";
        if (emb.thumbnail.url) str += "\n{thumb|url:" + emb.thumbnail.url + "}";
        if (emb.description) str += "\n{desc:" + emb.description + "}";
        if (emb.fields.length != 0) {
