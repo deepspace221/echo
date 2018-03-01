@@ -230,7 +230,7 @@ function getInRoleNextPreviousPage(type){
 	if (server_db.hasOwnProperty("inRole")){
 // 		dbg("in");
 		inRole = JSON.parse(server_db["inRole"]);
-		if ((type == "previous" && inRole.page > 0)  || (type == "next" && inRole.Page < inRole.pagesNum)){
+		if ((type == "next" && inRole.page < inRole.pagesNum) || (type == "previous" && inRole.page > 0)){
 			
 			if (type == "next" && (inRole.page + 1 <= inRole.pagesNum)){
 				inRole.page++;
