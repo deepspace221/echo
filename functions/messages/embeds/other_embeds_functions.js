@@ -197,7 +197,7 @@ function getInRoleEmbed(arrUsers, role){
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
 	
      var arrUsersSplit = [];
-     for (var i = 0; i< arrUsers.length){
+     for (var i = 0; i< arrUsers.length; i++){
 	   if (arrUsers.length > 40){
 		arrUsersSplit.push(arrUsers.splice(0,40));   
 	   } 
