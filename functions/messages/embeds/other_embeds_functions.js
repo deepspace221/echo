@@ -200,8 +200,9 @@ function getInRoleEmbed(arrUsers, role){
      
      if (arrUsers.length % 40  == 0)
 	     pagesNum = (arrUsers.length / 40);
-     else pagesNum += arrUsers.length / 40;
+     else pagesNum += Math.floor(arrUsers.length / 40);
 	
+	dbg(arrUsers.length / 40);
      emb.footer.text = "Page " + (page + 1) + "/" + pagesNum;	
 	
      if (arrUsers.length > 40){
@@ -213,7 +214,7 @@ function getInRoleEmbed(arrUsers, role){
 		emb: emb,
 		reacts: reacts
 	};     
-	server_db["inRole"] = JSON.stringify(inRole); 
+	server_db["inRole"] = JSON.parse(inRole); 
 	sleep = "{sleep}{time:5m}{d?server_db:inRole}{/sleep}"
      }
      return getJSEmbedToArs(emb) + reacts + sleep;
@@ -235,7 +236,7 @@ function getInRoleNextPreviousPage(type){
 			emb = getInRolePage(inRole.emb, inRole.arrUsers, inRole.page);			
 		}
 		
-		server_db["inRole"] = JSON.stringify(inRole); 
+		server_db["inRole"] = JSON.parse(inRole); 
 
 		return getJSEmbedToArs(emb) + inRole.reacts;
 	}
