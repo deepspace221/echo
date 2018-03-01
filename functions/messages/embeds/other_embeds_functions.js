@@ -197,8 +197,9 @@ function getInRoleEmbed(arrUsers, role){
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
      emb.thumbnail.url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";
      emb.image.url = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png";
+     emb.author.name = "aaaa";
      emb.footer.text = "this is a footer";
-     emb.footer.text_url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";	
+     emb.footer.icon_url = "https://zartnerds.files.wordpress.com/2015/10/thumbnail.png";	
 	
      if (arrUsers.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
