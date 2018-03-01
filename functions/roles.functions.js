@@ -440,6 +440,7 @@ function isValidRole(str){
 
 function inRole(role){
 	var arrUsers = [];
+	role = getRegexRoleName(role);
 	for (var i = 0; i < ServerMembers.length; i++){
 		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
 // 			dbg(GetRoleID(role));
