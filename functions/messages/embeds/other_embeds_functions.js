@@ -195,7 +195,7 @@ function getInRoleEmbed(arrUsers, role){
      var emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";
-     emb.color = 16777216;
+     emb.color = 15110413;
 	
      if (arrUsers.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
