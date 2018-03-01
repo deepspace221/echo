@@ -73,18 +73,20 @@ function getStaffRoleName(){ //working
 function getRegexRoleName(roleName){
 	var arr = [];
 	var regex = new RegExp(roleName, 'i');
-	var ctr = 0;
+	dbg(regex);
 	for (var i = 0; ServerRoles.length; i++){
 		if (regex.test(ServerRoles["Name"])){
-			ctr++;
 			arr.push(ServerRoles["Name"]);	
 		}	
 	}
+	dbg(arr);
 	if (arr.length > 1){
 		regex = "/\b" + roleName + "\b/i";
 		for (var i = 0; arr.length; i++){
-			if (regex.test(arr[i]))
+			if (regex.test(arr[i])){
+				dbg("yes");
 				return arr[i];
+			}
 		}
 		return "";
 	}	
@@ -448,7 +450,7 @@ function isValidRole(str){
 function inRole(role){
 	var arrUsers = [];
 	role = getRegexRoleName(role);
-	dbg(role);
+	dbg("dd" + role);
 	for (var i = 0; i < ServerMembers.length; i++){
 		for (var k = 0; k < ServerMembers[i].Roles.length; k++){
 			if (ServerMembers[i].Roles[k] == GetRoleID(role))
