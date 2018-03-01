@@ -196,14 +196,16 @@ function getInRoleEmbed(arrUsers, role){
      emb = getEmbedObj(), reacts = "";
      emb.title = "Users in the role - " + role;
      emb.description = "We have **" + arrUsers.length + "** users in the role **" + role + "**.";  
-     emb = getInRolePage(emb, arrUsers, 0);	     
-     
+         
      if (arrUsers.length % 40  == 0)
 	     pagesNum = (arrUsers.length / 40);
-     else pagesNum += Math.floor(arrUsers.length / 40);
-	
-	dbg("length " + arrUsers.length + "\n division: " + arrUsers.length / 40);
+     else pagesNum += Math.floor(arrUsers.length / 40);	
+     dbg("length " + arrUsers.length + "\n division: " + arrUsers.length / 40);
      emb.footer.text = "Page " + (page + 1) + "/" + pagesNum;	
+	
+     emb = getInRolePage(emb, arrUsers, 0);	
+
+     dbg(arrUsers.length);
 	
      if (arrUsers.length > 40){
 	reacts = "{reactbot:◀ ▶}";      
@@ -244,8 +246,7 @@ function getInRoleNextPreviousPage(type){
 }
 
 function getInRolePage(emb, arrUsers, page){
-     var pagesNum = 1;	
-     var arr = arrUsers.splice(page * 20, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
+     var arr = arrUsers.slice(page * 20, (arrUsers.length >= (page+1)*40) ? (page+1)*40 : arrUsers.length);
      if (arr.length <= 20){	
     	 emb.fields = getFieldsObj(1, true);
 	 emb.fields[0].name = "Users";
