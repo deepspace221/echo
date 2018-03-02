@@ -52,7 +52,7 @@ emb.fields[9].name = "R O L E S";
 emb.fields[9].value = user.sortedRoles;
 emb.fields[9].inline = false;
 
-emb.image.url = user.flagImage;
+// emb.image.url = user.flagImage;
 emb.footer.text = "Type \\help whoami to view configuration info.";
 emb.footer.icon_url = "http://androidcenter.com/wp-content/uploads/MEMRISE.png";
 
