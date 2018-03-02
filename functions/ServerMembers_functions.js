@@ -10,19 +10,19 @@ function getMemberIndex() { //WORKING
     return memberIndex;
 }
 
-function getUserRolesArr() {
+function getUserRolesArr(memberIndex) {
     var roles = [];
     for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
             roles.push(GetRoleName(ServerMembers[memberIndex].Roles[x]));
     }
     return roles;
 }
-function getUserRolesOBJ(){
-    var user = {};
-    var role = "";
-    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
-            role = GetRoleName(ServerMembers[memberIndex].Roles[x]).replace("[\s.]", "");
-            user[role] = icon.positive;
-    }
-    return user;
-}
+// function getUserRolesOBJ(memberIndex){
+//     var user = {};
+//     var role = "";
+//     for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+//             role = GetRoleName(ServerMembers[memberIndex].Roles[x]).replace("[\s.]", "");
+//             user[role] = icon.positive;
+//     }
+//     return user;
+// }
