@@ -2,7 +2,9 @@ function getDisplayWhoami(){
         use whoami_db;
 
         var user = {};
-        var memberIndex, sortedRoles = "", userRoles = [];
+        var sortedRoles = "", userRoles = [];
+        var memberIndex = getMemberIndex();
+
 
         var icon = {
             none: "NaN",
@@ -72,7 +74,6 @@ function getDisplayWhoami(){
             // lvl18: {bar: icon.lv18, nickname: icon.langWorrior},
         };
 
-        memberIndex = getMemberIndex();
         
         dbg("here");
         user = getInitUserRolesValuesObj(user);
