@@ -1,8 +1,7 @@
-[#CONTINUE#]
-&\whoami={init}
-#js >>
 use whoami_db;
 
+var user = {};
+var memberIndex, sortedRoles = "", userRoles = [];
 
 var icon = {
     none: "NaN",
@@ -13,9 +12,9 @@ var icon = {
     duolingo2: "<:duolingo:352946192176513026>",
     polyglot: "<:Octopus:337623131932065792>",
     askNative: "<:gringo:402274676153516033>",
-    nsfw: "<:terrified:402081920063635467>",
+    nsfw: "BѠbs",
     godModeExtras: "<:rip:402279584625721346>",
-    voicemedia: ":loud_sound:",
+    voicemedia: "🔊",
     correctMe: "<:angry:401900445389291531>",
     palmTree: ":palm_tree:",
     positive: ":white_check_mark:",
@@ -58,14 +57,6 @@ var icon = {
     ten: ":one::zero:"
 };
 
-
-
-var memberIndex = getMemberIndex();
-var userOBJ = getUserServerRolesOBJ();
-var sortedRoles = sortRolesByPosition();
-var userRoles = getUserRolesArr();
-var colors = "#ff0000,#00ff00,#ffffff,#4286f4,#f45642,#262525,#e2d626,#87e226,#26e2c0,#2633e2,#8126e2";
-
 var activityBars = {
     lvl0: {bar: icon.lvl0, nickname: icon.silenceVow},
     lvl3: {bar: icon.lvl3, nickname: icon.baby},
@@ -79,6 +70,11 @@ var activityBars = {
     // lvl16: {bar: icon.lv16, nickname: icon.langNerd},
     // lvl18: {bar: icon.lv18, nickname: icon.langWorrior},
 };
+
+memberIndex = getMemberIndex();
+user = getInitUserRolesValuesObj(user);
+sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
+userRoles = getUserRolesArr();
 
 user.Patrons = "";
 user.Contributors = "";
@@ -242,7 +238,7 @@ for (i = 0; i < userRoles.length; i++) {
                 else if (user.MemriseLVL10 = icon.positive)
                     user.memriseLVL = icon.ten;              
                     break;
-            case "Voice-media":
+            case GetRoleName("346415797544943626"):
                     user.Voicemedia = icon.voicemedia;
                     break;
             case "Activity +5":
@@ -286,57 +282,18 @@ else if (user.Voicemedia == icon.positive){
     user.activityNickname = activityBars.lvl3.nickname;
 }  
 
-
-
-
 whoami_db["user"] = JSON.stringify(user);
 
-resp = embedWhoami(); 
+resp = getEmbedWhoami(user, icon); 
 
-function chkChatty() { //WORKING
 
-    for (i = 0; i < ServerMembers[memberIndex].Roles.length; i++) {
-        if (GetRoleName(ServerMembers[memberIndex].Roles[i]) == "Chatty")
-            return true;
-    }
-    return false;
-}
+function getInitUserRolesValuesObj(user){
+        var role = "";
 
-function getMemberIndex() { //WORKING
-    var memberIndex = 0;
-
-    for (i = 0; i < ServerMembers.length; i++) {
-        if (ServerMembers[i].User.ID == UserID) {
-            memberIndex = i;
-            break;
-        }
-    }
-    return memberIndex;
-}
-
-function getUserRolesArr() {
-    var roles = [];
-    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
-            roles.push(GetRoleName(ServerMembers[memberIndex].Roles[x]));
-    }
-    return roles;
-}
-function getUserRoleKeyName(str){
-        return str.replace(/[\s.\-•\+]/g, "");
-}
-
-function initDefaultUserOBJValues(){
-         var role = "";
-            for (var i = 0; i < ServerRoles.length; i++) {
+        for (var i = 0; i < ServerRoles.length; i++) {
                 role = getUserRoleKeyName(GetRoleName(ServerRoles[i]["ID"]));
                 user[role] = icon.negative;
          }
-}
-function getUserServerRolesOBJ(){
-        user = {};
-        var role = "";
-
-        initDefaultUserOBJValues();
 
         for (var i = 0; i < UserRoles.length; i++) {
                     role = getUserRoleKeyName(GetRoleName(UserRoles[i]));
@@ -344,122 +301,3 @@ function getUserServerRolesOBJ(){
         }
         return user;
 }
-function getUserRolesOBJ(){
-    var user = {};
-    var role = "";
-    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
-            role = GetRoleName(ServerMembers[memberIndex].Roles[x]).replace("[\s.]", "");
-            user[role] = icon.positive;
-    }
-    return user;
-}
-function sortRolesByPosition() {
-
-        var arr = new Array();
-
-        for (var i = 0; i < UserRoles.length; i++) {
-            for (var j = 0; j < ServerRoles.length; j++) {
-                if (UserRoles[i] === ServerRoles[j]["ID"]) {
-                    var role = {
-                        Position: ServerRoles[j]["Position"],
-                        Name: GetRoleName(UserRoles[i])
-                    };
-                    arr.push(role);
-                }
-            }
-        }
-
-        var byPos = arr.slice(0);
-
-        byPos.sort(function(a,b) {
-            return b.Position - a.Position;
-        });
-
-        var msg = byPos[0]["Name"];
-
-        for (var k = 1; k < arr.length; k++) {
-            msg += ", " + byPos[k]["Name"];
-        }
-
-        return msg;
-}
-function generateSpacer(size){
-        var str = ""; 
-        for (i = 0; i < size; i++)
-            str += " ";
-        return str;
-}
-function embedWhoami(){
-
-var lineMemriseLevel = icon.memrise + " LVL: " + user.memriseLVL;
-var lineMemriseChampion = icon.memrise +" Champion: " + user.MemriseChampion;
-var lineDuolingoTrees = icon.duolingo + icon.palmTree + " Finished "+ user.duolingoTrees; 
-var lineDuolingo25 = icon.duolingo + " LVL 25: "+ user.duolingo25;
-var lineSpacer1 = generateSpacer(72-lineMemriseLevel.length);
-var lineSpacer2 = generateSpacer(72-lineMemriseChampion.length);
-
-
-var embed =" \
-         {embed: \
-                    {title:USER INFORMATION FOR: `" + Username +"`} \
-                    {type:rich} \
-                    {author|icon:" + user.avatar +"} \
-                    {author|name:" + Username +"} \
-                    {color:{randlist:" + colors + "}} \
-                    {thumb|url:" + user.avatar +"} \
-                    {desc: \
-                    \nJoined Date: " + user.joinDate +" \
-                    \nProfile: {user} " + user.Staff + " " + user.Patrons + " " + user.Contributors + " \
-                    \nBot Master: **{ismaster}** \
-                    \nCountry: " + user.country + " |  Timezone: `" + user.timezone + "` \
-                    \n────────────────────────────────────────  \
-                    \n|  " + lineMemriseLevel + lineSpacer1 + lineDuolingoTrees +" \
-                    \n|  " + lineMemriseChampion + lineSpacer2 + lineDuolingo25 + " \
-                    \n──────────────────────────────────────── \
-                    } \
-                    {field[0]|name:Memrise/CC} \
-                    {field[0]|value:|  "+ user.Memrise + user.CourseCreator + "}  \
-                    {field[0]|inline:true} \
-                    {field[1]|name:Duolingo} \
-                    {field[1]|value:" + user.Duolingo + "} \
-                    {field[1]|inline:true} \
-                    {field[2]|name:Polyglot} \
-                    {field[2]|value:" + user.Polyglot + "} \
-                    {field[2]|inline:true} \
-                    {field[3]|name:Voice/NSFW} \
-                    {field[3]|value:|  "+ user.Voicemedia + user.nsfw +"} \
-                    {field[3]|inline:true} \
-                    {field[4]|name:Ask a Native} \
-                    {field[4]|value:" + user.AskaNative + "} \
-                    {field[4]|inline:true} \
-                    {field[5]|name:Correct Me} \
-                    {field[5]|value:" + user.CorrectMe + "} \
-                    {field[5]|inline:true} \
-                    {field[6]|name:Experience Level (" + user.activity + "/50)} \
-                    {field[6]|value:" + user.activityBar +" " +user.activityNickname + " \
-                    \n|  " + user.Teachers +"                       " + user.Linguistics + user.GodMode + user.Extras +" \
-                    \n────────────────────────────────────────} \
-                    {field[6]|inline:false} \
-                    {field[7]|name:A B O U T} \
-                    {field[7]|value:" + user.about +"} \
-                    {field[7]|inline:false} \
-                    {field[8]|name:P A R T N E R :globe_with_meridians: S E A R C H} \
-                    {field[8]|value:" + user.parnterSearch +"} \
-                    {field[8]|inline:false} \
-                    {field[9]|name:R O L E S} \
-                    {field[9]|value: " + sortedRoles +"} \
-                    {field[9]|inline:true} \
-                        {image|url:" + user.flagImage +"} \
-                        {image|width:50px} \
-                        {image|height:50px} \
-                    {footer|icon:http://androidcenter.com/wp-content/uploads/MEMRISE.png} \
-                    {footer|text: Type \\help whoami to view configuration info.} \
-            } \
-";
-
-return embed; 
-}
->>
-[#CONTINUE#]
-&\about {params}={init}
-
