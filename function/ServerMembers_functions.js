@@ -9,3 +9,11 @@ function getMemberIndex() { //WORKING
     }
     return memberIndex;
 }
+
+function getUserRolesArr() {
+    var roles = [];
+    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+            roles.push(GetRoleName(ServerMembers[memberIndex].Roles[x]));
+    }
+    return roles;
+}
