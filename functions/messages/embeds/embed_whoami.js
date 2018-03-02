@@ -1,4 +1,4 @@
-function getEmbedWhoami(user, icon){
+function getEmbedWhoami(user, icon, sortedRoles){
 
 var lineMemriseLevel = icon.memrise + " LVL: " + user.memriseLVL;
 var lineMemriseChampion = icon.memrise +" Champion: " + user.MemriseChampion;
