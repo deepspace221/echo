@@ -4,8 +4,8 @@ var lineMemriseLevel = icon.memrise + " LVL: " + user.memriseLVL;
 var lineMemriseChampion = icon.memrise +" Champion: " + user.MemriseChampion;
 var lineDuolingoTrees = icon.duolingo + icon.palmTree + " Finished "+ user.duolingoTrees; 
 var lineDuolingo25 = icon.duolingo + " LVL 25: "+ user.duolingo25;
-// var lineSpacer1 = generateSpacer(72-lineMemriseLevel.length);
-// var lineSpacer2 = generateSpacer(72-lineMemriseChampion.length);
+var lineSpacer1 = createEmptyStr(72-lineMemriseLevel.length);
+var lineSpacer2 = createEmptyStr(72-lineMemriseChampion.length);
 
 var emb; 
 emb = getEmbedObj();
