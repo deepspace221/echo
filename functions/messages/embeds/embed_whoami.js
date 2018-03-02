@@ -1,4 +1,4 @@
-function getEmbedWhoami(user, icon, sortedRoles){
+function getEmbedWhoami(user, icon){
 
 var lineMemriseLevel = icon.memrise + " LVL: " + user.memriseLVL;
 var lineMemriseChampion = icon.memrise +" Champion: " + user.MemriseChampion;
@@ -50,7 +50,7 @@ emb.fields[8].name = "P A R T N E R :globe_with_meridians: S E A R C H";
 emb.fields[8].value = user.parnterSearch;
 emb.fields[8].inline = false;
 emb.fields[9].name = "R O L E S";
-emb.fields[9].value = sortedRoles;
+emb.fields[9].value = user.sortedRoles;
 emb.fields[9].inline = false;
 
 emb.image.url = user.flagImage;
