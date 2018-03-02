@@ -17,3 +17,12 @@ function getUserRolesArr() {
     }
     return roles;
 }
+function getUserRolesOBJ(){
+    var user = {};
+    var role = "";
+    for (x = 0; x < ServerMembers[memberIndex].Roles.length; x++) {
+            role = GetRoleName(ServerMembers[memberIndex].Roles[x]).replace("[\s.]", "");
+            user[role] = icon.positive;
+    }
+    return user;
+}
