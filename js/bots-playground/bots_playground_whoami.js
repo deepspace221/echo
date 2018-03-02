@@ -1,4 +1,4 @@
-function displayWhoami(){
+function getDisplayWhoami(){
         use whoami_db;
 
         var user = {};
