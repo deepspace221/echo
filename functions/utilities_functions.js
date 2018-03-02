@@ -91,3 +91,7 @@ function createEmptyStr(len){
       }
       return str;
 }
+
+function getUserRoleKeyName(str){
+        return str.replace(/[\s.\-•\+]/g, "");
+}
