@@ -2,8 +2,7 @@ function getDisplayWhoami(){
         use whoami_db;
 
         var user = {};
-        var sortedRoles = "", userRoles = [];
-        var memberIndex = getMemberIndex();
+        var memberIndex, sortedRoles = "", userRoles = [];
 
 
         var icon = {
@@ -74,11 +73,10 @@ function getDisplayWhoami(){
             // lvl18: {bar: icon.lv18, nickname: icon.langWorrior},
         };
 
-        
-        dbg("here");
+        memberIndex = getMemberIndex();     
         user = getInitUserRolesValuesObj(user);
         sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
-        userRoles = getUserRolesArr();
+        userRoles = getUserRolesArr(memberIndex);
         
         
 
