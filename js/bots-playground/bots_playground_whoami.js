@@ -73,9 +73,13 @@ function getDisplayWhoami(){
         };
 
         memberIndex = getMemberIndex();
+        
+        dbg("here");
         user = getInitUserRolesValuesObj(user);
         sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
         userRoles = getUserRolesArr();
+        
+        
 
         user.Patrons = "";
         user.Contributors = "";
