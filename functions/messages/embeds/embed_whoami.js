@@ -10,20 +10,19 @@ var lineSpacer2 = createEmptyStr(72-lineMemriseChampion.length);
 var emb; 
 emb = getEmbedObj();
 emb.fields = getFieldsObj(10, true);
-
+//\nBot Master: **{ismaster}** \
 emb.title = "USER INFORMATION FOR: `" + Username + "`";
 // emb.color = colors;
 // emb.thumbnail.url = user.avatar
-emb.description = "\
-\nJoined Date: " + user.joinDate +" \
-\nProfile: {user} " + user.Staff + " " + user.Patrons + " " + user.Contributors + " \
-\nBot Master: **{ismaster}** \
-\nCountry: " + user.country + " |  Timezone: `" + user.timezone + "` \
-\n────────────────────────────────────────  \
-\n|  " + lineMemriseLevel + lineSpacer1 + lineDuolingoTrees +" \
-\n|  " + lineMemriseChampion + lineSpacer2 + lineDuolingo25 + " \
-\n──────────────────────────────────────── \
-";
+// emb.description = "\
+// \nJoined Date: " + user.joinDate +" \
+// \nProfile: {user} " + user.Staff + " " + user.Patrons + " " + user.Contributors + " \
+// \nCountry: " + user.country + " |  Timezone: `" + user.timezone + "` \
+// \n────────────────────────────────────────  \
+// \n|  " + lineMemriseLevel + lineSpacer1 + lineDuolingoTrees +" \
+// \n|  " + lineMemriseChampion + lineSpacer2 + lineDuolingo25 + " \
+// \n──────────────────────────────────────── \
+// ";
 
 emb.fields[0].name = "Memrise/CC";
 emb.fields[0].value = "|  " + user.Memrise + user.CourseCreator;
