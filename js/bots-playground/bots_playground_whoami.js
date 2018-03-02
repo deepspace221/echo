@@ -285,7 +285,7 @@ fucntion displayWhoami(){
 
         whoami_db["user"] = JSON.stringify(user);
 
-        resp = getEmbedWhoami(user, icon); 
+        return getEmbedWhoami(user, icon); 
 
         function getInitUserRolesValuesObj(user){
                 var role = "";
