@@ -75,7 +75,7 @@ function getDisplayWhoami(){
 
         memberIndex = getMemberIndex();     
         user = getInitUserRolesValuesObj(user);
-        sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
+//         sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
         userRoles = getUserRolesArr(memberIndex);
         
         
@@ -101,6 +101,7 @@ function getDisplayWhoami(){
         user.activity = "0";
         user.activityBar = activityBars.lvl0.bar;
         user.activityNickname = activityBars.lvl0.nickname;
+        user.sortedRoles = createArrOutputCommaSeprated(getArrSortedRolesByPosition());
 
         for (i = 0; i < userRoles.length; i++) {
             switch (userRoles[i]) {
